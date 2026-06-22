@@ -61,6 +61,11 @@
     padding-top: $space-12;
     padding-bottom: $space-12;
   }
+
+  @include respond-to(sm) {
+    padding-top: $space-8;
+    padding-bottom: $space-8;
+  }
 }
 
 .content {

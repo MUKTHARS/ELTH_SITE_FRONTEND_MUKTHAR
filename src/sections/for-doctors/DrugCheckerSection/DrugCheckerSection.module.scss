@@ -21,6 +21,8 @@
     grid-template-columns: 1fr;
     gap: $space-8;
   }
+
+  @include respond-to(sm) { padding: $space-6; }
 }
 
 .left {

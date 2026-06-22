@@ -5,6 +5,8 @@
   background: $elth-dark;
   color: rgba($white, 0.7);
   padding-top: $space-16;
+
+  @include respond-to(sm) { padding-top: $space-12; }
 }
 
 .inner {

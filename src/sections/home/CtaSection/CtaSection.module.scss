@@ -17,6 +17,7 @@
   text-align: center;
 
   @include respond-to(md) { padding: $space-10 $space-6; }
+  @include respond-to(sm) { padding: $space-8 $space-4; border-radius: $radius-lg; }
 }
 
 .blobs {
@@ -66,6 +67,8 @@
   color: $white;
   max-width: 560px;
   line-height: $leading-tight;
+
+  @include respond-to(sm) { max-width: 100%; }
 }
 
 .sub {

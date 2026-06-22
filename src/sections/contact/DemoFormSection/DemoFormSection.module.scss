@@ -4,6 +4,9 @@
 .section {
   background: $elth-bg-warm;
   padding: 120px 0 $space-20;
+
+  @include respond-to(md) { padding: 100px 0 $space-16; }
+  @include respond-to(sm) { padding: 88px 0 $space-12; }
 }
 
 .inner { @include container; }
@@ -93,6 +96,8 @@
   display: flex;
   flex-direction: column;
   gap: $space-5;
+
+  @include respond-to(sm) { padding: $space-5; border-radius: $radius-lg; }
 }
 
 .row {
@@ -168,6 +173,8 @@
   align-items: center;
   gap: $space-4;
   text-align: center;
+
+  @include respond-to(sm) { padding: $space-8 $space-5; }
 }
 
 .successIcon { font-size: 48px; }

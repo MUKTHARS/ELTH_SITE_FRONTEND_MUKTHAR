@@ -24,6 +24,7 @@
   display: flex;
   flex-direction: column;
   gap: $space-5;
+  @include respond-to(lg) { order: 1; }
 }
 
 .heading { @include heading-md; color: $text-primary; }

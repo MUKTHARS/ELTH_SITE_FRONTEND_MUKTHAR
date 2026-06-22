@@ -6,6 +6,9 @@
   padding: 120px 0 $space-20;
   min-height: 60vh;
   @include flex-center;
+
+  @include respond-to(md) { padding: 100px 0 $space-16; }
+  @include respond-to(sm) { padding: 88px 0 $space-12; }
 }
 
 .inner { @include container; }
@@ -47,12 +50,14 @@
 
 .proof {
   display: flex;
-  gap: $space-5;
+  gap: $space-3;
   flex-wrap: wrap;
   padding-top: $space-2;
 
   span {
     font-size: $text-sm;
     color: rgba($white, 0.5);
+
+    @include respond-to(sm) { font-size: $text-xs; }
   }
 }

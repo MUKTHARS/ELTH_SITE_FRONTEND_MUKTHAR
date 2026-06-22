@@ -4,6 +4,9 @@
 .section {
   background: $elth-bg-warm;
   padding: 120px 0 $space-20;
+
+  @include respond-to(md) { padding: 100px 0 $space-16; }
+  @include respond-to(sm) { padding: 88px 0 $space-12; }
 }
 
 .inner { @include container; }

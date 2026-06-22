@@ -5,6 +5,9 @@
   background: $elth-bg-warm;
   padding: 120px 0 $space-16;
   text-align: center;
+
+  @include respond-to(md) { padding: 100px 0 $space-12; }
+  @include respond-to(sm) { padding: 88px 0 $space-10; }
 }
 
 .inner { @include container; }

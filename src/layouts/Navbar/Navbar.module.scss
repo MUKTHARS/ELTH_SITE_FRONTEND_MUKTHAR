@@ -107,6 +107,8 @@
   display: flex;
   align-items: center;
   gap: $space-3;
+
+  @include respond-to(xs) { gap: $space-2; }
 }
 
 .menuBtn {
