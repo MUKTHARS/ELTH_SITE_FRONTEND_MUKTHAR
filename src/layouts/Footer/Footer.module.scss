@@ -1,0 +1,107 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.footer {
+  background: $elth-dark;
+  color: rgba($white, 0.7);
+  padding-top: $space-16;
+}
+
+.inner {
+  @include container;
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  gap: $space-10;
+  padding-bottom: $space-12;
+
+  @include respond-to(lg) { grid-template-columns: 1fr 1fr; }
+  @include respond-to(md) { grid-template-columns: 1fr; }
+}
+
+.brand { display: flex; flex-direction: column; gap: $space-3; }
+
+.logo {
+  font-size: $text-2xl;
+  font-weight: $font-bold;
+  color: $white;
+}
+
+.tagline {
+  @include body-sm;
+  color: rgba($white, 0.6);
+  max-width: 260px;
+  line-height: $leading-relaxed;
+}
+
+.built {
+  font-size: $text-xs;
+  color: rgba($white, 0.4);
+}
+
+.link {
+  color: $elth-teal-light;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin-top: $space-1;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: $font-medium;
+  color: rgba($white, 0.5);
+  border: 1px solid rgba($white, 0.15);
+  border-radius: $radius-xs;
+  padding: 2px 8px;
+}
+
+.groups {
+  display: contents;
+}
+
+.group {}
+
+.groupTitle {
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $white;
+  letter-spacing: $tracking-wider;
+  text-transform: uppercase;
+  margin-bottom: $space-4;
+}
+
+.groupLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.groupLink {
+  font-size: $text-sm;
+  color: rgba($white, 0.55);
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover { color: $white; }
+}
+
+.bottom {
+  @include container;
+  @include flex-between;
+  padding-top: $space-6;
+  padding-bottom: $space-6;
+  border-top: 1px solid rgba($white, 0.1);
+
+  @include respond-to(md) { flex-direction: column; gap: $space-2; text-align: center; }
+}
+
+.copy {
+  font-size: $text-xs;
+  color: rgba($white, 0.35);
+}

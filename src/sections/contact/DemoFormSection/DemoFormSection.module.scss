@@ -1,0 +1,186 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  background: $elth-bg-warm;
+  padding: 120px 0 $space-20;
+}
+
+.inner { @include container; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-16;
+  align-items: flex-start;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+    gap: $space-10;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.eyebrow {
+  @include label-text;
+  color: $text-tertiary;
+}
+
+.heading {
+  @include heading-lg;
+  color: $text-primary;
+  line-height: $leading-tight;
+}
+
+.sub {
+  @include body-lg;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+}
+
+.promises {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.promise {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  font-size: $text-sm;
+  color: $text-secondary;
+}
+
+.promiseCheck {
+  color: $elth-teal;
+  font-weight: $font-bold;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding-top: $space-2;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+}
+
+.contactIcon { font-size: 18px; }
+
+.contactText {
+  font-size: $text-sm;
+  color: $text-secondary;
+}
+
+// Form
+.right {}
+
+.form {
+  background: $white;
+  border: 1px solid $elth-border;
+  border-radius: $radius-xl;
+  padding: $space-8;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-4;
+
+  @include respond-to(sm) { grid-template-columns: 1fr; }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.label {
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  color: $text-primary;
+}
+
+.select {
+  height: 40px;
+  width: 100%;
+  border: 1px solid $elth-border;
+  border-radius: $radius-md;
+  padding: 0 $space-3;
+  font-size: $text-sm;
+  color: $text-primary;
+  background: $white;
+  outline: none;
+
+  &:focus { border-color: $elth-teal; box-shadow: 0 0 0 2px rgba($elth-teal, 0.15); }
+}
+
+.textarea {
+  width: 100%;
+  border: 1px solid $elth-border;
+  border-radius: $radius-md;
+  padding: $space-3;
+  font-size: $text-sm;
+  color: $text-primary;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  line-height: $leading-relaxed;
+
+  &:focus { border-color: $elth-teal; box-shadow: 0 0 0 2px rgba($elth-teal, 0.15); }
+  &::placeholder { color: $text-tertiary; }
+}
+
+.submit {
+  width: 100%;
+  justify-content: center;
+}
+
+.privacy {
+  font-size: $text-xs;
+  color: $text-tertiary;
+  text-align: center;
+  margin: 0;
+}
+
+// Success state
+.success {
+  background: $white;
+  border: 1px solid $elth-border;
+  border-radius: $radius-xl;
+  padding: $space-12 $space-8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-4;
+  text-align: center;
+}
+
+.successIcon { font-size: 48px; }
+
+.successTitle {
+  @include heading-sm;
+  color: $text-primary;
+}
+
+.successDesc {
+  font-size: $text-base;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+  margin: 0;
+  max-width: 400px;
+}

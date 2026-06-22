@@ -1,0 +1,146 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $elth-bg-warm;
+}
+
+.inner { @include container; }
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-16;
+  align-items: center;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+    gap: $space-10;
+  }
+}
+
+.left {}
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.heading {
+  @include heading-lg;
+  color: $text-primary;
+  line-height: $leading-tight;
+}
+
+.sub {
+  @include body-lg;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.step {
+  display: flex;
+  gap: $space-4;
+  align-items: flex-start;
+}
+
+.stepNum {
+  font-size: $text-xs;
+  font-weight: $font-bold;
+  color: $elth-teal;
+  background: $elth-teal-bg;
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-full;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.stepLabel {
+  display: block;
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $text-primary;
+  margin-bottom: $space-1;
+}
+
+.stepDetail {
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+  margin: 0;
+}
+
+// Chat mockup
+.chatMock {
+  padding: $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  min-height: 320px;
+}
+
+.chatHeader {
+  @include flex-start;
+  gap: $space-3;
+  padding-bottom: $space-3;
+  border-bottom: 1px solid $elth-border;
+}
+
+.chatAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-full;
+  background: $elth-teal;
+  color: $white;
+  font-weight: $font-bold;
+  font-size: $text-sm;
+  @include flex-center;
+}
+
+.chatName {
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.chatStatus {
+  font-size: $text-xs;
+  color: $text-tertiary;
+}
+
+.chatMessages {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  flex: 1;
+}
+
+.chatBubblePatient {
+  align-self: flex-end;
+  background: $elth-teal;
+  color: $white;
+  padding: $space-2 $space-3;
+  border-radius: 12px 12px 2px 12px;
+  font-size: $text-xs;
+  line-height: $leading-relaxed;
+  max-width: 85%;
+}
+
+.chatBubbleAi {
+  align-self: flex-start;
+  background: $elth-border;
+  color: $text-primary;
+  padding: $space-2 $space-3;
+  border-radius: 12px 12px 12px 2px;
+  font-size: $text-xs;
+  line-height: $leading-relaxed;
+  max-width: 85%;
+}

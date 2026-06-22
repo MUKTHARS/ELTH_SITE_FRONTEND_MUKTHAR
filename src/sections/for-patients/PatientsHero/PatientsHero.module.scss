@@ -1,0 +1,58 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  background: linear-gradient(135deg, #012810 0%, $elth-dark 100%);
+  padding: 120px 0 $space-20;
+  min-height: 60vh;
+  @include flex-center;
+}
+
+.inner { @include container; }
+
+.content {
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.badge {
+  @include label-text;
+  color: rgba($white, 0.5);
+  background: rgba($white, 0.06);
+  padding: $space-2 $space-4;
+  border-radius: $radius-full;
+  width: fit-content;
+}
+
+.heading {
+  @include heading-xl;
+  color: $white;
+  line-height: $leading-tight;
+}
+
+.sub {
+  @include body-lg;
+  color: rgba($white, 0.65);
+  line-height: $leading-relaxed;
+  max-width: 520px;
+}
+
+.actions {
+  display: flex;
+  gap: $space-4;
+  flex-wrap: wrap;
+}
+
+.proof {
+  display: flex;
+  gap: $space-5;
+  flex-wrap: wrap;
+  padding-top: $space-2;
+
+  span {
+    font-size: $text-sm;
+    color: rgba($white, 0.5);
+  }
+}

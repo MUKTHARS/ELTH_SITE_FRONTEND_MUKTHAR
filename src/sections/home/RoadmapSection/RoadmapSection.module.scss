@@ -1,0 +1,139 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $white;
+}
+
+.inner { @include container; }
+
+.header {
+  text-align: center;
+  margin-bottom: $space-12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-4;
+}
+
+.heading {
+  @include heading-md;
+  color: $text-primary;
+}
+
+.sub {
+  @include body-lg;
+  color: $text-secondary;
+  max-width: 520px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.phase {
+  display: grid;
+  grid-template-columns: 140px 32px 1fr;
+  gap: $space-4;
+  align-items: flex-start;
+
+  @include respond-to(sm) {
+    grid-template-columns: 32px 1fr;
+  }
+}
+
+.phaseLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: $space-2;
+  padding-top: 4px;
+
+  @include respond-to(sm) { display: none; }
+}
+
+.statusPill {
+  font-size: $text-xs;
+  font-weight: $font-medium;
+  padding: 2px 10px;
+  border-radius: $radius-full;
+}
+
+.statusDone     { background: #dcfce7; color: #16a34a; }
+.statusActive   { background: #e0f2fe; color: #0369a1; }
+.statusUpcoming { background: $elth-border; color: $text-tertiary; }
+
+.phaseNum {
+  font-size: $text-xs;
+  color: $text-tertiary;
+  @include label-text;
+}
+
+.phaseConnector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: $radius-full;
+  border: 2px solid;
+  flex-shrink: 0;
+  margin-top: 5px;
+
+  &[data-status='done']     { background: #22c55e; border-color: #22c55e; }
+  &[data-status='active']   { background: $elth-teal; border-color: $elth-teal; }
+  &[data-status='upcoming'] { background: $white; border-color: $elth-border; }
+}
+
+.line {
+  width: 2px;
+  flex: 1;
+  background: $elth-border;
+  min-height: 40px;
+}
+
+.phaseRight {
+  padding-bottom: $space-8;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.phaseTitle {
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  color: $text-primary;
+  padding-top: 2px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.feature {
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+  padding-left: $space-4;
+  position: relative;
+
+  &::before {
+    content: '·';
+    position: absolute;
+    left: $space-1;
+    color: $text-tertiary;
+  }
+}

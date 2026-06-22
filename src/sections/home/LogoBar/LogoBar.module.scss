@@ -1,0 +1,53 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+@use '@styles/animations';
+
+.wrapper {
+  background: $elth-bg-warm;
+  padding: $space-8 0;
+  border-bottom: 1px solid $elth-border;
+}
+
+.label {
+  text-align: center;
+  font-size: $text-xs;
+  color: $text-tertiary;
+  letter-spacing: $tracking-wide;
+  text-transform: uppercase;
+  margin-bottom: $space-5;
+}
+
+.track {
+  overflow: hidden;
+  position: relative;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 1;
+  }
+
+  &::before { left: 0;  background: linear-gradient(to right, $elth-bg-warm, transparent); }
+  &::after  { right: 0; background: linear-gradient(to left,  $elth-bg-warm, transparent); }
+}
+
+.marquee {
+  display: flex;
+  gap: $space-8;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.logo {
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  color: $text-secondary;
+  white-space: nowrap;
+  padding: $space-2 $space-5;
+  background: $white;
+  border: 1px solid $elth-border;
+  border-radius: $radius-full;
+}

@@ -1,0 +1,12 @@
+@use '@styles/variables' as *;
+
+.gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+.teal   { background-image: linear-gradient(135deg, $elth-teal 0%, $elth-teal-light 60%, #0ea5e9 100%); }
+.purple { background-image: linear-gradient(135deg, $elth-purple 0%, $elth-purple-light 100%); }
+.warm   { background-image: linear-gradient(135deg, $elth-amber 0%, #d97706 100%); }

@@ -1,0 +1,139 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $elth-bg-warm;
+}
+
+.inner { @include container; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-16;
+  align-items: center;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+    gap: $space-10;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.heading { @include heading-md; color: $text-primary; }
+.sub { @include body-lg; color: $text-secondary; line-height: $leading-relaxed; }
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.bullet {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  font-size: $text-sm;
+  color: $text-secondary;
+}
+
+.bulletCheck {
+  color: $elth-teal;
+  font-weight: $font-bold;
+  font-size: $text-sm;
+}
+
+.right {}
+
+.dashboard {
+  @include card-base;
+  padding: $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.dashHeader {
+  @include flex-between;
+}
+
+.dashTitle {
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.dashDate {
+  font-size: $text-xs;
+  color: $text-tertiary;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-3;
+}
+
+.metric {
+  background: $elth-bg-warm;
+  border-radius: $radius-md;
+  padding: $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.metricLabel {
+  font-size: $text-xs;
+  color: $text-tertiary;
+}
+
+.metricValue {
+  font-size: $text-xl;
+  font-weight: $font-bold;
+  color: $text-primary;
+}
+
+.metricChange {
+  font-size: $text-xs;
+  font-weight: $font-medium;
+
+  &[data-positive='true'] { color: #16a34a; }
+  &[data-positive='false'] { color: #dc2626; }
+}
+
+.chartPlaceholder {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.chartBars {
+  display: flex;
+  align-items: flex-end;
+  gap: $space-2;
+  height: 80px;
+  padding: $space-2 0;
+}
+
+.bar {
+  flex: 1;
+  background: $elth-teal;
+  border-radius: $radius-sm $radius-sm 0 0;
+  opacity: 0.7;
+}
+
+.chartLabel {
+  font-size: $text-xs;
+  color: $text-tertiary;
+  text-align: center;
+}

@@ -1,0 +1,159 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $white;
+}
+
+.inner { @include container; }
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-16;
+  align-items: center;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+    gap: $space-10;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.heading {
+  @include heading-lg;
+  color: $text-primary;
+  line-height: $leading-tight;
+}
+
+.sub {
+  @include body-lg;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.featureRow {
+  display: flex;
+  gap: $space-3;
+  align-items: flex-start;
+}
+
+.check {
+  color: $elth-teal;
+  font-weight: $font-bold;
+  font-size: $text-sm;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.featureText {
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+}
+
+.right {}
+
+.reportCard {
+  @include card-base;
+  padding: $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.reportHeader {
+  @include flex-between;
+}
+
+.reportTitle {
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.reportDate {
+  font-size: $text-xs;
+  color: $text-tertiary;
+}
+
+.markers {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.marker {
+  padding: $space-3;
+  border: 1px solid $elth-border;
+  border-radius: $radius-md;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.markerTop {
+  @include flex-between;
+}
+
+.markerName {
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  color: $text-primary;
+}
+
+.markerValue {
+  font-size: $text-sm;
+  font-weight: $font-bold;
+}
+
+.markerMeta {
+  @include flex-between;
+}
+
+.markerNormal {
+  font-size: $text-xs;
+  color: $text-tertiary;
+}
+
+.markerBadge {
+  font-size: $text-xs;
+  padding: 2px 8px;
+  border-radius: $radius-full;
+  font-weight: $font-medium;
+  text-transform: capitalize;
+}
+
+.aiSummary {
+  background: $elth-teal-bg;
+  border-radius: $radius-md;
+  padding: $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.aiLabel {
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $elth-teal;
+}
+
+.aiText {
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+  margin: 0;
+}

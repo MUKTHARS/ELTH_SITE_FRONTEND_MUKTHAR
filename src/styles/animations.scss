@@ -1,0 +1,63 @@
+// ─── Float ────────────────────────────────────────────────────────────────────
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+// ─── Shimmer ──────────────────────────────────────────────────────────────────
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+// ─── Gradient Shift ───────────────────────────────────────────────────────────
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%;   }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%;   }
+}
+
+// ─── Marquee ──────────────────────────────────────────────────────────────────
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+// ─── Pulse Glow ───────────────────────────────────────────────────────────────
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(8, 80, 65, 0.2); }
+  50%       { box-shadow: 0 0 40px rgba(8, 80, 65, 0.5); }
+}
+
+// ─── Spin Slow ────────────────────────────────────────────────────────────────
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+// ─── Blink ────────────────────────────────────────────────────────────────────
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+// ─── Slide In Left ────────────────────────────────────────────────────────────
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+// ─── Slide In Right ───────────────────────────────────────────────────────────
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+// ─── Utility Classes ──────────────────────────────────────────────────────────
+.animate-float        { animation: float 3s ease-in-out infinite; }
+.animate-shimmer      { animation: shimmer 2s linear infinite; background-size: 200% 100%; }
+.animate-gradient     { animation: gradient-shift 6s ease infinite; background-size: 200% 200%; }
+.animate-marquee      { animation: marquee 30s linear infinite; }
+.animate-pulse-glow   { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-spin-slow    { animation: spin-slow 8s linear infinite; }
+.animate-blink        { animation: blink 1s step-end infinite; }

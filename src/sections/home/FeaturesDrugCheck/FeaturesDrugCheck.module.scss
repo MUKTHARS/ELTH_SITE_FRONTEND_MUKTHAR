@@ -1,0 +1,157 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $white;
+}
+
+.inner { @include container; }
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-16;
+  align-items: center;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+    gap: $space-10;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.heading {
+  @include heading-lg;
+  color: $text-primary;
+  line-height: $leading-tight;
+}
+
+.sub {
+  @include body-lg;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.bullet {
+  display: flex;
+  gap: $space-3;
+  align-items: flex-start;
+}
+
+.bulletDot {
+  width: 6px;
+  height: 6px;
+  border-radius: $radius-full;
+  background: $elth-amber;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.bulletText {
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+}
+
+.right {}
+
+.drugCard {
+  @include card-base;
+  padding: $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.drugCardHeader {
+  @include flex-between;
+}
+
+.drugCardTitle {
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.drugCount {
+  font-size: $text-xs;
+  color: #dc2626;
+  font-weight: $font-medium;
+  background: #fee2e2;
+  padding: 2px 8px;
+  border-radius: $radius-full;
+}
+
+.interactions {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.interaction {
+  border: 1px solid $elth-border;
+  border-radius: $radius-md;
+  padding: $space-3 $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.interactionDrugs {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  flex-wrap: wrap;
+}
+
+.drugPill {
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  background: #f1f5f9;
+  color: $text-primary;
+  padding: 3px 8px;
+  border-radius: $radius-full;
+}
+
+.interactionX {
+  font-size: $text-xs;
+  color: $text-tertiary;
+}
+
+.severityBadge {
+  font-size: $text-xs;
+  padding: 2px 8px;
+  border-radius: $radius-full;
+  font-weight: $font-medium;
+  text-transform: capitalize;
+  margin-left: auto;
+}
+
+.interactionNote {
+  font-size: $text-xs;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+  margin: 0;
+}
+
+.drugFooter {
+  padding-top: $space-2;
+  border-top: 1px solid $elth-border;
+}
+
+.dbNote {
+  font-size: $text-xs;
+  color: $text-tertiary;
+}

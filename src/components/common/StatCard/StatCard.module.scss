@@ -1,0 +1,31 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.card {
+  @include flex-col-center;
+  text-align: center;
+  padding: $space-8 $space-6;
+}
+
+.value {
+  font-size: $text-5xl;
+  font-weight: $font-bold;
+  color: $white;
+  line-height: 1;
+  letter-spacing: $tracking-tight;
+  margin-bottom: $space-2;
+
+  @include respond-to(md) { font-size: $text-4xl; }
+}
+
+.label {
+  font-size: $text-base;
+  font-weight: $font-medium;
+  color: rgba($white, 0.9);
+  margin-bottom: $space-1;
+}
+
+.description {
+  font-size: $text-sm;
+  color: rgba($white, 0.55);
+}

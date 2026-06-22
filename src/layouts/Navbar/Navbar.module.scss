@@ -1,0 +1,125 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-sticky;
+  transition: background $transition-base, box-shadow $transition-base, border-color $transition-base;
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background: rgba($white, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: $elth-border;
+  box-shadow: $shadow-sm;
+}
+
+.inner {
+  @include container;
+  @include flex-between;
+  height: 68px;
+}
+
+.logo { text-decoration: none; }
+
+.logoText {
+  font-size: $text-xl;
+  font-weight: $font-bold;
+  color: $elth-teal;
+  letter-spacing: $tracking-tight;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+
+  @include respond-to(lg) { display: none; }
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: $space-2 $space-3;
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  color: $text-secondary;
+  border-radius: $radius-md;
+  transition: color $transition-fast, background $transition-fast;
+  text-decoration: none;
+
+  &:hover { color: $text-primary; background: $elth-bg-warm; }
+}
+
+.chevron {
+  font-size: $text-base;
+  color: $text-tertiary;
+  transform: rotate(90deg);
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: $white;
+  border: 1px solid $elth-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  padding: $space-2;
+  min-width: 180px;
+  z-index: $z-dropdown;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    height: 8px;
+  }
+}
+
+.dropdownLink {
+  display: block;
+  padding: $space-2 $space-3;
+  font-size: $text-sm;
+  color: $text-secondary;
+  border-radius: $radius-md;
+  transition: color $transition-fast, background $transition-fast;
+  text-decoration: none;
+
+  &:hover { color: $elth-teal; background: $elth-teal-bg; }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  padding: $space-2;
+  color: $text-secondary;
+  cursor: pointer;
+  border-radius: $radius-md;
+  transition: background $transition-fast;
+
+  &:hover { background: $elth-bg-warm; }
+
+  @include respond-to(lg) { display: flex; align-items: center; }
+}

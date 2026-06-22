@@ -1,0 +1,177 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $elth-bg-warm;
+}
+
+.inner { @include container; }
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-16;
+  align-items: center;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+    gap: $space-10;
+  }
+}
+
+.left {}
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.heading {
+  @include heading-lg;
+  color: $text-primary;
+  line-height: $leading-tight;
+}
+
+.sub {
+  @include body-lg;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+}
+
+.stats {
+  display: flex;
+  gap: $space-8;
+  padding-top: $space-2;
+
+  @include respond-to(sm) { flex-direction: column; gap: $space-4; }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.statNum {
+  font-size: $text-3xl;
+  font-weight: $font-bold;
+  color: $elth-purple;
+  letter-spacing: $tracking-tight;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: $text-sm;
+  color: $text-secondary;
+}
+
+// Brief card mockup
+.briefCard {
+  @include card-base;
+  padding: $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.briefHeader {
+  @include flex-start;
+  gap: $space-3;
+  flex-wrap: wrap;
+}
+
+.patientAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: $radius-full;
+  background: $elth-purple;
+  color: $white;
+  font-weight: $font-bold;
+  font-size: $text-sm;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.patientName {
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.apptTime {
+  font-size: $text-xs;
+  color: $text-tertiary;
+}
+
+.briefBadge {
+  margin-left: auto;
+  font-size: $text-xs;
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 4px 10px;
+  border-radius: $radius-full;
+  font-weight: $font-medium;
+  white-space: nowrap;
+
+  @include respond-to(sm) { margin-left: 0; }
+}
+
+.briefBody {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  border-top: 1px solid $elth-border;
+  padding-top: $space-4;
+}
+
+.briefRow {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.briefLabel {
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  text-transform: uppercase;
+  letter-spacing: $tracking-wide;
+  color: $elth-purple;
+}
+
+.briefValue {
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+  margin: 0;
+}
+
+.briefFooter {
+  @include flex-between;
+  border-top: 1px solid $elth-border;
+  padding-top: $space-3;
+}
+
+.readyPill {
+  @include flex-start;
+  gap: $space-2;
+  font-size: $text-xs;
+  color: $text-tertiary;
+}
+
+.readyDot {
+  width: 8px;
+  height: 8px;
+  border-radius: $radius-full;
+  background: #22c55e;
+}
+
+.viewBtn {
+  font-size: $text-xs;
+  font-weight: $font-medium;
+  color: $elth-purple;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}

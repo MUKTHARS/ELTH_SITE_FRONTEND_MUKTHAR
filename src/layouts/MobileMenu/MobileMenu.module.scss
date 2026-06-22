@@ -1,0 +1,85 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba($black, 0.5);
+  z-index: $z-overlay;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  background: $white;
+  z-index: $z-modal;
+  display: flex;
+  flex-direction: column;
+  box-shadow: $shadow-xl;
+}
+
+.drawerHeader {
+  @include flex-between;
+  padding: $space-5 $space-6;
+  border-bottom: 1px solid $elth-border;
+}
+
+.logo {
+  font-size: $text-lg;
+  font-weight: $font-bold;
+  color: $elth-teal;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  padding: $space-2;
+  color: $text-secondary;
+  cursor: pointer;
+  border-radius: $radius-md;
+  @include flex-center;
+
+  &:hover { background: $elth-bg-warm; }
+}
+
+.nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: $space-4 $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.navLink {
+  display: block;
+  padding: $space-3 $space-3;
+  font-size: $text-base;
+  font-weight: $font-medium;
+  color: $text-primary;
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: background $transition-fast;
+
+  &:hover { background: $elth-bg-warm; color: $elth-teal; }
+}
+
+.subLink {
+  display: block;
+  padding: $space-2 $space-6;
+  font-size: $text-sm;
+  color: $text-secondary;
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: background $transition-fast;
+
+  &:hover { background: $elth-teal-bg; color: $elth-teal; }
+}
+
+.cta {
+  padding: $space-5 $space-6;
+  border-top: 1px solid $elth-border;
+}

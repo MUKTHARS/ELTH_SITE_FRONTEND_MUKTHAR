@@ -1,0 +1,99 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $white;
+}
+
+.inner { @include container; }
+
+.card {
+  background: linear-gradient(135deg, #1a0a00 0%, $elth-dark 100%);
+  border-radius: $radius-xl;
+  padding: $space-12;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: $space-12;
+  align-items: center;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+    gap: $space-8;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.heading {
+  @include heading-md;
+  color: $white;
+}
+
+.desc {
+  @include body-base;
+  color: rgba($white, 0.6);
+  line-height: $leading-relaxed;
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  font-size: $text-sm;
+  color: rgba($white, 0.7);
+}
+
+.listDot {
+  width: 6px;
+  height: 6px;
+  border-radius: $radius-full;
+  background: $elth-amber;
+  flex-shrink: 0;
+}
+
+.right {}
+
+.statGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+
+  @include respond-to(lg) {
+    flex-direction: row;
+    gap: $space-10;
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.statNum {
+  font-size: $text-4xl;
+  font-weight: $font-bold;
+  color: $white;
+  letter-spacing: $tracking-tight;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: $text-sm;
+  color: rgba($white, 0.4);
+}

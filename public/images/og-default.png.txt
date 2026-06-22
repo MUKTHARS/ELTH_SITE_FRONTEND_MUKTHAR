@@ -1,0 +1,3 @@
+PLACEHOLDER — replace with actual 1200x630 PNG.
+The opengraph-image.tsx in src/app/ generates this dynamically via Next.js Edge runtime.
+If you need a static fallback, export the OG route and save the output here as og-default.png.

@@ -1,0 +1,63 @@
+import type { PricingPlan } from '@/types'
+import { ROUTES } from './routes'
+
+export const PRICING_PLANS: PricingPlan[] = [
+  {
+    name: 'Starter',
+    price: '₹4,999',
+    period: '/month',
+    description: 'For small clinics with 1–3 doctors getting started with AI.',
+    features: [
+      'Up to 3 doctor accounts',
+      'AI Clinical Scribe (50 notes/month)',
+      'Appointment booking & reminders',
+      'Basic symptom checker (WhatsApp)',
+      'Lab report interpreter (20/month)',
+      'Email support',
+    ],
+    cta: 'Start Free Trial',
+    ctaHref: ROUTES.CONTACT,
+    highlighted: false,
+  },
+  {
+    name: 'Pro',
+    price: '₹14,999',
+    period: '/month',
+    description: 'For growing clinics and multi-doctor practices.',
+    features: [
+      'Up to 15 doctor accounts',
+      'Unlimited AI Clinical Scribe',
+      'Drug interaction checker',
+      'Pre-consultation patient briefing',
+      'Post-discharge follow-up bot',
+      'Lab report interpreter (unlimited)',
+      'Admin analytics console',
+      'WhatsApp Business integration',
+      'Priority support',
+    ],
+    cta: 'Request Demo',
+    ctaHref: ROUTES.CONTACT,
+    highlighted: true,
+    badge: 'Most Popular',
+  },
+  {
+    name: 'Enterprise',
+    price: 'Custom',
+    period: '',
+    description: 'For hospital networks, multi-location groups, and large institutions.',
+    features: [
+      'Unlimited doctor accounts',
+      'Full white-label (your brand, your AI)',
+      'Custom system prompt & AI persona',
+      'EMR/EHR integration (FHIR R4)',
+      'Population health analytics',
+      'Dedicated account manager',
+      'SLA-backed 99.9% uptime',
+      'On-premise deployment option',
+      'HIPAA & DPDPA compliance audit',
+    ],
+    cta: 'Talk to Sales',
+    ctaHref: ROUTES.CONTACT,
+    highlighted: false,
+  },
+]

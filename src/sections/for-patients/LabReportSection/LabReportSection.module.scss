@@ -1,0 +1,89 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $elth-bg-warm;
+}
+
+.inner { @include container; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-16;
+  align-items: center;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+    gap: $space-10;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.heading { @include heading-md; color: $text-primary; line-height: $leading-tight; }
+.sub { @include body-lg; color: $text-secondary; line-height: $leading-relaxed; }
+
+.stat {
+  background: $white;
+  border: 1px solid $elth-border;
+  border-radius: $radius-lg;
+  padding: $space-5;
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.statNum {
+  font-size: $text-4xl;
+  font-weight: $font-bold;
+  color: $elth-teal;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.statText {
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+}
+
+.right {}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.featureItem {
+  display: flex;
+  gap: $space-4;
+  align-items: flex-start;
+}
+
+.featureIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.featureTitle {
+  display: block;
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $text-primary;
+  margin-bottom: $space-1;
+}
+
+.featureDesc {
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+  margin: 0;
+}

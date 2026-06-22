@@ -1,0 +1,14 @@
+@use '@styles/variables' as *;
+
+.badge {
+  display: inline-block;
+  font-size: $text-xs;
+  font-weight: $font-medium;
+  padding: 2px 8px;
+  border-radius: $radius-xs;
+}
+
+.patient { background: $elth-teal-bg;   color: $elth-teal;   }
+.doctor  { background: $elth-purple-bg; color: $elth-purple; }
+.admin   { background: $elth-blue-bg;   color: $elth-blue;   }
+.elth    { background: $elth-amber-bg;  color: $elth-amber;  }

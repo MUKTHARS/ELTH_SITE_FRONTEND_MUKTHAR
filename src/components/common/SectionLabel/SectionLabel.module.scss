@@ -1,0 +1,17 @@
+@use '@styles/variables' as *;
+
+.label {
+  display: inline-block;
+  font-size: $text-xs;
+  font-weight: $font-medium;
+  letter-spacing: $tracking-wider;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: $radius-full;
+  border: 1px solid transparent;
+}
+
+.teal   { background: $elth-teal-bg;   color: $elth-teal;   border-color: rgba($elth-teal, 0.2); }
+.purple { background: $elth-purple-bg; color: $elth-purple; border-color: rgba($elth-purple, 0.2); }
+.blue   { background: $elth-blue-bg;   color: $elth-blue;   border-color: rgba($elth-blue, 0.2); }
+.amber  { background: $elth-amber-bg;  color: $elth-amber;  border-color: rgba($elth-amber, 0.2); }

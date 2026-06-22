@@ -1,0 +1,42 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.pill {
+  @include card-base;
+  @include flex-start;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.logoWrap {
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-sm;
+  background: $elth-bg-warm;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.fallback {
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $elth-teal;
+}
+
+.name {
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  color: $text-primary;
+}
+
+.category {
+  font-size: $text-xs;
+  color: $text-tertiary;
+  margin-left: auto;
+}
