@@ -2,14 +2,8 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { TEAM_MEMBERS } from '@constants/team'
 import styles from './TeamSection.module.scss'
-
-const TEAM = [
-  { name: 'Founder & CEO', initials: 'EL', bg: '#085041', role: 'Former clinician. 10 years building health-tech in India.', location: 'Chennai' },
-  { name: 'CTO', initials: 'TH', bg: '#26215C', role: 'AI/ML engineer. Previously at a leading Indian AI research lab.', location: 'Bangalore' },
-  { name: 'Head of Product', initials: 'AI', bg: '#042C53', role: 'Ex-Practo. Knows every edge case in Indian EMR workflows.', location: 'Hyderabad' },
-  { name: 'Head of Partnerships', initials: 'HP', bg: '#412402', role: 'Relationships with 200+ hospitals across Tamil Nadu and Telangana.', location: 'Chennai' },
-]
 
 export default function TeamSection() {
   return (
@@ -21,7 +15,7 @@ export default function TeamSection() {
           <p className={styles.sub}>Our founding team combines clinical experience, AI research, and deep product intuition in Indian health-tech.</p>
         </div>
         <div className={styles.grid}>
-          {TEAM.map((member, i) => (
+          {TEAM_MEMBERS.map((member, i) => (
             <motion.div
               key={member.name}
               className={styles.card}

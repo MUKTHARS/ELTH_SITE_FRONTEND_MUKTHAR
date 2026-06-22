@@ -4,21 +4,8 @@ import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import GradientText from '@components/common/GradientText/GradientText'
 import MockupFrame from '@components/common/MockupFrame/MockupFrame'
+import { SYMPTOM_STEPS, SYMPTOM_CHAT_MESSAGES } from '@constants/symptom'
 import styles from './FeaturesSymptom.module.scss'
-
-const STEPS = [
-  { step: '01', label: 'Patient describes symptoms', detail: 'WhatsApp or in-app — text or voice, any language.' },
-  { step: '02', label: 'AI asks follow-up questions', detail: 'Duration, severity, location, history — structured intake, not a search bar.' },
-  { step: '03', label: 'Urgency triage', detail: 'Low / Moderate / High. Emergency cases are routed immediately.' },
-  { step: '04', label: 'Doctor pre-read', detail: 'Physician sees a structured summary before the patient walks in.' },
-]
-
-const CHAT_MESSAGES = [
-  { from: 'patient', text: 'I have had chest pain for 2 days, gets worse when I breathe deeply' },
-  { from: 'ai', text: 'Is the pain sharp or dull? Does it radiate to your left arm or jaw?' },
-  { from: 'patient', text: 'Sharp, only in the chest, no arm pain' },
-  { from: 'ai', text: '⚠️ Pleuritic chest pain. I am connecting you to Dr. Priya immediately. Please do not drive.' },
-]
 
 export default function FeaturesSymptom() {
   return (
@@ -42,7 +29,7 @@ export default function FeaturesSymptom() {
                   </div>
                 </div>
                 <div className={styles.chatMessages}>
-                  {CHAT_MESSAGES.map((m, i) => (
+                  {SYMPTOM_CHAT_MESSAGES.map((m, i) => (
                     <div
                       key={i}
                       className={m.from === 'patient' ? styles.chatBubblePatient : styles.chatBubbleAi}
@@ -71,7 +58,7 @@ export default function FeaturesSymptom() {
               Patients don&apos;t Google their symptoms anymore. They ask your hospital&apos;s AI — in their own language, on WhatsApp. The AI triages and prepares the doctor.
             </p>
             <div className={styles.steps}>
-              {STEPS.map((s) => (
+              {SYMPTOM_STEPS.map((s) => (
                 <div key={s.step} className={styles.step}>
                   <span className={styles.stepNum}>{s.step}</span>
                   <div>

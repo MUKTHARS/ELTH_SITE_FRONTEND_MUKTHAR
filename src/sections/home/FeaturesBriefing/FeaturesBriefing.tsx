@@ -3,14 +3,8 @@
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import GradientText from '@components/common/GradientText/GradientText'
+import { BRIEF_SECTIONS, BRIEF_STATS } from '@constants/briefing'
 import styles from './FeaturesBriefing.module.scss'
-
-const BRIEF_SECTIONS = [
-  { label: 'Chief Complaint', value: 'Chest pain for 2 days, worse on inspiration' },
-  { label: 'History', value: 'HTN × 4 yrs, on Amlodipine 5mg. No prior cardiac events.' },
-  { label: 'Last Labs', value: 'ECG (Jun 12): Sinus rhythm, no ST changes. CBC normal.' },
-  { label: 'Risk Flags', value: '🚩 Smoker · BMI 28.4 · Father: MI at 52' },
-]
 
 export default function FeaturesBriefing() {
   return (
@@ -67,11 +61,7 @@ export default function FeaturesBriefing() {
               60 seconds before each appointment, Elth AI surfaces a structured brief — chief complaint, history, last labs, risk flags — so doctors can walk in prepared, not playing catch-up.
             </p>
             <div className={styles.stats}>
-              {[
-                { num: '60s', label: 'before appointment' },
-                { num: '3x', label: 'faster consultation start' },
-                { num: '0', label: 'chart hunting' },
-              ].map((s) => (
+              {BRIEF_STATS.map((s) => (
                 <div key={s.label} className={styles.stat}>
                   <span className={styles.statNum}>{s.num}</span>
                   <span className={styles.statLabel}>{s.label}</span>

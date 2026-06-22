@@ -2,14 +2,8 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { SCRIBE_WORKFLOW } from '@constants/scribe'
 import styles from './ScribeSection.module.scss'
-
-const WORKFLOW = [
-  { step: '1', label: 'Doctor speaks', detail: 'Record the consultation naturally — patient present or dictation mode.' },
-  { step: '2', label: 'AI transcribes', detail: 'Real-time multilingual transcription in 12+ Indian languages.' },
-  { step: '3', label: 'SOAP note generated', detail: 'Structured Subjective / Objective / Assessment / Plan in 30 seconds.' },
-  { step: '4', label: 'Review & sign', detail: 'Edit any field, then one click sends to your EMR.' },
-]
 
 export default function ScribeSection() {
   return (
@@ -23,7 +17,7 @@ export default function ScribeSection() {
           </p>
         </div>
         <div className={styles.workflow}>
-          {WORKFLOW.map((w, i) => (
+          {SCRIBE_WORKFLOW.map((w, i) => (
             <motion.div
               key={w.step}
               className={styles.wStep}

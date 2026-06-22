@@ -2,14 +2,8 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { ANALYTICS_METRICS, ANALYTICS_BULLETS, ANALYTICS_CHART_BARS } from '@constants/analytics'
 import styles from './AnalyticsSection.module.scss'
-
-const METRICS = [
-  { label: 'OPD Footfall', value: '1,247', change: '+12%', positive: true },
-  { label: 'No-show Rate', value: '8.3%', change: '-34%', positive: true },
-  { label: 'Avg. Wait Time', value: '14 min', change: '-22%', positive: true },
-  { label: 'AI Consultations', value: '3,891', change: '+67%', positive: true },
-]
 
 export default function AnalyticsSection() {
   return (
@@ -29,13 +23,7 @@ export default function AnalyticsSection() {
               Real-time dashboards that actually tell you what&apos;s happening — OPD footfall, doctor utilization, no-show prediction, and AI adoption across your facility.
             </p>
             <ul className={styles.bullets}>
-              {[
-                'Real-time OPD and IPD dashboards',
-                'No-show prediction 24h in advance',
-                'Doctor-level productivity metrics',
-                'AI feature adoption tracking',
-                'Monthly executive summary PDF',
-              ].map((b) => (
+              {ANALYTICS_BULLETS.map((b) => (
                 <li key={b} className={styles.bullet}>
                   <span className={styles.bulletCheck}>✓</span>
                   {b}
@@ -57,7 +45,7 @@ export default function AnalyticsSection() {
                 <span className={styles.dashDate}>Jun 2026</span>
               </div>
               <div className={styles.metricsGrid}>
-                {METRICS.map((m) => (
+                {ANALYTICS_METRICS.map((m) => (
                   <div key={m.label} className={styles.metric}>
                     <span className={styles.metricLabel}>{m.label}</span>
                     <span className={styles.metricValue}>{m.value}</span>
@@ -67,7 +55,7 @@ export default function AnalyticsSection() {
               </div>
               <div className={styles.chartPlaceholder}>
                 <div className={styles.chartBars}>
-                  {[40, 65, 52, 80, 70, 90, 75].map((h, i) => (
+                  {ANALYTICS_CHART_BARS.map((h, i) => (
                     <div key={i} className={styles.bar} style={{ height: `${h}%` }} />
                   ))}
                 </div>

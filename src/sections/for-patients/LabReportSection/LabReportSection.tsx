@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { LAB_REPORT_FEATURES } from '@constants/labReport'
 import styles from './LabReportSection.module.scss'
 
 export default function LabReportSection() {
@@ -35,12 +36,7 @@ export default function LabReportSection() {
             viewport={{ once: true }}
           >
             <div className={styles.features}>
-              {[
-                { icon: '📤', title: 'Upload any format', desc: 'PDF, image, or WhatsApp photo. We handle all lab formats.' },
-                { icon: '🔍', title: '200+ test types', desc: 'CBC, LFT, KFT, Lipid Panel, Thyroid, HbA1c and more.' },
-                { icon: '🚨', title: 'Abnormal flags', desc: 'High and low values highlighted with plain-language explanation.' },
-                { icon: '📋', title: 'Doctor summary', desc: 'Structured summary sent to your doctor before the appointment.' },
-              ].map((f, i) => (
+              {LAB_REPORT_FEATURES.map((f) => (
                 <div key={f.title} className={styles.featureItem}>
                   <span className={styles.featureIcon}>{f.icon}</span>
                   <div>

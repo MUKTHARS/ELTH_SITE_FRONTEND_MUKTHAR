@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { DRUG_CHECKER_LIST, DRUG_CHECKER_STATS } from '@constants/drugCheck'
 import styles from './DrugCheckerSection.module.scss'
 
 export default function DrugCheckerSection() {
@@ -22,13 +23,7 @@ export default function DrugCheckerSection() {
               As you add drugs to a prescription, Elth AI silently checks every combination against a 50,000+ interaction database. Contraindications surface instantly — before you confirm.
             </p>
             <ul className={styles.list}>
-              {[
-                'Drug–drug interactions with severity grading',
-                'Drug–allergy contraindications',
-                'Renal & hepatic dose adjustments',
-                'Paediatric and geriatric alerts',
-                'Pregnancy category warnings',
-              ].map((item) => (
+              {DRUG_CHECKER_LIST.map((item) => (
                 <li key={item} className={styles.listItem}>
                   <span className={styles.listDot} />
                   {item}
@@ -38,11 +33,7 @@ export default function DrugCheckerSection() {
           </div>
           <div className={styles.right}>
             <div className={styles.statGroup}>
-              {[
-                { num: '50K+', label: 'drug interactions' },
-                { num: '<1s', label: 'check time' },
-                { num: '0', label: 'extra clicks' },
-              ].map((s) => (
+              {DRUG_CHECKER_STATS.map((s) => (
                 <div key={s.label} className={styles.stat}>
                   <span className={styles.statNum}>{s.num}</span>
                   <span className={styles.statLabel}>{s.label}</span>

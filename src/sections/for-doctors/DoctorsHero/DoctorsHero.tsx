@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Button } from '@components/ui/button'
 import GradientText from '@components/common/GradientText/GradientText'
 import { ROUTES } from '@constants/routes'
+import { DOCTORS_HERO_PROOF } from '@constants/heroes'
 import styles from './DoctorsHero.module.scss'
 
 export default function DoctorsHero() {
@@ -34,10 +35,9 @@ export default function DoctorsHero() {
             </Button>
           </div>
           <div className={styles.proof}>
-            <span>🎙️ AI Scribe</span>
-            <span>📋 Pre-visit Brief</span>
-            <span>💊 Drug Checker</span>
-            <span>🧠 CDSS</span>
+            {DOCTORS_HERO_PROOF.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
           </div>
         </motion.div>
       </div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import GradientText from '@components/common/GradientText/GradientText'
+import { MISSION_VALUES } from '@constants/mission'
 import styles from './MissionSection.module.scss'
 
 export default function MissionSection() {
@@ -27,11 +28,7 @@ export default function MissionSection() {
           </p>
 
           <div className={styles.values}>
-            {[
-              { icon: '🎯', value: 'Doctor-first', desc: 'We design for the doctor\'s workflow, not around it. If it slows them down, we rebuild it.' },
-              { icon: '🔒', value: 'Privacy by default', desc: 'Patient consent is not optional. Every data decision is made as if our own family is the patient.' },
-              { icon: '🌏', value: 'India-native', desc: 'Built for Indian languages, Indian infrastructure, Indian healthcare workflows. Not adapted from the West.' },
-            ].map((v, i) => (
+            {MISSION_VALUES.map((v, i) => (
               <motion.div
                 key={v.value}
                 className={styles.valueCard}

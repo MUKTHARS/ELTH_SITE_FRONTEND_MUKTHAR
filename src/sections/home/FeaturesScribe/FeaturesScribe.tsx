@@ -4,14 +4,8 @@ import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import GradientText from '@components/common/GradientText/GradientText'
 import MockupFrame from '@components/common/MockupFrame/MockupFrame'
+import { SCRIBE_POINTS } from '@constants/scribe'
 import styles from './FeaturesScribe.module.scss'
-
-const POINTS = [
-  { icon: '🎙️', title: 'Voice → SOAP note in 30 seconds', desc: 'Record the consultation. Elth transcribes and structures it into a SOAP note, ready to sign off.' },
-  { icon: '🌐', title: '12+ Indian languages', desc: 'Tamil, Hindi, Telugu, Malayalam, Kannada and more — our model switches mid-sentence.' },
-  { icon: '✏️', title: 'Always editable', desc: 'Every field is editable before the note is finalized. The AI drafts, the doctor decides.' },
-  { icon: '📋', title: 'Pushes to your EMR', desc: 'One click sends the completed note straight to Healthplix, Practo, or your custom EMR.' },
-]
 
 export default function FeaturesScribe() {
   return (
@@ -34,7 +28,7 @@ export default function FeaturesScribe() {
               Elth AI Scribe listens to your consultation and writes the clinical note for you — in any Indian language, in real time.
             </p>
             <ul className={styles.points}>
-              {POINTS.map((pt) => (
+              {SCRIBE_POINTS.map((pt) => (
                 <li key={pt.title} className={styles.point}>
                   <span className={styles.pointIcon}>{pt.icon}</span>
                   <div>

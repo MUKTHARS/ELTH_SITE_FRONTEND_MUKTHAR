@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@components/ui/button'
 import { Input } from '@components/ui/input'
+import { DEMO_PROMISES } from '@constants/heroes'
 import styles from './DemoFormSection.module.scss'
 
 export default function DemoFormSection() {
@@ -43,12 +44,7 @@ export default function DemoFormSection() {
             </p>
 
             <div className={styles.promises}>
-              {[
-                '30-minute demo, no sales pressure',
-                'Live walkthrough with your use case',
-                '14-day free trial after demo',
-                'Dedicated onboarding support',
-              ].map((p) => (
+              {DEMO_PROMISES.map((p) => (
                 <div key={p} className={styles.promise}>
                   <span className={styles.promiseCheck}>✓</span>
                   {p}

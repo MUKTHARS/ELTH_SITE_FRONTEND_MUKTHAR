@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { SYMPTOM_CHECKER_FLOW } from '@constants/symptom'
 import styles from './SymptomCheckerSection.module.scss'
 
 export default function SymptomCheckerSection() {
@@ -16,12 +17,7 @@ export default function SymptomCheckerSection() {
           </p>
         </div>
         <div className={styles.flow}>
-          {[
-            { icon: '💬', step: 'Describe on WhatsApp', desc: 'Text or voice. Any language. No app to download.' },
-            { icon: '🤖', step: 'AI asks follow-ups', desc: 'Smart questions about duration, severity, and history.' },
-            { icon: '⚡', step: 'Urgency triage', desc: 'Low / Moderate / High. Critical cases routed immediately.' },
-            { icon: '🩺', step: 'Doctor pre-briefed', desc: 'Your doctor sees a structured intake before you arrive.' },
-          ].map((f, i) => (
+          {SYMPTOM_CHECKER_FLOW.map((f, i) => (
             <motion.div
               key={f.step}
               className={styles.flowStep}

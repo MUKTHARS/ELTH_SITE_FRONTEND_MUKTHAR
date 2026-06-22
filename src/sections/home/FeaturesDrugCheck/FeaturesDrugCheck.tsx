@@ -3,19 +3,8 @@
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import GradientText from '@components/common/GradientText/GradientText'
+import { DRUG_INTERACTIONS, DRUG_SEVERITY_COLOR, DRUG_BULLETS } from '@constants/drugCheck'
 import styles from './FeaturesDrugCheck.module.scss'
-
-const INTERACTIONS = [
-  { drug1: 'Warfarin', drug2: 'Aspirin', severity: 'high', note: 'Major bleeding risk. Consider alternatives.' },
-  { drug1: 'Metformin', drug2: 'Alcohol', severity: 'moderate', note: 'Risk of lactic acidosis. Counsel patient.' },
-  { drug1: 'Amlodipine', drug2: 'Clarithromycin', severity: 'moderate', note: 'Increased amlodipine levels. Monitor BP.' },
-]
-
-const SEVERITY_COLOR: Record<string, { bg: string; text: string }> = {
-  high: { bg: '#fee2e2', text: '#dc2626' },
-  moderate: { bg: '#fef3c7', text: '#d97706' },
-  low: { bg: '#dcfce7', text: '#16a34a' },
-}
 
 export default function FeaturesDrugCheck() {
   return (
@@ -38,12 +27,7 @@ export default function FeaturesDrugCheck() {
               Before any prescription is finalized, Elth AI cross-checks every drug combination against a 50,000+ interaction database — flagging contraindications in real time.
             </p>
             <div className={styles.bullets}>
-              {[
-                '50,000+ drug–drug interactions',
-                'Drug–allergy contraindication alerts',
-                'Dosage adjustments for renal / hepatic impairment',
-                'Paediatric and geriatric dose warnings',
-              ].map((b) => (
+              {DRUG_BULLETS.map((b) => (
                 <div key={b} className={styles.bullet}>
                   <span className={styles.bulletDot} />
                   <span className={styles.bulletText}>{b}</span>
@@ -65,8 +49,8 @@ export default function FeaturesDrugCheck() {
                 <span className={styles.drugCount}>3 flagged</span>
               </div>
               <div className={styles.interactions}>
-                {INTERACTIONS.map((ix) => {
-                  const c = SEVERITY_COLOR[ix.severity]
+                {DRUG_INTERACTIONS.map((ix) => {
+                  const c = DRUG_SEVERITY_COLOR[ix.severity]
                   return (
                     <div key={`${ix.drug1}-${ix.drug2}`} className={styles.interaction}>
                       <div className={styles.interactionDrugs}>

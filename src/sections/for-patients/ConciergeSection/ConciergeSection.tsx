@@ -2,14 +2,8 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { CONCIERGE_SERVICES } from '@constants/concierge'
 import styles from './ConciergeSection.module.scss'
-
-const SERVICES = [
-  { icon: '💊', title: 'Medication reminders', desc: 'Daily WhatsApp reminders for every medication, in the patient\'s language.' },
-  { icon: '📅', title: 'Follow-up scheduling', desc: 'AI proactively books the next appointment based on doctor\'s instructions.' },
-  { icon: '📝', title: 'Discharge summaries', desc: 'Plain-language discharge summaries sent directly to the patient and family.' },
-  { icon: '❓', title: '24/7 Q&A', desc: 'Patients can ask any health question, any time. The AI answers from their medical record context.' },
-]
 
 export default function ConciergeSection() {
   return (
@@ -23,7 +17,7 @@ export default function ConciergeSection() {
           </p>
         </div>
         <div className={styles.grid}>
-          {SERVICES.map((s, i) => (
+          {CONCIERGE_SERVICES.map((s, i) => (
             <motion.div
               key={s.title}
               className={styles.card}

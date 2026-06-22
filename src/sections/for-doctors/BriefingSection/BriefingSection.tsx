@@ -2,14 +2,8 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { BRIEFING_ITEMS } from '@constants/briefing'
 import styles from './BriefingSection.module.scss'
-
-const ITEMS = [
-  { icon: '📌', title: 'Chief complaint', desc: 'What the patient is here for, in their own words — summarized by AI.' },
-  { icon: '📂', title: 'Full history snapshot', desc: 'Diagnoses, allergies, ongoing medications, past surgeries — one screen.' },
-  { icon: '🔬', title: 'Latest investigations', desc: 'Labs and imaging from the last 90 days, flagged if abnormal.' },
-  { icon: '🚩', title: 'Risk flags', desc: 'Smoking, BMI, family history, adherence issues — surfaced automatically.' },
-]
 
 export default function BriefingSection() {
   return (
@@ -23,7 +17,7 @@ export default function BriefingSection() {
           </p>
         </div>
         <div className={styles.grid}>
-          {ITEMS.map((item, i) => (
+          {BRIEFING_ITEMS.map((item, i) => (
             <motion.div
               key={item.title}
               className={styles.card}

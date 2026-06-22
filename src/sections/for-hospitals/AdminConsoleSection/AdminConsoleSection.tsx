@@ -2,16 +2,8 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { ADMIN_FEATURES } from '@constants/adminConsole'
 import styles from './AdminConsoleSection.module.scss'
-
-const FEATURES = [
-  { icon: '👥', title: 'Doctor & staff management', desc: 'Add doctors, assign roles, set permissions. Full control over who sees what.' },
-  { icon: '📅', title: 'Appointment scheduling', desc: 'Smart scheduling with no-show prediction and automated reminders via WhatsApp.' },
-  { icon: '🏷️', title: 'White-label customization', desc: 'Your logo, your colors, your domain. Patients interact with your brand.' },
-  { icon: '📢', title: 'Patient communication', desc: 'Send discharge summaries, medication reminders, follow-up prompts — all automated.' },
-  { icon: '🔌', title: 'EMR integration', desc: 'Two-way sync with Healthplix, Practo, eVital, or your custom EMR.' },
-  { icon: '💳', title: 'Billing & receipts', desc: 'Auto-generate bills, track payments, export to your accounting software.' },
-]
 
 export default function AdminConsoleSection() {
   return (
@@ -23,7 +15,7 @@ export default function AdminConsoleSection() {
           <p className={styles.sub}>The Elth Admin Console gives hospital administrators full operational control — staff, scheduling, communication, billing, and integrations.</p>
         </div>
         <div className={styles.grid}>
-          {FEATURES.map((f, i) => (
+          {ADMIN_FEATURES.map((f, i) => (
             <motion.div
               key={f.title}
               className={styles.card}

@@ -2,38 +2,8 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { HOW_IT_WORKS_STEPS } from '@constants/howItWorks'
 import styles from './HowItWorks.module.scss'
-
-const STEPS = [
-  {
-    num: '01',
-    icon: '🏥',
-    title: 'Hospital signs up',
-    desc: 'Your hospital gets a white-label tenant. Custom logo, subdomain, and patient-facing brand. Setup takes 48 hours.',
-    color: '#085041',
-  },
-  {
-    num: '02',
-    icon: '⚙️',
-    title: 'Configure your workflows',
-    desc: 'Enable the features your hospital needs. Scribe for OPD? Symptom checker on WhatsApp? Analytics for admin? All toggleable.',
-    color: '#26215C',
-  },
-  {
-    num: '03',
-    icon: '📱',
-    title: 'Patients connect',
-    desc: 'Patients reach your hospital\'s AI via WhatsApp, web portal, or app. They never see Elth — only your hospital.',
-    color: '#042C53',
-  },
-  {
-    num: '04',
-    icon: '🤖',
-    title: 'AI works across every touchpoint',
-    desc: 'Intake → consultation → diagnosis → prescription → follow-up. Elth AI is the thread across every step of care.',
-    color: '#412402',
-  },
-]
 
 export default function HowItWorks() {
   return (
@@ -46,7 +16,7 @@ export default function HowItWorks() {
         </div>
 
         <div className={styles.steps}>
-          {STEPS.map((s, i) => (
+          {HOW_IT_WORKS_STEPS.map((s, i) => (
             <motion.div
               key={s.num}
               className={styles.step}
@@ -63,7 +33,7 @@ export default function HowItWorks() {
               </div>
               <h3 className={styles.stepTitle}>{s.title}</h3>
               <p className={styles.stepDesc}>{s.desc}</p>
-              {i < STEPS.length - 1 && <div className={styles.connector} />}
+              {i < HOW_IT_WORKS_STEPS.length - 1 && <div className={styles.connector} />}
             </motion.div>
           ))}
         </div>
