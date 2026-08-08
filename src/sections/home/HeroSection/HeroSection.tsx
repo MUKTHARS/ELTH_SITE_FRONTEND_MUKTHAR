@@ -1,7 +1,10 @@
 'use client'
 
+import { useEffect, useRef }  from 'react'
 import Link               from 'next/link'
 import { motion }         from 'framer-motion'
+import gsap                from 'gsap'
+import { ScrollTrigger }  from 'gsap/dist/ScrollTrigger'
 import { Button }         from '@components/ui/button'
 import { Badge }          from '@components/ui/badge'
 import { IconArrowRight } from '@icons/index'
@@ -16,15 +19,67 @@ const fadeUp = {
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } }
 
 export default function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const innerRef    = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    const section = sectionRef.current
+    const inner = innerRef.current
+    if (!section || !inner) return
+
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia()
+
+      mm.add(
+        { isDesktop: `(min-width: 768px) and (prefers-reduced-motion: no-preference)` },
+        (context) => {
+          const { isDesktop } = context.conditions as { isDesktop: boolean }
+          if (!isDesktop) return
+
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: section,
+              start: 'top top',
+              end: '+=100%',
+              scrub: 1,
+              pin: true,
+            },
+          })
+
+          tl.to(inner, { opacity: 0, y: -40, scale: 0.96, ease: 'none' }, 0)
+
+          return () => tl.scrollTrigger?.kill()
+        }
+      )
+
+      return () => mm.revert()
+    }, section)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section className={styles.section}>
+    <section ref={sectionRef} className={styles.section}>
+      <div className={styles.videoStage}>
+        <video
+          className={styles.heroVideo}
+          src="/videos/scroll-demo.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <div className={styles.videoOverlay} />
+      </div>
+
       <div className={styles.bg}>
         <div className={styles.blob1} />
         <div className={styles.blob2} />
         <div className={styles.grid} />
       </div>
 
-      <div className={styles.inner}>
+      <div ref={innerRef} className={styles.inner}>
         <motion.div className={styles.content} variants={stagger} initial="hidden" animate="show">
           <motion.div variants={fadeUp}>
             <Badge variant="dark" className={styles.pill}>
