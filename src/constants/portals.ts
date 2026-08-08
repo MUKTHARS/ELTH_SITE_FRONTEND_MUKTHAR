@@ -1,4 +1,5 @@
 import { ROUTES } from './routes'
+import { IconStethoscope, IconBuilding, IconUser } from '@icons/index'
 
 export const PORTALS = [
   {
@@ -6,7 +7,7 @@ export const PORTALS = [
     color: '#26215C',
     bg: '#EEEDFE',
     href: ROUTES.FOR_DOCTORS,
-    icon: '🩺',
+    icon: IconStethoscope,
     desc: 'AI Scribe, Pre-visit Brief, Drug Checker, Clinical Decision Support',
   },
   {
@@ -14,7 +15,7 @@ export const PORTALS = [
     color: '#042C53',
     bg: '#E6F1FB',
     href: ROUTES.FOR_HOSPITALS,
-    icon: '🏥',
+    icon: IconBuilding,
     desc: 'Admin Console, Analytics, Patient Communication, No-Show Prediction',
   },
   {
@@ -22,7 +23,7 @@ export const PORTALS = [
     color: '#085041',
     bg: '#E1F5EE',
     href: ROUTES.FOR_PATIENTS,
-    icon: '👤',
+    icon: IconUser,
     desc: 'Symptom Checker, Lab Interpreter, Health Concierge, WhatsApp-first',
   },
 ]

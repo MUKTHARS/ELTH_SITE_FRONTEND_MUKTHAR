@@ -4,12 +4,9 @@
 
 .section {
   position: relative;
-  min-height: 100vh;
-  background: $elth-dark;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  padding-top: 68px;
+  background: linear-gradient(180deg, #F6F5FC 0%, #FBFBFE 100%);
+  padding-top: 88px;
 }
 
 .bg {
@@ -20,21 +17,21 @@
 
 .blob1 {
   position: absolute;
-  top: -100px;
+  top: -120px;
   left: -100px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba($elth-teal, 0.18) 0%, transparent 70%);
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba($elth-purple, 0.14) 0%, transparent 70%);
   border-radius: $radius-full;
 }
 
 .blob2 {
   position: absolute;
-  bottom: -100px;
+  bottom: -140px;
   right: -100px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba($elth-purple, 0.12) 0%, transparent 70%);
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba($elth-teal, 0.1) 0%, transparent 70%);
   border-radius: $radius-full;
 }
 
@@ -42,31 +39,10 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba($white, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba($white, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba($elth-purple, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($elth-purple, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
-}
-
-.videoStage {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.heroVideo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.videoOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba($elth-dark, 0.75) 0%, rgba($elth-dark, 0.6) 50%, rgba($elth-dark, 0.85) 100%);
+  mask-image: linear-gradient(180deg, black, transparent 70%);
 }
 
 .inner {
@@ -74,43 +50,39 @@
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $space-16;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: $space-12;
   align-items: center;
-  padding-top: $space-20;
+  padding-top: $space-16;
   padding-bottom: $space-20;
 
   @include respond-to(lg) {
     grid-template-columns: 1fr;
-    padding-top: $space-12;
-    padding-bottom: $space-12;
-  }
-
-  @include respond-to(sm) {
-    padding-top: $space-8;
-    padding-bottom: $space-8;
+    padding-top: $space-10;
+    padding-bottom: $space-10;
   }
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: $space-6;
+  gap: $space-5;
 }
 
 .pill {
   width: fit-content;
-  font-size: 11px;
+  font-size: 10px;
+  letter-spacing: $tracking-wide;
 }
 
 .heading {
   @include heading-xl;
-  color: $white;
-  line-height: 1.15;
+  color: $text-primary;
+  line-height: 1.12;
 }
 
 .accent {
-  background: linear-gradient(135deg, $elth-teal-light 0%, #38bdf8 100%);
+  background: linear-gradient(135deg, $elth-teal 0%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -118,8 +90,8 @@
 
 .sub {
   @include body-lg;
-  color: rgba($white, 0.65);
-  max-width: 520px;
+  color: $text-secondary;
+  max-width: 460px;
   line-height: $leading-relaxed;
 }
 
@@ -127,155 +99,470 @@
   display: flex;
   gap: $space-4;
   flex-wrap: wrap;
+  padding-top: $space-1;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  height: 52px;
+  padding: 0 $space-8;
+  border-radius: $radius-md;
+  background: linear-gradient(135deg, $elth-purple 0%, #4338CA 60%, #2563EB 100%);
+  color: $white;
+  font-size: $text-base;
+  font-weight: $font-medium;
+  transition: opacity $transition-base;
+
+  &:hover { opacity: 0.9; }
+}
+
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  height: 52px;
+  padding: 0 $space-8;
+  border-radius: $radius-md;
+  background: $white;
+  border: 1px solid $elth-border;
+  color: $text-primary;
+  font-size: $text-base;
+  font-weight: $font-medium;
+  transition: border-color $transition-base;
+
+  &:hover { border-color: $elth-purple; }
 }
 
 .trustLine {
-  display: flex;
-  align-items: center;
-  gap: $space-3;
-  flex-wrap: wrap;
   padding-top: $space-2;
 }
 
 .trustText {
-  font-size: $text-xs;
-  color: rgba($white, 0.4);
-  letter-spacing: $tracking-wide;
+  font-size: $text-sm;
+  color: $text-tertiary;
 }
 
-.trustName {
-  font-size: $text-xs;
-  font-weight: $font-medium;
-  color: rgba($white, 0.55);
-  padding: 2px 10px;
-  border: 1px solid rgba($white, 0.12);
-  border-radius: $radius-full;
+.badges {
+  display: flex;
+  gap: $space-6;
+  flex-wrap: wrap;
+  padding-top: $space-1;
 }
 
-// ─── Visual ───────────────────────────────────────────────────────────────────
+.badgeItem {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.badgeIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: $radius-md;
+  background: $elth-purple-bg;
+  color: $elth-purple;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.badgeLabel {
+  display: block;
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.badgeSub {
+  display: block;
+  font-size: 10px;
+  color: $text-tertiary;
+}
+
+// ─── Dashboard visual ───────────────────────────────────────────────────────
 .visual {
   position: relative;
 
   @include respond-to(lg) { display: none; }
 }
 
-.card {
-  background: rgba($white, 0.06);
-  border: 1px solid rgba($white, 0.12);
+.dashCard {
+  background: $white;
+  border: 1px solid $elth-border;
   border-radius: $radius-xl;
-  padding: $space-5;
-  backdrop-filter: blur(12px);
+  box-shadow: $shadow-xl;
+  padding: $space-5 $space-6 0;
+  overflow: hidden;
 }
 
-.cardHeader {
+.dashHeader {
   display: flex;
   align-items: center;
   gap: $space-3;
-  margin-bottom: $space-4;
   padding-bottom: $space-4;
-  border-bottom: 1px solid rgba($white, 0.1);
+  border-bottom: 1px solid $elth-border;
 }
 
 .avatar {
   width: 40px;
   height: 40px;
   border-radius: $radius-full;
+  background: $elth-purple-bg;
+  color: $elth-purple;
   @include flex-center;
   font-size: $text-sm;
   font-weight: $font-semibold;
   flex-shrink: 0;
 }
 
+.patientMeta { flex-shrink: 0; }
+
 .cardName {
   font-size: $text-sm;
-  font-weight: $font-semibold;
-  color: $white;
-}
-
-.cardRole {
-  font-size: $text-xs;
-  color: rgba($white, 0.5);
-  margin-top: 2px;
-}
-
-.cardBody {
-  display: flex;
-  flex-direction: column;
-  gap: $space-2;
-}
-
-.noteLabel {
-  font-size: $text-xs;
-  font-weight: $font-medium;
-  color: $elth-teal-light;
-  letter-spacing: $tracking-wide;
-  text-transform: uppercase;
-  margin-bottom: $space-1;
-}
-
-.noteLine {
-  font-size: $text-xs;
-  color: rgba($white, 0.7);
-  line-height: $leading-relaxed;
-  display: flex;
-  gap: $space-2;
-}
-
-.noteKey {
-  color: $elth-teal-light;
-  font-weight: $font-semibold;
-  flex-shrink: 0;
-  width: 14px;
-}
-
-.cardFooter {
-  margin-top: $space-4;
-  padding-top: $space-3;
-  border-top: 1px solid rgba($white, 0.1);
-}
-
-.timeSave {
-  font-size: $text-xs;
-  color: rgba($white, 0.4);
-}
-
-.floatCard1 {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  background: $white;
-  border-radius: $radius-lg;
-  padding: $space-3 $space-4;
-  display: flex;
-  align-items: center;
-  gap: $space-3;
-  box-shadow: $shadow-lg;
-  animation: float 3.5s ease-in-out infinite;
-}
-
-.floatCard2 {
-  position: absolute;
-  bottom: -20px;
-  left: -20px;
-  background: $white;
-  border-radius: $radius-lg;
-  padding: $space-3 $space-4;
-  display: flex;
-  align-items: center;
-  gap: $space-3;
-  box-shadow: $shadow-lg;
-  animation: float 4s ease-in-out infinite 1s;
-}
-
-.floatIcon { font-size: $text-xl; }
-
-.floatTitle {
-  font-size: $text-xs;
   font-weight: $font-semibold;
   color: $text-primary;
 }
 
-.floatSub {
+.cardRole {
+  font-size: 11px;
+  color: $text-tertiary;
+  margin-top: 2px;
+}
+
+.vitals {
+  display: flex;
+  gap: $space-5;
+  margin-left: auto;
+  padding-right: $space-4;
+
+  @include respond-to(xl) { display: none; }
+}
+
+.vitalItem {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+  color: $text-tertiary;
+
+  b { font-size: $text-xs; font-weight: $font-semibold; color: $text-primary; }
+}
+
+.moreDots {
+  color: $text-tertiary;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.tabs {
+  display: flex;
+  gap: $space-5;
+  padding: $space-3 0;
+  border-bottom: 1px solid $elth-border;
+}
+
+.tab, .tabActive {
+  font-size: 12px;
+  padding-bottom: $space-1;
+  white-space: nowrap;
+}
+
+.tab { color: $text-tertiary; }
+
+.tabActive {
+  color: $elth-purple;
+  border-bottom: 2px solid $elth-purple;
+  font-weight: $font-medium;
+}
+
+.dashBody {
+  display: grid;
+  grid-template-columns: 160px 1fr 190px;
+  gap: $space-4;
+  padding: $space-4 0;
+
+  @include respond-to(xl) { grid-template-columns: 1fr; }
+}
+
+.scribePanel {
+  background: $elth-bg-light;
+  border: 1px solid $elth-border;
+  border-radius: $radius-md;
+  padding: $space-3;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+
+  @include respond-to(xl) { display: none; }
+}
+
+.scribeHeader {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: 11px;
+  font-weight: $font-semibold;
+  color: $elth-purple;
+}
+
+.scribeStatus {
+  font-size: 10px;
+  color: $text-tertiary;
+}
+
+.scribeTimer {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.waveform {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 22px;
+
+  span {
+    flex: 1;
+    background: $elth-purple;
+    opacity: 0.55;
+    border-radius: 2px;
+  }
+}
+
+.stopBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-full;
+  background: $white;
+  box-shadow: $shadow-md;
+  border: none;
+  @include flex-center;
+  align-self: center;
+  margin-top: $space-2;
+  cursor: pointer;
+
+  span {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    background: #ef4444;
+  }
+}
+
+.fieldsPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.noteRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $space-3;
+  padding: $space-3 0;
+  border-bottom: 1px solid $elth-border;
+
+  &:first-child { padding-top: 0; }
+  &:last-child { border-bottom: none; }
+}
+
+.noteLabel {
   font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $elth-purple;
+  margin-bottom: 2px;
+}
+
+.noteValue {
+  font-size: 11px;
   color: $text-secondary;
+  line-height: $leading-snug;
+  max-width: 360px;
+}
+
+.editTag {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  color: $text-tertiary;
+  flex-shrink: 0;
+  padding-top: 1px;
+  white-space: nowrap;
+}
+
+.timelinePanel {
+  background: $elth-bg-light;
+  border: 1px solid $elth-border;
+  border-radius: $radius-md;
+  padding: $space-4;
+
+  @include respond-to(xl) { display: none; }
+}
+
+.timelineTitle {
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $text-primary;
+  margin-bottom: $space-3;
+}
+
+.timelineList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  border-left: 1px solid $elth-border;
+  padding-left: $space-3;
+}
+
+.timelineItem {
+  display: flex;
+  gap: $space-2;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timelineDot, .timelineDotActive {
+  width: 8px;
+  height: 8px;
+  border-radius: $radius-full;
+  margin-top: 3px;
+  margin-left: -19px;
+  flex-shrink: 0;
+  background: $white;
+  border: 2px solid $elth-border;
+}
+
+.timelineDotActive {
+  border-color: $elth-purple;
+  background: $elth-purple;
+}
+
+.timelineDate {
+  font-size: 10px;
+  font-weight: $font-medium;
+  color: $text-secondary;
+}
+
+.timelineDateActive {
+  font-size: 10px;
+  font-weight: $font-semibold;
+  color: $elth-purple;
+}
+
+.timelineLabel {
+  font-size: 10px;
+  color: $text-tertiary;
+}
+
+.timelineLink {
+  display: block;
+  font-size: 11px;
+  font-weight: $font-medium;
+  color: $elth-purple;
+  margin-top: $space-3;
+}
+
+.dashFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+  padding: $space-4 0;
+  border-top: 1px solid $elth-border;
+  margin-top: $space-1;
+  flex-wrap: wrap;
+}
+
+.footerNote {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: 11px;
+  color: $text-tertiary;
+
+  @include respond-to(xl) { display: none; }
+}
+
+.footerActions {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  margin-left: auto;
+}
+
+.footerBtn {
+  font-size: $text-xs;
+  font-weight: $font-medium;
+  color: $text-secondary;
+  background: $white;
+  border: 1px solid $elth-border;
+  padding: $space-2 $space-4;
+  border-radius: $radius-md;
+}
+
+.footerBtnPrimary {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+  font-size: $text-xs;
+  font-weight: $font-medium;
+  color: $white;
+  background: $elth-teal;
+  padding: $space-2 $space-4;
+  border-radius: $radius-md;
+}
+
+.phonePeek {
+  position: absolute;
+  right: -18px;
+  bottom: -28px;
+  width: 84px;
+  height: 150px;
+  background: $elth-dark;
+  border-radius: 18px;
+  box-shadow: $shadow-xl;
+  padding: 6px;
+  z-index: -1;
+
+  @include respond-to(xl) { display: none; }
+}
+
+.phoneNotch {
+  height: 14px;
+  @include flex-center;
+
+  &::after {
+    content: '';
+    width: 28px;
+    height: 6px;
+    background: rgba($white, 0.2);
+    border-radius: $radius-full;
+  }
+}
+
+.phoneLines {
+  background: $white;
+  border-radius: 12px;
+  height: calc(100% - 14px);
+  padding: $space-3 $space-2;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+
+  span {
+    display: block;
+    height: 6px;
+    border-radius: $radius-full;
+    background: $elth-border;
+
+    &:first-child { background: $elth-teal-bg; height: 24px; border-radius: $radius-sm; }
+  }
 }

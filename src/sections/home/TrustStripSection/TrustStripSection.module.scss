@@ -1,0 +1,56 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding-sm;
+  background: $white;
+  border-top: 1px solid $elth-border;
+  border-bottom: 1px solid $elth-border;
+}
+
+.inner { @include container; }
+
+.eyebrow {
+  @include label-text;
+  color: $text-tertiary;
+  text-align: center;
+  margin-bottom: $space-8;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-8;
+
+  @include respond-to(md) { grid-template-columns: 1fr; }
+}
+
+.item {
+  display: flex;
+  gap: $space-3;
+  align-items: flex-start;
+}
+
+.iconWrap {
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-full;
+  background: $elth-teal-bg;
+  color: $elth-teal;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.itemTitle {
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $text-primary;
+  margin-bottom: 2px;
+}
+
+.itemDesc {
+  font-size: $text-xs;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+  margin: 0;
+}

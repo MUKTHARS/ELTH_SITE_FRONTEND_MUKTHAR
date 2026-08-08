@@ -1,0 +1,237 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $white;
+}
+
+.inner {
+  @include container;
+  display: grid;
+  grid-template-columns: 200px 1fr 180px;
+  gap: $space-10;
+  align-items: center;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+    gap: $space-8;
+  }
+}
+
+.phoneCol {
+  @include flex-center;
+
+  @include respond-to(lg) { order: 1; }
+}
+
+.phone { width: 200px; }
+
+.phoneScreen {
+  background: $elth-bg-warm;
+  min-height: 400px;
+  padding: $space-4 $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.phoneTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: $text-sm;
+  color: $text-secondary;
+  margin-bottom: $space-3;
+}
+
+.phoneTopTitle {
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.phoneGreeting {
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.phoneSub {
+  font-size: 10px;
+  color: $text-secondary;
+  margin-bottom: $space-4;
+}
+
+.phoneStats {
+  display: flex;
+  gap: $space-2;
+  margin-bottom: $space-5;
+}
+
+.phoneStat {
+  @include card-base;
+  flex: 1;
+  padding: $space-2;
+  text-align: center;
+}
+
+.phoneStatNum {
+  font-size: $text-lg;
+  font-weight: $font-bold;
+  color: $elth-teal;
+}
+
+.phoneStatLabel {
+  font-size: 9px;
+  color: $text-tertiary;
+  margin-top: 2px;
+}
+
+.phoneListLabel {
+  @include label-text;
+  color: $text-tertiary;
+  margin-bottom: $space-2;
+}
+
+.phoneListItem {
+  @include card-base;
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-2;
+}
+
+.phoneListDot {
+  width: 7px;
+  height: 7px;
+  border-radius: $radius-full;
+  background: $elth-teal;
+  flex-shrink: 0;
+}
+
+.phoneListTitle {
+  font-size: 11px;
+  font-weight: $font-medium;
+  color: $text-primary;
+}
+
+.phoneListDate {
+  font-size: 9px;
+  color: $text-tertiary;
+}
+
+.phoneListBadge {
+  margin-left: auto;
+  font-size: 8px;
+  font-weight: $font-semibold;
+  color: $elth-teal;
+  background: $elth-teal-bg;
+  padding: 2px 6px;
+  border-radius: $radius-full;
+  flex-shrink: 0;
+}
+
+.middleCol {
+  display: flex;
+  gap: $space-8;
+  align-items: flex-start;
+
+  @include respond-to(lg) { order: 2; flex-direction: column; gap: $space-6; }
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  flex: 1;
+  min-width: 240px;
+}
+
+.heading {
+  @include heading-lg;
+  color: $text-primary;
+}
+
+.sub {
+  @include body-base;
+  color: $text-secondary;
+  max-width: 340px;
+}
+
+.pointsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-4;
+  flex: 1;
+  min-width: 300px;
+}
+
+.pointTile {
+  display: flex;
+  gap: $space-2;
+  align-items: flex-start;
+}
+
+.pointIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: $radius-md;
+  background: $elth-teal-bg;
+  color: $elth-teal;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.pointTitle {
+  display: block;
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $text-primary;
+  margin-bottom: 2px;
+}
+
+.pointDesc {
+  font-size: 11px;
+  color: $text-secondary;
+  margin: 0;
+  line-height: $leading-snug;
+}
+
+.photoCol {
+  position: relative;
+  @include flex-center;
+
+  @include respond-to(lg) { order: 3; }
+}
+
+.photoPlaceholder {
+  width: 160px;
+  height: 200px;
+  border-radius: $radius-xl;
+  background: linear-gradient(160deg, $elth-teal-bg 0%, $elth-purple-bg 100%);
+  @include flex-center;
+  overflow: hidden;
+}
+
+.illustration {
+  width: 108px;
+  height: auto;
+}
+
+.freeBadge {
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  background: $white;
+  box-shadow: $shadow-lg;
+  border-radius: $radius-lg;
+  padding: $space-3 $space-4;
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $elth-purple;
+  line-height: $leading-snug;
+  text-align: left;
+
+  @include respond-to(lg) { position: static; margin-top: $space-4; }
+}

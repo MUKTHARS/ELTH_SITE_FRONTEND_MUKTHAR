@@ -1,0 +1,162 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $elth-bg-light;
+}
+
+.inner { @include container; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-6;
+
+  @include respond-to(lg) { grid-template-columns: 1fr; }
+}
+
+.card {
+  @include card-base;
+  @include card-hover;
+  padding: $space-8;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  position: relative;
+  z-index: 1;
+}
+
+.cardDoctors, .cardSpecialty {
+  padding: 0;
+  flex-direction: row;
+  align-items: stretch;
+
+  .cardBody { padding: $space-8; flex: 1; }
+
+  @include respond-to(md) { flex-direction: column; }
+}
+
+.decorPanel {
+  width: 110px;
+  flex-shrink: 0;
+  @include flex-center;
+  background: linear-gradient(160deg, $elth-purple-bg 0%, $elth-teal-bg 100%);
+
+  @include respond-to(md) { width: 100%; padding: $space-6 0; }
+}
+
+.decorIcon { color: $elth-purple; opacity: 0.75; }
+
+.cardClinics { position: relative; }
+
+.decorWatermark {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  color: $elth-teal;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.kicker {
+  @include label-text;
+  color: $elth-purple;
+}
+
+.cardTitle {
+  @include heading-sm;
+  color: $text-primary;
+}
+
+.cardDesc {
+  @include body-sm;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-2;
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: $leading-snug;
+}
+
+.check {
+  color: $elth-purple;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.stepsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin-top: $space-2;
+}
+
+.stepPill {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: $text-xs;
+  font-weight: $font-medium;
+  color: $elth-teal;
+  background: $elth-teal-bg;
+  padding: $space-2 $space-3;
+  border-radius: $radius-full;
+}
+
+.stepDivider {
+  color: $text-tertiary;
+  margin-left: $space-2;
+}
+
+.specialtyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.specialtyItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: $space-3;
+  border-bottom: 1px solid $elth-border;
+
+  &:last-child { border-bottom: none; padding-bottom: 0; }
+
+  strong {
+    font-size: $text-sm;
+    font-weight: $font-semibold;
+    color: $text-primary;
+  }
+
+  span {
+    font-size: $text-xs;
+    color: $text-secondary;
+  }
+}

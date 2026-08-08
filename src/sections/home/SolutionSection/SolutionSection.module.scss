@@ -20,6 +20,65 @@
 .heading { @include heading-md; color: $text-primary; max-width: 600px; }
 .sub { @include body-lg; color: $text-secondary; max-width: 540px; }
 
+.journeyCaption {
+  @include label-text;
+  color: $text-tertiary;
+  text-align: center;
+  margin-bottom: $space-4;
+}
+
+.journey {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: $space-1;
+  padding: $space-8 $space-4;
+  margin-bottom: $space-10;
+  overflow-x: auto;
+
+  @include respond-to(md) {
+    justify-content: flex-start;
+  }
+}
+
+.journeyStepWrap {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.journeyStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-3;
+  flex-shrink: 0;
+  width: 96px;
+}
+
+.journeyNode {
+  width: 56px;
+  height: 56px;
+  border-radius: $radius-full;
+  @include flex-center;
+}
+
+.journeyLabel {
+  font-size: $text-xs;
+  font-weight: $font-medium;
+  color: $text-primary;
+  text-align: center;
+  line-height: $leading-snug;
+}
+
+.journeyDot {
+  color: $elth-border;
+  font-size: 20px;
+  line-height: 1;
+  margin: 0 $space-1;
+  padding-top: 26px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -46,7 +105,6 @@
   @include flex-center;
 }
 
-.icon { font-size: 26px; }
 .cardTitle { @include heading-sm; }
 .cardDesc { @include body-sm; color: $text-secondary; line-height: $leading-relaxed; }
 

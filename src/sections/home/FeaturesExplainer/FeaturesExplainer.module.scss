@@ -1,0 +1,267 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $elth-bg-light;
+}
+
+.inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.row {
+  @include card-base;
+  @include card-hover;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: $space-10;
+  align-items: center;
+  padding: $space-10;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr;
+    padding: $space-6;
+    gap: $space-6;
+  }
+}
+
+.rowContent {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.eyebrow {
+  @include label-text;
+  color: $elth-purple;
+}
+
+.title {
+  @include heading-md;
+  color: $text-primary;
+  line-height: $leading-tight;
+}
+
+.desc {
+  @include body-base;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+  max-width: 380px;
+}
+
+.pointList {
+  list-style: none;
+  padding: 0;
+  margin: $space-3 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.pointItem {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  color: $text-primary;
+}
+
+.pointIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: $radius-md;
+  background: $elth-purple-bg;
+  color: $elth-purple;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.rowVisual { display: flex; justify-content: center; }
+
+// ─── AI Scribe visual ───────────────────────────────────────────────────────
+.scribeCard {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.scribeWave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: $space-4 $space-5;
+
+  span {
+    flex: 1;
+    background: $elth-purple;
+    opacity: 0.55;
+    border-radius: 2px;
+    min-height: 4px;
+  }
+}
+
+.scribeStop {
+  flex: none !important;
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-full;
+  background: $white;
+  box-shadow: $shadow-md;
+  margin-left: $space-2;
+  position: relative;
+  opacity: 1 !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background: #ef4444;
+  }
+}
+
+.checklistCard {
+  @include card-base;
+  padding: $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.checklistRow {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-2 $space-2;
+  border-radius: $radius-md;
+
+  &:hover { background: $elth-bg-light; }
+}
+
+.checklistIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: $radius-sm;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.checklistDot {
+  width: 7px;
+  height: 7px;
+  border-radius: $radius-full;
+}
+
+.checklistLabel {
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  color: $text-primary;
+  flex: 1;
+}
+
+.checklistCheck { color: #16A34A; flex-shrink: 0; }
+
+// ─── Clinical Memory visual ─────────────────────────────────────────────────
+.memoryCard {
+  @include card-base;
+  width: 100%;
+  max-width: 340px;
+  padding: $space-5;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.memoryYear {
+  display: flex;
+  gap: $space-3;
+}
+
+.memoryYearLabel {
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $text-tertiary;
+  width: 36px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.memoryItems {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  flex: 1;
+  border-left: 1px solid $elth-border;
+  padding-left: $space-3;
+}
+
+.memoryItem {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: $text-sm;
+  color: $text-primary;
+  position: relative;
+}
+
+.memoryDot {
+  width: 7px;
+  height: 7px;
+  border-radius: $radius-full;
+  margin-left: -17.5px;
+  flex-shrink: 0;
+}
+
+// ─── Continuous Care visual ─────────────────────────────────────────────────
+.circleCard {
+  width: 100%;
+  max-width: 380px;
+  @include flex-center;
+}
+
+.circleTrack {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: $radius-full;
+  border: 1.5px dashed $elth-border;
+
+  @include respond-to(sm) { width: 260px; height: 260px; }
+}
+
+.circleNode {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-1;
+  width: 90px;
+  transform: translate(-50%, -50%);
+}
+
+.circleIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-full;
+  @include flex-center;
+  font-size: 16px;
+  box-shadow: $shadow-sm;
+}
+
+.circleLabel {
+  font-size: 10px;
+  font-weight: $font-medium;
+  color: $text-secondary;
+  text-align: center;
+  line-height: $leading-snug;
+}

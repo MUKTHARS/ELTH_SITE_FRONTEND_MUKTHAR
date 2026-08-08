@@ -11,7 +11,7 @@ export default function ProblemSection() {
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionLabel text="The Problem" color="purple" />
-          <h2 className={styles.heading}>Indian healthcare is broken in three ways</h2>
+          <h2 className={styles.heading}>The consultation ends. The work doesn&apos;t.</h2>
           <p className={styles.sub}>Every clinic, every hospital, every patient feels it. We built Elth AI to fix all three.</p>
         </div>
 
@@ -26,7 +26,7 @@ export default function ProblemSection() {
               viewport={{ once: true }}
             >
               <div className={styles.iconWrap} style={{ background: p.bg, color: p.color }}>
-                <span className={styles.icon}>{p.icon}</span>
+                <p.icon size={24} />
               </div>
               <div className={styles.stat} style={{ color: p.color }}>{p.stat}</div>
               <h3 className={styles.cardTitle}>{p.title}</h3>

@@ -5,11 +5,36 @@ import Link               from 'next/link'
 import { motion }         from 'framer-motion'
 import gsap                from 'gsap'
 import { ScrollTrigger }  from 'gsap/dist/ScrollTrigger'
-import { Button }         from '@components/ui/button'
 import { Badge }          from '@components/ui/badge'
-import { IconArrowRight } from '@icons/index'
+import { IconArrowRight, IconMic, IconCheck, IconFileText, IconShield, IconLock, IconGlobe, IconClock, IconEdit } from '@icons/index'
 import { ROUTES }         from '@constants/routes'
 import styles             from './HeroSection.module.scss'
+
+const NOTE_FIELDS = [
+  { label: 'Complaints',     value: 'Left knee pain for the past two weeks. Pain increases on walking and while climbing stairs.' },
+  { label: 'Examination',    value: 'Swelling present. Tenderness over medial joint line. Range of motion painful beyond 90 degrees.' },
+  { label: 'Investigation',  value: 'X-ray shows early degenerative changes.' },
+  { label: 'Diagnosis',      value: 'Early osteoarthritis of left knee.' },
+  { label: 'Treatment Plan', value: 'Physiotherapy, weight reduction, knee strengthening exercises. Follow up after 2 weeks.' },
+  { label: 'Medication',     value: 'Ecosprin 75 mg OD after food · Pantop 40 mg OD · Zerodol-P SOS' },
+]
+
+const TIMELINE = [
+  { date: '05 Aug 2026', label: 'OPD Consultation',      active: true },
+  { date: '12 Jun 2026',  label: 'Follow-up Visit' },
+  { date: '02 May 2026',  label: 'Physiotherapy Session' },
+  { date: '15 Mar 2026',  label: 'X-Ray — Left Knee' },
+  { date: '28 Jan 2026',  label: 'OPD Consultation' },
+]
+
+const TABS = ['Consult', 'History', 'Records', 'Prescriptions', 'Reports', 'Timeline']
+
+const COMPLIANCE_BADGES = [
+  { icon: IconShield, label: 'NABH', sub: 'Compliant' },
+  { icon: IconLock,   label: 'HIPAA', sub: 'Aligned' },
+  { icon: IconFileText, label: 'ISO 27001', sub: 'Certified' },
+  { icon: IconGlobe,  label: 'ABDM', sub: 'Ready' },
+]
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -61,18 +86,6 @@ export default function HeroSection() {
 
   return (
     <section ref={sectionRef} className={styles.section}>
-      <div className={styles.videoStage}>
-        <video
-          className={styles.heroVideo}
-          src="/videos/scroll-demo.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-        <div className={styles.videoOverlay} />
-      </div>
-
       <div className={styles.bg}>
         <div className={styles.blob1} />
         <div className={styles.blob2} />
@@ -82,34 +95,43 @@ export default function HeroSection() {
       <div ref={innerRef} className={styles.inner}>
         <motion.div className={styles.content} variants={stagger} initial="hidden" animate="show">
           <motion.div variants={fadeUp}>
-            <Badge variant="dark" className={styles.pill}>
-              Built on Saple.ai · AI-Native Healthcare Platform
+            <Badge variant="purple" className={styles.pill}>
+              AI-POWERED CARE, FROM CONSULTATION TO CONTINUITY
             </Badge>
           </motion.div>
 
           <motion.h1 className={styles.heading} variants={fadeUp}>
-            The AI that <br />
-            <span className={styles.accent}>runs your clinic.</span>
+            Let doctors care. <br />
+            <span className={styles.accent}>Let Elth remember.</span>
           </motion.h1>
 
           <motion.p className={styles.sub} variants={fadeUp}>
-            Elth AI gives hospitals and clinics white-label AI infrastructure.
-            Your brand. Your patients. Powered by the smartest clinical AI in India.
+            AI-assisted documentation, connected patient records and follow-up care —
+            all in one platform. Less typing. Less searching. More time with patients.
           </motion.p>
 
           <motion.div className={styles.actions} variants={fadeUp}>
-            <Button asChild size="xl">
-              <Link href={ROUTES.CONTACT}>Request a Demo <IconArrowRight size={18} /></Link>
-            </Button>
-            <Button asChild variant="dark" size="xl">
-              <Link href={ROUTES.FOR_DOCTORS}>See how it works</Link>
-            </Button>
+            <Link href={ROUTES.CONTACT} className={styles.primaryBtn}>
+              Book a Demo <IconArrowRight size={18} />
+            </Link>
+            <Link href={ROUTES.FOR_DOCTORS} className={styles.secondaryBtn}>
+              See How It Works
+            </Link>
           </motion.div>
 
           <motion.div className={styles.trustLine} variants={fadeUp}>
-            <span className={styles.trustText}>Trusted by</span>
-            {['Apollo', 'Medanta', 'Varsha Health', 'Sri Kumaran'].map(name => (
-              <span key={name} className={styles.trustName}>{name}</span>
+            <span className={styles.trustText}>Trusted by forward-thinking hospitals and clinics</span>
+          </motion.div>
+
+          <motion.div className={styles.badges} variants={fadeUp}>
+            {COMPLIANCE_BADGES.map(b => (
+              <span key={b.label} className={styles.badgeItem}>
+                <span className={styles.badgeIcon}><b.icon size={18} /></span>
+                <span>
+                  <span className={styles.badgeLabel}>{b.label}</span>
+                  <span className={styles.badgeSub}>{b.sub}</span>
+                </span>
+              </span>
             ))}
           </motion.div>
         </motion.div>
@@ -120,39 +142,85 @@ export default function HeroSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className={styles.card}>
-            <div className={styles.cardHeader}>
-              <div className={styles.avatar} style={{ background: '#EEEDFE', color: '#26215C' }}>PR</div>
-              <div>
-                <div className={styles.cardName}>Dr. Priya Ramachandran</div>
-                <div className={styles.cardRole}>Endocrinologist · Varsha Health Care</div>
+          <div className={styles.dashCard}>
+            <div className={styles.dashHeader}>
+              <div className={styles.avatar}>RG</div>
+              <div className={styles.patientMeta}>
+                <div className={styles.cardName}>Ramesh Gupta</div>
+                <div className={styles.cardRole}>45 Y · Male · MRN: OCMC-24581</div>
+              </div>
+              <div className={styles.vitals}>
+                <div className={styles.vitalItem}><b>BP 128/82</b><span>mmHg</span></div>
+                <div className={styles.vitalItem}><b>Pulse 96</b><span>bpm</span></div>
+                <div className={styles.vitalItem}><b>Temp 100°C</b></div>
+                <div className={styles.vitalItem}><b>SpO2 98%</b></div>
+              </div>
+              <span className={styles.moreDots}>•••</span>
+            </div>
+
+            <div className={styles.tabs}>
+              {TABS.map((t, i) => (
+                <span key={t} className={i === 0 ? styles.tabActive : styles.tab}>{t}</span>
+              ))}
+            </div>
+
+            <div className={styles.dashBody}>
+              <div className={styles.scribePanel}>
+                <div className={styles.scribeHeader}>
+                  <IconMic size={14} /> <span>AI Scribe</span>
+                </div>
+                <div className={styles.scribeStatus}>Recording...</div>
+                <div className={styles.scribeTimer}><IconClock size={12} /> 01:38</div>
+                <div className={styles.waveform}>
+                  {Array.from({ length: 22 }).map((_, i) => (
+                    <span key={i} style={{ height: `${6 + ((i * 37) % 18)}px` }} />
+                  ))}
+                </div>
+                <button className={styles.stopBtn} aria-label="Stop recording"><span /></button>
+              </div>
+
+              <div className={styles.fieldsPanel}>
+                {NOTE_FIELDS.map(f => (
+                  <div className={styles.noteRow} key={f.label}>
+                    <div>
+                      <div className={styles.noteLabel}>{f.label}</div>
+                      <div className={styles.noteValue}>{f.value}</div>
+                    </div>
+                    <span className={styles.editTag}><IconEdit size={11} /> Edit</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className={styles.timelinePanel}>
+                <div className={styles.timelineTitle}>Patient Timeline</div>
+                <ul className={styles.timelineList}>
+                  {TIMELINE.map(t => (
+                    <li key={t.date + t.label} className={styles.timelineItem}>
+                      <span className={t.active ? styles.timelineDotActive : styles.timelineDot} />
+                      <div>
+                        <div className={t.active ? styles.timelineDateActive : styles.timelineDate}>{t.date}</div>
+                        <div className={styles.timelineLabel}>{t.label}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <Link href={ROUTES.FOR_DOCTORS} className={styles.timelineLink}>View full timeline →</Link>
               </div>
             </div>
-            <div className={styles.cardBody}>
-              <div className={styles.noteLabel}>AI-generated SOAP Note</div>
-              <div className={styles.noteLine}><span className={styles.noteKey}>S:</span> Patient reports fatigue, increased thirst for 3 weeks</div>
-              <div className={styles.noteLine}><span className={styles.noteKey}>O:</span> HbA1c 8.2% · FBS 186 mg/dL · Weight 72kg</div>
-              <div className={styles.noteLine}><span className={styles.noteKey}>A:</span> Uncontrolled Type 2 Diabetes Mellitus (E11.9)</div>
-              <div className={styles.noteLine}><span className={styles.noteKey}>P:</span> Increase Metformin to 1g BD · Repeat HbA1c in 3 months</div>
-            </div>
-            <div className={styles.cardFooter}>
-              <span className={styles.timeSave}>⏱ Generated in 14 seconds · Saved 12 min</span>
+
+            <div className={styles.dashFooter}>
+              <span className={styles.footerNote}><IconFileText size={14} /> Once approved, the report will be sent to the patient app (MyElth).</span>
+              <span className={styles.footerActions}>
+                <span className={styles.footerBtn}>Save Draft</span>
+                <span className={styles.footerBtnPrimary}><IconCheck size={13} /> Review &amp; Approve</span>
+              </span>
             </div>
           </div>
 
-          <div className={styles.floatCard1}>
-            <span className={styles.floatIcon}>🔴</span>
-            <div>
-              <div className={styles.floatTitle}>Critical Alert</div>
-              <div className={styles.floatSub}>Vitamin D: 3.31 ng/mL</div>
-            </div>
-          </div>
-
-          <div className={styles.floatCard2}>
-            <span className={styles.floatIcon}>✅</span>
-            <div>
-              <div className={styles.floatTitle}>No Drug Interactions</div>
-              <div className={styles.floatSub}>Prescription is safe</div>
+          <div className={styles.phonePeek}>
+            <div className={styles.phoneNotch} />
+            <div className={styles.phoneLines}>
+              <span /><span /><span />
             </div>
           </div>
         </motion.div>

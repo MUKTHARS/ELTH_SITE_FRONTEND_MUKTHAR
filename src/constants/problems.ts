@@ -1,25 +1,27 @@
+import { IconStethoscope, IconSearch, IconBell } from '@icons/index'
+
 export const PROBLEMS = [
   {
-    icon: '🩺',
+    icon: IconStethoscope,
     stat: '30–40%',
-    title: 'Doctor time lost to paperwork',
-    desc: 'Clinicians spend nearly half their day on documentation, notes, and administrative tasks — time stolen from patients.',
+    title: 'Doctors don\'t have time to document',
+    desc: 'Doctors spend valuable consultation time typing notes, searching records and completing repetitive documentation.',
     color: '#26215C',
     bg: '#EEEDFE',
   },
   {
-    icon: '📋',
+    icon: IconSearch,
     stat: '73%',
-    title: 'Patients can\'t understand their reports',
-    desc: 'Lab reports arrive in medical jargon. Patients panic, self-diagnose on Google, and flood clinics with unnecessary visits.',
+    title: 'Patient history is scattered',
+    desc: 'Prescriptions, reports, scans and previous consultations often live across hospital systems, PDFs, WhatsApp and paper.',
     color: '#085041',
     bg: '#E1F5EE',
   },
   {
-    icon: '🔗',
+    icon: IconBell,
     stat: '0',
-    title: 'Connected care after discharge',
-    desc: 'Once the patient walks out, they\'re on their own. No automated follow-up, no medication reminders, no continuity of care.',
+    title: 'Follow-up gets lost',
+    desc: 'The patient leaves the clinic — but the relationship shouldn\'t end there. Appointments and treatment plans need to continue.',
     color: '#042C53',
     bg: '#E6F1FB',
   },

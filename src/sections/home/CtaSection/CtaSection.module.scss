@@ -14,10 +14,15 @@
   background: $elth-dark;
   border-radius: $radius-xl;
   padding: $space-16 $space-12;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-10;
+  text-align: left;
 
   @include respond-to(md) { padding: $space-10 $space-6; }
   @include respond-to(sm) { padding: $space-8 $space-4; border-radius: $radius-lg; }
+  @include respond-to(lg) { flex-direction: column; text-align: center; }
 }
 
 .blobs {
@@ -53,8 +58,42 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: $space-5;
+
+  @include respond-to(lg) { align-items: center; }
+}
+
+.graphic {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  @include flex-center;
+
+  @include respond-to(lg) { display: none; }
+}
+
+.graphicRing {
+  position: absolute;
+  inset: 0;
+  border-radius: $radius-full;
+  border: 1px solid rgba($white, 0.15);
+}
+
+.graphicAvatar {
+  width: 130px;
+  height: 130px;
+  border-radius: $radius-full;
+  background: rgba($white, 0.06);
+  border: 1px solid rgba($white, 0.15);
+  @include flex-center;
+}
+
+.illustration {
+  width: 90px;
+  height: 90px;
 }
 
 .eyebrow {
@@ -80,8 +119,10 @@
 .actions {
   display: flex;
   gap: $space-4;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+
+  @include respond-to(lg) { justify-content: center; }
 }
 
 .outlineBtn {
@@ -98,8 +139,10 @@
   display: flex;
   gap: $space-6;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: $space-2;
+
+  @include respond-to(lg) { justify-content: center; }
 }
 
 .trustItem {
@@ -112,5 +155,5 @@
 
 .trustCheck {
   color: $elth-teal-light;
-  font-weight: $font-bold;
+  flex-shrink: 0;
 }
