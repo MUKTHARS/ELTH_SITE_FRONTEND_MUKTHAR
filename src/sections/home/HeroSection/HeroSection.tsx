@@ -1,20 +1,23 @@
 'use client'
 
-import { useEffect, useRef }  from 'react'
 import Link               from 'next/link'
 import { motion }         from 'framer-motion'
-import gsap                from 'gsap'
-import { ScrollTrigger }  from 'gsap/dist/ScrollTrigger'
 import { Badge }          from '@components/ui/badge'
 import { IconArrowRight, IconMic, IconCheck, IconFileText, IconShield, IconLock, IconGlobe, IconClock, IconEdit } from '@icons/index'
 import { ROUTES }         from '@constants/routes'
 import styles             from './HeroSection.module.scss'
 
-const NOTE_FIELDS = [
+interface NoteField {
+  label: string
+  value: string
+  highlight?: boolean
+}
+
+const NOTE_FIELDS: NoteField[] = [
   { label: 'Complaints',     value: 'Left knee pain for the past two weeks. Pain increases on walking and while climbing stairs.' },
   { label: 'Examination',    value: 'Swelling present. Tenderness over medial joint line. Range of motion painful beyond 90 degrees.' },
   { label: 'Investigation',  value: 'X-ray shows early degenerative changes.' },
-  { label: 'Diagnosis',      value: 'Early osteoarthritis of left knee.' },
+  { label: 'Diagnosis',      value: 'Early osteoarthritis of left knee.', highlight: true },
   { label: 'Treatment Plan', value: 'Physiotherapy, weight reduction, knee strengthening exercises. Follow up after 2 weeks.' },
   { label: 'Medication',     value: 'Ecosprin 75 mg OD after food · Pantop 40 mg OD · Zerodol-P SOS' },
 ]
@@ -44,55 +47,15 @@ const fadeUp = {
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } }
 
 export default function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const innerRef    = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-    const section = sectionRef.current
-    const inner = innerRef.current
-    if (!section || !inner) return
-
-    const ctx = gsap.context(() => {
-      const mm = gsap.matchMedia()
-
-      mm.add(
-        { isDesktop: `(min-width: 768px) and (prefers-reduced-motion: no-preference)` },
-        (context) => {
-          const { isDesktop } = context.conditions as { isDesktop: boolean }
-          if (!isDesktop) return
-
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: section,
-              start: 'top top',
-              end: '+=100%',
-              scrub: 1,
-              pin: true,
-            },
-          })
-
-          tl.to(inner, { opacity: 0, y: -40, scale: 0.96, ease: 'none' }, 0)
-
-          return () => tl.scrollTrigger?.kill()
-        }
-      )
-
-      return () => mm.revert()
-    }, section)
-
-    return () => ctx.revert()
-  }, [])
-
   return (
-    <section ref={sectionRef} className={styles.section}>
+    <section className={styles.section}>
       <div className={styles.bg}>
         <div className={styles.blob1} />
         <div className={styles.blob2} />
         <div className={styles.grid} />
       </div>
 
-      <div ref={innerRef} className={styles.inner}>
+      <div className={styles.inner}>
         <motion.div className={styles.content} variants={stagger} initial="hidden" animate="show">
           <motion.div variants={fadeUp}>
             <Badge variant="purple" className={styles.pill}>
@@ -144,7 +107,7 @@ export default function HeroSection() {
         >
           <div className={styles.dashCard}>
             <div className={styles.dashHeader}>
-              <div className={styles.avatar}>RG</div>
+              <div className={styles.avatar} role="img" aria-label="Ramesh Gupta" />
               <div className={styles.patientMeta}>
                 <div className={styles.cardName}>Ramesh Gupta</div>
                 <div className={styles.cardRole}>45 Y · Male · MRN: OCMC-24581</div>
@@ -183,7 +146,7 @@ export default function HeroSection() {
                 {NOTE_FIELDS.map(f => (
                   <div className={styles.noteRow} key={f.label}>
                     <div>
-                      <div className={styles.noteLabel}>{f.label}</div>
+                      <div className={f.highlight ? styles.noteLabelAccent : styles.noteLabel}>{f.label}</div>
                       <div className={styles.noteValue}>{f.value}</div>
                     </div>
                     <span className={styles.editTag}><IconEdit size={11} /> Edit</span>
@@ -197,7 +160,7 @@ export default function HeroSection() {
                   {TIMELINE.map(t => (
                     <li key={t.date + t.label} className={styles.timelineItem}>
                       <span className={t.active ? styles.timelineDotActive : styles.timelineDot} />
-                      <div>
+                      <div className={t.active ? styles.timelineTextActive : undefined}>
                         <div className={t.active ? styles.timelineDateActive : styles.timelineDate}>{t.date}</div>
                         <div className={styles.timelineLabel}>{t.label}</div>
                       </div>
@@ -217,12 +180,6 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className={styles.phonePeek}>
-            <div className={styles.phoneNotch} />
-            <div className={styles.phoneLines}>
-              <span /><span /><span />
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

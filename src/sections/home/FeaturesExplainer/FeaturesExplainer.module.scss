@@ -3,7 +3,7 @@
 
 .section {
   @include section-padding;
-  background: $elth-bg-light;
+  background: $white;
 }
 
 .inner {
@@ -13,18 +13,52 @@
   gap: $space-8;
 }
 
+.tabBar {
+  display: flex;
+  gap: $space-2;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tab, .tabActive {
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  padding: $space-3 $space-5;
+  border-radius: $radius-full;
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
+  transition: color $transition-fast, border-color $transition-fast, background $transition-fast;
+}
+
+.tab {
+  color: $text-tertiary;
+
+  &:hover { color: $text-primary; background: $elth-bg-light; }
+}
+
+.tabActive {
+  background: $white;
+  border-color: currentColor;
+  box-shadow: $shadow-sm;
+}
+
 .row {
   @include card-base;
-  @include card-hover;
+  padding: $space-10;
+  overflow: hidden;
+
+  @include respond-to(lg) { padding: $space-6; }
+}
+
+.tabContent {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: $space-10;
   align-items: center;
-  padding: $space-10;
 
   @include respond-to(lg) {
     grid-template-columns: 1fr;
-    padding: $space-6;
     gap: $space-6;
   }
 }
@@ -41,13 +75,15 @@
 }
 
 .title {
-  @include heading-md;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: $font-bold;
+  letter-spacing: $tracking-tight;
+  line-height: 1.18;
   color: $text-primary;
-  line-height: $leading-tight;
 }
 
 .desc {
-  @include body-base;
+  @include body-lg;
   color: $text-secondary;
   line-height: $leading-relaxed;
   max-width: 380px;
@@ -95,16 +131,15 @@
 .scribeWave {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: $space-3;
   padding: $space-4 $space-5;
+}
 
-  span {
-    flex: 1;
-    background: $elth-purple;
-    opacity: 0.55;
-    border-radius: 2px;
-    min-height: 4px;
-  }
+.scribeWaveImg {
+  flex: 1;
+  height: 112px;
+  width: auto;
+  object-fit: contain;
 }
 
 .scribeStop {
@@ -142,24 +177,19 @@
   display: flex;
   align-items: center;
   gap: $space-3;
-  padding: $space-2 $space-2;
+  padding: $space-2 $space-3;
   border-radius: $radius-md;
+  transition: filter $transition-fast;
 
-  &:hover { background: $elth-bg-light; }
+  &:hover { filter: brightness(0.97); }
 }
 
 .checklistIcon {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   border-radius: $radius-sm;
   @include flex-center;
   flex-shrink: 0;
-}
-
-.checklistDot {
-  width: 7px;
-  height: 7px;
-  border-radius: $radius-full;
 }
 
 .checklistLabel {
@@ -187,22 +217,39 @@
   gap: $space-3;
 }
 
+.memoryYearCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 44px;
+  flex-shrink: 0;
+}
+
 .memoryYearLabel {
   font-size: $text-xs;
-  font-weight: $font-semibold;
-  color: $text-tertiary;
-  width: 36px;
-  flex-shrink: 0;
+  font-weight: $font-bold;
   padding-top: 2px;
+}
+
+.memoryLatest {
+  font-size: 9px;
+  font-weight: $font-semibold;
+  text-transform: uppercase;
+  letter-spacing: $tracking-wide;
+  color: $elth-teal;
+  background: $elth-teal-bg;
+  padding: 2px 6px;
+  border-radius: $radius-full;
+  width: fit-content;
 }
 
 .memoryItems {
   display: flex;
   flex-direction: column;
-  gap: $space-2;
+  gap: $space-3;
   flex: 1;
   border-left: 1px solid $elth-border;
-  padding-left: $space-3;
+  padding-left: $space-4;
 }
 
 .memoryItem {
@@ -214,12 +261,15 @@
   position: relative;
 }
 
-.memoryDot {
-  width: 7px;
-  height: 7px;
+.memoryIcon {
+  width: 22px;
+  height: 22px;
   border-radius: $radius-full;
-  margin-left: -17.5px;
+  @include flex-center;
+  margin-left: -29px;
   flex-shrink: 0;
+  border: 2px solid $white;
+  box-shadow: 0 0 0 1px $elth-border;
 }
 
 // ─── Continuous Care visual ─────────────────────────────────────────────────
@@ -235,8 +285,36 @@
   height: 300px;
   border-radius: $radius-full;
   border: 1.5px dashed $elth-border;
+  background: radial-gradient(circle, $elth-bg-light 0%, transparent 70%);
 
   @include respond-to(sm) { width: 260px; height: 260px; }
+}
+
+.circleCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88px;
+  height: 88px;
+  border-radius: $radius-full;
+  background: $white;
+  box-shadow: $shadow-md;
+  border: 1px solid $elth-border;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: $elth-purple;
+
+  span {
+    font-size: 9px;
+    font-weight: $font-semibold;
+    color: $text-tertiary;
+    text-transform: uppercase;
+    letter-spacing: $tracking-wide;
+  }
 }
 
 .circleNode {

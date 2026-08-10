@@ -5,18 +5,17 @@ import Link from 'next/link'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import { Button } from '@components/ui/button'
 import { PORTALS } from '@constants/portals'
-import { IconUser, IconUsers, IconMic, IconFileText, IconCheck, IconCalendar, IconSmartphone, IconRepeat } from '@icons/index'
 import styles from './SolutionSection.module.scss'
 
 const JOURNEY = [
-  { label: 'Patient arrives',    icon: IconUser,        color: '#085041', bg: '#E1F5EE' },
-  { label: 'Consultation',       icon: IconUsers,       color: '#042C53', bg: '#E6F1FB' },
-  { label: 'AI Scribe',          icon: IconMic,         color: '#26215C', bg: '#EEEDFE' },
-  { label: 'Clinical Record',    icon: IconFileText,    color: '#DB2777', bg: '#FCE7F3' },
-  { label: 'Doctor Approval',    icon: IconCheck,       color: '#16A34A', bg: '#DCFCE7' },
-  { label: 'Patient App',        icon: IconSmartphone,  color: '#085041', bg: '#E1F5EE' },
-  { label: 'Follow-up',          icon: IconCalendar,    color: '#26215C', bg: '#EEEDFE' },
-  { label: 'Next Consultation',  icon: IconRepeat,      color: '#16A34A', bg: '#DCFCE7' },
+  { label: 'Patient arrives',    img: '/assets/svgs/undraw_booking_8vl5.svg' },
+  { label: 'Consultation',       img: '/assets/svgs/undraw_doctor_aum1.svg' },
+  { label: 'AI Scribe',          img: '/assets/svgs/undraw_ai-data-extraction_soxc.svg' },
+  { label: 'Clinical Record',    img: '/assets/svgs/undraw_doctors-orders_a8sv.svg' },
+  { label: 'Doctor Approval',    img: '/assets/svgs/undraw_medicine_hqqg.svg' },
+  { label: 'Patient App',        img: '/assets/svgs/undraw_apps_i78y.svg' },
+  { label: 'Follow-up',          img: '/assets/svgs/undraw_reminders_o8j5.svg' },
+  { label: 'Next Consultation',  img: '/assets/svgs/undraw_coming-soon_7lvi.svg' },
 ]
 
 export default function SolutionSection() {
@@ -43,8 +42,9 @@ export default function SolutionSection() {
           {JOURNEY.map((step, i) => (
             <div className={styles.journeyStepWrap} key={step.label}>
               <div className={styles.journeyStep}>
-                <div className={styles.journeyNode} style={{ background: step.bg }}>
-                  <step.icon color={step.color} size={20} />
+                <div className={styles.journeyNode}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={step.img} alt={step.label} className={styles.journeyImg} />
                 </div>
                 <span className={styles.journeyLabel}>{step.label}</span>
               </div>

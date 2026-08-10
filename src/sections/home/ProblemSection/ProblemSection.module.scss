@@ -18,7 +18,10 @@
 }
 
 .heading {
-  @include heading-md;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: $font-bold;
+  letter-spacing: $tracking-tight;
+  line-height: 1.18;
   color: $text-primary;
   max-width: 560px;
 }
@@ -39,35 +42,61 @@
 }
 
 .card {
-  @include card-base;
-  @include card-hover;
-  padding: $space-8;
+  position: relative;
+  overflow: hidden;
+  background: $white;
+  border: 1px solid $elth-border;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-card;
+  padding: $space-10 $space-8 $space-8;
   display: flex;
   flex-direction: column;
-  gap: $space-3;
+  gap: $space-4;
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+    border-color: transparent;
+
+    .iconWrap { transform: scale(1.06); }
+  }
+}
+
+.accentBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform $transition-base, opacity $transition-base;
+
+  .card:hover & {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 .iconWrap {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: $radius-lg;
   @include flex-center;
-}
-
-.stat {
-  font-size: $text-4xl;
-  font-weight: $font-bold;
-  line-height: 1;
-  letter-spacing: $tracking-tight;
+  transition: transform $transition-base;
 }
 
 .cardTitle {
   @include heading-sm;
+  font-size: $text-xl;
+  line-height: $leading-snug;
   color: $text-primary;
 }
 
 .cardDesc {
-  @include body-sm;
+  @include body-base;
   color: $text-secondary;
   line-height: $leading-relaxed;
 }

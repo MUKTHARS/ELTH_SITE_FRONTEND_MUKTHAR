@@ -1,4 +1,4 @@
-import { IconMic, IconSparkle, IconCheck, IconSmartphone, IconCalendar, IconBell, IconChat, IconFileText } from '@icons/index'
+import { IconMic, IconSparkle, IconCheck, IconSmartphone, IconCalendar, IconBell, IconChat, IconFileText, IconStethoscope, IconSearch, IconBrain, IconPill, IconBone, IconRepeat, IconUser } from '@icons/index'
 
 export const SCRIBE_BLOCK = {
   eyebrow: 'AI SCRIBE',
@@ -11,12 +11,12 @@ export const SCRIBE_BLOCK = {
     { icon: IconSmartphone, label: 'Saved to patient app' },
   ],
   checklist: [
-    { label: 'Complaints',     color: '#26215C', bg: '#EEEDFE' },
-    { label: 'Examination',    color: '#042C53', bg: '#E6F1FB' },
-    { label: 'Investigation',  color: '#9A3412', bg: '#FFEDD5' },
-    { label: 'Diagnosis',      color: '#085041', bg: '#E1F5EE' },
-    { label: 'Treatment Plan', color: '#26215C', bg: '#EEEDFE' },
-    { label: 'Medication',     color: '#DB2777', bg: '#FCE7F3' },
+    { label: 'Complaints',     icon: IconFileText,    color: '#26215C', bg: '#EEEDFE' },
+    { label: 'Examination',    icon: IconStethoscope, color: '#042C53', bg: '#E6F1FB' },
+    { label: 'Investigation',  icon: IconSearch,      color: '#9A3412', bg: '#FFEDD5' },
+    { label: 'Diagnosis',      icon: IconBrain,       color: '#085041', bg: '#E1F5EE' },
+    { label: 'Treatment Plan', icon: IconCalendar,    color: '#26215C', bg: '#EEEDFE' },
+    { label: 'Medication',     icon: IconPill,        color: '#DB2777', bg: '#FCE7F3' },
   ],
 }
 
@@ -25,10 +25,35 @@ export const MEMORY_BLOCK = {
   title: 'Don\'t just store records.\nBuild clinical memory.',
   desc: 'Every consultation, prescription, report and investigation becomes part of the patient\'s longitudinal story.',
   years: [
-    { year: '2026', color: '#3B82F6', items: ['Consultation', 'Prescription', 'X-Ray'] },
-    { year: '2025', color: '#16A34A', items: ['Follow-up', 'MRI', 'Physiotherapy'] },
-    { year: '2024', color: '#F59E0B', items: ['Surgery', 'Discharge'] },
-    { year: '2023', color: '#DC2626', items: ['First Consultation'] },
+    {
+      year: '2026', color: '#3B82F6', latest: true,
+      items: [
+        { label: 'Consultation', icon: IconStethoscope },
+        { label: 'Prescription', icon: IconPill },
+        { label: 'X-Ray',        icon: IconSearch },
+      ],
+    },
+    {
+      year: '2025', color: '#16A34A',
+      items: [
+        { label: 'Follow-up',     icon: IconCalendar },
+        { label: 'MRI',           icon: IconBrain },
+        { label: 'Physiotherapy', icon: IconRepeat },
+      ],
+    },
+    {
+      year: '2024', color: '#F59E0B',
+      items: [
+        { label: 'Surgery',   icon: IconBone },
+        { label: 'Discharge', icon: IconCheck },
+      ],
+    },
+    {
+      year: '2023', color: '#DC2626',
+      items: [
+        { label: 'First Consultation', icon: IconUser },
+      ],
+    },
   ],
 }
 
@@ -36,6 +61,7 @@ export const CONTINUOUS_BLOCK = {
   eyebrow: 'CONTINUOUS CARE',
   title: 'Care doesn\'t end when\nthe patient leaves.',
   desc: 'Elth keeps the connection alive between consultations — helping clinics turn one-time visits into continuous care.',
+  center: { icon: IconRepeat, label: 'Always on' },
   nodes: [
     { icon: IconCheck,      label: 'Visit completed',       color: '#16A34A', bg: '#DCFCE7' },
     { icon: IconCalendar,   label: 'Follow-up scheduled',   color: '#26215C', bg: '#EEEDFE' },

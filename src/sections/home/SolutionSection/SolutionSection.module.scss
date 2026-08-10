@@ -3,7 +3,7 @@
 
 .section {
   @include section-padding;
-  background: $elth-bg-warm;
+  background: linear-gradient(180deg, #F6F5FC 0%, #F1EFFB 100%);
 }
 
 .inner { @include container; }
@@ -17,7 +17,14 @@
   gap: $space-4;
 }
 
-.heading { @include heading-md; color: $text-primary; max-width: 600px; }
+.heading {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: $font-bold;
+  letter-spacing: $tracking-tight;
+  line-height: 1.18;
+  color: $text-primary;
+  max-width: 600px;
+}
 .sub { @include body-lg; color: $text-secondary; max-width: 540px; }
 
 .journeyCaption {
@@ -53,14 +60,23 @@
   align-items: center;
   gap: $space-3;
   flex-shrink: 0;
-  width: 96px;
+  width: 104px;
 }
 
 .journeyNode {
-  width: 56px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
   border-radius: $radius-full;
+  background: $white;
+  border: 1px solid $elth-border;
+  box-shadow: $shadow-sm;
   @include flex-center;
+}
+
+.journeyImg {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .journeyLabel {
@@ -76,7 +92,7 @@
   font-size: 20px;
   line-height: 1;
   margin: 0 $space-1;
-  padding-top: 26px;
+  padding-top: 38px;
 }
 
 .grid {

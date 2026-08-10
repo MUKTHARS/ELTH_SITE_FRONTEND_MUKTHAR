@@ -3,19 +3,35 @@
 
 .section {
   @include section-padding;
-  background: $white;
+  background: linear-gradient(180deg, #FBFBFE 0%, #F6F5FC 100%);
 }
 
 .inner {
   @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $space-12;
+}
+
+.rowOne {
   display: grid;
-  grid-template-columns: 200px 1fr 180px;
-  gap: $space-10;
-  align-items: center;
+  grid-template-columns: 150px 240px 1fr 320px;
+  gap: $space-6;
+  align-items: stretch;
+
+  @include respond-to(xl) {
+    grid-template-columns: 150px 1fr;
+
+    .pointsGrid { grid-column: 1 / -1; }
+    .photoCol { grid-column: 1 / -1; }
+  }
 
   @include respond-to(lg) {
     grid-template-columns: 1fr;
     gap: $space-8;
+
+    .pointsGrid { grid-column: auto; }
+    .photoCol { grid-column: auto; }
   }
 }
 
@@ -25,15 +41,70 @@
   @include respond-to(lg) { order: 1; }
 }
 
-.phone { width: 200px; }
+.phoneShell {
+  width: 150px;
+  background: $elth-dark;
+  border-radius: 26px;
+  padding: 7px;
+  box-shadow: $shadow-xl, 0 0 0 2px rgba($elth-dark, 0.06);
+  position: relative;
+}
+
+.phoneNotch {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 14px;
+  background: $elth-dark;
+  border-radius: 0 0 9px 9px;
+  z-index: 2;
+}
+
+.phoneStatusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-2 $space-4 2px;
+  background: #F6F5FC;
+  border-radius: 22px 22px 0 0;
+  font-size: 10px;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.statusIcons {
+  display: flex;
+  gap: 3px;
+
+  span {
+    width: 3px;
+    height: 8px;
+    border-radius: 1px;
+    background: $text-primary;
+
+    &:nth-child(2) { height: 6px; align-self: flex-end; }
+    &:nth-child(3) { height: 10px; }
+  }
+}
 
 .phoneScreen {
-  background: $elth-bg-warm;
-  min-height: 400px;
-  padding: $space-4 $space-4;
+  background: #F6F5FC;
+  min-height: 280px;
+  padding: $space-2 $space-2 $space-3;
   display: flex;
   flex-direction: column;
   gap: $space-1;
+}
+
+.phoneHomeBar {
+  display: block;
+  width: 100px;
+  height: 4px;
+  border-radius: $radius-full;
+  background: $elth-dark;
+  margin: $space-2 auto 0;
 }
 
 .phoneTopBar {
@@ -45,6 +116,11 @@
   margin-bottom: $space-3;
 }
 
+.navArrow {
+  font-size: $text-lg;
+  color: $text-primary;
+}
+
 .phoneTopTitle {
   font-size: $text-xs;
   font-weight: $font-semibold;
@@ -52,40 +128,57 @@
 }
 
 .phoneGreeting {
-  font-size: $text-base;
+  font-size: $text-sm;
   font-weight: $font-semibold;
   color: $text-primary;
 }
 
 .phoneSub {
-  font-size: 10px;
+  font-size: 9px;
   color: $text-secondary;
-  margin-bottom: $space-4;
+  margin-bottom: $space-3;
+}
+
+.phoneSectionLabel {
+  font-size: 9px;
+  font-weight: $font-semibold;
+  color: $text-primary;
+  margin-bottom: $space-2;
 }
 
 .phoneStats {
   display: flex;
-  gap: $space-2;
-  margin-bottom: $space-5;
+  gap: 6px;
+  margin-bottom: $space-4;
 }
 
 .phoneStat {
   @include card-base;
   flex: 1;
-  padding: $space-2;
+  padding: 6px;
   text-align: center;
 }
 
+.phoneStatIcon {
+  width: 16px;
+  height: 16px;
+  border-radius: $radius-sm;
+  background: $elth-teal-bg;
+  color: $elth-teal;
+  @include flex-center;
+  margin: 0 auto 3px;
+}
+
 .phoneStatNum {
-  font-size: $text-lg;
+  font-size: $text-sm;
   font-weight: $font-bold;
   color: $elth-teal;
 }
 
 .phoneStatLabel {
-  font-size: 9px;
+  font-size: 8px;
   color: $text-tertiary;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .phoneListLabel {
@@ -134,37 +227,46 @@
 
 .middleCol {
   display: flex;
-  gap: $space-8;
-  align-items: flex-start;
-
-  @include respond-to(lg) { order: 2; flex-direction: column; gap: $space-6; }
-}
-
-.textBlock {
-  display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   gap: $space-3;
-  flex: 1;
-  min-width: 240px;
+
+  @include respond-to(lg) { order: 2; }
 }
 
 .heading {
-  @include heading-lg;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: $font-bold;
+  letter-spacing: $tracking-tight;
+  line-height: 1.18;
   color: $text-primary;
 }
 
 .sub {
   @include body-base;
   color: $text-secondary;
-  max-width: 340px;
+  line-height: $leading-relaxed;
+}
+
+.underline {
+  display: block;
+  width: 32px;
+  height: 3px;
+  border-radius: $radius-full;
+  background: $elth-purple;
+  margin-top: $space-1;
 }
 
 .pointsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: $space-4;
-  flex: 1;
-  min-width: 300px;
+  gap: $space-5 $space-4;
+  align-content: center;
+  height: 100%;
+
+  @include respond-to(xl) { grid-template-columns: repeat(2, 1fr); max-width: 500px; }
+  @include respond-to(sm) { grid-template-columns: 1fr; max-width: 100%; }
 }
 
 .pointTile {
@@ -199,39 +301,27 @@
 }
 
 .photoCol {
-  position: relative;
-  @include flex-center;
+  display: flex;
 
   @include respond-to(lg) { order: 3; }
 }
 
-.photoPlaceholder {
-  width: 160px;
-  height: 200px;
-  border-radius: $radius-xl;
-  background: linear-gradient(160deg, $elth-teal-bg 0%, $elth-purple-bg 100%);
-  @include flex-center;
-  overflow: hidden;
-}
-
-.illustration {
-  width: 108px;
-  height: auto;
-}
-
-.freeBadge {
-  position: absolute;
-  top: -12px;
-  right: -8px;
-  background: $white;
-  box-shadow: $shadow-lg;
+.photoFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
   border-radius: $radius-lg;
-  padding: $space-3 $space-4;
-  font-size: $text-sm;
-  font-weight: $font-semibold;
-  color: $elth-purple;
-  line-height: $leading-snug;
-  text-align: left;
-
-  @include respond-to(lg) { position: static; margin-top: $space-4; }
+  overflow: hidden;
+  box-shadow: $shadow-lg;
 }
+
+.photoImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @include respond-to(lg) { aspect-ratio: 1328 / 784; height: auto; }
+}
+

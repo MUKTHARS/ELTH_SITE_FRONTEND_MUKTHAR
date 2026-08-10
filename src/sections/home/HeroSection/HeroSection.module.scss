@@ -2,6 +2,8 @@
 @use '@styles/mixins' as *;
 @use '@styles/animations' as *;
 
+$accent: #6D4AEA;
+
 .section {
   position: relative;
   overflow: hidden;
@@ -50,8 +52,8 @@
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
-  gap: $space-12;
+  grid-template-columns: 0.68fr 1.32fr;
+  gap: $space-10;
   align-items: center;
   padding-top: $space-16;
   padding-bottom: $space-20;
@@ -76,9 +78,14 @@
 }
 
 .heading {
-  @include heading-xl;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: $font-bold;
+  letter-spacing: $tracking-tight;
   color: $text-primary;
-  line-height: 1.12;
+  line-height: 1.18;
+  white-space: nowrap;
+
+  @include respond-to(lg) { white-space: normal; }
 }
 
 .accent {
@@ -183,8 +190,9 @@
 // ─── Dashboard visual ───────────────────────────────────────────────────────
 .visual {
   position: relative;
+  width: 100%;
 
-  @include respond-to(lg) { display: none; }
+  @include respond-to(lg) { margin-top: $space-2; }
 }
 
 .dashCard {
@@ -205,15 +213,14 @@
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: $radius-full;
-  background: $elth-purple-bg;
-  color: $elth-purple;
-  @include flex-center;
-  font-size: $text-sm;
-  font-weight: $font-semibold;
   flex-shrink: 0;
+  background-image: url('/assets/top.jpg');
+  background-repeat: no-repeat;
+  background-size: 744px 406px;
+  background-position: -8px -14px;
 }
 
 .patientMeta { flex-shrink: 0; }
@@ -259,6 +266,9 @@
   gap: $space-5;
   padding: $space-3 0;
   border-bottom: 1px solid $elth-border;
+  overflow-x: auto;
+
+  @include scrollbar-hide;
 }
 
 .tab, .tabActive {
@@ -270,15 +280,15 @@
 .tab { color: $text-tertiary; }
 
 .tabActive {
-  color: $elth-purple;
-  border-bottom: 2px solid $elth-purple;
+  color: $accent;
+  border-bottom: 2px solid $accent;
   font-weight: $font-medium;
 }
 
 .dashBody {
   display: grid;
-  grid-template-columns: 160px 1fr 190px;
-  gap: $space-4;
+  grid-template-columns: 180px 1fr 210px;
+  gap: $space-5;
   padding: $space-4 0;
 
   @include respond-to(xl) { grid-template-columns: 1fr; }
@@ -302,7 +312,8 @@
   gap: $space-2;
   font-size: 11px;
   font-weight: $font-semibold;
-  color: $elth-purple;
+  color: $accent;
+  white-space: nowrap;
 }
 
 .scribeStatus {
@@ -327,8 +338,8 @@
 
   span {
     flex: 1;
-    background: $elth-purple;
-    opacity: 0.55;
+    background: $accent;
+    opacity: 0.65;
     border-radius: 2px;
   }
 }
@@ -373,15 +384,24 @@
 .noteLabel {
   font-size: $text-xs;
   font-weight: $font-semibold;
-  color: $elth-purple;
+  color: $text-primary;
   margin-bottom: 2px;
+  white-space: nowrap;
+}
+
+.noteLabelAccent {
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $accent;
+  margin-bottom: 2px;
+  white-space: nowrap;
 }
 
 .noteValue {
   font-size: 11px;
   color: $text-secondary;
   line-height: $leading-snug;
-  max-width: 360px;
+  max-width: 440px;
 }
 
 .editTag {
@@ -429,6 +449,13 @@
   position: relative;
 }
 
+.timelineTextActive {
+  background: rgba($accent, 0.08);
+  border-radius: $radius-md;
+  padding: 4px $space-2;
+  margin: -4px 0 0 -2px;
+}
+
 .timelineDot, .timelineDotActive {
   width: 8px;
   height: 8px;
@@ -441,8 +468,8 @@
 }
 
 .timelineDotActive {
-  border-color: $elth-purple;
-  background: $elth-purple;
+  border-color: $accent;
+  background: $accent;
 }
 
 .timelineDate {
@@ -454,7 +481,7 @@
 .timelineDateActive {
   font-size: 10px;
   font-weight: $font-semibold;
-  color: $elth-purple;
+  color: $accent;
 }
 
 .timelineLabel {

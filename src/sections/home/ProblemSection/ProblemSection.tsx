@@ -25,10 +25,10 @@ export default function ProblemSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
             >
+              <span className={styles.accentBar} style={{ background: p.color }} />
               <div className={styles.iconWrap} style={{ background: p.bg, color: p.color }}>
-                <p.icon size={24} />
+                <p.icon size={26} />
               </div>
-              <div className={styles.stat} style={{ color: p.color }}>{p.stat}</div>
               <h3 className={styles.cardTitle}>{p.title}</h3>
               <p className={styles.cardDesc}>{p.desc}</p>
             </motion.div>
