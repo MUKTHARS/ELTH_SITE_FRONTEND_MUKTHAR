@@ -110,10 +110,17 @@
   box-shadow: 0 22px 46px rgba(#18241d, 0.18);
 }
 
-@media (max-width: 480px) {
-  .visual { min-height: 410px; }
-  .visualImage { inset-right: 14px; }
+@include respond-to(sm) {
+  .visual { min-height: 340px; width: 100%; }
+  .visualImage { inset: 0 14px 0 0; }
   .workspace { width: calc(100% - 14px); bottom: 18px; }
+  .workspaceBody { padding: $space-4; gap: $space-2; }
+  .recording { padding: $space-2 $space-3; }
+  .wave { display: none; }
+}
+
+@include respond-to(xs) {
+  .visual { min-height: 300px; }
 }
 
 .workspaceTop {

@@ -69,6 +69,7 @@ $accent: #6D4AEA;
   display: flex;
   flex-direction: column;
   gap: $space-5;
+  min-width: 0;
 }
 
 .pill {
@@ -192,6 +193,7 @@ $accent: #6D4AEA;
 .visual {
   position: relative;
   width: 100%;
+  min-width: 0;
 
   @include respond-to(lg) { margin-top: $space-2; }
 }
@@ -226,7 +228,14 @@ $accent: #6D4AEA;
   background-position: -8px -14px;
 }
 
-.patientMeta { flex-shrink: 0; }
+.patientMeta {
+  flex-shrink: 0;
+
+  @include respond-to(xl) {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+}
 
 .cardName {
   font-size: $text-sm;
@@ -238,6 +247,10 @@ $accent: #6D4AEA;
   font-size: 11px;
   color: $text-tertiary;
   margin-top: 2px;
+
+  @include respond-to(xl) {
+    overflow-wrap: anywhere;
+  }
 }
 
 .vitals {

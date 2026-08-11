@@ -7,6 +7,8 @@
   gap: $space-3;
   padding: $space-3 $space-4;
   transition: transform $transition-base, box-shadow $transition-base;
+  min-width: 0;
+  max-width: 100%;
 
   &:hover {
     transform: translateY(-2px);
@@ -33,10 +35,18 @@
   font-size: $text-sm;
   font-weight: $font-medium;
   color: $text-primary;
+  min-width: 0;
+
+  @include respond-to(sm) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 .category {
   font-size: $text-xs;
   color: $text-tertiary;
   margin-left: auto;
+  flex-shrink: 0;
 }

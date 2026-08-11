@@ -69,4 +69,12 @@
 .helpCard span { color: $elth-purple; font-size: $text-xs; font-weight: $font-semibold; text-transform: uppercase; letter-spacing: $tracking-wide; }
 .helpCard strong { color: #18241d; font-size: $text-xl; letter-spacing: -0.03em; }
 .helpCard p { margin: 0; color: $text-secondary; font-size: $text-sm; line-height: $leading-relaxed; }
-@media (max-width: 480px) { .visual { min-height: 410px; } .imageWrap { inset-right: 14px; } .helpCard { width: calc(100% - 14px); bottom: 18px; } }
+@include respond-to(sm) {
+  .visual { min-height: 340px; width: 100%; }
+  .imageWrap { inset: 0 14px 0 0; }
+  .helpCard { width: calc(100% - 14px); bottom: 18px; padding: $space-4; }
+}
+
+@include respond-to(xs) {
+  .visual { min-height: 300px; }
+}

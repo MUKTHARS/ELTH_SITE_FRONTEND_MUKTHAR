@@ -19,7 +19,7 @@
   color: $elth-teal;
 }
 
-.content { flex: 1; }
+.content { flex: 1; min-width: 0; }
 
 .header {
   @include flex-between;
@@ -31,6 +31,7 @@
   font-size: $text-base;
   font-weight: $font-semibold;
   color: $text-primary;
+  min-width: 0;
 }
 
 .description {

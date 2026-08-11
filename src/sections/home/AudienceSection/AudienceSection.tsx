@@ -64,7 +64,7 @@ export default function AudienceSection() {
               {clinics.cta} <IconArrowRight size={15} />
             </Link>
             <div className={styles.artWrap}>
-              {/* ,,,,eslint-disable-next-line @next/next/no-img-element */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/clinic.avif" alt="" className={styles.art} />
             </div>
           </motion.div>

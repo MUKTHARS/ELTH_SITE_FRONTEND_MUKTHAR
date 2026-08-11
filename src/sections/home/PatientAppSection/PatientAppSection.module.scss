@@ -37,6 +37,13 @@
   align-items: stretch;
   justify-content: flex-end;
   position: relative;
+
+  @include respond-to(sm) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $space-8;
+  }
 }
 
 .phoneCol {
@@ -44,9 +51,9 @@
   position: relative;
   z-index: 2;
   margin-right: -40px; /* creates the overlap effect */
-  
+
   @include respond-to(sm) {
-    margin-right: -20px;
+    margin-right: 0;
   }
 }
 
@@ -327,6 +334,13 @@
   flex: 1;
   max-width: 500px;
   align-self: stretch;
+
+  @include respond-to(sm) {
+    width: 100%;
+    max-width: 100%;
+    flex: none;
+    align-self: auto;
+  }
 }
 
 .photoFrame {
