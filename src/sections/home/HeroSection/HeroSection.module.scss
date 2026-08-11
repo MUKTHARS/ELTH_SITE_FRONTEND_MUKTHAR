@@ -8,7 +8,7 @@ $accent: #6D4AEA;
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, #F6F5FC 0%, #FBFBFE 100%);
-  padding-top: 88px;
+  padding-top: 104px;
 }
 
 .bg {
@@ -23,7 +23,7 @@ $accent: #6D4AEA;
   left: -100px;
   width: 560px;
   height: 560px;
-  background: radial-gradient(circle, rgba($elth-purple, 0.14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba($elth-purple, 0.09) 0%, transparent 70%);
   border-radius: $radius-full;
 }
 
@@ -33,7 +33,7 @@ $accent: #6D4AEA;
   right: -100px;
   width: 480px;
   height: 480px;
-  background: radial-gradient(circle, rgba($elth-teal, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba($elth-blue, 0.08) 0%, transparent 70%);
   border-radius: $radius-full;
 }
 
@@ -52,8 +52,8 @@ $accent: #6D4AEA;
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 0.68fr 1.32fr;
-  gap: $space-10;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: $space-12;
   align-items: center;
   padding-top: $space-16;
   padding-bottom: $space-20;
@@ -78,18 +78,19 @@ $accent: #6D4AEA;
 }
 
 .heading {
-  font-size: clamp(26px, 3vw, 38px);
+  font-size: clamp(38px, 4.5vw, 64px);
   font-weight: $font-bold;
   letter-spacing: $tracking-tight;
   color: $text-primary;
-  line-height: 1.18;
+  line-height: 1.04;
+  letter-spacing: -0.055em;
   white-space: nowrap;
 
   @include respond-to(lg) { white-space: normal; }
 }
 
 .accent {
-  background: linear-gradient(135deg, $elth-teal 0%, #38bdf8 100%);
+  background: linear-gradient(135deg, $elth-purple 0%, #4338CA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -115,8 +116,8 @@ $accent: #6D4AEA;
   gap: $space-2;
   height: 52px;
   padding: 0 $space-8;
-  border-radius: $radius-md;
-  background: linear-gradient(135deg, $elth-purple 0%, #4338CA 60%, #2563EB 100%);
+  border-radius: 2px;
+  background: $elth-purple;
   color: $white;
   font-size: $text-base;
   font-weight: $font-medium;
@@ -131,7 +132,7 @@ $accent: #6D4AEA;
   gap: $space-2;
   height: 52px;
   padding: 0 $space-8;
-  border-radius: $radius-md;
+  border-radius: 2px;
   background: $white;
   border: 1px solid $elth-border;
   color: $text-primary;
@@ -191,15 +192,30 @@ $accent: #6D4AEA;
 .visual {
   position: relative;
   width: 100%;
+  min-height: 520px;
 
   @include respond-to(lg) { margin-top: $space-2; }
 }
 
+.visualImage {
+  position: absolute;
+  inset: 0 48px 0 0;
+  overflow: hidden;
+  border-radius: 2px;
+
+  :global(img) { object-fit: cover; }
+  &::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 28%, rgba($elth-dark, .34)); }
+}
+
 .dashCard {
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  width: min(92%, 840px);
   background: $white;
   border: 1px solid $elth-border;
-  border-radius: $radius-xl;
-  box-shadow: $shadow-xl;
+  border-radius: 2px;
+  box-shadow: 0 22px 48px rgba($elth-dark, .18);
   padding: $space-5 $space-6 0;
   overflow: hidden;
 }

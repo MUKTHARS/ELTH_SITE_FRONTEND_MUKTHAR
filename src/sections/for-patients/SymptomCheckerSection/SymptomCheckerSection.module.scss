@@ -9,37 +9,41 @@
 .inner { @include container; }
 
 .header {
-  text-align: center;
+  text-align: left;
   margin-bottom: $space-12;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: $space-4;
 }
 
-.heading { @include heading-md; color: $text-primary; max-width: 540px; }
-.sub { @include body-lg; color: $text-secondary; max-width: 520px; }
+.heading { @include heading-lg; color: #18241d; max-width: 720px; letter-spacing: -0.045em; }
+.sub { @include body-lg; color: $text-secondary; max-width: 620px; }
+
+.content { display: grid; grid-template-columns: .72fr 1.28fr; gap: $space-8; align-items: stretch; @include respond-to(lg) { grid-template-columns: 1fr; } }
+.imagePanel { position: relative; min-height: 430px; overflow: hidden; border-radius: 2px; box-shadow: $shadow-lg; :global(img) { object-fit: cover; } &::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(#18241d, .7)); } }
+.imageCaption { position: absolute; z-index: 1; left: $space-6; right: $space-6; bottom: $space-6; color: $white; font-size: $text-lg; font-weight: $font-medium; line-height: $leading-tight; }
 
 .flow {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: $space-6;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 $space-6;
 
   @include respond-to(lg) { grid-template-columns: repeat(2, 1fr); }
   @include respond-to(sm) { grid-template-columns: 1fr; }
 }
 
 .flowStep {
-  @include card-base;
-  padding: $space-6;
+  border-top: 1px solid #DCD9F1;
+  padding: $space-5 0;
   display: flex;
   flex-direction: column;
   gap: $space-3;
-  text-align: center;
-  align-items: center;
+  text-align: left;
+  align-items: flex-start;
 }
 
-.flowIcon { font-size: 32px; }
+.flowIcon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: $elth-purple-bg; font-size: 18px; }
 
 .flowLabel {
   font-size: $text-base;

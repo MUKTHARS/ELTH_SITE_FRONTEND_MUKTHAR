@@ -7,15 +7,26 @@ import { Button } from '@components/ui/button'
 import { PORTALS } from '@constants/portals'
 import styles from './SolutionSection.module.scss'
 
+import {
+  IconUser,
+  IconStethoscope,
+  IconMic,
+  IconFileText,
+  IconCheck,
+  IconSmartphone,
+  IconBell,
+  IconCalendar,
+} from '@icons/index'
+
 const JOURNEY = [
-  { label: 'Patient arrives',    img: '/assets/svgs/undraw_booking_8vl5.svg' },
-  { label: 'Consultation',       img: '/assets/svgs/undraw_doctor_aum1.svg' },
-  { label: 'AI Scribe',          img: '/assets/svgs/undraw_ai-data-extraction_soxc.svg' },
-  { label: 'Clinical Record',    img: '/assets/svgs/undraw_doctors-orders_a8sv.svg' },
-  { label: 'Doctor Approval',    img: '/assets/svgs/undraw_medicine_hqqg.svg' },
-  { label: 'Patient App',        img: '/assets/svgs/undraw_apps_i78y.svg' },
-  { label: 'Follow-up',          img: '/assets/svgs/undraw_reminders_o8j5.svg' },
-  { label: 'Next Consultation',  img: '/assets/svgs/undraw_coming-soon_7lvi.svg' },
+  { label: 'Patient arrives',    Icon: IconUser },
+  { label: 'Consultation',       Icon: IconStethoscope },
+  { label: 'AI Scribe',          Icon: IconMic },
+  { label: 'Clinical Record',    Icon: IconFileText },
+  { label: 'Doctor Approval',    Icon: IconCheck },
+  { label: 'Patient App',        Icon: IconSmartphone },
+  { label: 'Follow-up',          Icon: IconBell },
+  { label: 'Next Consultation',  Icon: IconCalendar },
 ]
 
 export default function SolutionSection() {
@@ -43,8 +54,7 @@ export default function SolutionSection() {
             <div className={styles.journeyStepWrap} key={step.label}>
               <div className={styles.journeyStep}>
                 <div className={styles.journeyNode}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={step.img} alt={step.label} className={styles.journeyImg} />
+                  <step.Icon size={32} color="#085041" strokeWidth={1.5} />
                 </div>
                 <span className={styles.journeyLabel}>{step.label}</span>
               </div>
@@ -63,14 +73,21 @@ export default function SolutionSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className={styles.iconWrap} style={{ background: p.bg, color: p.color }}>
-                <p.icon size={24} />
+              <div className={styles.cardBg} />
+              <div className={styles.cardHeader}>
+                <h3 className={styles.cardTitle} style={{ color: p.color }}>{p.role}</h3>
+                <Link href={p.href} className={styles.arrowIcon}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </Link>
               </div>
-              <h3 className={styles.cardTitle} style={{ color: p.color }}>{p.role}</h3>
               <p className={styles.cardDesc}>{p.desc}</p>
-              <Button asChild variant="outline" size="sm" className="mt-2 w-fit">
-                <Link href={p.href}>Explore →</Link>
-              </Button>
+              
+              <div className={styles.cardBottom}>
+                <div className={styles.illustrationWrap}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.img} alt={p.role} className={styles.cardIllustration} />
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

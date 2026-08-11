@@ -3,53 +3,120 @@
 
 .section {
   @include section-padding-sm;
-  background: $white;
-  border-top: 1px solid $elth-border;
-  border-bottom: 1px solid $elth-border;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 50%, rgba($elth-teal, 0.09), transparent 26%),
+    radial-gradient(circle at 92% 18%, rgba($elth-purple, 0.1), transparent 24%),
+    linear-gradient(135deg, #fbfbfe 0%, #f5f3fc 52%, #f8fbfb 100%);
+  border-top: 1px solid rgba($elth-purple, 0.1);
+  border-bottom: 1px solid rgba($elth-purple, 0.1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.45;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba($elth-purple, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($elth-purple, 0.025) 1px, transparent 1px);
+    background-size: 52px 52px;
+    mask-image: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+  }
 }
 
-.inner { @include container; }
+.inner {
+  @include container;
+  position: relative;
+  z-index: 1;
+}
 
 .eyebrow {
   @include label-text;
-  color: $text-tertiary;
+  color: $elth-purple-light;
   text-align: center;
-  margin-bottom: $space-8;
+  margin-bottom: $space-6;
 }
 
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $space-8;
+  gap: $space-5;
 
   @include respond-to(md) { grid-template-columns: 1fr; }
 }
 
 .item {
+  position: relative;
+  isolation: isolate;
   display: flex;
-  gap: $space-3;
+  gap: $space-4;
   align-items: flex-start;
+  min-height: 150px;
+  padding: $space-6;
+  overflow: hidden;
+  background: rgba($white, 0.78);
+  border: 1px solid rgba($elth-purple, 0.12);
+  border-radius: $radius-xl;
+  box-shadow: 0 10px 28px rgba(38, 33, 92, 0.06), inset 0 1px 0 rgba($white, 0.8);
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 130px;
+    height: 130px;
+    right: -54px;
+    bottom: -62px;
+    border-radius: $radius-full;
+    background: rgba($elth-teal, 0.08);
+    transition: transform $transition-slow;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba($elth-purple, 0.24);
+    box-shadow: 0 18px 38px rgba(38, 33, 92, 0.12), inset 0 1px 0 rgba($white, 0.9);
+
+    &::after { transform: scale(1.35); }
+  }
+
+  &:nth-child(2) {
+    &::after { background: rgba($elth-purple, 0.1); }
+    .iconWrap { background: $elth-purple-bg; color: $elth-purple; }
+  }
+
+  &:nth-child(3) {
+    &::after { background: rgba($elth-blue, 0.09); }
+    .iconWrap { background: $elth-blue-bg; color: $elth-blue; }
+  }
+
+  @include respond-to(md) { min-height: auto; }
 }
 
 .iconWrap {
-  width: 40px;
-  height: 40px;
-  border-radius: $radius-full;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba($elth-teal, 0.1);
+  border-radius: 14px;
   background: $elth-teal-bg;
   color: $elth-teal;
+  box-shadow: 0 6px 14px rgba($elth-teal, 0.1);
   @include flex-center;
   flex-shrink: 0;
 }
 
 .itemTitle {
-  font-size: $text-sm;
-  font-weight: $font-semibold;
+  font-size: $text-base;
+  font-weight: $font-bold;
   color: $text-primary;
-  margin-bottom: 2px;
+  margin-bottom: $space-2;
 }
 
 .itemDesc {
-  font-size: $text-xs;
+  font-size: $text-sm;
   color: $text-secondary;
   line-height: $leading-relaxed;
   margin: 0;

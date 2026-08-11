@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 246 64% 97%; /* #F6F5FC to match homepage theme */
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -40,7 +40,8 @@
   }
 
   body {
-    background-color: hsl(var(--background));
+    background: linear-gradient(180deg, #F6F5FC 0%, #FBFBFE 100%);
+    background-attachment: fixed;
     color: hsl(var(--foreground));
     font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'rlig' 1, 'calt' 1;
@@ -48,6 +49,7 @@
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
     overflow-x: hidden;
+    min-height: 100vh;
   }
 
   img, video {

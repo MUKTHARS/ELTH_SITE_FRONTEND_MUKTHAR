@@ -8,6 +8,7 @@ export const PORTALS = [
     bg: '#EEEDFE',
     href: ROUTES.FOR_DOCTORS,
     icon: IconStethoscope,
+    img: '/assets/svgs/undraw_doctor_aum1.svg',
     desc: 'AI Scribe, Pre-visit Brief, Drug Checker, Clinical Decision Support',
   },
   {
@@ -16,6 +17,7 @@ export const PORTALS = [
     bg: '#E6F1FB',
     href: ROUTES.FOR_HOSPITALS,
     icon: IconBuilding,
+    img: '/assets/svgs/undraw_medicine_hqqg.svg',
     desc: 'Admin Console, Analytics, Patient Communication, No-Show Prediction',
   },
   {
@@ -24,6 +26,7 @@ export const PORTALS = [
     bg: '#E1F5EE',
     href: ROUTES.FOR_PATIENTS,
     icon: IconUser,
+    img: '/assets/svgs/undraw_booking_8vl5.svg',
     desc: 'Symptom Checker, Lab Interpreter, Health Concierge, WhatsApp-first',
   },
 ]

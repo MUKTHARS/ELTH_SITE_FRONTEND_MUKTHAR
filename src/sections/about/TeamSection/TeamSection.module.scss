@@ -9,21 +9,21 @@
 .inner { @include container; }
 
 .header {
-  text-align: center;
+  text-align: left;
   margin-bottom: $space-12;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: $space-4;
 }
 
-.heading { @include heading-md; color: $text-primary; max-width: 520px; }
-.sub { @include body-lg; color: $text-secondary; max-width: 480px; }
+.heading { @include heading-lg; color: #18241d; max-width: 680px; letter-spacing: -0.045em; }
+.sub { @include body-lg; color: $text-secondary; max-width: 560px; }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: $space-6;
+  gap: 0 $space-6;
   margin-bottom: $space-12;
 
   @include respond-to(lg) { grid-template-columns: repeat(2, 1fr); }
@@ -31,8 +31,8 @@
 }
 
 .card {
-  @include card-base;
-  padding: $space-6;
+  border-top: 1px solid #DCD9F1;
+  padding: $space-5 0;
   display: flex;
   flex-direction: column;
   gap: $space-4;
@@ -74,7 +74,7 @@
 
 .saple {
   background: $elth-teal-bg;
-  border-radius: $radius-lg;
+  border-radius: 2px;
   padding: $space-6 $space-8;
   display: flex;
   align-items: center;

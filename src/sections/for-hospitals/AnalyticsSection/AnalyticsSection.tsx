@@ -18,7 +18,7 @@ export default function AnalyticsSection() {
             viewport={{ once: true }}
           >
             <SectionLabel text="Analytics" color="blue" />
-            <h2 className={styles.heading}>Hospital intelligence, not just data</h2>
+            <h2 className={styles.heading}>A clear view of the day ahead</h2>
             <p className={styles.sub}>
               Real-time dashboards that actually tell you what&apos;s happening — OPD footfall, doctor utilization, no-show prediction, and AI adoption across your facility.
             </p>
@@ -30,6 +30,10 @@ export default function AnalyticsSection() {
                 </li>
               ))}
             </ul>
+            <div className={styles.note}>
+              <span>Built for the people making daily decisions</span>
+              <p>Turn operational signals into a shared next step—not another report left unread.</p>
+            </div>
           </motion.div>
 
           <motion.div

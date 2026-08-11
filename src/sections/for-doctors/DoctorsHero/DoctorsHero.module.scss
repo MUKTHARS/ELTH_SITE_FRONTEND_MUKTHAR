@@ -2,19 +2,30 @@
 @use '@styles/mixins' as *;
 
 .section {
-  background: linear-gradient(135deg, #1a1240 0%, $elth-dark 100%);
-  padding: 120px 0 $space-20;
-  min-height: 60vh;
-  @include flex-center;
+  position: relative;
+  overflow: hidden;
+  background: #F6F5FC;
+  padding: 132px 0 $space-20;
+  min-height: 700px;
 
   @include respond-to(md) { padding: 100px 0 $space-16; }
   @include respond-to(sm) { padding: 88px 0 $space-12; }
 }
 
-.inner { @include container; }
+.inner {
+  @include container;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: $space-12;
+  align-items: center;
+
+  @include respond-to(lg) { grid-template-columns: 1fr; }
+}
 
 .content {
-  max-width: 660px;
+  max-width: 610px;
   display: flex;
   flex-direction: column;
   gap: $space-6;
@@ -22,22 +33,22 @@
 
 .badge {
   @include label-text;
-  color: rgba($white, 0.5);
-  background: rgba($white, 0.06);
-  padding: $space-2 $space-4;
-  border-radius: $radius-full;
+  color: $elth-purple;
+  padding: 0;
+  border-radius: 0;
   width: fit-content;
 }
 
 .heading {
   @include heading-xl;
-  color: $white;
+  color: #18241d;
   line-height: $leading-tight;
+  letter-spacing: -0.055em;
 }
 
 .sub {
   @include body-lg;
-  color: rgba($white, 0.65);
+  color: $text-secondary;
   line-height: $leading-relaxed;
   max-width: 520px;
 }
@@ -56,8 +67,99 @@
 
   span {
     font-size: $text-sm;
-    color: rgba($white, 0.5);
+    color: $text-secondary;
 
     @include respond-to(sm) { font-size: $text-xs; }
   }
 }
+
+.visual {
+  position: relative;
+  justify-self: end;
+  width: min(100%, 530px);
+  min-height: 470px;
+
+  @include respond-to(lg) { justify-self: center; }
+}
+
+.visualImage {
+  position: absolute;
+  inset: 0 34px 0 0;
+  overflow: hidden;
+  border-radius: 2px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 35%, rgba(#18241d, 0.32));
+  }
+
+  :global(img) { object-fit: cover; object-position: center; }
+}
+
+.workspace {
+  position: absolute;
+  right: 0;
+  bottom: 28px;
+  width: min(88%, 440px);
+  overflow: hidden;
+  border: 1px solid rgba(#18241d, 0.08);
+  border-radius: 2px;
+  background: #f9fafc;
+  box-shadow: 0 22px 46px rgba(#18241d, 0.18);
+}
+
+@media (max-width: 480px) {
+  .visual { min-height: 410px; }
+  .visualImage { inset-right: 14px; }
+  .workspace { width: calc(100% - 14px); bottom: 18px; }
+}
+
+.workspaceTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-4 $space-5;
+  border-bottom: 1px solid $elth-border;
+}
+
+.workspaceTitle { font-size: $text-sm; font-weight: $font-semibold; color: $text-primary; }
+
+.liveBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: $elth-teal;
+  font-weight: $font-medium;
+
+  i { width: 7px; height: 7px; border-radius: $radius-full; background: #22c55e; }
+}
+
+.workspaceBody { padding: $space-5; display: flex; flex-direction: column; gap: $space-3; }
+
+.recording {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  border-radius: $radius-md;
+  background: $elth-purple-bg;
+
+  > div:not(.wave) { display: flex; flex-direction: column; gap: 1px; font-size: 10px; color: $text-secondary; }
+  strong { font-size: $text-xs; color: $elth-purple; }
+}
+
+.micIcon { width: 34px; height: 34px; border-radius: $radius-full; background: $elth-purple; color: $white; @include flex-center; }
+.wave { margin-left: auto; height: 24px; display: flex; align-items: center; gap: 2px; }
+.wave i { display: block; width: 3px; height: 8px; border-radius: 2px; background: $elth-purple-light; }
+.wave i:nth-child(3n) { height: 20px; }.wave i:nth-child(2n) { height: 14px; }
+
+.noteBlock { padding: $space-3 $space-4; border: 1px solid $elth-border; border-radius: $radius-md; display: flex; flex-direction: column; gap: 4px; }
+.noteBlock span { font-size: 10px; color: $text-tertiary; text-transform: uppercase; letter-spacing: $tracking-wide; font-weight: $font-semibold; }
+.noteBlock strong { font-size: $text-sm; color: $text-primary; font-weight: $font-medium; }
+
+.workspaceFooter { display: flex; align-items: center; justify-content: space-between; padding-top: $space-2; font-size: $text-xs; color: $text-secondary; }
+.workspaceFooter > span { display: flex; align-items: center; gap: 6px; }
+.ready { padding: 6px 10px; border-radius: $radius-sm; background: $elth-teal; color: $white; font-weight: $font-medium; }

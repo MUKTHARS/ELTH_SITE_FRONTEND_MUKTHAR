@@ -18,7 +18,7 @@ $elth-dark:       #0A1628;
 $elth-dark-2:     #111827;
 $elth-dark-3:     #1F2937;
 
-$elth-bg-warm:    #F1EFE8;
+$elth-bg-warm:    transparent; // Replaced #F1EFE8 so the global theme is inherited
 $elth-bg-light:   #F8F9FA;
 
 $elth-border:     #E2E8F0;

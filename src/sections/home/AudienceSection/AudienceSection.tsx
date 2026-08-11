@@ -37,7 +37,7 @@ export default function AudienceSection() {
             </Link>
             <div className={styles.artWrap}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/audience-doctors.png" alt="" className={styles.art} />
+              <img src="/images/doctor.avif" alt="" className={styles.art} />
             </div>
           </motion.div>
 
@@ -65,7 +65,7 @@ export default function AudienceSection() {
             </Link>
             <div className={styles.artWrap}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/audience-clinics.png" alt="" className={styles.art} />
+              <img src="/images/clinic.avif" alt="" className={styles.art} />
             </div>
           </motion.div>
 
@@ -92,7 +92,7 @@ export default function AudienceSection() {
             </Link>
             <div className={styles.artWrap}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/audience-specialty.png" alt="" className={styles.art} />
+              <img src="/images/spine2.webp" alt="" className={styles.art} />
             </div>
           </motion.div>
 

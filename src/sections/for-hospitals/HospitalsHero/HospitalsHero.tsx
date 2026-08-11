@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@components/ui/button'
-import GradientText from '@components/common/GradientText/GradientText'
 import { ROUTES } from '@constants/routes'
 import { HOSPITALS_HERO_PROOF } from '@constants/heroes'
 import styles from './HospitalsHero.module.scss'
@@ -20,8 +20,8 @@ export default function HospitalsHero() {
         >
           <span className={styles.badge}>For Hospitals</span>
           <h1 className={styles.heading}>
-            Your hospital.<br />
-            <GradientText variant="teal">Your AI.</GradientText>
+            One connected experience.<br />
+            From arrival to follow-up.
           </h1>
           <p className={styles.sub}>
             Elth AI is white-label infrastructure. Deploy it under your brand in 48 hours. Your patients never see &ldquo;Elth&rdquo; — they see your hospital&apos;s AI.
@@ -38,6 +38,24 @@ export default function HospitalsHero() {
             {HOSPITALS_HERO_PROOF.map((item) => (
               <span key={item}>{item}</span>
             ))}
+          </div>
+        </motion.div>
+        <motion.div
+          className={styles.visual}
+          initial={{ opacity: 0, x: 28 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.65, delay: 0.15 }}
+        >
+          <div className={styles.imageWrap}>
+            <Image src="/images/clinic.avif" alt="A welcoming hospital care environment" fill priority sizes="(max-width: 1024px) 100vw, 48vw" />
+          </div>
+          <div className={styles.statusCard}>
+            <span className={styles.statusEyebrow}>Today, at a glance</span>
+            <strong>Care is moving smoothly.</strong>
+            <div className={styles.statusRows}>
+              <span><i /> Appointments on track</span>
+              <span><i /> Follow-ups ready to send</span>
+            </div>
           </div>
         </motion.div>
       </div>

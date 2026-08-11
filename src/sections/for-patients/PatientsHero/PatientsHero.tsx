@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@components/ui/button'
-import GradientText from '@components/common/GradientText/GradientText'
 import { ROUTES } from '@constants/routes'
 import { PATIENTS_HERO_PROOF } from '@constants/heroes'
 import styles from './PatientsHero.module.scss'
@@ -20,8 +20,8 @@ export default function PatientsHero() {
         >
           <span className={styles.badge}>For Patients</span>
           <h1 className={styles.heading}>
-            Your health,<br />
-            <GradientText variant="teal">explained.</GradientText>
+            Clearer answers.<br />
+            Calmer next steps.
           </h1>
           <p className={styles.sub}>
             Symptom checker, lab report interpreter, health concierge — all on WhatsApp, in your language, from your hospital&apos;s AI.
@@ -35,6 +35,16 @@ export default function PatientsHero() {
             {PATIENTS_HERO_PROOF.map((item) => (
               <span key={item}>{item}</span>
             ))}
+          </div>
+        </motion.div>
+        <motion.div className={styles.visual} initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.65, delay: 0.15 }}>
+          <div className={styles.imageWrap}>
+            <Image src="/images/doctor.avif" alt="A patient receiving thoughtful care" fill priority sizes="(max-width: 1024px) 100vw, 48vw" />
+          </div>
+          <div className={styles.helpCard}>
+            <span>Care, in your language</span>
+            <strong>Understand what comes next.</strong>
+            <p>Questions, reports, reminders and follow-ups—kept simple.</p>
           </div>
         </motion.div>
       </div>

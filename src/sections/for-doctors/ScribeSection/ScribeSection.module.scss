@@ -9,47 +9,91 @@
 .inner { @include container; }
 
 .header {
-  text-align: center;
+  text-align: left;
   margin-bottom: $space-12;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: $space-4;
 }
 
-.heading { @include heading-md; color: $text-primary; max-width: 560px; }
-.sub { @include body-lg; color: $text-secondary; max-width: 480px; }
+.heading { @include heading-lg; color: #18241d; max-width: 700px; letter-spacing: -0.045em; }
+.sub { @include body-lg; color: $text-secondary; max-width: 580px; }
 
 .workflow {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: $space-6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  position: relative;
 
   @include respond-to(lg) { grid-template-columns: repeat(2, 1fr); }
   @include respond-to(sm) { grid-template-columns: 1fr; }
 }
 
-.wStep {
-  @include card-base;
-  padding: $space-6;
+.story {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.78fr) 1.22fr;
+  gap: $space-8;
+  align-items: stretch;
+
+  @include respond-to(lg) { grid-template-columns: 1fr; }
+}
+
+.imageWrap {
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-lg;
+
+  :global(img) { object-fit: cover; }
+  &::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba($elth-dark, 0.72)); }
+
+  @include respond-to(lg) { min-height: 340px; }
+}
+
+.imageCaption {
+  position: absolute;
+  z-index: 1;
+  left: $space-6;
+  right: $space-6;
+  bottom: $space-5;
+  color: $white;
+  font-size: $text-sm;
+  font-weight: $font-medium;
   display: flex;
-  flex-direction: column;
-  gap: $space-3;
+  align-items: center;
+  gap: $space-2;
+
+  span { width: 8px; height: 8px; border-radius: $radius-full; background: #54d49a; }
+}
+
+.wStep {
+  position: relative;
+  min-height: auto;
+  padding: $space-5 0 $space-5 64px;
+  border-bottom: 1px solid #DCD9F1;
+
+  &:first-child { border-top: 1px solid #DCD9F1; }
 }
 
 .wNum {
   width: 36px;
   height: 36px;
-  border-radius: $radius-full;
-  background: $elth-purple;
-  color: $white;
+  position: absolute;
+  left: 0;
+  top: $space-5;
+  border-radius: 0;
+  background: $elth-purple-bg;
+  color: $elth-purple;
   font-weight: $font-bold;
   font-size: $text-sm;
   @include flex-center;
 }
 
 .wLabel {
-  font-size: $text-base;
+  font-size: $text-lg;
   font-weight: $font-semibold;
   color: $text-primary;
 }
@@ -58,5 +102,5 @@
   font-size: $text-sm;
   color: $text-secondary;
   line-height: $leading-relaxed;
-  margin: 0;
+  margin: $space-1 0 0;
 }

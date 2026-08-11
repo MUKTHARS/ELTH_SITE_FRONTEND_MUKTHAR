@@ -3,7 +3,7 @@
 
 .section {
   @include section-padding;
-  background: $elth-bg-warm;
+  background: #F6F5FC;
 }
 
 .inner { @include container; }
@@ -11,7 +11,7 @@
 .layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: $space-16;
+  gap: $space-12;
   align-items: center;
 
   @include respond-to(lg) {
@@ -26,13 +26,13 @@
   gap: $space-5;
 }
 
-.heading { @include heading-md; color: $text-primary; line-height: $leading-tight; }
+.heading { @include heading-lg; color: #18241d; line-height: $leading-tight; letter-spacing: -0.045em; }
 .sub { @include body-lg; color: $text-secondary; line-height: $leading-relaxed; }
 
 .stat {
-  background: $white;
-  border: 1px solid $elth-border;
-  border-radius: $radius-lg;
+  background: rgba($white, .62);
+  border: 1px solid rgba(#18241d, .1);
+  border-radius: 2px;
   padding: $space-5;
   display: flex;
   align-items: center;
@@ -42,7 +42,7 @@
 .statNum {
   font-size: $text-4xl;
   font-weight: $font-bold;
-  color: $elth-teal;
+  color: $elth-purple;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -58,17 +58,25 @@
 .features {
   display: flex;
   flex-direction: column;
-  gap: $space-5;
+  gap: 0;
 }
 
 .featureItem {
   display: flex;
   gap: $space-4;
   align-items: flex-start;
+  border-top: 1px solid #DCD9F1;
+  padding: $space-5 0;
 }
 
 .featureIcon {
-  font-size: 22px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $elth-purple-bg;
+  font-size: 18px;
   flex-shrink: 0;
   margin-top: 2px;
 }

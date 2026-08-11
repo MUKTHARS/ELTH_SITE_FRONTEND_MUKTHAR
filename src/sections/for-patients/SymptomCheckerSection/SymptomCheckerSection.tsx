@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import { SYMPTOM_CHECKER_FLOW } from '@constants/symptom'
 import styles from './SymptomCheckerSection.module.scss'
@@ -11,12 +12,17 @@ export default function SymptomCheckerSection() {
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionLabel text="Symptom Checker" color="teal" />
-          <h2 className={styles.heading}>Don&apos;t Google it. Ask your hospital&apos;s AI.</h2>
+          <h2 className={styles.heading}>When something feels wrong, start with a simple conversation</h2>
           <p className={styles.sub}>
             Describe your symptoms on WhatsApp — in Tamil, Hindi, Telugu, or any Indian language. Elth AI asks the right follow-up questions and triages your urgency in minutes.
           </p>
         </div>
-        <div className={styles.flow}>
+        <div className={styles.content}>
+          <div className={styles.imagePanel}>
+            <Image src="/images/clinic.avif" alt="A calm, supportive care setting" fill sizes="(max-width: 1024px) 100vw, 40vw" />
+            <div className={styles.imageCaption}>Support that helps you decide what to do next.</div>
+          </div>
+          <div className={styles.flow}>
           {SYMPTOM_CHECKER_FLOW.map((f, i) => (
             <motion.div
               key={f.step}
@@ -31,6 +37,7 @@ export default function SymptomCheckerSection() {
               <p className={styles.flowDesc}>{f.desc}</p>
             </motion.div>
           ))}
+          </div>
         </div>
       </div>
     </section>

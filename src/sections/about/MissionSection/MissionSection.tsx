@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import GradientText from '@components/common/GradientText/GradientText'
 import { MISSION_VALUES } from '@constants/mission'
 import styles from './MissionSection.module.scss'
@@ -26,6 +27,11 @@ export default function MissionSection() {
           <p className={styles.body}>
             We built Elth AI on Saple.ai to give hospitals the same AI capabilities that large tech companies have — at a price that works for a 3-doctor clinic in Coimbatore and a 500-bed hospital in Hyderabad.
           </p>
+
+          <div className={styles.visual}>
+            <Image src="/images/clinic.avif" alt="A care team working together in a clinical setting" fill priority sizes="(max-width: 768px) 100vw, 860px" />
+            <span>Built around the people delivering care, every day.</span>
+          </div>
 
           <div className={styles.values}>
             {MISSION_VALUES.map((v, i) => (
