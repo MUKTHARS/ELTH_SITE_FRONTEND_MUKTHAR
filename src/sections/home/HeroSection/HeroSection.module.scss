@@ -52,14 +52,17 @@ $accent: #6D4AEA;
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: $space-12;
+  grid-template-columns: 1fr 1.2fr;
+  gap: $space-8;
   align-items: flex-start;
   padding-top: $space-16;
   padding-bottom: $space-20;
+  max-width: 1440px;
+  margin: 0 auto;
 
   @include respond-to(lg) {
     grid-template-columns: 1fr;
+    gap: $space-6;
     padding-top: $space-10;
     padding-bottom: $space-10;
   }
@@ -70,6 +73,13 @@ $accent: #6D4AEA;
   flex-direction: column;
   gap: $space-5;
   min-width: 0;
+  max-width: 560px;
+  padding-right: $space-4;
+
+  @include respond-to(lg) {
+    max-width: 100%;
+    padding-right: 0;
+  }
 }
 
 .pill {
@@ -79,15 +89,26 @@ $accent: #6D4AEA;
 }
 
 .heading {
-  font-size: clamp(38px, 4.5vw, 64px);
+  font-size: clamp(38px, 4.2vw, 56px);
   font-weight: $font-bold;
   letter-spacing: $tracking-tight;
   color: $text-primary;
-  line-height: 1.04;
+  line-height: 1.08;
   letter-spacing: -0.055em;
-  white-space: nowrap;
+  word-wrap: break-word;
+  
+  @include respond-to(lg) { 
+    word-wrap: normal;
+  }
 
-  @include respond-to(lg) { white-space: normal; }
+  // Only apply white-space: nowrap on large screens when the content fits
+  @include respond-to(xl) {
+    white-space: nowrap;
+  }
+  
+  @include respond-to(lg) {
+    white-space: normal;
+  }
 }
 
 .accent {
@@ -194,13 +215,18 @@ $accent: #6D4AEA;
   position: relative;
   width: 100%;
   min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 
-  @include respond-to(lg) { margin-top: $space-2; }
+  @include respond-to(lg) { 
+    margin-top: $space-2;
+  }
 }
 
 .dashCard {
   position: relative;
   width: 100%;
+  max-width: 100%;
   background: $white;
   border: 1px solid $elth-border;
   border-radius: 2px;
@@ -215,6 +241,12 @@ $accent: #6D4AEA;
   gap: $space-3;
   padding-bottom: $space-4;
   border-bottom: 1px solid $elth-border;
+  flex-wrap: nowrap;
+
+  @include respond-to(xl) {
+    flex-wrap: wrap;
+    gap: $space-2;
+  }
 }
 
 .avatar {
@@ -255,11 +287,14 @@ $accent: #6D4AEA;
 
 .vitals {
   display: flex;
-  gap: $space-5;
+  gap: $space-3;
   margin-left: auto;
-  padding-right: $space-4;
+  padding-right: $space-2;
+  flex-shrink: 0;
 
-  @include respond-to(xl) { display: none; }
+  @include respond-to(xl) { 
+    display: none; 
+  }
 }
 
 .vitalItem {
@@ -303,12 +338,14 @@ $accent: #6D4AEA;
 
 .dashBody {
   display: grid;
-  grid-template-columns: 0.62fr 1fr 0.6fr;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
   align-items: start;
-  gap: $space-5;
+  gap: $space-4;
   padding: $space-4 0;
 
-  @include respond-to(xl) { grid-template-columns: 1fr; }
+  @include respond-to(xl) { 
+    grid-template-columns: 1fr; 
+  }
 }
 
 .scribePanel {
@@ -384,6 +421,8 @@ $accent: #6D4AEA;
 .fieldsPanel {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .noteRow {
@@ -418,7 +457,9 @@ $accent: #6D4AEA;
   font-size: 11px;
   color: $text-secondary;
   line-height: $leading-snug;
-  max-width: 440px;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .editTag {
