@@ -54,7 +54,7 @@ $accent: #6D4AEA;
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: $space-12;
-  align-items: center;
+  align-items: flex-start;
   padding-top: $space-16;
   padding-bottom: $space-20;
 
@@ -192,26 +192,13 @@ $accent: #6D4AEA;
 .visual {
   position: relative;
   width: 100%;
-  min-height: 520px;
 
   @include respond-to(lg) { margin-top: $space-2; }
 }
 
-.visualImage {
-  position: absolute;
-  inset: 0 48px 0 0;
-  overflow: hidden;
-  border-radius: 2px;
-
-  :global(img) { object-fit: cover; }
-  &::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 28%, rgba($elth-dark, .34)); }
-}
-
 .dashCard {
-  position: absolute;
-  right: 0;
-  bottom: 24px;
-  width: min(92%, 840px);
+  position: relative;
+  width: 100%;
   background: $white;
   border: 1px solid $elth-border;
   border-radius: 2px;
@@ -303,7 +290,8 @@ $accent: #6D4AEA;
 
 .dashBody {
   display: grid;
-  grid-template-columns: 180px 1fr 210px;
+  grid-template-columns: 0.62fr 1fr 0.6fr;
+  align-items: start;
   gap: $space-5;
   padding: $space-4 0;
 

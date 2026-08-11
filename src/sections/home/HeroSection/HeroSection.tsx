@@ -1,7 +1,6 @@
 'use client'
 
 import Link               from 'next/link'
-import Image              from 'next/image'
 import { motion }         from 'framer-motion'
 import { Badge }          from '@components/ui/badge'
 import { IconArrowRight, IconMic, IconCheck, IconFileText, IconShield, IconLock, IconGlobe, IconClock, IconEdit } from '@icons/index'
@@ -106,9 +105,6 @@ export default function HeroSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className={styles.visualImage}>
-            <Image src="/images/doctorctc.avif" alt="Clinician preparing for a patient consultation" fill priority sizes="(max-width: 1024px) 100vw, 58vw" />
-          </div>
           <div className={styles.dashCard}>
             <div className={styles.dashHeader}>
               <div className={styles.avatar} role="img" aria-label="Ramesh Gupta" />
