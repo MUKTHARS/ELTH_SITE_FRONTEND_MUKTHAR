@@ -3,7 +3,7 @@
 
 .section {
   @include section-padding;
-  background: linear-gradient(180deg, #FBFEFC 0%, #F3F8F6 100%);
+  background: linear-gradient(180deg, #F5F1FB 0%, #EDE7F8 100%);
 }
 
 .inner {
@@ -174,13 +174,11 @@
 }
 
 .phoneStat {
-  background: $white;
+  @include card-base;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   flex: 1;
   padding: 10px;
   text-align: center;
-  border: 1px solid rgba(0,0,0,0.02);
 }
 
 .phoneStatIcon {
@@ -216,14 +214,12 @@
 }
 
 .phoneListItem {
-  background: $white;
+  @include card-base;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   display: flex;
   align-items: center;
   gap: $space-3;
   padding: 12px 14px;
-  border: 1px solid rgba(0,0,0,0.02);
 }
 
 .phoneListDot {

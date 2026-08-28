@@ -89,8 +89,7 @@
 .right {}
 
 .form {
-  background: $white;
-  border: 1px solid $elth-border;
+  @include card-base;
   border-radius: $radius-xl;
   padding: $space-8;
   display: flex;
@@ -164,8 +163,7 @@
 
 // Success state
 .success {
-  background: $white;
-  border: 1px solid $elth-border;
+  @include card-base;
   border-radius: $radius-xl;
   padding: $space-12 $space-8;
   display: flex;

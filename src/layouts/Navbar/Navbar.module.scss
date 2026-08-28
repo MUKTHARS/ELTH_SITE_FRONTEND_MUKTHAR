@@ -73,10 +73,7 @@
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: $white;
-  border: 1px solid $elth-border;
-  border-radius: $radius-lg;
-  box-shadow: $shadow-lg;
+  @include card-base;
   padding: $space-2;
   min-width: 180px;
   z-index: $z-dropdown;

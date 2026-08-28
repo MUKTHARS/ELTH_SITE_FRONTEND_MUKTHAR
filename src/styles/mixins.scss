@@ -135,18 +135,28 @@
   line-height: $leading-normal;
 }
 
-// ─── Cards ────────────────────────────────────────────────────────────────────
-@mixin card-base {
-  background: $white;
-  border: 0.5px solid $elth-border;
+// ─── Cards (glassmorphism) ──────────────────────────────────────────────────
+// Canonical glass surface for the site's light/warm backgrounds. Any card,
+// panel, or bar that would otherwise use a flat $white fill should route
+// through this mixin so the whole site reads as one glass system.
+@mixin card-base($blur: 16px) {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  outline: 1px solid rgba($elth-dark, 0.07);
   border-radius: $radius-lg;
-  box-shadow: $shadow-card;
+  box-shadow: 0 20px 44px -26px rgba($elth-dark, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-@mixin card-dark {
-  background: $elth-dark-2;
-  border: 0.5px solid $elth-border-dark;
+// Glass surface for the site's dark sections (e.g. $elth-dark backgrounds).
+@mixin card-dark($blur: 16px) {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: $radius-lg;
+  box-shadow: 0 20px 44px -26px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 @mixin card-hover {

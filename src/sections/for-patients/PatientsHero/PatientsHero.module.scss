@@ -65,7 +65,7 @@
 
 .visual { position: relative; justify-self: end; width: min(100%, 530px); min-height: 470px; @include respond-to(lg) { justify-self: center; } }
 .imageWrap { position: absolute; inset: 0 34px 0 0; overflow: hidden; border-radius: 2px; :global(img) { object-fit: cover; } &::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 32%, rgba(#18241d, .3)); } }
-.helpCard { position: absolute; right: 0; bottom: 28px; width: min(88%, 380px); padding: $space-6; background: $white; border: 1px solid rgba(#18241d, .08); box-shadow: 0 22px 46px rgba(#18241d, .16); display: flex; flex-direction: column; gap: $space-2; }
+.helpCard { position: absolute; right: 0; bottom: 28px; width: min(88%, 380px); padding: $space-6; @include card-base; display: flex; flex-direction: column; gap: $space-2; }
 .helpCard span { color: $elth-purple; font-size: $text-xs; font-weight: $font-semibold; text-transform: uppercase; letter-spacing: $tracking-wide; }
 .helpCard strong { color: #18241d; font-size: $text-xl; letter-spacing: -0.03em; }
 .helpCard p { margin: 0; color: $text-secondary; font-size: $text-sm; line-height: $leading-relaxed; }

@@ -7,7 +7,7 @@ $accent: #6D4AEA;
 .section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #F3F8F6 0%, #FBFEFC 100%);
+  background: linear-gradient(180deg, #EDE7F8 0%, #F5F1FB 100%);
   padding-top: 104px;
 }
 
@@ -89,15 +89,14 @@ $accent: #6D4AEA;
 }
 
 .heading {
-  font-size: clamp(38px, 4.2vw, 56px);
-  font-weight: $font-bold;
-  letter-spacing: $tracking-tight;
+  font-size: clamp(40px, 5.2vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
   color: $text-primary;
-  line-height: 1.08;
-  letter-spacing: -0.055em;
+  line-height: 1.05;
   word-wrap: break-word;
-  
-  @include respond-to(lg) { 
+
+  @include respond-to(lg) {
     word-wrap: normal;
   }
 
@@ -105,14 +104,14 @@ $accent: #6D4AEA;
   @include respond-to(xl) {
     white-space: nowrap;
   }
-  
+
   @include respond-to(lg) {
     white-space: normal;
   }
 }
 
 .accent {
-  background: linear-gradient(135deg, $elth-purple 0%, #4338CA 100%);
+  background: linear-gradient(135deg, $elth-purple 10%, #FF6B4A 75%, #FFB238 135%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -223,431 +222,193 @@ $accent: #6D4AEA;
   }
 }
 
-.dashCard {
+// ─── Clinical companion (moving-frequency hover panel) ──────────────────────
+.stage {
   position: relative;
-  width: 100%;
-  max-width: 100%;
-  background: $white;
-  border: 1px solid $elth-border;
-  border-radius: 2px;
-  box-shadow: 0 22px 48px rgba($elth-dark, .18);
-  padding: $space-5 $space-6 0;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+
+  @include respond-to(lg) { height: 480px; }
+}
+
+.medScene {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transform: rotateX(4deg) rotateY(-8deg);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: medFloat 5s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) { animation: none; }
+}
+
+@keyframes medFloat {
+  0%, 100% { transform: rotateX(4deg) rotateY(-8deg) translateY(0); }
+  50%      { transform: rotateX(4deg) rotateY(-8deg) translateY(-12px); }
+}
+
+.medGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  border-radius: $radius-full;
+  background: radial-gradient(circle, rgba($elth-purple, 0.18), transparent 70%);
+  filter: blur(40px);
+  animation: glowPulse 4s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) { animation: none; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50%      { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+.medParticles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.medParticle {
+  position: absolute;
+  border-radius: $radius-full;
+  background: $elth-purple-light;
+  opacity: 0.3;
+  animation: particleFloat 8s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) { animation: none; }
+
+  &[data-particle='0'] { width: 8px;  height: 8px;  top: 10%; left: 5%;   animation-delay: 0s; }
+  &[data-particle='1'] { width: 6px;  height: 6px;  top: 20%; right: 8%;  animation-delay: 1.5s; }
+  &[data-particle='2'] { width: 10px; height: 10px; bottom: 25%; left: 10%; animation-delay: 3s; }
+  &[data-particle='3'] { width: 7px;  height: 7px;  bottom: 15%; right: 5%; animation-delay: 4.5s; }
+  &[data-particle='4'] { width: 5px;  height: 5px;  top: 45%; left: 0%;   animation-delay: 2s; }
+  &[data-particle='5'] { width: 9px;  height: 9px;  bottom: 40%; right: 0%; animation-delay: 3.5s; }
+}
+
+@keyframes particleFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+  25%      { transform: translate(15px, -25px) scale(1.5); opacity: 0.5; }
+  50%      { transform: translate(-8px, -45px) scale(1); opacity: 0.3; }
+  75%      { transform: translate(20px, -20px) scale(1.3); opacity: 0.4; }
+}
+
+.medical3d {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  width: min(440px, 100%);
+  transform: translate(-50%, -50%) translateZ(100px) rotateX(3deg) rotateY(-6deg);
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.listenPanel {
+  position: relative;
+  padding: $space-6;
+  @include card-base;
   overflow: hidden;
 }
 
-.dashHeader {
+.listenPanel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba($elth-purple, 0.08), transparent 48%, rgba(255, 107, 74, 0.06));
+  pointer-events: none;
+}
+
+.listenTop, .listenFoot {
   display: flex;
   align-items: center;
-  gap: $space-3;
-  padding-bottom: $space-4;
-  border-bottom: 1px solid $elth-border;
-  flex-wrap: nowrap;
-
-  @include respond-to(xl) {
-    flex-wrap: wrap;
-    gap: $space-2;
-  }
+  justify-content: space-between;
 }
 
-.avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: $radius-full;
-  flex-shrink: 0;
-  background-image: url('/assets/top.jpg');
-  background-repeat: no-repeat;
-  background-size: 744px 406px;
-  background-position: -8px -14px;
-}
-
-.patientMeta {
-  flex-shrink: 0;
-
-  @include respond-to(xl) {
-    flex-shrink: 1;
-    min-width: 0;
-  }
-}
-
-.cardName {
-  font-size: $text-sm;
-  font-weight: $font-semibold;
-  color: $text-primary;
-}
-
-.cardRole {
-  font-size: 11px;
+.listenKicker {
   color: $text-tertiary;
-  margin-top: 2px;
-
-  @include respond-to(xl) {
-    overflow-wrap: anywhere;
-  }
-}
-
-.vitals {
-  display: flex;
-  gap: $space-3;
-  margin-left: auto;
-  padding-right: $space-2;
-  flex-shrink: 0;
-
-  @include respond-to(xl) { 
-    display: none; 
-  }
-}
-
-.vitalItem {
-  display: flex;
-  flex-direction: column;
-  font-size: 11px;
-  color: $text-tertiary;
-
-  b { font-size: $text-xs; font-weight: $font-semibold; color: $text-primary; }
-}
-
-.moreDots {
-  color: $text-tertiary;
-  letter-spacing: 1px;
-  flex-shrink: 0;
-}
-
-.tabs {
-  display: flex;
-  gap: $space-5;
-  padding: $space-3 0;
-  border-bottom: 1px solid $elth-border;
-  overflow-x: auto;
-
-  @include scrollbar-hide;
-}
-
-.tab, .tabActive {
-  font-size: 12px;
-  padding-bottom: $space-1;
-  white-space: nowrap;
-}
-
-.tab { color: $text-tertiary; }
-
-.tabActive {
-  color: $accent;
-  border-bottom: 2px solid $accent;
-  font-weight: $font-medium;
-}
-
-.dashBody {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr 0.5fr;
-  align-items: start;
-  gap: $space-4;
-  padding: $space-4 0;
-
-  @include respond-to(xl) { 
-    grid-template-columns: 1fr; 
-  }
-}
-
-.scribePanel {
-  background: $elth-bg-light;
-  border: 1px solid $elth-border;
-  border-radius: $radius-md;
-  padding: $space-3;
-  display: flex;
-  flex-direction: column;
-  gap: $space-2;
-
-  @include respond-to(xl) { display: none; }
-}
-
-.scribeHeader {
-  display: flex;
-  align-items: center;
-  gap: $space-2;
-  font-size: 11px;
-  font-weight: $font-semibold;
-  color: $accent;
-  white-space: nowrap;
-}
-
-.scribeStatus {
   font-size: 10px;
-  color: $text-tertiary;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.scribeTimer {
-  display: flex;
+.listenStatus {
+  display: inline-flex;
   align-items: center;
-  gap: $space-1;
-  font-size: $text-sm;
+  gap: 7px;
+  color: #257443;
+  font-size: 10px;
   font-weight: $font-semibold;
-  color: $text-primary;
+
+  &::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22C55E;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.14);
+  }
+}
+
+.listenCopy {
+  padding: $space-6 0 $space-5;
+  border-bottom: 1px solid $elth-border;
+
+  strong {
+    display: block;
+    margin-bottom: $space-2;
+    color: $text-primary;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  p {
+    max-width: 320px;
+    color: $text-secondary;
+    font-size: 13px;
+    line-height: 1.55;
+  }
 }
 
 .waveform {
   display: flex;
-  align-items: flex-end;
-  gap: 2px;
-  height: 22px;
-
-  span {
-    flex: 1;
-    background: $accent;
-    opacity: 0.65;
-    border-radius: 2px;
-  }
-}
-
-.stopBtn {
-  width: 36px;
-  height: 36px;
-  border-radius: $radius-full;
-  background: $white;
-  box-shadow: $shadow-md;
-  border: none;
-  @include flex-center;
-  align-self: center;
-  margin-top: $space-2;
-  cursor: pointer;
-
-  span {
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
-    background: #ef4444;
-  }
-}
-
-.fieldsPanel {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.noteRow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: $space-3;
-  padding: $space-3 0;
-  border-bottom: 1px solid $elth-border;
-
-  &:first-child { padding-top: 0; }
-  &:last-child { border-bottom: none; }
-}
-
-.noteLabel {
-  font-size: $text-xs;
-  font-weight: $font-semibold;
-  color: $text-primary;
-  margin-bottom: 2px;
-  white-space: nowrap;
-}
-
-.noteLabelAccent {
-  font-size: $text-xs;
-  font-weight: $font-semibold;
-  color: $accent;
-  margin-bottom: 2px;
-  white-space: nowrap;
-}
-
-.noteValue {
-  font-size: 11px;
-  color: $text-secondary;
-  line-height: $leading-snug;
-  max-width: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.editTag {
-  display: flex;
   align-items: center;
-  gap: 3px;
-  font-size: 10px;
+  gap: 4px;
+  height: 68px;
+  margin: $space-5 0;
+
+  i {
+    width: 4px;
+    height: var(--bar-height);
+    border-radius: 4px;
+    background: linear-gradient(180deg, $elth-purple-light, $elth-purple);
+    animation: waveBreathe 1.2s ease-in-out infinite alternate;
+    animation-delay: var(--bar-delay);
+
+    @media (prefers-reduced-motion: reduce) { animation: none; }
+  }
+}
+
+@keyframes waveBreathe {
+  from { transform: scaleY(0.45); opacity: 0.55; }
+  to   { transform: scaleY(1); opacity: 1; }
+}
+
+.listenFoot {
   color: $text-tertiary;
-  flex-shrink: 0;
-  padding-top: 1px;
-  white-space: nowrap;
-}
-
-.timelinePanel {
-  background: $elth-bg-light;
-  border: 1px solid $elth-border;
-  border-radius: $radius-md;
-  padding: $space-4;
-
-  @include respond-to(xl) { display: none; }
-}
-
-.timelineTitle {
-  font-size: $text-xs;
-  font-weight: $font-semibold;
-  color: $text-primary;
-  margin-bottom: $space-3;
-}
-
-.timelineList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: $space-3;
-  border-left: 1px solid $elth-border;
-  padding-left: $space-3;
-}
-
-.timelineItem {
-  display: flex;
-  gap: $space-2;
-  align-items: flex-start;
-  position: relative;
-}
-
-.timelineTextActive {
-  background: rgba($accent, 0.08);
-  border-radius: $radius-md;
-  padding: 4px $space-2;
-  margin: -4px 0 0 -2px;
-}
-
-.timelineDot, .timelineDotActive {
-  width: 8px;
-  height: 8px;
-  border-radius: $radius-full;
-  margin-top: 3px;
-  margin-left: -19px;
-  flex-shrink: 0;
-  background: $white;
-  border: 2px solid $elth-border;
-}
-
-.timelineDotActive {
-  border-color: $accent;
-  background: $accent;
-}
-
-.timelineDate {
   font-size: 10px;
-  font-weight: $font-medium;
-  color: $text-secondary;
+
+  b { color: $text-secondary; font-weight: $font-medium; }
 }
 
-.timelineDateActive {
-  font-size: 10px;
-  font-weight: $font-semibold;
-  color: $accent;
-}
-
-.timelineLabel {
-  font-size: 10px;
-  color: $text-tertiary;
-}
-
-.timelineLink {
-  display: block;
-  font-size: 11px;
-  font-weight: $font-medium;
-  color: $elth-purple;
-  margin-top: $space-3;
-}
-
-.dashFooter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: $space-4;
-  padding: $space-4 0;
-  border-top: 1px solid $elth-border;
-  margin-top: $space-1;
-  flex-wrap: wrap;
-}
-
-.footerNote {
-  display: flex;
-  align-items: center;
-  gap: $space-2;
-  font-size: 11px;
-  color: $text-tertiary;
-
-  @include respond-to(xl) { display: none; }
-}
-
-.footerActions {
-  display: flex;
-  align-items: center;
-  gap: $space-3;
-  margin-left: auto;
-}
-
-.footerBtn {
-  font-size: $text-xs;
-  font-weight: $font-medium;
-  color: $text-secondary;
-  background: $white;
-  border: 1px solid $elth-border;
-  padding: $space-2 $space-4;
-  border-radius: $radius-md;
-}
-
-.footerBtnPrimary {
-  display: flex;
-  align-items: center;
-  gap: $space-1;
-  font-size: $text-xs;
-  font-weight: $font-medium;
-  color: $white;
-  background: $elth-teal;
-  padding: $space-2 $space-4;
-  border-radius: $radius-md;
-}
-
-.phonePeek {
-  position: absolute;
-  right: -18px;
-  bottom: -28px;
-  width: 84px;
-  height: 150px;
-  background: $elth-dark;
-  border-radius: 18px;
-  box-shadow: $shadow-xl;
-  padding: 6px;
-  z-index: -1;
-
-  @include respond-to(xl) { display: none; }
-}
-
-.phoneNotch {
-  height: 14px;
-  @include flex-center;
-
-  &::after {
-    content: '';
-    width: 28px;
-    height: 6px;
-    background: rgba($white, 0.2);
-    border-radius: $radius-full;
-  }
-}
-
-.phoneLines {
-  background: $white;
-  border-radius: 12px;
-  height: calc(100% - 14px);
-  padding: $space-3 $space-2;
-  display: flex;
-  flex-direction: column;
-  gap: $space-2;
-
-  span {
-    display: block;
-    height: 6px;
-    border-radius: $radius-full;
-    background: $elth-border;
-
-    &:first-child { background: $elth-teal-bg; height: 24px; border-radius: $radius-sm; }
-  }
+@include respond-to(lg) {
+  .medScene   { width: min(420px, 100%); height: 340px; }
+  .listenPanel { padding: $space-5; }
 }
