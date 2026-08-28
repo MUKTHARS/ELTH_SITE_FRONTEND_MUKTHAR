@@ -1,4 +1,4 @@
-import { ImageResponse } from 'next/og'
+﻿import { ImageResponse } from 'next/og'
 import { siteConfig } from '@config/site'
 
 export const runtime = 'edge'
@@ -11,7 +11,7 @@ export default function OgImage() {
     (
       <div
         style={{
-          background: '#0A1628',
+          background: '#101826',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -25,7 +25,7 @@ export default function OgImage() {
         <div
           style={{
             fontSize: 20,
-            color: '#085041',
+            color: '#0F7A5C',
             background: 'rgba(8,80,65,0.15)',
             padding: '8px 20px',
             borderRadius: 100,

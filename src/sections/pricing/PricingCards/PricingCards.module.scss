@@ -1,9 +1,9 @@
-@use '@styles/variables' as *;
+﻿@use '@styles/variables' as *;
 @use '@styles/mixins' as *;
 
 .section {
   @include section-padding;
-  background: #FBFBFE;
+  background: #FBFEFC;
 }
 
 .inner { @include container; }

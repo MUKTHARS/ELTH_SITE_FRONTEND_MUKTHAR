@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -13,8 +13,8 @@ function DoctorIllustration() {
       <circle cx="80" cy="60" r="30" stroke="#fff" strokeOpacity="0.9" strokeWidth="2.5" />
       <path d="M28 148c0-30 23-48 52-48s52 18 52 48" stroke="#fff" strokeOpacity="0.9" strokeWidth="2.5" strokeLinecap="round" />
       <path d="M62 92v10a18 18 0 0 0 36 0V92" stroke="#fff" strokeOpacity="0.6" strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="118" cy="118" r="14" fill="#0A1628" stroke="#38bdf8" strokeWidth="2.5" />
-      <path d="M118 112v12M112 118h12" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="118" cy="118" r="14" fill="#101826" stroke="#3DCBA0" strokeWidth="2.5" />
+      <path d="M118 112v12M112 118h12" stroke="#3DCBA0" strokeWidth="2" strokeLinecap="round" />
     </svg>
   )
 }

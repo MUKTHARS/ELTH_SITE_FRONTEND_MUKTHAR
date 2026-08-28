@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -54,7 +54,7 @@ export default function SolutionSection() {
             <div className={styles.journeyStepWrap} key={step.label}>
               <div className={styles.journeyStep}>
                 <div className={styles.journeyNode}>
-                  <step.Icon size={32} color="#085041" strokeWidth={1.5} />
+                  <step.Icon size={32} color="#0F7A5C" strokeWidth={1.5} />
                 </div>
                 <span className={styles.journeyLabel}>{step.label}</span>
               </div>

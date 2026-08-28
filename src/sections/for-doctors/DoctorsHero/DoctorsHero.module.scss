@@ -1,10 +1,10 @@
-@use '@styles/variables' as *;
+﻿@use '@styles/variables' as *;
 @use '@styles/mixins' as *;
 
 .section {
   position: relative;
   overflow: hidden;
-  background: #F6F5FC;
+  background: #F3F8F6;
   padding: 132px 0 $space-20;
   min-height: 700px;
 

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -16,9 +16,9 @@ const CIRCLE_POSITIONS = [
 ]
 
 const TABS = [
-  { id: 'scribe',     label: 'AI Scribe',        color: '#26215C' },
-  { id: 'memory',     label: 'Clinical Memory',  color: '#085041' },
-  { id: 'continuous', label: 'Continuous Care',  color: '#042C53' },
+  { id: 'scribe',     label: 'AI Scribe',        color: '#1E2A4A' },
+  { id: 'memory',     label: 'Clinical Memory',  color: '#0F7A5C' },
+  { id: 'continuous', label: 'Continuous Care',  color: '#2C4A7C' },
 ] as const
 
 export default function FeaturesExplainer() {

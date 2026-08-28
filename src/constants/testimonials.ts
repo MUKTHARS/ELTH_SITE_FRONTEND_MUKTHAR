@@ -1,4 +1,4 @@
-import type { Testimonial } from '@/types'
+﻿import type { Testimonial } from '@/types'
 
 export const TESTIMONIALS: Testimonial[] = [
   {
@@ -9,8 +9,8 @@ export const TESTIMONIALS: Testimonial[] = [
     location: 'Coimbatore',
     avatar: '/images/avatars/dr-priya.jpg',
     initials: 'PR',
-    bgColor: '#EEEDFE',
-    textColor: '#26215C',
+    bgColor: '#EAEEF6',
+    textColor: '#1E2A4A',
   },
   {
     quote: "My patients in Madurai finally understand their lab reports. The plain-language explanations in Tamil have reduced unnecessary panic calls to our clinic by 40%.",
@@ -20,8 +20,8 @@ export const TESTIMONIALS: Testimonial[] = [
     location: 'Madurai',
     avatar: '/images/avatars/dr-suresh.jpg',
     initials: 'SN',
-    bgColor: '#E1F5EE',
-    textColor: '#085041',
+    bgColor: '#E6F5EF',
+    textColor: '#0F7A5C',
   },
   {
     quote: "We onboarded 500 patients in the first month. The WhatsApp-first approach works perfectly for our Tier-2 patient base who aren't comfortable with apps.",
@@ -31,8 +31,8 @@ export const TESTIMONIALS: Testimonial[] = [
     location: 'Coimbatore',
     avatar: '/images/avatars/vijay.jpg',
     initials: 'VK',
-    bgColor: '#E6F1FB',
-    textColor: '#042C53',
+    bgColor: '#EAF0F8',
+    textColor: '#2C4A7C',
   },
   {
     quote: "The pre-consultation brief is a game changer. I walk into every appointment knowing exactly what to focus on. No more asking patients to repeat their history.",
@@ -42,8 +42,8 @@ export const TESTIMONIALS: Testimonial[] = [
     location: 'Chennai',
     avatar: '/images/avatars/dr-meenakshi.jpg',
     initials: 'MI',
-    bgColor: '#FAEEDA',
-    textColor: '#412402',
+    bgColor: '#FBF0DE',
+    textColor: '#C9852F',
   },
   {
     quote: "The drug interaction checker caught a potentially dangerous combination I almost missed during a busy OPD. It's saved me more than once.",
@@ -53,8 +53,8 @@ export const TESTIMONIALS: Testimonial[] = [
     location: 'Chennai',
     avatar: '/images/avatars/dr-ramesh.jpg',
     initials: 'RB',
-    bgColor: '#EEEDFE',
-    textColor: '#26215C',
+    bgColor: '#EAEEF6',
+    textColor: '#1E2A4A',
   },
   {
     quote: "Our no-show rate dropped 28% after enabling the automated appointment reminders. That's real revenue recovered, not just a nice stat.",
@@ -64,7 +64,7 @@ export const TESTIMONIALS: Testimonial[] = [
     location: 'Coimbatore',
     avatar: '/images/avatars/anitha.jpg',
     initials: 'AK',
-    bgColor: '#E1F5EE',
-    textColor: '#085041',
+    bgColor: '#E6F5EF',
+    textColor: '#0F7A5C',
   },
 ]

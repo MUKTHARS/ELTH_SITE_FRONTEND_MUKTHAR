@@ -1,4 +1,4 @@
-@use '@styles/variables' as *;
+﻿@use '@styles/variables' as *;
 @use '@styles/mixins' as *;
 @use '@styles/animations' as *;
 
@@ -7,7 +7,7 @@ $accent: #6D4AEA;
 .section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #F6F5FC 0%, #FBFBFE 100%);
+  background: linear-gradient(180deg, #F3F8F6 0%, #FBFEFC 100%);
   padding-top: 104px;
 }
 
@@ -210,7 +210,7 @@ $accent: #6D4AEA;
   color: $text-tertiary;
 }
 
-// ─── Dashboard visual ───────────────────────────────────────────────────────
+// â”€â”€â”€ Dashboard visual â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 .visual {
   position: relative;
   width: 100%;
