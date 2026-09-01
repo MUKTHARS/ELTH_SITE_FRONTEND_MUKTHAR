@@ -9,6 +9,10 @@ import styles from './CaseStudiesSection.module.scss'
 export default function CaseStudiesSection() {
   return (
     <section className={styles.section}>
+      <div className={styles.bg}>
+        <Image src="/images/top.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
+      </div>
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionLabel text="Case Studies" color="teal" />

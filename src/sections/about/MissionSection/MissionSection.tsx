@@ -9,6 +9,10 @@ import styles from './MissionSection.module.scss'
 export default function MissionSection() {
   return (
     <section className={styles.section}>
+      <div className={styles.bg}>
+        <Image src="/images/top.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
+      </div>
       <div className={styles.inner}>
         <motion.div
           className={styles.content}

@@ -2,14 +2,35 @@
 @use '@styles/mixins' as *;
 
 .section {
-  background: $elth-bg-warm;
+  position: relative;
+  overflow: hidden;
+  background: $elth-dark;
   padding: 120px 0 $space-20;
 
   @include respond-to(md) { padding: 100px 0 $space-16; }
   @include respond-to(sm) { padding: 88px 0 $space-12; }
 }
 
-.inner { @include container; }
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba($elth-dark, 0.94) 0%, rgba($elth-dark, 0.86) 42%, rgba($elth-dark, 0.55) 72%, rgba($elth-dark, 0.35) 100%),
+    linear-gradient(0deg, rgba($elth-dark, 0.5) 0%, transparent 30%);
+}
+
+.inner { @include container; position: relative; z-index: 1; }
 
 .layout {
   display: grid;
@@ -31,18 +52,18 @@
 
 .eyebrow {
   @include label-text;
-  color: $text-tertiary;
+  color: #A78BFA;
 }
 
 .heading {
   @include heading-lg;
-  color: $text-primary;
+  color: $white;
   line-height: $leading-tight;
 }
 
 .sub {
   @include body-lg;
-  color: $text-secondary;
+  color: rgba($white, 0.8);
   line-height: $leading-relaxed;
 }
 
@@ -57,11 +78,11 @@
   align-items: center;
   gap: $space-3;
   font-size: $text-sm;
-  color: $text-secondary;
+  color: rgba($white, 0.7);
 }
 
 .promiseCheck {
-  color: $elth-teal;
+  color: #A78BFA;
   font-weight: $font-bold;
 }
 
@@ -82,7 +103,7 @@
 
 .contactText {
   font-size: $text-sm;
-  color: $text-secondary;
+  color: rgba($white, 0.7);
 }
 
 // Form

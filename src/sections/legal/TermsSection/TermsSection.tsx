@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { TERMS_SECTIONS } from '@constants/terms'
 import styles from './TermsSection.module.scss'
@@ -7,6 +8,10 @@ import styles from './TermsSection.module.scss'
 export default function TermsSection() {
   return (
     <section className={styles.section}>
+      <div className={styles.bg}>
+        <Image src="/images/top.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
+      </div>
       <div className={styles.inner}>
         <div className={styles.header}>
           <span className={styles.eyebrow}>Legal</span>

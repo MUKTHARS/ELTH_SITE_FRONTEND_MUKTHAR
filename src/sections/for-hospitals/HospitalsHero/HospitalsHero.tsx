@@ -11,6 +11,10 @@ import styles from './HospitalsHero.module.scss'
 export default function HospitalsHero() {
   return (
     <section className={styles.section}>
+      <div className={styles.bg}>
+        <Image src="/images/topbanners/for-hospitals.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
+      </div>
       <div className={styles.inner}>
         <motion.div
           className={styles.content}

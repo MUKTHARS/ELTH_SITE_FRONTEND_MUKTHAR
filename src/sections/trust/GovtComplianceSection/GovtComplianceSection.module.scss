@@ -2,11 +2,32 @@
 @use '@styles/mixins' as *;
 
 .section {
+  position: relative;
+  overflow: hidden;
   @include section-padding;
-  background: $elth-bg-warm;
+  background: $elth-dark;
 }
 
-.inner { @include container; }
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba($elth-dark, 0.94) 0%, rgba($elth-dark, 0.86) 42%, rgba($elth-dark, 0.55) 72%, rgba($elth-dark, 0.35) 100%),
+    linear-gradient(0deg, rgba($elth-dark, 0.5) 0%, transparent 30%);
+}
+
+.inner { @include container; position: relative; z-index: 1; }
 
 .header {
   text-align: center;
@@ -19,13 +40,13 @@
 
 .heading {
   @include heading-md;
-  color: $text-primary;
+  color: $white;
   line-height: $leading-tight;
 }
 
 .sub {
   @include body-lg;
-  color: $text-secondary;
+  color: rgba($white, 0.8);
   max-width: 640px;
 }
 

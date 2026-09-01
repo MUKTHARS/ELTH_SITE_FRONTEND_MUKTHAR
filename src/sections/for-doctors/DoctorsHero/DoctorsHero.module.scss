@@ -4,12 +4,31 @@
 .section {
   position: relative;
   overflow: hidden;
-  background: #F3F8F6;
+  background: $elth-dark;
   padding: 132px 0 $space-20;
   min-height: 700px;
 
   @include respond-to(md) { padding: 100px 0 $space-16; }
   @include respond-to(sm) { padding: 88px 0 $space-12; }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba($elth-dark, 0.94) 0%, rgba($elth-dark, 0.86) 42%, rgba($elth-dark, 0.55) 72%, rgba($elth-dark, 0.35) 100%),
+    linear-gradient(0deg, rgba($elth-dark, 0.5) 0%, transparent 30%);
 }
 
 .inner {
@@ -33,7 +52,7 @@
 
 .badge {
   @include label-text;
-  color: $elth-purple;
+  color: #A78BFA;
   padding: 0;
   border-radius: 0;
   width: fit-content;
@@ -41,14 +60,14 @@
 
 .heading {
   @include heading-xl;
-  color: #18241d;
+  color: $white;
   line-height: $leading-tight;
   letter-spacing: -0.055em;
 }
 
 .sub {
   @include body-lg;
-  color: $text-secondary;
+  color: rgba($white, 0.8);
   line-height: $leading-relaxed;
   max-width: 520px;
 }
@@ -67,7 +86,7 @@
 
   span {
     font-size: $text-sm;
-    color: $text-secondary;
+    color: rgba($white, 0.7);
 
     @include respond-to(sm) { font-size: $text-xs; }
   }

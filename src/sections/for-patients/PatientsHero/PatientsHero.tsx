@@ -11,6 +11,10 @@ import styles from './PatientsHero.module.scss'
 export default function PatientsHero() {
   return (
     <section className={styles.section}>
+      <div className={styles.bg}>
+        <Image src="/images/topbanners/for-patients.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
+      </div>
       <div className={styles.inner}>
         <motion.div
           className={styles.content}
