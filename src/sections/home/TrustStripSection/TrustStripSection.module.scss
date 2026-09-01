@@ -49,49 +49,25 @@
 
 .item {
   position: relative;
-  isolation: isolate;
+  @include card-base;
+  border-radius: 28px;
   display: flex;
   gap: $space-4;
   align-items: flex-start;
   min-height: 150px;
   padding: $space-6;
-  overflow: hidden;
-  background: rgba($white, 0.78);
-  border: 1px solid rgba($elth-purple, 0.12);
-  border-radius: $radius-xl;
-  box-shadow: 0 10px 28px rgba(38, 33, 92, 0.06), inset 0 1px 0 rgba($white, 0.8);
-  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
-
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: 130px;
-    height: 130px;
-    right: -54px;
-    bottom: -62px;
-    border-radius: $radius-full;
-    background: rgba($elth-teal, 0.08);
-    transition: transform $transition-slow;
-  }
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 
   &:hover {
-    transform: translateY(-5px);
-    border-color: rgba($elth-purple, 0.24);
-    box-shadow: 0 18px 38px rgba(38, 33, 92, 0.12), inset 0 1px 0 rgba($white, 0.9);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.12);
 
-    &::after { transform: scale(1.35); }
+    .iconWrap { transform: scale(1.08) rotate(-4deg); }
   }
 
-  &:nth-child(2) {
-    &::after { background: rgba($elth-purple, 0.1); }
-    .iconWrap { background: $elth-purple-bg; color: $elth-purple; }
-  }
-
-  &:nth-child(3) {
-    &::after { background: rgba($elth-blue, 0.09); }
-    .iconWrap { background: $elth-blue-bg; color: $elth-blue; }
-  }
+  &:nth-child(2) .iconWrap { background: $elth-purple-bg; color: $elth-purple; }
+  &:nth-child(3) .iconWrap { background: $elth-blue-bg; color: $elth-blue; }
 
   @include respond-to(md) { min-height: auto; }
 }
@@ -99,13 +75,12 @@
 .iconWrap {
   width: 46px;
   height: 46px;
-  border: 1px solid rgba($elth-teal, 0.1);
   border-radius: 14px;
   background: $elth-teal-bg;
   color: $elth-teal;
-  box-shadow: 0 6px 14px rgba($elth-teal, 0.1);
   @include flex-center;
   flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .itemTitle {

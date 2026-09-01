@@ -4,9 +4,37 @@
 .section {
   @include section-padding;
   background: $elth-dark;
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::before {
+    width: 520px;
+    height: 520px;
+    top: -200px;
+    left: -160px;
+    background: radial-gradient(circle at 30% 30%, rgba($elth-teal-light, 0.16), transparent 70%);
+  }
+
+  &::after {
+    width: 480px;
+    height: 480px;
+    bottom: -200px;
+    right: -160px;
+    background: radial-gradient(circle at 70% 70%, rgba($elth-blue-light, 0.14), transparent 70%);
+  }
 }
 
-.inner { @include container; }
+.inner { @include container; position: relative; z-index: 1; }
 
 .header {
   text-align: center;

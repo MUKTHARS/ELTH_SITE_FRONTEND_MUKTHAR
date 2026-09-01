@@ -6,16 +6,16 @@
   background: #F3F8F6;
 }
 
-.inner { @include container; }
+.inner { width: 100%; }
 
 .card {
   position: relative;
   overflow: hidden;
   background: linear-gradient(120deg, $elth-purple, $elth-blue-light 55%, $elth-teal);
   border: 0;
-  border-radius: $radius-xl;
+  border-radius: 0;
   box-shadow: 0 18px 42px rgba($elth-purple, .2);
-  padding: $space-16 $space-12;
+  padding: $space-16 max($space-12, calc((100vw - 1200px) / 2 + #{$space-12}));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,7 +23,7 @@
   text-align: left;
 
   @include respond-to(md) { padding: $space-10 $space-6; }
-  @include respond-to(sm) { padding: $space-8 $space-4; border-radius: $radius-lg; }
+  @include respond-to(sm) { padding: $space-8 $space-4; }
   @include respond-to(lg) { flex-direction: column; text-align: center; }
 }
 

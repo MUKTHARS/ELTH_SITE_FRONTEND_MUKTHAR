@@ -2,6 +2,7 @@ import {
   HeroSection,
   // LogoBar,
   ProblemSection,
+  PlatformSection,
   SolutionSection,
   FeaturesExplainer,
   // FeaturesScribe,
@@ -28,6 +29,7 @@ export default function HomePage() {
       <HeroSection />
       {/* <LogoBar /> */}
       <ProblemSection />
+      <PlatformSection />
       <SolutionSection />
       <FeaturesExplainer />
       {/* <FeaturesScribe /> */}

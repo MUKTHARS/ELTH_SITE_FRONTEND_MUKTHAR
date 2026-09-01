@@ -4,9 +4,37 @@
 .section {
   @include section-padding;
   background: linear-gradient(180deg, #F1EFFB 0%, #E7DFF6 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::before {
+    width: 480px;
+    height: 480px;
+    top: -160px;
+    right: -140px;
+    background: radial-gradient(circle at 30% 30%, rgba($elth-blue-light, 0.34), transparent 70%);
+  }
+
+  &::after {
+    width: 440px;
+    height: 440px;
+    bottom: -180px;
+    left: -140px;
+    background: radial-gradient(circle at 70% 70%, rgba($elth-teal, 0.3), transparent 70%);
+  }
 }
 
-.inner { @include container; }
+.inner { @include container; position: relative; z-index: 1; }
 
 .header {
   text-align: center;
@@ -66,7 +94,8 @@
 .journeyNode {
   width: 80px;
   height: 80px;
-  @include card-base;
+  @include gradient-dark;
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.35);
   border-radius: $radius-full;
   @include flex-center;
 }
@@ -204,7 +233,9 @@
 }
 
 .analogy {
-  @include card-base;
+  @include gradient-dark;
+  border-radius: $radius-lg;
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.4);
   padding: $space-6 $space-8;
   display: flex;
   align-items: flex-start;
@@ -215,15 +246,15 @@
 
 .analogyLabel {
   @include label-text;
-  color: $text-tertiary;
+  color: rgba($white, 0.5);
   white-space: nowrap;
   padding-top: 3px;
 }
 
 .analogyText {
   @include body-base;
-  color: $text-secondary;
+  color: rgba($white, 0.75);
   line-height: $leading-relaxed;
 
-  strong { color: $text-primary; font-weight: $font-semibold; }
+  strong { color: $white; font-weight: $font-semibold; }
 }

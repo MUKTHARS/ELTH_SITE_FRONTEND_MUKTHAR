@@ -53,19 +53,29 @@
   padding: $space-2 $space-3;
   font-size: $text-sm;
   font-weight: $font-medium;
-  color: $text-secondary;
+  color: $white;
   border-radius: $radius-md;
   transition: color $transition-fast, background $transition-fast;
   text-decoration: none;
+
+  &:hover { color: $white; background: rgba($white, 0.15); }
+}
+
+.scrolled .navLink {
+  color: $text-secondary;
 
   &:hover { color: $text-primary; background: $elth-bg-warm; }
 }
 
 .chevron {
   font-size: $text-base;
-  color: $text-tertiary;
+  color: rgba($white, 0.7);
   transform: rotate(90deg);
   display: inline-block;
+}
+
+.scrolled .chevron {
+  color: $text-tertiary;
 }
 
 .dropdown {
@@ -77,6 +87,8 @@
   padding: $space-2;
   min-width: 180px;
   z-index: $z-dropdown;
+  background: $white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 
   &::before {
     content: '';
@@ -113,12 +125,18 @@
   background: none;
   border: none;
   padding: $space-2;
-  color: $text-secondary;
+  color: $white;
   cursor: pointer;
   border-radius: $radius-md;
-  transition: background $transition-fast;
+  transition: background $transition-fast, color $transition-fast;
 
-  &:hover { background: $elth-bg-warm; }
+  &:hover { background: rgba($white, 0.15); }
 
   @include respond-to(lg) { display: flex; align-items: center; }
+}
+
+.scrolled .menuBtn {
+  color: $text-secondary;
+
+  &:hover { background: $elth-bg-warm; }
 }

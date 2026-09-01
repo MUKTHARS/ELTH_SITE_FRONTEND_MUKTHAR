@@ -7,7 +7,7 @@ $accent: #6D4AEA;
 .section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #EDE7F8 0%, #F5F1FB 100%);
+  background: $elth-dark;
   padding-top: 104px;
 }
 
@@ -17,34 +17,17 @@ $accent: #6D4AEA;
   pointer-events: none;
 }
 
-.blob1 {
-  position: absolute;
-  top: -120px;
-  left: -100px;
-  width: 560px;
-  height: 560px;
-  background: radial-gradient(circle, rgba($elth-purple, 0.09) 0%, transparent 70%);
-  border-radius: $radius-full;
+.bgImage {
+  object-fit: cover;
+  object-position: center;
 }
 
-.blob2 {
-  position: absolute;
-  bottom: -140px;
-  right: -100px;
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba($elth-blue, 0.08) 0%, transparent 70%);
-  border-radius: $radius-full;
-}
-
-.grid {
+.scrim {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba($elth-purple, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba($elth-purple, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: linear-gradient(180deg, black, transparent 70%);
+  background:
+    linear-gradient(100deg, rgba($elth-dark, 0.94) 0%, rgba($elth-dark, 0.86) 42%, rgba($elth-dark, 0.55) 72%, rgba($elth-dark, 0.35) 100%),
+    linear-gradient(0deg, rgba($elth-dark, 0.5) 0%, transparent 30%);
 }
 
 .inner {
@@ -74,10 +57,12 @@ $accent: #6D4AEA;
   gap: $space-5;
   min-width: 0;
   max-width: 560px;
+  padding-left: $space-8;
   padding-right: $space-4;
 
   @include respond-to(lg) {
     max-width: 100%;
+    padding-left: 0;
     padding-right: 0;
   }
 }
@@ -92,7 +77,7 @@ $accent: #6D4AEA;
   font-size: clamp(40px, 5.2vw, 64px);
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: $text-primary;
+  color: $white;
   line-height: 1.05;
   word-wrap: break-word;
 
@@ -111,7 +96,7 @@ $accent: #6D4AEA;
 }
 
 .accent {
-  background: linear-gradient(135deg, $elth-purple 10%, #FF6B4A 75%, #FFB238 135%);
+  background: linear-gradient(135deg, #C4B5FD 10%, #FF6B4A 75%, #FFB238 135%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -119,7 +104,7 @@ $accent: #6D4AEA;
 
 .sub {
   @include body-lg;
-  color: $text-secondary;
+  color: rgba($white, 0.75);
   max-width: 460px;
   line-height: $leading-relaxed;
 }
@@ -225,19 +210,19 @@ $accent: #6D4AEA;
 // ─── Clinical companion (moving-frequency hover panel) ──────────────────────
 .stage {
   position: relative;
-  height: 600px;
+  height: 660px;
   display: flex;
   align-items: center;
   justify-content: center;
   perspective: 1200px;
 
-  @include respond-to(lg) { height: 480px; }
+  @include respond-to(lg) { height: 520px; }
 }
 
 .medScene {
   position: relative;
-  width: 320px;
-  height: 400px;
+  width: 360px;
+  height: 440px;
   transform-style: preserve-3d;
   transform: rotateX(4deg) rotateY(-8deg);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -305,7 +290,7 @@ $accent: #6D4AEA;
   position: absolute;
   top: 32%;
   left: 50%;
-  width: min(440px, 100%);
+  width: min(500px, 100%);
   transform: translate(-50%, -50%) translateZ(100px) rotateX(3deg) rotateY(-6deg);
   transform-style: preserve-3d;
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -314,7 +299,12 @@ $accent: #6D4AEA;
 .listenPanel {
   position: relative;
   padding: $space-6;
-  @include card-base;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: $radius-lg;
+  box-shadow: 0 32px 64px -20px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 80px -10px rgba($elth-purple-light, 0.35);
   overflow: hidden;
 }
 

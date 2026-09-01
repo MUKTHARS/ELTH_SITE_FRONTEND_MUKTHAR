@@ -1,0 +1,58 @@
+import { IconMic, IconBuilding, IconUser } from '@icons/index'
+
+export const PLATFORM_PRODUCTS = [
+  {
+    id: 'elthdoc',
+    tag: 'For Doctors',
+    title: 'ElthDoc',
+    subtitle: 'Doctor Dictates. Saple Structures.',
+    ctaText: 'Explore ElthDoc',
+    ctaLink: '/for-doctors',
+    icon: IconMic,
+    img: '/images/doctorctc.avif',
+    color: '#3E7767',
+    bg: '#22463B',
+    features: [
+      'Voice-powered documentation',
+      'Complete patient context',
+      'Smarter clinical decisions',
+      'Reduced documentation time',
+    ],
+  },
+  {
+    id: 'elthcare',
+    tag: 'For Hospitals',
+    title: 'ElthCare',
+    subtitle: 'Connected departments. Continuous care.',
+    ctaText: 'Explore ElthCare',
+    ctaLink: '/for-hospitals',
+    icon: IconBuilding,
+    img: '/images/clinic.avif',
+    color: '#4C6690',
+    bg: '#293A54',
+    features: [
+      'Connected departments',
+      'Appointments & care continuity',
+      'Operational insights',
+      'Better patient outcomes',
+    ],
+  },
+  {
+    id: 'myelth',
+    tag: 'For Patients',
+    title: 'MyElth',
+    subtitle: 'Better care, everywhere.',
+    ctaText: 'Explore MyElth',
+    ctaLink: '/for-patients',
+    icon: IconUser,
+    img: '/images/doctor.avif',
+    color: '#A87742',
+    bg: '#4A3620',
+    features: [
+      'Own your health records',
+      'Manage consent with trust',
+      'Access care anytime',
+      'Stay connected to your care',
+    ],
+  },
+] as const

@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef }         from 'react'
+import Image              from 'next/image'
 import Link               from 'next/link'
 import { motion }         from 'framer-motion'
 import { Badge }          from '@components/ui/badge'
@@ -48,15 +49,14 @@ export default function HeroSection() {
   return (
     <section className={styles.section}>
       <div className={styles.bg}>
-        <div className={styles.blob1} />
-        <div className={styles.blob2} />
-        <div className={styles.grid} />
+        <Image src="/images/top.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
       </div>
 
       <div className={styles.inner}>
         <motion.div className={styles.content} variants={stagger} initial="hidden" animate="show">
           <motion.div variants={fadeUp}>
-            <Badge variant="purple" className={styles.pill}>
+            <Badge variant="dark" className={styles.pill}>
               AI-POWERED CARE, FROM CONSULTATION TO CONTINUITY
             </Badge>
           </motion.div>
@@ -80,11 +80,11 @@ export default function HeroSection() {
             </Link>
           </motion.div>
 
-          <motion.div className={styles.trustLine} variants={fadeUp}>
+          {/* <motion.div className={styles.trustLine} variants={fadeUp}>
             <span className={styles.trustText}>Trusted by forward-thinking hospitals and clinics</span>
-          </motion.div>
+          </motion.div> */}
 
-          <motion.div className={styles.badges} variants={fadeUp}>
+          {/* <motion.div className={styles.badges} variants={fadeUp}>
             {COMPLIANCE_BADGES.map(b => (
               <span key={b.label} className={styles.badgeItem}>
                 <span className={styles.badgeIcon}><b.icon size={18} /></span>
@@ -94,7 +94,7 @@ export default function HeroSection() {
                 </span>
               </span>
             ))}
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         <motion.div

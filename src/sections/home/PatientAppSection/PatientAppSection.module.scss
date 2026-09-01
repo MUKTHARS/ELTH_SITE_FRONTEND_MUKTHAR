@@ -3,11 +3,41 @@
 
 .section {
   @include section-padding;
-  background: linear-gradient(180deg, #F5F1FB 0%, #EDE7F8 100%);
+  @include gradient-dark;
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::before {
+    width: 480px;
+    height: 480px;
+    top: -160px;
+    right: -140px;
+    background: radial-gradient(circle at 30% 30%, rgba($elth-teal-light, 0.28), transparent 70%);
+  }
+
+  &::after {
+    width: 440px;
+    height: 440px;
+    bottom: -180px;
+    left: -140px;
+    background: radial-gradient(circle at 70% 70%, rgba($elth-purple-light, 0.24), transparent 70%);
+  }
 }
 
 .inner {
   @include container;
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: $space-12;
@@ -62,7 +92,7 @@
   background: #161a23;
   border-radius: 46px;
   padding: 12px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), inset 0 0 0 2px #4b5563, inset 0 0 0 6px #161a23;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 0 2px #4b5563, inset 0 0 0 6px #161a23;
   position: relative;
 }
 
@@ -266,12 +296,12 @@
   font-weight: $font-bold;
   letter-spacing: $tracking-tight;
   line-height: 1.18;
-  color: $text-primary;
+  color: $white;
 }
 
 .sub {
   @include body-base;
-  color: $text-secondary;
+  color: rgba($white, 0.7);
   line-height: $leading-relaxed;
 }
 
@@ -280,7 +310,7 @@
   width: 32px;
   height: 3px;
   border-radius: $radius-full;
-  background: $elth-purple;
+  background: $elth-purple-light;
   margin-top: $space-1;
 }
 
@@ -304,8 +334,9 @@
   width: 30px;
   height: 30px;
   border-radius: $radius-md;
-  background: $elth-teal-bg;
-  color: $elth-teal;
+  background: rgba($elth-teal-light, 0.14);
+  color: $elth-teal-light;
+  border: 1px solid rgba($elth-teal-light, 0.25);
   @include flex-center;
   flex-shrink: 0;
 }
@@ -314,13 +345,13 @@
   display: block;
   font-size: $text-xs;
   font-weight: $font-semibold;
-  color: $text-primary;
+  color: $white;
   margin-bottom: 2px;
 }
 
 .pointDesc {
   font-size: 11px;
-  color: $text-secondary;
+  color: rgba($white, 0.6);
   margin: 0;
   line-height: $leading-snug;
 }
@@ -346,7 +377,7 @@
   min-height: 280px;
   border-radius: $radius-lg;
   overflow: hidden;
-  box-shadow: $shadow-lg;
+  box-shadow: 0 32px 64px -24px rgba(0, 0, 0, 0.55);
   align-self: stretch;
 }
 
