@@ -35,7 +35,7 @@ export default function ConciergeSection() {
           ))}
           </div>
           <div className={styles.imagePanel}>
-            <Image src="/images/doctorctc.avif" alt="A caring clinician supporting a patient" fill sizes="(max-width: 1024px) 100vw, 36vw" />
+            <Image src="/images/appointment.webp" alt="A caring clinician supporting a patient" fill sizes="(max-width: 1024px) 100vw, 36vw" />
             <div className={styles.imageCaption}>The details are easier to manage when care stays connected.</div>
           </div>
         </div>

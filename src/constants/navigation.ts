@@ -12,7 +12,7 @@ export const NAV_ITEMS: NavItem[] = [
     ],
   },
   { label: 'Pricing',      href: ROUTES.PRICING },
-  { label: 'Case Studies', href: ROUTES.CASE_STUDIES },
+  // { label: 'Case Studies', href: ROUTES.CASE_STUDIES },
   { label: 'About',        href: ROUTES.ABOUT },
 ]
 

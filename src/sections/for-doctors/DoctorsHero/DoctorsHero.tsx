@@ -54,7 +54,7 @@ export default function DoctorsHero() {
         >
           <div className={styles.visualImage}>
             <Image
-              src="/images/doctorctc.avif"
+              src="/images/topcontent/for-doctors.jpg"
               alt="Doctor preparing for a patient consultation"
               fill
               priority

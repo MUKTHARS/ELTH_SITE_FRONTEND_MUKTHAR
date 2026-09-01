@@ -43,7 +43,7 @@ export default function PatientsHero() {
         </motion.div>
         <motion.div className={styles.visual} initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.65, delay: 0.15 }}>
           <div className={styles.imageWrap}>
-            <Image src="/images/doctor.avif" alt="A patient receiving thoughtful care" fill priority sizes="(max-width: 1024px) 100vw, 48vw" />
+            <Image src="/images/topcontent/for-patients.avif" alt="A patient receiving thoughtful care" fill priority sizes="(max-width: 1024px) 100vw, 48vw" />
           </div>
           <div className={styles.helpCard}>
             <span>Care, in your language</span>

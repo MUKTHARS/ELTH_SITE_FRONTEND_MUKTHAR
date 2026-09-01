@@ -45,7 +45,7 @@ export const PLATFORM_PRODUCTS = [
     ctaText: 'Explore MyElth',
     ctaLink: '/for-patients',
     icon: IconUser,
-    img: '/images/doctor.avif',
+    img: '/images/doctor.jpg',
     color: '#A87742',
     bg: '#4A3620',
     features: [

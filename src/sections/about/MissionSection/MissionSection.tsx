@@ -33,7 +33,7 @@ export default function MissionSection() {
           </p>
 
           <div className={styles.visual}>
-            <Image src="/images/clinic.avif" alt="A care team working together in a clinical setting" fill priority sizes="(max-width: 768px) 100vw, 860px" />
+            <Image src="/images/about_mission.webp" alt="A care team working together in a clinical setting" fill priority sizes="(max-width: 768px) 100vw, 860px" />
             <span>Built around the people delivering care, every day.</span>
           </div>
 

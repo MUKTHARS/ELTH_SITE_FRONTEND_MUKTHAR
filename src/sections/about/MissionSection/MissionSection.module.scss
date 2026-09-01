@@ -86,7 +86,7 @@
 
 .valueCard {
   background: transparent;
-  border-top: 1px solid #DCD9F1;
+  border-top: 1px solid rgba($white, 0.15);
   padding: $space-5 0;
   display: flex;
   flex-direction: column;
@@ -98,12 +98,12 @@
 .valueName {
   font-size: $text-base;
   font-weight: $font-semibold;
-  color: $text-primary;
+  color: $white;
 }
 
 .valueDesc {
   font-size: $text-sm;
-  color: $text-secondary;
+  color: rgba($white, 0.8);
   line-height: $leading-relaxed;
   margin: 0;
 }

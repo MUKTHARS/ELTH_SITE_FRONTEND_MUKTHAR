@@ -37,7 +37,7 @@ export default function AudienceSection() {
             </Link>
             <div className={styles.artWrap}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/doctor.avif" alt="" className={styles.art} />
+              <img src="/images/doctor.jpg" alt="" className={styles.art} />
             </div>
           </motion.div>
 

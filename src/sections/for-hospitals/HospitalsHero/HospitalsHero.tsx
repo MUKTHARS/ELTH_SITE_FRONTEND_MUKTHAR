@@ -51,7 +51,7 @@ export default function HospitalsHero() {
           transition={{ duration: 0.65, delay: 0.15 }}
         >
           <div className={styles.imageWrap}>
-            <Image src="/images/clinic.avif" alt="A welcoming hospital care environment" fill priority sizes="(max-width: 1024px) 100vw, 48vw" />
+            <Image src="/images/topcontent/for-healthcare.jpg" alt="A welcoming hospital care environment" fill priority sizes="(max-width: 1024px) 100vw, 48vw" />
           </div>
           <div className={styles.statusCard}>
             <span className={styles.statusEyebrow}>Today, at a glance</span>

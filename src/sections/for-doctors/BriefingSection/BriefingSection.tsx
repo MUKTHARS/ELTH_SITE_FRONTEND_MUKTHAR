@@ -41,7 +41,7 @@ export default function BriefingSection() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <Image src="/images/doctor.avif" alt="Doctor reviewing a patient record before a consultation" fill sizes="(max-width: 1024px) 100vw, 36vw" />
+            <Image src="/images/doctor_brief.avif" alt="Doctor reviewing a patient record before a consultation" fill sizes="(max-width: 1024px) 100vw, 36vw" />
             <div className={styles.briefOverlay}>
               <span>Next appointment</span>
               <strong>Everything important, in one brief.</strong>
