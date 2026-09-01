@@ -9,6 +9,9 @@
   z-index: $z-sticky;
   transition: background $transition-base, box-shadow $transition-base, border-color $transition-base;
   border-bottom: 1px solid transparent;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .scrolled {
@@ -30,8 +33,12 @@
 .logoText {
   font-size: $text-xl;
   font-weight: $font-bold;
-  color: $elth-teal;
+  color: $white;
   letter-spacing: $tracking-tight;
+}
+
+.scrolled .logoText {
+  color: $elth-teal;
 }
 
 .nav {
