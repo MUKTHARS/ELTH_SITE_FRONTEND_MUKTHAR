@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
-import { Button } from '@components/ui/button'
 import { PORTALS } from '@constants/portals'
 import styles from './SolutionSection.module.scss'
 

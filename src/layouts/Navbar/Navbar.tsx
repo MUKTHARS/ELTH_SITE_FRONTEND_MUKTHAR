@@ -5,7 +5,7 @@ import Link                   from 'next/link'
 import { useScrollProgress }  from '@hooks/useScrollProgress'
 import { NAV_ITEMS, NAV_CTA } from '@constants/navigation'
 import { Button }             from '@components/ui/button'
-import { IconMenu, IconX }    from '@icons/index'
+import { IconMenu }           from '@icons/index'
 import MobileMenu             from '../MobileMenu/MobileMenu'
 import styles                 from './Navbar.module.scss'
 

@@ -5,18 +5,11 @@ import Image              from 'next/image'
 import Link               from 'next/link'
 import { motion }         from 'framer-motion'
 import { Badge }          from '@components/ui/badge'
-import { IconArrowRight, IconShield, IconLock, IconFileText, IconGlobe } from '@icons/index'
+import { IconArrowRight } from '@icons/index'
 import { ROUTES }         from '@constants/routes'
 import styles             from './HeroSection.module.scss'
 
 const WAVEFORM_BARS = [18, 34, 24, 46, 30, 52, 26, 40, 20, 34, 16]
-
-const COMPLIANCE_BADGES = [
-  { icon: IconShield, label: 'NABH', sub: 'Compliant' },
-  { icon: IconLock,   label: 'HIPAA', sub: 'Aligned' },
-  { icon: IconFileText, label: 'ISO 27001', sub: 'Certified' },
-  { icon: IconGlobe,  label: 'ABDM', sub: 'Ready' },
-]
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
