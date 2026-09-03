@@ -9,7 +9,7 @@ export const PLATFORM_PRODUCTS = [
     ctaText: 'Explore ElthDoc',
     ctaLink: '/for-doctors',
     icon: IconMic,
-    img: '/images/3o.jpeg',
+    img: '/images/elthDoc_1.png',
     color: '#3E7767',
     bg: '#22463B',
     features: [
@@ -29,7 +29,7 @@ export const PLATFORM_PRODUCTS = [
     ctaText: 'Explore ElthCare',
     ctaLink: '/for-hospitals',
     icon: IconBuilding,
-    img: '/images/2o.jpeg',
+    img: '/images/elthCare_1.png',
     color: '#4C6690',
     bg: '#293A54',
     features: [
@@ -49,7 +49,7 @@ export const PLATFORM_PRODUCTS = [
     ctaText: 'Explore MyElth',
     ctaLink: '/for-patients',
     icon: IconUser,
-    img: '/images/1o.jpeg',
+    img: '/images/myElth_1.png',
     color: '#A87742',
     bg: '#4A3620',
     features: [

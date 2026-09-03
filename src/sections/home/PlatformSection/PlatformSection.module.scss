@@ -289,11 +289,12 @@
 .mobileMock {
   position: relative;
   height: 180px;
+  background: $elth-dark;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .mobileImage {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .mobileBody {
