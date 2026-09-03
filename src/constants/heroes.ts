@@ -1,8 +1,25 @@
-export const DOCTORS_HERO_PROOF = ['🎙️ AI Scribe', '📋 Pre-visit Brief', '💊 Drug Checker', '🧠 CDSS']
+import { IconMic, IconFileText, IconPill, IconBrain, IconBuilding, IconChart, IconSmartphone, IconStethoscope, IconSearch, IconChat } from '@icons/index'
 
-export const HOSPITALS_HERO_PROOF = ['🏥 Admin Console', '📊 Analytics', '📱 Patient Communication', '🤖 AI Across Touchpoints']
+export const DOCTORS_HERO_PROOF = [
+  { icon: IconMic, label: 'AI Scribe' },
+  { icon: IconFileText, label: 'Pre-visit Brief' },
+  { icon: IconPill, label: 'Drug Checker' },
+  { icon: IconBrain, label: 'CDSS' },
+]
 
-export const PATIENTS_HERO_PROOF = ['🩺 Symptom Checker', '🔬 Lab Interpreter', '💬 Health Concierge', '📱 WhatsApp-first']
+export const HOSPITALS_HERO_PROOF = [
+  { icon: IconBuilding, label: 'Admin Console' },
+  { icon: IconChart, label: 'Analytics' },
+  { icon: IconSmartphone, label: 'Patient Communication' },
+  { icon: IconBrain, label: 'AI Across Touchpoints' },
+]
+
+export const PATIENTS_HERO_PROOF = [
+  { icon: IconStethoscope, label: 'Symptom Checker' },
+  { icon: IconSearch, label: 'Lab Interpreter' },
+  { icon: IconChat, label: 'Health Concierge' },
+  { icon: IconSmartphone, label: 'WhatsApp-first' },
+]
 
 export const DEMO_PROMISES = [
   '30-minute demo, no sales pressure',

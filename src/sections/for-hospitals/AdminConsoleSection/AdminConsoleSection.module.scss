@@ -59,7 +59,7 @@
   gap: $space-3;
 }
 
-.icon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: $elth-purple-bg; font-size: 18px; }
+.icon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: $elth-purple-bg; flex-shrink: 0; }
 
 .cardTitle {
   font-size: $text-base;

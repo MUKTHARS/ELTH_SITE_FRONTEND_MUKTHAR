@@ -82,7 +82,8 @@
 }
 
 .pointIcon {
-  font-size: 20px;
+  display: flex;
+  color: $elth-purple;
   flex-shrink: 0;
   margin-top: 2px;
 }

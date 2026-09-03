@@ -70,7 +70,7 @@
   &:hover { box-shadow: $shadow-md; }
 }
 
-.icon { font-size: 28px; }
+.icon { display: flex; color: $elth-teal; }
 
 .cardTitle {
   font-size: $text-base;

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import GradientText from '@components/common/GradientText/GradientText'
+import { IconFlag } from '@icons/index'
 import { BRIEF_SECTIONS, BRIEF_STATS } from '@constants/briefing'
 import styles from './FeaturesBriefing.module.scss'
 
@@ -31,7 +32,10 @@ export default function FeaturesBriefing() {
                 {BRIEF_SECTIONS.map((s) => (
                   <div key={s.label} className={styles.briefRow}>
                     <span className={styles.briefLabel}>{s.label}</span>
-                    <p className={styles.briefValue}>{s.value}</p>
+                    <p className={styles.briefValue}>
+                      {s.flagged && <IconFlag size={13} className={styles.flagIcon} />}
+                      {s.value}
+                    </p>
                   </div>
                 ))}
               </div>

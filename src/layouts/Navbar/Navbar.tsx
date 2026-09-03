@@ -49,7 +49,7 @@ export default function Navbar() {
           </nav>
 
           <div className={styles.actions}>
-            <Button asChild size="default">
+            <Button asChild size="default" className={styles.ctaBtn}>
               <Link href={NAV_CTA.href}>{NAV_CTA.label}</Link>
             </Button>
             <button className={styles.menuBtn} onClick={() => setOpen(true)} aria-label="Open menu">

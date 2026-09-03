@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import { IconLightbulb } from '@icons/index'
 import { HOW_IT_WORKS_STEPS } from '@constants/howItWorks'
 import styles from './HowItWorks.module.scss'
 
@@ -27,7 +28,7 @@ export default function HowItWorks() {
             >
               <div className={styles.stepTop}>
                 <div className={styles.stepIcon} style={{ color: s.color, background: s.color + '18' }}>
-                  {s.icon}
+                  <s.icon size={22} strokeWidth={1.6} />
                 </div>
                 <span className={styles.stepNum} style={{ color: s.color }}>{s.num}</span>
               </div>
@@ -45,7 +46,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.5, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <span className={styles.noteIcon}>💡</span>
+          <span className={styles.noteIcon}><IconLightbulb size={18} strokeWidth={1.6} /></span>
           <p className={styles.noteText}>
             <strong>No patients ever see &quot;Elth AI&quot;</strong> — they interact with your hospital&apos;s brand. We&apos;re the infrastructure, you&apos;re the experience.
           </p>

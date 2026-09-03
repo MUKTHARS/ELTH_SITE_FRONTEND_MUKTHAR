@@ -43,7 +43,7 @@
   align-items: flex-start;
 }
 
-.flowIcon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: $elth-purple-bg; font-size: 18px; }
+.flowIcon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: $elth-purple-bg; flex-shrink: 0; }
 
 .flowLabel {
   font-size: $text-base;

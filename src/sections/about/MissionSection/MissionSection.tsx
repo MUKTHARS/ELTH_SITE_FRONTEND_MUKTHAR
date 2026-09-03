@@ -47,7 +47,7 @@ export default function MissionSection() {
                 transition={{ duration: 0.45, delay: i * 0.1 }}
                 viewport={{ once: true }}
               >
-                <span className={styles.valueIcon}>{v.icon}</span>
+                <span className={styles.valueIcon}><v.icon size={20} color="#C4B5FD" strokeWidth={1.6} /></span>
                 <strong className={styles.valueName}>{v.value}</strong>
                 <p className={styles.valueDesc}>{v.desc}</p>
               </motion.div>

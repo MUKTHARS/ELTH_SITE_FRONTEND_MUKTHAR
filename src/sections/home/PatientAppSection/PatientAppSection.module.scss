@@ -363,10 +363,7 @@
   align-self: stretch;
 
   @include respond-to(sm) {
-    width: 100%;
-    max-width: 100%;
-    flex: none;
-    align-self: auto;
+    display: none;
   }
 }
 

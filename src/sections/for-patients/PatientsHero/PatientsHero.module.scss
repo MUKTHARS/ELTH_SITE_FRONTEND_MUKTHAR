@@ -75,8 +75,13 @@
   padding-top: $space-2;
 
   span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     font-size: $text-sm;
     color: rgba($white, 0.7);
+
+    svg { flex-shrink: 0; }
 
     @include respond-to(sm) { font-size: $text-xs; }
   }

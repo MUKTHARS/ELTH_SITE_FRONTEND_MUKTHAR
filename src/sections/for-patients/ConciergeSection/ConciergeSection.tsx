@@ -28,7 +28,7 @@ export default function ConciergeSection() {
               transition={{ duration: 0.45, delay: i * 0.09 }}
               viewport={{ once: true }}
             >
-              <span className={styles.icon}>{s.icon}</span>
+              <span className={styles.icon}><s.icon size={20} color="#1E2A4A" strokeWidth={1.6} /></span>
               <h3 className={styles.cardTitle}>{s.title}</h3>
               <p className={styles.cardDesc}>{s.desc}</p>
             </motion.div>

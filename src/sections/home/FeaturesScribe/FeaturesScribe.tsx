@@ -30,7 +30,7 @@ export default function FeaturesScribe() {
             <ul className={styles.points}>
               {SCRIBE_POINTS.map((pt) => (
                 <li key={pt.title} className={styles.point}>
-                  <span className={styles.pointIcon}>{pt.icon}</span>
+                  <span className={styles.pointIcon}><pt.icon size={18} strokeWidth={1.6} /></span>
                   <div>
                     <strong className={styles.pointTitle}>{pt.title}</strong>
                     <p className={styles.pointDesc}>{pt.desc}</p>

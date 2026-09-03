@@ -38,7 +38,7 @@ export default function LabReportSection() {
             <div className={styles.features}>
               {LAB_REPORT_FEATURES.map((f) => (
                 <div key={f.title} className={styles.featureItem}>
-                  <span className={styles.featureIcon}>{f.icon}</span>
+                  <span className={styles.featureIcon}><f.icon size={20} color="#1E2A4A" strokeWidth={1.6} /></span>
                   <div>
                     <strong className={styles.featureTitle}>{f.title}</strong>
                     <p className={styles.featureDesc}>{f.desc}</p>

@@ -26,7 +26,11 @@
     gap: $space-8;
   }
 
-  @include respond-to(sm) { padding: $space-6; }
+  @include respond-to(sm) {
+    padding: $space-6 $space-5;
+    box-shadow: $shadow-md;
+    border: 1px solid rgba(#18241d, 0.08);
+  }
 }
 
 .left {
@@ -94,9 +98,11 @@
   }
 
   @include respond-to(sm) {
-    flex-direction: column;
-    gap: $space-4;
+    flex-direction: row;
+    gap: $space-3;
     padding: $space-5;
+    background: rgba($white, 0.85);
+    box-shadow: $shadow-sm;
   }
 }
 
@@ -111,7 +117,13 @@
   &:last-child { padding-bottom: 0; border-bottom: none; }
 
   @include respond-to(sm) {
-    padding-bottom: $space-3;
+    flex: 1;
+    padding-bottom: 0;
+    padding-right: $space-3;
+    border-bottom: none;
+    border-right: 1px solid rgba(#18241d, 0.1);
+
+    &:last-child { padding-right: 0; border-right: none; }
   }
 }
 
@@ -121,6 +133,8 @@
   color: #18241d;
   letter-spacing: $tracking-tight;
   line-height: 1;
+
+  @include respond-to(xs) { font-size: $text-3xl; }
 }
 
 .statLabel {

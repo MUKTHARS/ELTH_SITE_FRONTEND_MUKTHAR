@@ -202,8 +202,14 @@ $accent: #6D4AEA;
   max-width: 100%;
   overflow: hidden;
 
-  @include respond-to(lg) { 
+  @include respond-to(lg) {
     margin-top: $space-2;
+  }
+
+  // The clinical-companion mockup is a desktop hero accent; on phones it
+  // just eats space above the fold, so skip it and let the copy lead.
+  @include respond-to(sm) {
+    display: none;
   }
 }
 
@@ -229,11 +235,26 @@ $accent: #6D4AEA;
   animation: medFloat 5s ease-in-out infinite;
 
   @media (prefers-reduced-motion: reduce) { animation: none; }
+
+  // The tilt is a desktop hover-parallax effect (see handleStageMouseMove).
+  // On touch devices there's no hover to justify it, so the card just looks
+  // crooked — keep it flat like the other mobile cards.
+  @include respond-to(sm) {
+    transform: none;
+    animation: medFloatFlat 5s ease-in-out infinite;
+
+    @media (prefers-reduced-motion: reduce) { animation: none; }
+  }
 }
 
 @keyframes medFloat {
   0%, 100% { transform: rotateX(4deg) rotateY(-8deg) translateY(0); }
   50%      { transform: rotateX(4deg) rotateY(-8deg) translateY(-12px); }
+}
+
+@keyframes medFloatFlat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
 }
 
 .medGlow {
@@ -294,6 +315,10 @@ $accent: #6D4AEA;
   transform: translate(-50%, -50%) translateZ(100px) rotateX(3deg) rotateY(-6deg);
   transform-style: preserve-3d;
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  @include respond-to(sm) {
+    transform: translate(-50%, -50%);
+  }
 }
 
 .listenPanel {

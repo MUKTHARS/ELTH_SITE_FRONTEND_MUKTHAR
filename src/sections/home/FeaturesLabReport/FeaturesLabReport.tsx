@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import GradientText from '@components/common/GradientText/GradientText'
+import { IconBrain } from '@icons/index'
 import { LAB_MARKERS, LAB_STATUS_COLOR, LAB_FEATURES_LIST } from '@constants/labReport'
 import styles from './FeaturesLabReport.module.scss'
 
@@ -67,7 +68,7 @@ export default function FeaturesLabReport() {
                 ))}
               </div>
               <div className={styles.aiSummary}>
-                <span className={styles.aiLabel}>🤖 AI Summary</span>
+                <span className={styles.aiLabel}><IconBrain size={14} strokeWidth={1.75} /> AI Summary</span>
                 <p className={styles.aiText}>Your haemoglobin is low — this may cause tiredness. Your blood sugar is slightly elevated. Your doctor will discuss next steps.</p>
               </div>
             </div>

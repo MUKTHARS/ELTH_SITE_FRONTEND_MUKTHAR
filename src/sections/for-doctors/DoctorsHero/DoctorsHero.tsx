@@ -41,7 +41,7 @@ export default function DoctorsHero() {
           </div>
           <div className={styles.proof}>
             {DOCTORS_HERO_PROOF.map((item) => (
-              <span key={item}>{item}</span>
+              <span key={item.label}><item.icon size={13} strokeWidth={1.75} /> {item.label}</span>
             ))}
           </div>
         </motion.div>

@@ -33,7 +33,7 @@ export default function ComplianceSection() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 viewport={{ once: true }}
               >
-                <span className={styles.badgeIcon} style={{ color: b.color }}>🛡️</span>
+                <span className={styles.badgeIcon} style={{ color: b.color }}><b.icon size={20} color={b.color} strokeWidth={1.6} /></span>
                 <span className={styles.badgeName}>{b.name}</span>
                 <span className={styles.badgeDesc}>{b.description}</span>
               </motion.div>

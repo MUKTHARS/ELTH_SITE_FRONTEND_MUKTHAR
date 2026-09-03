@@ -99,7 +99,7 @@
   gap: $space-3;
 }
 
-.contactIcon { font-size: 18px; }
+.contactIcon { display: flex; color: rgba($white, 0.85); }
 
 .contactText {
   font-size: $text-sm;
@@ -196,7 +196,7 @@
   @include respond-to(sm) { padding: $space-8 $space-5; }
 }
 
-.successIcon { font-size: 48px; }
+.successIcon { display: flex; justify-content: center; color: $elth-teal; }
 
 .successTitle {
   @include heading-sm;

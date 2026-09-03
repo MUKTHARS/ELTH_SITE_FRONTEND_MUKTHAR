@@ -78,22 +78,28 @@
 .values {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0 $space-6;
+  gap: $space-5;
   margin-top: $space-4;
 
   @include respond-to(md) { grid-template-columns: 1fr; }
 }
 
 .valueCard {
-  background: transparent;
-  border-top: 1px solid rgba($white, 0.15);
-  padding: $space-5 0;
+  @include card-dark;
+  padding: $space-6;
   display: flex;
   flex-direction: column;
   gap: $space-3;
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: rgba($white, 0.22);
+    box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
 }
 
-.valueIcon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: $elth-purple-bg; font-size: 18px; }
+.valueIcon { width: 42px; height: 42px; border-radius: $radius-md; display: flex; align-items: center; justify-content: center; background: rgba($white, 0.08); flex-shrink: 0; }
 
 .valueName {
   font-size: $text-base;

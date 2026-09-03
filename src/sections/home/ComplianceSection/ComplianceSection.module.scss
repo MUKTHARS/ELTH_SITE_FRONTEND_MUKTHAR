@@ -92,7 +92,7 @@
   &:hover { background: rgba($white, 0.09); }
 }
 
-.badgeIcon { font-size: 28px; }
+.badgeIcon { display: flex; }
 
 .badgeName {
   font-size: $text-sm;

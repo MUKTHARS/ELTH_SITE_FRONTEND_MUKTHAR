@@ -1,3 +1,5 @@
+import type { ComponentType } from 'react'
+
 // ─── Navigation ───────────────────────────────────────────────────────────────
 export interface NavItem {
   label: string
@@ -83,7 +85,7 @@ export interface PricingPlan {
 export interface ComplianceBadge {
   name: string
   description: string
-  icon: string
+  icon: ComponentType<IconProps>
   color: string
 }
 

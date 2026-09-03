@@ -145,8 +145,19 @@
 }
 
 .chatStatus {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   font-size: $text-xs;
   color: $text-tertiary;
+}
+
+.onlineDot {
+  width: 7px;
+  height: 7px;
+  border-radius: $radius-full;
+  background: #22c55e;
+  flex-shrink: 0;
 }
 
 .chatMessages {
@@ -176,4 +187,11 @@
   font-size: $text-xs;
   line-height: $leading-relaxed;
   max-width: 85%;
+}
+
+.urgentIcon {
+  color: #dc2626;
+  vertical-align: -2px;
+  margin-right: 4px;
+  flex-shrink: 0;
 }

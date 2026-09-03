@@ -234,14 +234,15 @@
   position: relative;
   width: 100%;
   max-width: 560px;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 3;
   border-radius: $radius-2xl;
   overflow: hidden;
+  background: $elth-dark;
   box-shadow: 0 32px 64px -24px rgba(0, 0, 0, 0.55);
 }
 
 .mockImage {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 // ─── Progress dots ──────────────────────────────────────────────────────────

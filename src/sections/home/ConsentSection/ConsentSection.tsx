@@ -31,7 +31,7 @@ export default function ConsentSection() {
               transition={{ duration: 0.45, delay: i * 0.07 }}
               viewport={{ once: true }}
             >
-              <span className={styles.icon}>{p.icon}</span>
+              <span className={styles.icon}><p.icon size={22} strokeWidth={1.6} /></span>
               <h3 className={styles.cardTitle}>{p.title}</h3>
               <p className={styles.cardDesc}>{p.desc}</p>
             </motion.div>

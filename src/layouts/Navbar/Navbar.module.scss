@@ -127,6 +127,13 @@
   @include respond-to(xs) { gap: $space-2; }
 }
 
+.ctaBtn {
+  // The mobile drawer (MobileMenu) already surfaces its own full-width
+  // Request Demo CTA, so showing this one too just crowds the header
+  // next to the hamburger button.
+  @include respond-to(lg) { display: none; }
+}
+
 .menuBtn {
   display: none;
   background: none;

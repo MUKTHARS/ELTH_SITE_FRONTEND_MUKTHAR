@@ -32,7 +32,7 @@ export default function SymptomCheckerSection() {
               transition={{ duration: 0.45, delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <span className={styles.flowIcon}>{f.icon}</span>
+              <span className={styles.flowIcon}><f.icon size={20} color="#1E2A4A" strokeWidth={1.6} /></span>
               <h3 className={styles.flowLabel}>{f.step}</h3>
               <p className={styles.flowDesc}>{f.desc}</p>
             </motion.div>
