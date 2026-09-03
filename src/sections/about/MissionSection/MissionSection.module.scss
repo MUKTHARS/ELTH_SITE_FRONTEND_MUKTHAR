@@ -1,15 +1,40 @@
-@use '@styles/variables' as *;
+﻿@use '@styles/variables' as *;
 @use '@styles/mixins' as *;
 
 .section {
-  background: #F6F5FC;
+  position: relative;
+  overflow: hidden;
+  background: $elth-dark;
   padding: 120px 0 $space-20;
 
   @include respond-to(md) { padding: 100px 0 $space-16; }
   @include respond-to(sm) { padding: 88px 0 $space-12; }
 }
 
-.inner { @include container; }
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba($elth-dark, 0.94) 0%, rgba($elth-dark, 0.86) 42%, rgba($elth-dark, 0.55) 72%, rgba($elth-dark, 0.35) 100%),
+    linear-gradient(0deg, rgba($elth-dark, 0.5) 0%, transparent 30%);
+}
+
+.inner {
+  @include container;
+  position: relative;
+  z-index: 1;
+}
 
 .content {
   max-width: 860px;
@@ -21,19 +46,19 @@
 
 .eyebrow {
   @include label-text;
-  color: $elth-purple;
+  color: #A78BFA;
 }
 
 .heading {
   @include heading-xl;
-  color: #18241d;
+  color: $white;
   line-height: $leading-tight;
   letter-spacing: -0.055em;
 }
 
 .body {
   @include body-lg;
-  color: $text-secondary;
+  color: rgba($white, 0.8);
   line-height: $leading-relaxed;
   margin: 0;
 }
@@ -53,32 +78,38 @@
 .values {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0 $space-6;
+  gap: $space-5;
   margin-top: $space-4;
 
   @include respond-to(md) { grid-template-columns: 1fr; }
 }
 
 .valueCard {
-  background: transparent;
-  border-top: 1px solid #DCD9F1;
-  padding: $space-5 0;
+  @include card-dark;
+  padding: $space-6;
   display: flex;
   flex-direction: column;
   gap: $space-3;
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: rgba($white, 0.22);
+    box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
 }
 
-.valueIcon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: $elth-purple-bg; font-size: 18px; }
+.valueIcon { width: 42px; height: 42px; border-radius: $radius-md; display: flex; align-items: center; justify-content: center; background: rgba($white, 0.08); flex-shrink: 0; }
 
 .valueName {
   font-size: $text-base;
   font-weight: $font-semibold;
-  color: $text-primary;
+  color: $white;
 }
 
 .valueDesc {
   font-size: $text-sm;
-  color: $text-secondary;
+  color: rgba($white, 0.8);
   line-height: $leading-relaxed;
   margin: 0;
 }

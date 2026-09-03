@@ -11,8 +11,9 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'For Patients',  href: ROUTES.FOR_PATIENTS },
     ],
   },
-  { label: 'Pricing', href: ROUTES.PRICING },
-  { label: 'About',   href: ROUTES.ABOUT },
+  { label: 'Pricing',      href: ROUTES.PRICING },
+  // { label: 'Case Studies', href: ROUTES.CASE_STUDIES },
+  { label: 'About',        href: ROUTES.ABOUT },
 ]
 
 export const NAV_CTA = {
@@ -28,6 +29,7 @@ export const FOOTER_GROUPS: FooterGroup[] = [
       { label: 'For Hospitals', href: ROUTES.FOR_HOSPITALS },
       { label: 'For Patients',  href: ROUTES.FOR_PATIENTS },
       { label: 'Pricing',       href: ROUTES.PRICING },
+      { label: 'Case Studies',  href: ROUTES.CASE_STUDIES },
     ],
   },
   {
@@ -43,17 +45,18 @@ export const FOOTER_GROUPS: FooterGroup[] = [
   {
     title: 'Company',
     links: [
-      { label: 'About',        href: ROUTES.ABOUT },
-      { label: 'Contact',      href: ROUTES.CONTACT },
-      { label: 'Request Demo', href: ROUTES.CONTACT },
+      { label: 'About',            href: ROUTES.ABOUT },
+      { label: 'Trust & Security', href: ROUTES.TRUST },
+      { label: 'Contact',          href: ROUTES.CONTACT },
+      { label: 'Request Demo',     href: ROUTES.CONTACT },
     ],
   },
   {
     title: 'Legal',
     links: [
-      { label: 'Privacy Policy',    href: '/privacy' },
-      { label: 'Terms of Service',  href: '/terms' },
-      { label: 'Data Processing',   href: '/data' },
+      { label: 'Privacy Policy',    href: ROUTES.PRIVACY },
+      { label: 'Terms of Service',  href: ROUTES.TERMS },
+      { label: 'Data Processing',   href: ROUTES.DATA },
     ],
   },
 ]

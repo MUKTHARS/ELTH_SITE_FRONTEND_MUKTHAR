@@ -12,6 +12,10 @@ import styles from './DoctorsHero.module.scss'
 export default function DoctorsHero() {
   return (
     <section className={styles.section}>
+      <div className={styles.bg}>
+        <Image src="/images/topbanners/for-doctors.webp" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
+      </div>
       <div className={styles.inner}>
         <motion.div
           className={styles.content}
@@ -37,7 +41,7 @@ export default function DoctorsHero() {
           </div>
           <div className={styles.proof}>
             {DOCTORS_HERO_PROOF.map((item) => (
-              <span key={item}>{item}</span>
+              <span key={item.label}><item.icon size={13} strokeWidth={1.75} /> {item.label}</span>
             ))}
           </div>
         </motion.div>
@@ -50,7 +54,7 @@ export default function DoctorsHero() {
         >
           <div className={styles.visualImage}>
             <Image
-              src="/images/doctorctc.avif"
+              src="/images/topcontent/for-doctors.jpg"
               alt="Doctor preparing for a patient consultation"
               fill
               priority

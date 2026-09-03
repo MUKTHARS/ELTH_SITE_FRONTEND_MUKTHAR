@@ -1,9 +1,9 @@
-@use '@styles/variables' as *;
+﻿@use '@styles/variables' as *;
 @use '@styles/mixins' as *;
 
 .section {
   @include section-padding;
-  background: #F6F5FC;
+  background: #F3F8F6;
 }
 
 .inner { @include container; }
@@ -60,9 +60,7 @@
 .right {}
 
 .dashboard {
-  background: $white;
-  border: 1px solid rgba(#18241d, .08);
-  box-shadow: 0 18px 40px rgba(#18241d, .12);
+  @include card-base;
   border-radius: 2px;
   padding: $space-6;
   display: flex;

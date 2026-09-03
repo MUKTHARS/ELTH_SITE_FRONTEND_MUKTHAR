@@ -1,0 +1,64 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  background: $elth-bg-warm;
+  padding: 120px 0 $space-20;
+
+  @include respond-to(md) { padding: 100px 0 $space-16; }
+  @include respond-to(sm) { padding: 88px 0 $space-12; }
+}
+
+.inner {
+  @include container;
+  max-width: 800px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  margin-bottom: $space-10;
+}
+
+.eyebrow {
+  @include label-text;
+  color: $text-tertiary;
+}
+
+.heading {
+  @include heading-lg;
+  color: $text-primary;
+}
+
+.sub {
+  @include body-lg;
+  color: $text-secondary;
+  margin: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.card {
+  @include card-base;
+  padding: $space-6;
+
+  @include respond-to(sm) { padding: $space-5; }
+}
+
+.cardTitle {
+  @include heading-sm;
+  color: $text-primary;
+  margin: 0 0 $space-3;
+}
+
+.cardBody {
+  @include body-base;
+  color: $text-secondary;
+  white-space: pre-line;
+  margin: 0;
+}

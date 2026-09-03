@@ -1,10 +1,10 @@
-@use '@styles/variables' as *;
+﻿@use '@styles/variables' as *;
 @use '@styles/mixins' as *;
 
 .section {
   position: relative;
   overflow: hidden;
-  background: #F6F5FC;
+  background: $elth-dark;
   padding: 132px 0 $space-20;
   min-height: 700px;
 
@@ -12,7 +12,26 @@
   @include respond-to(sm) { padding: 88px 0 $space-12; }
 }
 
-.inner { @include container; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: $space-12; align-items: center; @include respond-to(lg) { grid-template-columns: 1fr; } }
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba($elth-dark, 0.94) 0%, rgba($elth-dark, 0.86) 42%, rgba($elth-dark, 0.55) 72%, rgba($elth-dark, 0.35) 100%),
+    linear-gradient(0deg, rgba($elth-dark, 0.5) 0%, transparent 30%);
+}
+
+.inner { @include container; position: relative; z-index: 1; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: $space-12; align-items: center; @include respond-to(lg) { grid-template-columns: 1fr; } }
 
 .content {
   max-width: 610px;
@@ -23,7 +42,7 @@
 
 .badge {
   @include label-text;
-  color: $elth-purple;
+  color: #A78BFA;
   padding: 0;
   border-radius: 0;
   width: fit-content;
@@ -31,14 +50,14 @@
 
 .heading {
   @include heading-xl;
-  color: #18241d;
+  color: $white;
   line-height: $leading-tight;
   letter-spacing: -0.055em;
 }
 
 .sub {
   @include body-lg;
-  color: $text-secondary;
+  color: rgba($white, 0.8);
   line-height: $leading-relaxed;
   max-width: 520px;
 }
@@ -56,8 +75,13 @@
   padding-top: $space-2;
 
   span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     font-size: $text-sm;
-    color: $text-secondary;
+    color: rgba($white, 0.7);
+
+    svg { flex-shrink: 0; }
 
     @include respond-to(sm) { font-size: $text-xs; }
   }
@@ -65,7 +89,7 @@
 
 .visual { position: relative; justify-self: end; width: min(100%, 530px); min-height: 470px; @include respond-to(lg) { justify-self: center; } }
 .imageWrap { position: absolute; inset: 0 34px 0 0; overflow: hidden; border-radius: 2px; :global(img) { object-fit: cover; } &::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 32%, rgba(#18241d, .3)); } }
-.helpCard { position: absolute; right: 0; bottom: 28px; width: min(88%, 380px); padding: $space-6; background: $white; border: 1px solid rgba(#18241d, .08); box-shadow: 0 22px 46px rgba(#18241d, .16); display: flex; flex-direction: column; gap: $space-2; }
+.helpCard { position: absolute; right: 0; bottom: 28px; width: min(88%, 380px); padding: $space-6; @include card-base; display: flex; flex-direction: column; gap: $space-2; }
 .helpCard span { color: $elth-purple; font-size: $text-xs; font-weight: $font-semibold; text-transform: uppercase; letter-spacing: $tracking-wide; }
 .helpCard strong { color: #18241d; font-size: $text-xl; letter-spacing: -0.03em; }
 .helpCard p { margin: 0; color: $text-secondary; font-size: $text-sm; line-height: $leading-relaxed; }

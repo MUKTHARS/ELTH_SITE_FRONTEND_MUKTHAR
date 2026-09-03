@@ -1,11 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import styles from './PricingHero.module.scss'
 
 export default function PricingHero() {
   return (
     <section className={styles.section}>
+      <div className={styles.bg}>
+        <Image src="/images/top.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
+      </div>
       <div className={styles.inner}>
         <motion.div
           className={styles.content}

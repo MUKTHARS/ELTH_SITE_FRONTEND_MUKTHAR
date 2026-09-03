@@ -28,14 +28,14 @@ export default function ConciergeSection() {
               transition={{ duration: 0.45, delay: i * 0.09 }}
               viewport={{ once: true }}
             >
-              <span className={styles.icon}>{s.icon}</span>
+              <span className={styles.icon}><s.icon size={20} color="#1E2A4A" strokeWidth={1.6} /></span>
               <h3 className={styles.cardTitle}>{s.title}</h3>
               <p className={styles.cardDesc}>{s.desc}</p>
             </motion.div>
           ))}
           </div>
           <div className={styles.imagePanel}>
-            <Image src="/images/doctorctc.avif" alt="A caring clinician supporting a patient" fill sizes="(max-width: 1024px) 100vw, 36vw" />
+            <Image src="/images/appointment.webp" alt="A caring clinician supporting a patient" fill sizes="(max-width: 1024px) 100vw, 36vw" />
             <div className={styles.imageCaption}>The details are easier to manage when care stays connected.</div>
           </div>
         </div>

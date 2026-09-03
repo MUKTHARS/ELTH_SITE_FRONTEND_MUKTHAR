@@ -1,0 +1,149 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  position: relative;
+  overflow: hidden;
+  background: $elth-dark;
+  padding: 120px 0 $space-24;
+
+  @include respond-to(md) { padding: 100px 0 $space-16; }
+  @include respond-to(sm) { padding: 88px 0 $space-12; }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba($elth-dark, 0.94) 0%, rgba($elth-dark, 0.86) 42%, rgba($elth-dark, 0.55) 72%, rgba($elth-dark, 0.35) 100%),
+    linear-gradient(0deg, rgba($elth-dark, 0.5) 0%, transparent 30%);
+}
+
+.inner {
+  @include container;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-4;
+  margin-bottom: $space-16;
+}
+
+.heading {
+  @include heading-lg;
+  color: $white;
+  line-height: $leading-tight;
+}
+
+.sub {
+  @include body-lg;
+  color: rgba($white, 0.8);
+  max-width: 560px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.card {
+  @include card-base;
+  padding: $space-8;
+
+  @include respond-to(sm) { padding: $space-5; }
+}
+
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: $space-5;
+}
+
+.hospital {
+  @include heading-sm;
+  color: $text-primary;
+  margin: 0 0 $space-1;
+}
+
+.meta {
+  @include body-sm;
+  color: $text-tertiary;
+  margin: 0;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-6;
+  margin-bottom: $space-6;
+
+  @include respond-to(sm) {
+    grid-template-columns: 1fr;
+    gap: $space-4;
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.blockLabel {
+  @include label-text;
+  color: $elth-teal;
+}
+
+.blockText {
+  @include body-base;
+  color: $text-secondary;
+  margin: 0;
+}
+
+.metrics {
+  display: flex;
+  gap: $space-8;
+  padding-top: $space-5;
+  border-top: 1px solid $elth-border;
+
+  @include respond-to(sm) {
+    flex-direction: column;
+    gap: $space-3;
+  }
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.metricValue {
+  font-size: $text-2xl;
+  font-weight: $font-bold;
+  color: $elth-teal;
+}
+
+.metricLabel {
+  @include body-sm;
+  color: $text-tertiary;
+}

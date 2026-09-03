@@ -9,6 +9,9 @@
   z-index: $z-sticky;
   transition: background $transition-base, box-shadow $transition-base, border-color $transition-base;
   border-bottom: 1px solid transparent;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .scrolled {
@@ -30,8 +33,12 @@
 .logoText {
   font-size: $text-xl;
   font-weight: $font-bold;
-  color: $elth-teal;
+  color: $white;
   letter-spacing: $tracking-tight;
+}
+
+.scrolled .logoText {
+  color: $elth-teal;
 }
 
 .nav {
@@ -53,19 +60,29 @@
   padding: $space-2 $space-3;
   font-size: $text-sm;
   font-weight: $font-medium;
-  color: $text-secondary;
+  color: $white;
   border-radius: $radius-md;
   transition: color $transition-fast, background $transition-fast;
   text-decoration: none;
+
+  &:hover { color: $white; background: rgba($white, 0.15); }
+}
+
+.scrolled .navLink {
+  color: $text-secondary;
 
   &:hover { color: $text-primary; background: $elth-bg-warm; }
 }
 
 .chevron {
   font-size: $text-base;
-  color: $text-tertiary;
+  color: rgba($white, 0.7);
   transform: rotate(90deg);
   display: inline-block;
+}
+
+.scrolled .chevron {
+  color: $text-tertiary;
 }
 
 .dropdown {
@@ -73,13 +90,12 @@
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: $white;
-  border: 1px solid $elth-border;
-  border-radius: $radius-lg;
-  box-shadow: $shadow-lg;
+  @include card-base;
   padding: $space-2;
   min-width: 180px;
   z-index: $z-dropdown;
+  background: $white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 
   &::before {
     content: '';
@@ -111,17 +127,30 @@
   @include respond-to(xs) { gap: $space-2; }
 }
 
+.ctaBtn {
+  // The mobile drawer (MobileMenu) already surfaces its own full-width
+  // Request Demo CTA, so showing this one too just crowds the header
+  // next to the hamburger button.
+  @include respond-to(lg) { display: none; }
+}
+
 .menuBtn {
   display: none;
   background: none;
   border: none;
   padding: $space-2;
-  color: $text-secondary;
+  color: $white;
   cursor: pointer;
   border-radius: $radius-md;
-  transition: background $transition-fast;
+  transition: background $transition-fast, color $transition-fast;
 
-  &:hover { background: $elth-bg-warm; }
+  &:hover { background: rgba($white, 0.15); }
 
   @include respond-to(lg) { display: flex; align-items: center; }
+}
+
+.scrolled .menuBtn {
+  color: $text-secondary;
+
+  &:hover { background: $elth-bg-warm; }
 }

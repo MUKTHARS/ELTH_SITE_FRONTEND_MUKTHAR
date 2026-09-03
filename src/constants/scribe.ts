@@ -1,21 +1,23 @@
+import { IconMic, IconGlobe, IconEdit, IconFileText } from '@icons/index'
+
 export const SCRIBE_POINTS = [
   {
-    icon: '🎙️',
+    icon: IconMic,
     title: 'Voice → SOAP note in 30 seconds',
     desc: 'Record the consultation. Elth transcribes and structures it into a SOAP note, ready to sign off.',
   },
   {
-    icon: '🌐',
+    icon: IconGlobe,
     title: '12+ Indian languages',
     desc: 'Tamil, Hindi, Telugu, Malayalam, Kannada and more — our model switches mid-sentence.',
   },
   {
-    icon: '✏️',
+    icon: IconEdit,
     title: 'Always editable',
     desc: 'Every field is editable before the note is finalized. The AI drafts, the doctor decides.',
   },
   {
-    icon: '📋',
+    icon: IconFileText,
     title: 'Pushes to your EMR',
     desc: 'One click sends the completed note straight to Healthplix, Practo, or your custom EMR.',
   },

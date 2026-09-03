@@ -28,7 +28,7 @@ export default function BriefingSection() {
               transition={{ duration: 0.45, delay: i * 0.09 }}
               viewport={{ once: true }}
             >
-              <span className={styles.icon}>{item.icon}</span>
+              <span className={styles.icon}><item.icon size={20} color="#1E2A4A" strokeWidth={1.75} /></span>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardDesc}>{item.desc}</p>
             </motion.div>
@@ -41,7 +41,7 @@ export default function BriefingSection() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <Image src="/images/doctor.avif" alt="Doctor reviewing a patient record before a consultation" fill sizes="(max-width: 1024px) 100vw, 36vw" />
+            <Image src="/images/doctor_brief.avif" alt="Doctor reviewing a patient record before a consultation" fill sizes="(max-width: 1024px) 100vw, 36vw" />
             <div className={styles.briefOverlay}>
               <span>Next appointment</span>
               <strong>Everything important, in one brief.</strong>

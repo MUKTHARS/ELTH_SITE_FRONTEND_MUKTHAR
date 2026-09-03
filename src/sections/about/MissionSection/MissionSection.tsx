@@ -9,6 +9,10 @@ import styles from './MissionSection.module.scss'
 export default function MissionSection() {
   return (
     <section className={styles.section}>
+      <div className={styles.bg}>
+        <Image src="/images/top.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
+      </div>
       <div className={styles.inner}>
         <motion.div
           className={styles.content}
@@ -29,7 +33,7 @@ export default function MissionSection() {
           </p>
 
           <div className={styles.visual}>
-            <Image src="/images/clinic.avif" alt="A care team working together in a clinical setting" fill priority sizes="(max-width: 768px) 100vw, 860px" />
+            <Image src="/images/about_mission.webp" alt="A care team working together in a clinical setting" fill priority sizes="(max-width: 768px) 100vw, 860px" />
             <span>Built around the people delivering care, every day.</span>
           </div>
 
@@ -43,7 +47,7 @@ export default function MissionSection() {
                 transition={{ duration: 0.45, delay: i * 0.1 }}
                 viewport={{ once: true }}
               >
-                <span className={styles.valueIcon}>{v.icon}</span>
+                <span className={styles.valueIcon}><v.icon size={20} color="#C4B5FD" strokeWidth={1.6} /></span>
                 <strong className={styles.valueName}>{v.value}</strong>
                 <p className={styles.valueDesc}>{v.desc}</p>
               </motion.div>

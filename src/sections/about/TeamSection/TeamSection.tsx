@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
-import { TEAM_MEMBERS } from '@constants/team'
+import { TEAM_EXPERTISE } from '@constants/team'
 import styles from './TeamSection.module.scss'
 
 export default function TeamSection() {
@@ -15,23 +15,18 @@ export default function TeamSection() {
           <p className={styles.sub}>Our founding team combines clinical experience, AI research, and deep product intuition in Indian health-tech.</p>
         </div>
         <div className={styles.grid}>
-          {TEAM_MEMBERS.map((member, i) => (
+          {TEAM_EXPERTISE.map((item, i) => (
             <motion.div
-              key={member.name}
+              key={item.title}
               className={styles.card}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className={styles.avatar} style={{ background: member.bg }}>
-                {member.initials}
-              </div>
-              <div className={styles.info}>
-                <div className={styles.role}>{member.name}</div>
-                <p className={styles.desc}>{member.role}</p>
-                <span className={styles.location}>📍 {member.location}</span>
-              </div>
+              <span className={styles.icon}><item.icon size={22} color="#0F7A5C" strokeWidth={1.6} /></span>
+              <h3 className={styles.cardTitle}>{item.title}</h3>
+              <p className={styles.desc}>{item.desc}</p>
             </motion.div>
           ))}
         </div>

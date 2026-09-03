@@ -3,7 +3,7 @@
 
 .section {
   @include section-padding;
-  background: $white;
+  background: $elth-lavender;
 }
 
 .inner { @include container; }
@@ -38,7 +38,7 @@
   gap: $space-3;
 }
 
-.icon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: $elth-purple-bg; font-size: 18px; }
+.icon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: $elth-purple-bg; flex-shrink: 0; }
 
 .imagePanel { position: relative; min-height: 410px; overflow: hidden; border-radius: 2px; box-shadow: $shadow-lg; :global(img) { object-fit: cover; } &::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(#18241d, .72)); } }
 .imageCaption { position: absolute; z-index: 1; left: $space-6; right: $space-6; bottom: $space-6; color: $white; font-size: $text-lg; font-weight: $font-medium; line-height: $leading-tight; }

@@ -1,6 +1,7 @@
 export { default as HeroSection } from './HeroSection/HeroSection'
 export { default as LogoBar } from './LogoBar/LogoBar'
 export { default as ProblemSection } from './ProblemSection/ProblemSection'
+export { default as PlatformSection } from './PlatformSection/PlatformSection'
 export { default as SolutionSection } from './SolutionSection/SolutionSection'
 export { default as FeaturesExplainer } from './FeaturesExplainer/FeaturesExplainer'
 export { default as FeaturesScribe } from './FeaturesScribe/FeaturesScribe'

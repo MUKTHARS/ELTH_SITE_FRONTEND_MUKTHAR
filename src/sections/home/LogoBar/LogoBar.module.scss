@@ -47,7 +47,6 @@
   color: $text-secondary;
   white-space: nowrap;
   padding: $space-2 $space-5;
-  background: $white;
-  border: 1px solid $elth-border;
+  @include card-base;
   border-radius: $radius-full;
 }

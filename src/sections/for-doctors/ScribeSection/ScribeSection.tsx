@@ -19,7 +19,7 @@ export default function ScribeSection() {
         </div>
         <div className={styles.story}>
           <div className={styles.imageWrap}>
-            <Image src="/images/clinic.avif" alt="A calm doctor-patient consultation" fill sizes="(max-width: 1024px) 100vw, 42vw" />
+            <Image src="/images/aiscribe.jpg" alt="A calm doctor-patient consultation" fill sizes="(max-width: 1024px) 100vw, 42vw" />
             <div className={styles.imageCaption}><span /> Your conversation stays yours</div>
           </div>
           <div className={styles.workflow}>

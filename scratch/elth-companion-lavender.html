@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavender Companion</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+        :root {
+            --bg: #E6E0F5;
+            --bg-2: #DACEEC;
+            --bg-3: #CDBEE3;
+            --glass: rgba(255, 255, 255, 0.6);
+            --glass-b: rgba(36, 27, 61, 0.12);
+            --violet: #6D4FC4;
+            --violet-dim: #4A2F99;
+            --violet-soft: #9C82E0;
+            --text: #241B3D;
+            --text-dim: #5B4E78;
+            --text-faint: #8577A0;
+            --font-display: 'Inter', 'Segoe UI', sans-serif;
+            --font-body: 'Inter', 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            background: var(--bg);
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--violet);
+            color: #F8F5FF;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .glow-field {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(620px 440px at 84% 6%, rgba(109, 79, 196, 0.14), transparent 60%),
+                radial-gradient(560px 420px at 4% 82%, rgba(255, 107, 74, 0.09), transparent 62%),
+                linear-gradient(180deg, var(--bg), var(--bg-2) 55%, var(--bg));
+        }
+
+        /* ─── Nav ─────────────────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 48px;
+            background: linear-gradient(180deg, rgba(230, 224, 245, 0.92), rgba(230, 224, 245, 0));
+            backdrop-filter: blur(6px);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            font-family: var(--font-display);
+        }
+        .logo::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            background: var(--violet);
+            box-shadow: 0 0 20px 4px rgba(109, 79, 196, 0.45);
+            transform: rotate(45deg);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            color: var(--text-dim);
+            font-family: var(--font-display);
+        }
+        .nav-links a {
+            transition: color 0.2s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--violet);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .nav-cta {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 999px;
+            border: 1px solid var(--glass-b);
+            background: var(--glass);
+            color: var(--text);
+            transition: all 0.3s ease;
+            font-family: var(--font-display);
+        }
+        .nav-cta:hover {
+            border-color: rgba(109, 79, 196, 0.42);
+            background: rgba(109, 79, 196, 0.09);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(109, 79, 196, 0.12);
+        }
+
+        @media (max-width: 720px) {
+            .nav-links {
+                display: none;
+            }
+            nav {
+                padding: 18px 20px;
+            }
+        }
+
+        /* ─── Hero ────────────────────────────────────────── */
+        .hero {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+            padding: 140px 48px 80px;
+        }
+        @media (max-width: 980px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 120px 24px 60px;
+                min-height: auto;
+                gap: 50px;
+            }
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--violet);
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+        .eyebrow::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--violet);
+            border-radius: 2px;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: clamp(40px, 5.2vw, 64px);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin: 0 0 24px;
+            text-wrap: balance;
+            color: var(--text);
+            font-family: var(--font-display);
+        }
+        h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--violet) 10%, #FF6B4A 75%, #FFB238 135%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-dim);
+            max-width: 480px;
+            margin: 0 0 40px;
+            font-weight: 400;
+            font-family: var(--font-display);
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 56px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-ghost {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+            padding: 15px 30px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--violet), var(--violet-dim));
+            color: #F8F5FF;
+            box-shadow: 0 16px 32px -12px rgba(109, 79, 196, 0.42);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 24px 44px -12px rgba(109, 79, 196, 0.52);
+        }
+        .btn-ghost {
+            border: 1.5px solid var(--glass-b);
+            color: var(--text);
+            background: var(--glass);
+        }
+        .btn-ghost:hover {
+            border-color: rgba(36, 27, 61, 0.3);
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 32px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+        .hero-meta b {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .hero-meta span::before {
+            content: '◆';
+            font-size: 6px;
+            color: var(--violet);
+            opacity: 0.5;
+        }
+
+        /* ─── LIVE CLINICAL LISTENING PANEL ───────────────── */
+        .stage {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1200px;
+        }
+        @media (max-width: 980px) {
+            .stage {
+                height: 480px;
+                margin-top: 0;
+            }
+        }
+
+        .med-scene {
+            position: relative;
+            width: 320px;
+            height: 400px;
+            transform-style: preserve-3d;
+            transform: rotateX(4deg) rotateY(-8deg);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: med-float 5s ease-in-out infinite;
+        }
+        @keyframes med-float {
+            0%, 100% { transform: rotateX(4deg) rotateY(-8deg) translateY(0); }
+            50% { transform: rotateX(4deg) rotateY(-8deg) translateY(-12px); }
+        }
+
+        /* Glow ring behind icon */
+        .med-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(109, 79, 196, 0.2), transparent 70%);
+            filter: blur(40px);
+            animation: glow-pulse 4s ease-in-out infinite;
+        }
+        @keyframes glow-pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+        }
+
+        /* Clinical listening surface */
+        .medical-3d {
+            position: absolute;
+            top: 32%;
+            left: 50%;
+            width: min(440px, 100%);
+            transform: translate(-50%, -50%) translateZ(100px) rotateY(-6deg);
+            transform-style: preserve-3d;
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .listen-panel {
+            position: relative;
+            padding: 30px;
+            border: 1px solid rgba(36, 27, 61, 0.16);
+            border-radius: 22px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(218, 206, 236, 0.76));
+            box-shadow: 0 30px 60px rgba(36, 27, 61, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            overflow: hidden;
+            transform: translateZ(24px) rotateX(3deg);
+            transform-style: preserve-3d;
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+            will-change: transform;
+        }
+
+        .listen-panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(109, 79, 196, 0.1), transparent 48%, rgba(255, 107, 74, 0.08));
+            pointer-events: none;
+        }
+
+        .listen-top,
+        .listen-copy,
+        .waveform,
+        .listen-foot {
+            position: relative;
+            transform: translateZ(18px);
+        }
+
+        .listen-top,
+        .listen-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .listen-kicker {
+            color: var(--text-faint);
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .listen-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #257443;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .listen-status::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22C55E;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.14);
+        }
+
+        .listen-copy {
+            padding: 28px 0 22px;
+            border-bottom: 1px solid rgba(36, 27, 61, 0.1);
+        }
+
+        .listen-copy strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text);
+            font-family: var(--font-display);
+            font-size: 22px;
+            line-height: 1.2;
+        }
+
+        .listen-copy p {
+            max-width: 320px;
+            color: var(--text-dim);
+            font-family: var(--font-display);
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .waveform {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            height: 68px;
+            margin: 22px 0;
+        }
+
+        .waveform i {
+            width: 4px;
+            height: var(--bar-height);
+            border-radius: 4px;
+            background: linear-gradient(180deg, var(--violet-soft), var(--violet));
+            animation: wave-breathe 1.2s ease-in-out infinite alternate;
+            animation-delay: var(--bar-delay);
+        }
+
+        @keyframes wave-breathe {
+            from { transform: scaleY(0.45); opacity: 0.55; }
+            to { transform: scaleY(1); opacity: 1; }
+        }
+
+        .listen-foot {
+            color: var(--text-faint);
+            font-family: var(--font-mono);
+            font-size: 10px;
+        }
+
+        .listen-foot b {
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        /* Floating particles around */
+        .med-particles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .med-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--violet-soft);
+            opacity: 0.3;
+            animation: particle-float 8s ease-in-out infinite;
+        }
+        .med-particle:nth-child(1) {
+            width: 8px;
+            height: 8px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        .med-particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            top: 20%;
+            right: 8%;
+            animation-delay: 1.5s;
+        }
+        .med-particle:nth-child(3) {
+            width: 10px;
+            height: 10px;
+            bottom: 25%;
+            left: 10%;
+            animation-delay: 3s;
+        }
+        .med-particle:nth-child(4) {
+            width: 7px;
+            height: 7px;
+            bottom: 15%;
+            right: 5%;
+            animation-delay: 4.5s;
+        }
+        .med-particle:nth-child(5) {
+            width: 5px;
+            height: 5px;
+            top: 45%;
+            left: 0%;
+            animation-delay: 2s;
+        }
+        .med-particle:nth-child(6) {
+            width: 9px;
+            height: 9px;
+            bottom: 40%;
+            right: 0%;
+            animation-delay: 3.5s;
+        }
+
+        @keyframes particle-float {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+            25% { transform: translate(15px, -25px) scale(1.5); opacity: 0.5; }
+            50% { transform: translate(-8px, -45px) scale(1); opacity: 0.3; }
+            75% { transform: translate(20px, -20px) scale(1.3); opacity: 0.4; }
+        }
+
+        /* Label under icon */
+        .med-label {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateZ(40px);
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dim);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            padding: 10px 24px;
+            border-radius: 40px;
+            border: 1px solid var(--glass-b);
+            box-shadow: 0 8px 24px rgba(36, 27, 61, 0.08);
+            white-space: nowrap;
+        }
+        .med-label b {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .med-label .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #22C55E;
+            margin-right: 8px;
+            animation: live-pulse 1.8s ease-in-out infinite;
+        }
+        @keyframes live-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.7); }
+        }
+
+        @media (max-width: 980px) {
+            .med-scene { width: min(420px, 100%); height: 340px; }
+            .listen-panel { padding: 22px; }
+            .med-label { font-size: 12px; padding: 8px 18px; }
+        }
+
+        /* ─── Section shell ───────────────────────────────── */
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 100px 48px;
+        }
+        @media (max-width: 720px) {
+            section {
+                padding: 70px 22px;
+            }
+        }
+
+        .section-head {
+            max-width: 640px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        .section-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--violet);
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+        h2 {
+            font-weight: 700;
+            font-size: clamp(28px, 3.6vw, 40px);
+            line-height: 1.15;
+            margin: 0 0 16px;
+            text-wrap: balance;
+            color: var(--text);
+            font-family: var(--font-display);
+            letter-spacing: -0.02em;
+        }
+        .section-sub {
+            color: var(--text-dim);
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 0;
+            font-family: var(--font-display);
+        }
+
+        /* ─── Stats ───────────────────────────────────────── */
+        .stats {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--glass-b);
+            border-bottom: 1px solid var(--glass-b);
+        }
+        @media (max-width: 780px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .stat {
+            padding: 38px 20px;
+            text-align: center;
+            border-right: 1px solid var(--glass-b);
+            transition: background 0.3s ease;
+        }
+        .stat:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .stat:last-child {
+            border-right: none;
+        }
+        @media (max-width: 780px) {
+            .stat:nth-child(2n) {
+                border-right: none;
+            }
+        }
+        .stat-num {
+            font-family: var(--font-mono);
+            font-variant-numeric: tabular-nums;
+            font-size: clamp(26px, 3.2vw, 34px);
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .stat-num span {
+            color: var(--violet);
+        }
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-faint);
+            font-weight: 400;
+            font-family: var(--font-display);
+        }
+
+        /* ─── Feature cards ───────────────────────────────── */
+        .features {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 900px) {
+            .features {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+            }
+        }
+        .fcard {
+            position: relative;
+            padding: 32px 28px;
+            border-radius: 20px;
+            background: linear-gradient(160deg, #FFFFFF, var(--bg-2));
+            border: 1px solid var(--glass-b);
+            box-shadow: 0 20px 44px -28px rgba(36, 27, 61, 0.24);
+            transform-style: preserve-3d;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+        .fcard:hover {
+            border-color: rgba(109, 79, 196, 0.32);
+            box-shadow: 0 32px 60px -28px rgba(36, 27, 61, 0.3);
+            transform: translateY(-6px);
+        }
+        .fcard-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(109, 79, 196, 0.1);
+            margin-bottom: 20px;
+            transform: translateZ(30px);
+            transition: all 0.3s ease;
+        }
+        .fcard:hover .fcard-icon {
+            background: rgba(109, 79, 196, 0.18);
+            transform: translateZ(40px) scale(1.05);
+        }
+        .fcard-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--violet);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .fcard h3 {
+            font-weight: 700;
+            font-size: 18px;
+            margin: 0 0 10px;
+            color: var(--text);
+            transform: translateZ(24px);
+            font-family: var(--font-display);
+            letter-spacing: -0.01em;
+        }
+        .fcard p {
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: var(--text-dim);
+            margin: 0;
+            transform: translateZ(18px);
+            font-family: var(--font-display);
+        }
+        .fcard-tag {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-faint);
+            transform: translateZ(24px);
+            font-weight: 500;
+        }
+
+        /* ─── Closing CTA ─────────────────────────────────── */
+        .cta-band {
+            max-width: 880px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 72px 48px;
+            border-radius: 28px;
+            background: linear-gradient(155deg, rgba(109, 79, 196, 0.12), rgba(255, 107, 74, 0.06));
+            border: 1px solid rgba(109, 79, 196, 0.2);
+            transition: all 0.3s ease;
+        }
+        .cta-band:hover {
+            border-color: rgba(109, 79, 196, 0.3);
+            box-shadow: 0 20px 60px -30px rgba(109, 79, 196, 0.15);
+        }
+        @media (max-width: 720px) {
+            .cta-band {
+                padding: 50px 26px;
+            }
+        }
+        .cta-band h2 {
+            margin-bottom: 14px;
+        }
+        .cta-band p {
+            color: var(--text-dim);
+            margin: 0 0 34px;
+            font-size: 16px;
+            font-family: var(--font-display);
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px 20px 60px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-faint);
+            letter-spacing: 0.06em;
+            font-weight: 400;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .med-scene,
+            .med-glow,
+            .listen-panel,
+            .waveform i,
+            .med-particle {
+                animation: none !important;
+            }
+            .fcard {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glow-field"></div>
+
+    <nav>
+        <div class="logo">Elth</div>
+        <div class="nav-links">
+            <a href="#capabilities">Capabilities</a>
+            <a href="#trust">Trust</a>
+        </div>
+        <a class="nav-cta" href="#">Request a demo</a>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <div class="eyebrow">Elth AI · Clinical Intelligence Platform</div>
+            <h1>Depth, where healthcare<br>software used to be <em>flat.</em></h1>
+            <p class="hero-sub">
+                Elth sits as a living layer between doctor and patient — listening, structuring, and briefing in real time,
+                without ever taking the decision out of a clinician's hands.
+            </p>
+            <div class="hero-ctas">
+                <a class="btn-primary" href="#">Request a demo →</a>
+                <a class="btn-ghost" href="#capabilities">See Elth listening</a>
+            </div>
+            <div class="hero-meta">
+                <span><b>6</b> languages</span>
+                <span><b>WhatsApp</b>-first</span>
+                <span><b>Consent</b>-gated by design</span>
+            </div>
+        </div>
+
+        <!-- ─── 3D MEDICAL ICON ─────────────────────────── -->
+        <div class="stage" id="stage">
+            <div class="med-scene" id="medScene">
+                <!-- Glow -->
+                <div class="med-glow"></div>
+
+                <!-- Particles -->
+                <div class="med-particles">
+                    <div class="med-particle"></div>
+                    <div class="med-particle"></div>
+                    <div class="med-particle"></div>
+                    <div class="med-particle"></div>
+                    <div class="med-particle"></div>
+                    <div class="med-particle"></div>
+                </div>
+
+                <!-- Live consultation surface -->
+                <div class="medical-3d">
+                    <div class="listen-panel">
+                        <div class="listen-top">
+                            <span class="listen-kicker">Clinical companion</span>
+                            <span class="listen-status">Listening</span>
+                        </div>
+                        <div class="listen-copy">
+                            <strong>Turning the conversation into care.</strong>
+                            <p>Capturing the patient's story and preparing a clear brief for the clinician.</p>
+                        </div>
+                        <div class="waveform" aria-hidden="true">
+                            <i style="--bar-height: 18px; --bar-delay: 0s"></i>
+                            <i style="--bar-height: 34px; --bar-delay: .1s"></i>
+                            <i style="--bar-height: 24px; --bar-delay: .2s"></i>
+                            <i style="--bar-height: 46px; --bar-delay: .3s"></i>
+                            <i style="--bar-height: 30px; --bar-delay: .4s"></i>
+                            <i style="--bar-height: 52px; --bar-delay: .5s"></i>
+                            <i style="--bar-height: 26px; --bar-delay: .6s"></i>
+                            <i style="--bar-height: 40px; --bar-delay: .7s"></i>
+                            <i style="--bar-height: 20px; --bar-delay: .8s"></i>
+                            <i style="--bar-height: 34px; --bar-delay: .9s"></i>
+                            <i style="--bar-height: 16px; --bar-delay: 1s"></i>
+                        </div>
+                        <div class="listen-foot">
+                            <span><b>EN</b> · consent verified</span>
+                            <span>00:42</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Label -->
+                
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top:0;">
+        <div class="stats">
+            <div class="stat"><div class="stat-num"><span>90,000</span>+</div><div class="stat-label">Doctors onboarded</div></div>
+            <div class="stat"><div class="stat-num"><span>33,000</span>+</div><div class="stat-label">Clinics &amp; hospitals</div></div>
+            <div class="stat"><div class="stat-num"><span>140M</span>+</div><div class="stat-label">Records managed</div></div>
+            <div class="stat"><div class="stat-num"><span>8M</span>+</div><div class="stat-label">AI conversations</div></div>
+        </div>
+    </section>
+
+    <section id="capabilities">
+        <div class="section-head">
+            <div class="section-eyebrow">Capabilities</div>
+            <h2>What Elth is doing behind that face</h2>
+            <p class="section-sub">The companion above is a real product surface — always listening, always handing off a structured brief, never deciding on its own.</p>
+        </div>
+
+        <div class="features">
+            <div class="fcard">
+                <div class="fcard-tag">01</div>
+                <div class="fcard-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+                </div>
+                <h3>AI Clinical Scribe</h3>
+                <p>Voice becomes a structured SOAP note and ICD-10-coded prescription draft — reviewed and approved by the doctor before it ever reaches a record.</p>
+            </div>
+
+            <div class="fcard">
+                <div class="fcard-tag">02</div>
+                <div class="fcard-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                </div>
+                <h3>Pre-Consult Briefing</h3>
+                <p>By the time a doctor opens the chart, the chief complaint, history, and risk flags are already there — surfaced from the patient's own words.</p>
+            </div>
+
+            <div class="fcard">
+                <div class="fcard-tag">03</div>
+                <div class="fcard-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <h3>Consent-First Data</h3>
+                <p>Every AI touch on a patient record requires an active, logged consent. Hospital admins — and Elth itself — never see identifiable data by default.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="trust" style="padding-top:20px;">
+        <div class="cta-band">
+            <h2>See Elth listen on your own data</h2>
+            <p>A 30-minute walkthrough on a real consultation flow — no procurement gate, no slideware.</p>
+            <a class="btn-primary" href="#">Request a demo →</a>
+        </div>
+    </section>
+
+    <footer>ELTH AI — CLINICAL INTELLIGENCE PLATFORM</footer>
+
+    <script>
+        // 3D tilt effect for the medical icon scene
+        const stage = document.getElementById('stage');
+        const medScene = document.getElementById('medScene');
+        const medicalPanel = document.querySelector('.medical-3d');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (stage && medScene && medicalPanel && !reducedMotion) {
+            stage.addEventListener('mousemove', function(e) {
+                const r = stage.getBoundingClientRect();
+                const px = (e.clientX - r.left) / r.width - 0.5;
+                const py = (e.clientY - r.top) / r.height - 0.5;
+                medScene.style.transform = `rotateX(${4 - py * 10}deg) rotateY(${-8 + px * 16}deg)`;
+                medicalPanel.style.transform = `translate(-50%, -50%) translateZ(100px) rotateX(${3 - py * 5}deg) rotateY(${-6 + px * 12}deg)`;
+                stage.classList.add('excited');
+            });
+
+            stage.addEventListener('mouseleave', function() {
+                medScene.style.transform = 'rotateX(4deg) rotateY(-8deg)';
+                medicalPanel.style.transform = 'translate(-50%, -50%) translateZ(100px) rotateX(3deg) rotateY(-6deg)';
+                stage.classList.remove('excited');
+            });
+        }
+
+        // Feature card tilt effect
+        document.querySelectorAll('.fcard').forEach(function(card) {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform =
+                    `perspective(700px) rotateX(${y * -8}deg) rotateY(${x * 10}deg) translateY(-6px)`;
+            });
+            card.addEventListener('mouseleave', function() {
+                card.style.transform = 'perspective(700px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

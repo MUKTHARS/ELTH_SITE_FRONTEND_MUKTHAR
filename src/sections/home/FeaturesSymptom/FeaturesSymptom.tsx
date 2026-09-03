@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import GradientText from '@components/common/GradientText/GradientText'
 import MockupFrame from '@components/common/MockupFrame/MockupFrame'
+import { IconAlertTriangle } from '@icons/index'
 import { SYMPTOM_STEPS, SYMPTOM_CHAT_MESSAGES } from '@constants/symptom'
 import styles from './FeaturesSymptom.module.scss'
 
@@ -25,7 +26,7 @@ export default function FeaturesSymptom() {
                   <span className={styles.chatAvatar}>E</span>
                   <div>
                     <div className={styles.chatName}>Elth Health Assistant</div>
-                    <div className={styles.chatStatus}>🟢 Online</div>
+                    <div className={styles.chatStatus}><i className={styles.onlineDot} /> Online</div>
                   </div>
                 </div>
                 <div className={styles.chatMessages}>
@@ -34,6 +35,7 @@ export default function FeaturesSymptom() {
                       key={i}
                       className={m.from === 'patient' ? styles.chatBubblePatient : styles.chatBubbleAi}
                     >
+                      {m.urgent && <IconAlertTriangle size={13} className={styles.urgentIcon} />}
                       {m.text}
                     </div>
                   ))}

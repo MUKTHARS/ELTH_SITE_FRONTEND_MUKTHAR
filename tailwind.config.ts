@@ -12,13 +12,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'elth-teal':    '#085041',
-        'elth-purple':  '#26215C',
-        'elth-blue':    '#042C53',
-        'elth-amber':   '#412402',
-        'elth-dark':    '#0A1628',
-        'elth-bg-warm': '#F1EFE8',
-        'elth-border':  '#E2E8F0',
+        'elth-teal':    '#0F7A5C',
+        'elth-purple':  '#1E2A4A',
+        'elth-blue':    '#3D5A99',
+        'elth-amber':   '#C9852F',
+        'elth-dark':    '#101826',
+        'elth-bg-warm': '#F3F8F6',
+        'elth-border':  '#E1EAE6',
         border:      'hsl(var(--border))',
         input:       'hsl(var(--input))',
         ring:        'hsl(var(--ring))',
@@ -42,7 +42,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Cordia New', 'Leelawadee UI', 'Tahoma', 'Geneva', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import * as React from 'react'
 import * as SelectPrimitive from '@radix-ui/react-select'
@@ -15,7 +15,7 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      'flex h-10 w-full items-center justify-between rounded-[10px] border border-[#E2E8F0] bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#085041] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+      'flex h-10 w-full items-center justify-between rounded-[10px] border border-[#E2E8F0] bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0F7A5C] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
       className
     )}
     {...props}

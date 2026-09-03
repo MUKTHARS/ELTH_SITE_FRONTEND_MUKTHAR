@@ -17,7 +17,7 @@
   padding-bottom: $space-12;
 
   @include respond-to(lg) { grid-template-columns: 1fr 1fr; }
-  @include respond-to(md) { grid-template-columns: 1fr; }
+  @include respond-to(md) { grid-template-columns: 1fr; gap: $space-8; }
 }
 
 .brand { display: flex; flex-direction: column; gap: $space-3; }
@@ -33,6 +33,8 @@
   color: rgba($white, 0.6);
   max-width: 260px;
   line-height: $leading-relaxed;
+
+  @include respond-to(md) { max-width: 360px; }
 }
 
 .built {
@@ -64,6 +66,14 @@
 
 .groups {
   display: contents;
+
+  @include respond-to(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-8 $space-5;
+    padding-top: $space-8;
+    border-top: 1px solid rgba($white, 0.1);
+  }
 }
 
 .group {}
@@ -82,6 +92,8 @@
   display: flex;
   flex-direction: column;
   gap: $space-3;
+
+  @include respond-to(md) { gap: $space-4; }
 }
 
 .groupLink {

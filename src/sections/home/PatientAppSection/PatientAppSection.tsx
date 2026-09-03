@@ -14,7 +14,7 @@ const STATS = [
 const POINTS = [
   { icon: IconFileText, title: 'Everything in one place', desc: 'Reports, prescriptions, scans and visit records.' },
   { icon: IconBrain,    title: 'Understand your health', desc: 'See trends and understand reports in plain language.' },
-  { icon: IconUsers,    title: 'Your records. Your choice.', desc: 'Share with doctors using patient-controlled consent.' },
+  { icon: IconUsers,    title: 'Your records. Your choice.', desc: 'Grant access with a scannable consent QR, and revoke it anytime.' },
   { icon: IconShield,   title: 'Connected to your care', desc: 'Receive prescriptions and follow-up information from connected hospitals.' },
 ]
 

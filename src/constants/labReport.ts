@@ -19,9 +19,11 @@ export const LAB_FEATURES_LIST = [
   'Sends directly to doctor before consultation',
 ]
 
+import { IconUpload, IconSearch, IconAlertTriangle, IconFileText } from '@icons/index'
+
 export const LAB_REPORT_FEATURES = [
-  { icon: '📤', title: 'Upload any format', desc: 'PDF, image, or WhatsApp photo. We handle all lab formats.' },
-  { icon: '🔍', title: '200+ test types', desc: 'CBC, LFT, KFT, Lipid Panel, Thyroid, HbA1c and more.' },
-  { icon: '🚨', title: 'Abnormal flags', desc: 'High and low values highlighted with plain-language explanation.' },
-  { icon: '📋', title: 'Doctor summary', desc: 'Structured summary sent to your doctor before the appointment.' },
+  { icon: IconUpload, title: 'Upload any format', desc: 'PDF, image, or WhatsApp photo. We handle all lab formats.' },
+  { icon: IconSearch, title: '200+ test types', desc: 'CBC, LFT, KFT, Lipid Panel, Thyroid, HbA1c and more.' },
+  { icon: IconAlertTriangle, title: 'Abnormal flags', desc: 'High and low values highlighted with plain-language explanation.' },
+  { icon: IconFileText, title: 'Doctor summary', desc: 'Structured summary sent to your doctor before the appointment.' },
 ]

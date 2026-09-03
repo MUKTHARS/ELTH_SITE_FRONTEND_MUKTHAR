@@ -1,9 +1,9 @@
-@use '@styles/variables' as *;
+﻿@use '@styles/variables' as *;
 @use '@styles/mixins' as *;
 
 .section {
   @include section-padding;
-  background: #FBFBFE;
+  background: #FBFEFC;
 }
 
 .inner { @include container; }
@@ -19,10 +19,8 @@
 }
 
 .card {
-  background: $white;
-  border: 1px solid #DCD9F1;
+  @include card-base;
   border-radius: 2px;
-  box-shadow: none;
   padding: $space-8;
   display: flex;
   flex-direction: column;

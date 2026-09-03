@@ -19,7 +19,7 @@ export const AUDIENCE: AudienceBlock[] = [
     points: [
       'AI Scribe — dictate naturally, Elth structures it',
       'Clinical Memory — find past consultations instantly',
-      'Faster consultations — less typing, more time with patients',
+      'Drug Interaction Checker — flags conflicts before you sign',
       'Doctor in control — AI assists, the doctor reviews and approves',
     ],
     cta: 'See how doctors use Elth',

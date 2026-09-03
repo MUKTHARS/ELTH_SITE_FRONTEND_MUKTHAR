@@ -30,7 +30,7 @@ export default function AdminConsoleSection() {
               transition={{ duration: 0.45, delay: i * 0.07 }}
               viewport={{ once: true }}
             >
-              <span className={styles.icon}>{f.icon}</span>
+              <span className={styles.icon}><f.icon size={20} color="#1E2A4A" strokeWidth={1.6} /></span>
               <h3 className={styles.cardTitle}>{f.title}</h3>
               <p className={styles.cardDesc}>{f.desc}</p>
             </motion.div>

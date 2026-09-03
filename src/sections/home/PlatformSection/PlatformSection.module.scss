@@ -1,0 +1,308 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  @include gradient-dark;
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::before {
+    width: 480px;
+    height: 480px;
+    top: -160px;
+    right: -140px;
+    background: radial-gradient(circle at 30% 30%, rgba($elth-teal-light, 0.28), transparent 70%);
+  }
+
+  &::after {
+    width: 440px;
+    height: 440px;
+    bottom: -180px;
+    left: -140px;
+    background: radial-gradient(circle at 70% 70%, rgba($elth-blue-light, 0.24), transparent 70%);
+  }
+}
+
+.inner {
+  @include container;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $space-12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-4;
+}
+
+.heading {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: $font-bold;
+  letter-spacing: $tracking-tight;
+  line-height: 1.18;
+  color: $white;
+  max-width: 600px;
+}
+
+.sub {
+  @include body-lg;
+  color: rgba($white, 0.7);
+  max-width: 540px;
+}
+
+// ─── Desktop switcher ──────────────────────────────────────────────────────
+
+.switcher {
+  display: none;
+
+  @include respond-min(lg) {
+    display: flex;
+    align-items: stretch;
+    gap: $space-10;
+    height: 85vh;
+    max-height: 680px;
+  }
+}
+
+.navCol {
+  width: 40%;
+  position: relative;
+}
+
+.navSticky {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.navItem {
+  position: relative;
+  cursor: pointer;
+  padding: $space-5 0 $space-5 $space-6;
+  opacity: 0.5;
+  transition: opacity $transition-slow;
+
+  &:hover { opacity: 0.75; }
+}
+
+.navItemActive {
+  opacity: 1;
+
+  &:hover { opacity: 1; }
+
+  .navBar { background: var(--accent, #{$elth-teal}); }
+  .navTitle { color: $white; }
+  .navSubtitle { color: rgba($white, 0.75); }
+  .navIcon {
+    color: var(--accent, #{$elth-teal});
+    background: color-mix(in srgb, var(--accent, #{$elth-teal}) 14%, transparent);
+    border-color: color-mix(in srgb, var(--accent, #{$elth-teal}) 45%, transparent);
+  }
+}
+
+.navBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: $radius-full;
+  background: rgba($white, 0.15);
+  transition: background $transition-slow;
+}
+
+.navRow {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-4;
+}
+
+.navIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-full;
+  @include flex-center;
+  color: rgba($white, 0.45);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: color $transition-slow, background $transition-slow, border-color $transition-slow;
+}
+
+.navText { flex: 1; min-width: 0; }
+
+.navTag {
+  display: block;
+  @include label-text;
+  color: var(--accent, #{$elth-teal});
+  margin-bottom: $space-1;
+}
+
+.navTitle {
+  font-size: $text-2xl;
+  font-weight: $font-bold;
+  color: rgba($white, 0.5);
+  transition: color $transition-slow;
+  margin-bottom: $space-1;
+}
+
+.navSubtitle {
+  @include body-sm;
+  color: rgba($white, 0.4);
+  transition: color $transition-slow;
+}
+
+.navExpand {
+  margin-top: $space-4;
+  padding-left: 56px;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-2 $space-4;
+  margin-bottom: $space-4;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  @include body-sm;
+  color: rgba($white, 0.65);
+}
+
+.featureDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent, #{$elth-teal});
+  flex-shrink: 0;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-3 $space-5;
+  border-radius: $radius-md;
+  background: var(--accent, #{$elth-teal});
+  color: $white;
+  font-weight: $font-medium;
+  font-size: $text-sm;
+  transition: transform $transition-base, opacity $transition-base;
+
+  &:hover { transform: translateX(2px); opacity: 0.9; }
+}
+
+.panelCol {
+  width: 60%;
+}
+
+.panelScroll {
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  @include scrollbar-hide;
+}
+
+.panelSlide {
+  height: 100%;
+  scroll-snap-align: start;
+  @include flex-center;
+  padding: $space-8;
+}
+
+.mockPanel {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 5 / 3;
+  border-radius: $radius-2xl;
+  overflow: hidden;
+  background: $elth-dark;
+  box-shadow: 0 32px 64px -24px rgba(0, 0, 0, 0.55);
+}
+
+.mockImage {
+  object-fit: contain;
+}
+
+// ─── Progress dots ──────────────────────────────────────────────────────────
+
+.dots {
+  display: none;
+  justify-content: center;
+  gap: $space-2;
+  margin-top: $space-8;
+
+  @include respond-min(lg) { display: flex; }
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: $radius-full;
+  background: rgba($white, 0.2);
+  transition: all $transition-slow;
+  cursor: pointer;
+}
+
+.dotActive {
+  width: 28px;
+  background: var(--accent, #{$elth-teal});
+}
+
+// ─── Mobile stacked cards ───────────────────────────────────────────────────
+
+.mobileList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+
+  @include respond-min(lg) { display: none; }
+}
+
+.mobileCard {
+  @include card-dark(16px);
+  border-radius: $radius-xl;
+  overflow: hidden;
+}
+
+.mobileMock {
+  position: relative;
+  height: 180px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobileImage {
+  object-fit: cover;
+}
+
+.mobileBody {
+  padding: $space-6;
+}
+
+.mobileTitle {
+  font-size: $text-xl;
+  font-weight: $font-bold;
+  color: $white;
+  margin: $space-1 0 $space-2;
+}

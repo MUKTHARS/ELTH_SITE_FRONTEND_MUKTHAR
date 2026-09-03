@@ -3,10 +3,38 @@
 
 .section {
   @include section-padding;
-  background: $white;
+  background: $elth-lavender;
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::before {
+    width: 460px;
+    height: 460px;
+    top: -160px;
+    right: -140px;
+    background: radial-gradient(circle at 30% 30%, rgba($elth-blue-light, 0.13), transparent 70%);
+  }
+
+  &::after {
+    width: 420px;
+    height: 420px;
+    bottom: -180px;
+    left: -140px;
+    background: radial-gradient(circle at 70% 70%, rgba($elth-teal, 0.12), transparent 70%);
+  }
 }
 
-.inner { @include container; }
+.inner { @include container; position: relative; z-index: 1; }
 
 .header {
   text-align: center;

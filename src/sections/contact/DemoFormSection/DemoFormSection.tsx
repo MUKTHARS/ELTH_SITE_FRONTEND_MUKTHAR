@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Button } from '@components/ui/button'
 import { Input } from '@components/ui/input'
+import { IconMail, IconSmartphone, IconSparkles } from '@icons/index'
 import { DEMO_PROMISES } from '@constants/heroes'
 import styles from './DemoFormSection.module.scss'
 
@@ -29,6 +31,10 @@ export default function DemoFormSection() {
 
   return (
     <section className={styles.section}>
+      <div className={styles.bg}>
+        <Image src="/images/top.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
+      </div>
       <div className={styles.inner}>
         <div className={styles.layout}>
           <motion.div
@@ -54,11 +60,11 @@ export default function DemoFormSection() {
 
             <div className={styles.contact}>
               <div className={styles.contactItem}>
-                <span className={styles.contactIcon}>📧</span>
+                <span className={styles.contactIcon}><IconMail size={16} strokeWidth={1.75} /></span>
                 <span className={styles.contactText}>hello@elth.ai</span>
               </div>
               <div className={styles.contactItem}>
-                <span className={styles.contactIcon}>📱</span>
+                <span className={styles.contactIcon}><IconSmartphone size={16} strokeWidth={1.75} /></span>
                 <span className={styles.contactText}>WhatsApp: +91 98XXX XXXXX</span>
               </div>
             </div>
@@ -72,7 +78,7 @@ export default function DemoFormSection() {
           >
             {submitted ? (
               <div className={styles.success}>
-                <span className={styles.successIcon}>🎉</span>
+                <span className={styles.successIcon}><IconSparkles size={32} strokeWidth={1.5} /></span>
                 <h2 className={styles.successTitle}>Demo request received!</h2>
                 <p className={styles.successDesc}>We&apos;ll reach out within 24 hours to schedule your demo. Check your email for confirmation.</p>
               </div>

@@ -5,7 +5,7 @@ import Link                   from 'next/link'
 import { useScrollProgress }  from '@hooks/useScrollProgress'
 import { NAV_ITEMS, NAV_CTA } from '@constants/navigation'
 import { Button }             from '@components/ui/button'
-import { IconMenu, IconX }    from '@icons/index'
+import { IconMenu }           from '@icons/index'
 import MobileMenu             from '../MobileMenu/MobileMenu'
 import styles                 from './Navbar.module.scss'
 
@@ -49,7 +49,7 @@ export default function Navbar() {
           </nav>
 
           <div className={styles.actions}>
-            <Button asChild size="default">
+            <Button asChild size="default" className={styles.ctaBtn}>
               <Link href={NAV_CTA.href}>{NAV_CTA.label}</Link>
             </Button>
             <button className={styles.menuBtn} onClick={() => setOpen(true)} aria-label="Open menu">

@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --background: 246 64% 97%; /* #F6F5FC to match homepage theme */
+    --background: 160 30% 97%; /* #F3F8F6 to match new emerald/navy theme */
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 161 82% 27%;
+    --primary: 163 78% 27%;
     --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -22,7 +22,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 161 82% 27%;
+    --ring: 163 78% 27%;
     --radius: 0.5rem;
   }
 
@@ -40,10 +40,10 @@
   }
 
   body {
-    background: linear-gradient(180deg, #F6F5FC 0%, #FBFBFE 100%);
+    background: linear-gradient(180deg, #EDE7F8 0%, #F5F1FB 100%);
     background-attachment: fixed;
     color: hsl(var(--foreground));
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Cordia New', 'Leelawadee UI', Tahoma, Geneva, sans-serif;
     font-feature-settings: 'rlig' 1, 'calt' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -151,6 +151,12 @@
   margin: 0;
 }
 
+.flagIcon {
+  color: #dc2626;
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+
 .briefFooter {
   @include flex-between;
   border-top: 1px solid $elth-border;

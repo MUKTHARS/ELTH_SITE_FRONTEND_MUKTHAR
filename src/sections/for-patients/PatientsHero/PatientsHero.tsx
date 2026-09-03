@@ -11,6 +11,10 @@ import styles from './PatientsHero.module.scss'
 export default function PatientsHero() {
   return (
     <section className={styles.section}>
+      <div className={styles.bg}>
+        <Image src="/images/topbanners/for-patients.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
+        <div className={styles.scrim} />
+      </div>
       <div className={styles.inner}>
         <motion.div
           className={styles.content}
@@ -33,13 +37,13 @@ export default function PatientsHero() {
           </div>
           <div className={styles.proof}>
             {PATIENTS_HERO_PROOF.map((item) => (
-              <span key={item}>{item}</span>
+              <span key={item.label}><item.icon size={13} strokeWidth={1.75} /> {item.label}</span>
             ))}
           </div>
         </motion.div>
         <motion.div className={styles.visual} initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.65, delay: 0.15 }}>
           <div className={styles.imageWrap}>
-            <Image src="/images/doctor.avif" alt="A patient receiving thoughtful care" fill priority sizes="(max-width: 1024px) 100vw, 48vw" />
+            <Image src="/images/topcontent/for-patients.avif" alt="A patient receiving thoughtful care" fill priority sizes="(max-width: 1024px) 100vw, 48vw" />
           </div>
           <div className={styles.helpCard}>
             <span>Care, in your language</span>

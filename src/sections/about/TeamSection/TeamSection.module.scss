@@ -3,7 +3,7 @@
 
 .section {
   @include section-padding;
-  background: $white;
+  background: $elth-lavender;
 }
 
 .inner { @include container; }
@@ -23,7 +23,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0 $space-6;
+  gap: $space-4;
   margin-bottom: $space-12;
 
   @include respond-to(lg) { grid-template-columns: repeat(2, 1fr); }
@@ -31,30 +31,34 @@
 }
 
 .card {
-  border-top: 1px solid #DCD9F1;
-  padding: $space-5 0;
+  background: rgba($white, 0.6);
+  border: 1px solid rgba(#18241d, 0.08);
+  border-radius: 2px;
+  padding: $space-6;
   display: flex;
   flex-direction: column;
-  gap: $space-4;
+  gap: $space-3;
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow-md;
+    border-color: rgba($elth-teal, 0.25);
+  }
 }
 
-.avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: $radius-full;
-  color: $white;
-  font-weight: $font-bold;
-  font-size: $text-base;
-  @include flex-center;
-}
-
-.info {
+.icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 2px;
   display: flex;
-  flex-direction: column;
-  gap: $space-2;
+  align-items: center;
+  justify-content: center;
+  background: $elth-teal-bg;
+  flex-shrink: 0;
 }
 
-.role {
+.cardTitle {
   font-size: $text-sm;
   font-weight: $font-semibold;
   color: $text-primary;
@@ -65,11 +69,6 @@
   color: $text-secondary;
   line-height: $leading-relaxed;
   margin: 0;
-}
-
-.location {
-  font-size: $text-xs;
-  color: $text-tertiary;
 }
 
 .saple {
