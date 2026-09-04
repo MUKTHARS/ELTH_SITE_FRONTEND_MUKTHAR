@@ -42,7 +42,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Tahoma', 'Geneva', 'sans-serif'],
+        sans: ['Cordia New'],
       },
       borderRadius: {
         lg: 'var(--radius)',
