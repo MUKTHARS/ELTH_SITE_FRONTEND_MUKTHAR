@@ -75,8 +75,8 @@ export const FEATURES: Feature[] = [
   },
   {
     id: 'referral',
-    title: 'Referral & Letter Generation',
-    description: 'One-click referral letters, discharge summaries, and medico-legal certificates — pre-filled, branded, and sendable via WhatsApp.',
+    title: 'Referral Tracking',
+    description: 'One-click referral letters to specialists or outside labs — tracked until the report comes back into the same patient record.',
     icon: 'IconFileText',
     phase: 'P1',
     audience: 'doctor',

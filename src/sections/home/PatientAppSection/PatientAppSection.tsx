@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
-import { IconFileText, IconBrain, IconUsers, IconShield, IconCalendar, IconPill, IconClock } from '@icons/index'
+import { IconFileText, IconBrain, IconUsers, IconShield, IconCalendar, IconPill, IconClock, IconSearch } from '@icons/index'
 import styles from './PatientAppSection.module.scss'
 
 const STATS = [
@@ -16,6 +16,8 @@ const POINTS = [
   { icon: IconBrain,    title: 'Understand your health', desc: 'See trends and understand reports in plain language.' },
   { icon: IconUsers,    title: 'Your records. Your choice.', desc: 'Grant access with a scannable consent QR, and revoke it anytime.' },
   { icon: IconShield,   title: 'Connected to your care', desc: 'Receive prescriptions and follow-up information from connected hospitals.' },
+  { icon: IconUsers,    title: 'Manage care for the whole family', desc: 'Add parents, spouse or children to your account and see everyone’s records and appointments in one place.' },
+  { icon: IconSearch,   title: 'Find the right doctor, fast', desc: 'Search your hospital’s doctors by specialty, availability and ratings — book in a tap.' },
 ]
 
 export default function PatientAppSection() {

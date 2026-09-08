@@ -1,8 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { IconArrowRight, IconCheck } from '@icons/index'
+import { IconCheck } from '@icons/index'
 import { AUDIENCE } from '@constants/audience'
 import styles from './AudienceSection.module.scss'
 
@@ -32,9 +31,6 @@ export default function AudienceSection() {
                 </li>
               ))}
             </ul>
-            <Link href={doctors.href} className={styles.cta}>
-              {doctors.cta} <IconArrowRight size={15} />
-            </Link>
             <div className={styles.artWrap}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/doctor.jpg" alt="" className={styles.art} />
@@ -60,9 +56,6 @@ export default function AudienceSection() {
                 </div>
               ))}
             </div>
-            <Link href={clinics.href} className={styles.cta}>
-              {clinics.cta} <IconArrowRight size={15} />
-            </Link>
             <div className={styles.artWrap}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/clinic.avif" alt="" className={styles.art} />
@@ -87,9 +80,6 @@ export default function AudienceSection() {
                 </li>
               ))}
             </ul>
-            <Link href={specialties.href} className={styles.cta}>
-              {specialties.cta} <IconArrowRight size={15} />
-            </Link>
             <div className={styles.artWrap}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/spine2.webp" alt="" className={styles.art} />

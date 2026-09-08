@@ -1,4 +1,4 @@
-﻿import { IconMic, IconSparkle, IconCheck, IconSmartphone, IconCalendar, IconBell, IconChat, IconFileText, IconStethoscope, IconSearch, IconBrain, IconPill, IconBone, IconRepeat, IconUser } from '@icons/index'
+﻿import { IconMic, IconSparkle, IconCheck, IconSmartphone, IconCalendar, IconBell, IconChat, IconFileText, IconStethoscope, IconSearch, IconBrain, IconPill, IconBone, IconRepeat, IconUser, IconActivity } from '@icons/index'
 
 export const SCRIBE_BLOCK = {
   eyebrow: 'AI SCRIBE',
@@ -12,6 +12,7 @@ export const SCRIBE_BLOCK = {
   ],
   checklist: [
     { label: 'Complaints',     icon: IconFileText,    color: '#1E2A4A', bg: '#EAEEF6' },
+    { label: 'Vitals',         icon: IconActivity,    color: '#DC2626', bg: '#FEE2E2' },
     { label: 'Examination',    icon: IconStethoscope, color: '#2C4A7C', bg: '#EAF0F8' },
     { label: 'Investigation',  icon: IconSearch,      color: '#9A3412', bg: '#FFEDD5' },
     { label: 'Diagnosis',      icon: IconBrain,       color: '#0F7A5C', bg: '#E6F5EF' },
