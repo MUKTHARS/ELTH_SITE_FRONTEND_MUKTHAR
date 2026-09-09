@@ -18,7 +18,7 @@ export default function ScribeSection() {
           </p>
         </div>
         <div className={styles.story}>
-          <div className={styles.imageWrap}>
+          <div className={styles.imageWrap}>w
             <Image src="/images/aiscribe.jpg" alt="A calm doctor-patient consultation" fill sizes="(max-width: 1024px) 100vw, 42vw" />
             <div className={styles.imageCaption}><span /> Your conversation stays yours</div>
           </div>
