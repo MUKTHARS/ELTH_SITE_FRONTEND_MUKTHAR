@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Providers }     from '@providers/index'
 import { Navbar }        from '@layouts/index'
 import { Footer }        from '@layouts/index'
+import ScrollToTop       from '@components/common/ScrollToTop/ScrollToTop'
 import { defaultMetadata } from '@config/metadata'
 import './globals.css'
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <ScrollToTop />
         </Providers>
       </body>
     </html>

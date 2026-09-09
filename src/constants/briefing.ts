@@ -11,11 +11,12 @@ export const BRIEF_STATS = [
   { num: '0', label: 'chart hunting' },
 ]
 
-import { IconChat, IconClock, IconChart, IconShield } from '@icons/index'
+import { IconChat, IconClock, IconChart, IconShield, IconActivity } from '@icons/index'
 
 export const BRIEFING_ITEMS = [
   { icon: IconChat, title: 'Chief complaint', desc: 'What the patient is here for, in their own words — summarized by AI.' },
   { icon: IconClock, title: 'Full history snapshot', desc: 'Diagnoses, allergies, ongoing medications, past surgeries — one screen.' },
+  { icon: IconActivity, title: 'Vitals at a glance', desc: 'BP, weight, temperature and other vitals — captured before the doctor opens the chart.' },
   { icon: IconChart, title: 'Latest investigations', desc: 'Labs and imaging from the last 90 days, flagged if abnormal.' },
   { icon: IconShield, title: 'Risk flags', desc: 'Smoking, BMI, family history, adherence issues — surfaced automatically.' },
 ]

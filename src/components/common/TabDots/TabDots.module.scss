@@ -1,0 +1,20 @@
+@use '@styles/variables' as *;
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: $radius-full;
+  background: rgba($elth-dark, 0.18);
+  transition: background $transition-fast, width $transition-fast;
+}
+
+.active {
+  width: 16px;
+  background: $elth-teal;
+}

@@ -71,23 +71,6 @@
   z-index: 1;
 }
 
-.cta {
-  display: inline-flex;
-  align-items: center;
-  gap: $space-2;
-  margin-top: $space-2;
-  padding-top: $space-3;
-  font-size: $text-sm;
-  font-weight: $font-semibold;
-  color: $text-primary;
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
-  width: fit-content;
-
-  &:hover { text-decoration: underline; }
-}
-
 .artWrap {
   position: absolute;
   top: 0;
