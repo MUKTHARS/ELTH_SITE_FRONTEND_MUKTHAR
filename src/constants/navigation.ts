@@ -33,22 +33,11 @@ export const FOOTER_GROUPS: FooterGroup[] = [
     ],
   },
   {
-    title: 'Features',
-    links: [
-      { label: 'AI Clinical Scribe',    href: `${ROUTES.FOR_DOCTORS}#scribe` },
-      { label: 'Symptom Checker',       href: `${ROUTES.FOR_PATIENTS}#symptom` },
-      { label: 'Lab Report Interpreter',href: `${ROUTES.FOR_PATIENTS}#lab` },
-      { label: 'Drug Interaction Check',href: `${ROUTES.FOR_DOCTORS}#drug` },
-      { label: 'Pre-Visit Briefing',    href: `${ROUTES.FOR_DOCTORS}#briefing` },
-    ],
-  },
-  {
     title: 'Company',
     links: [
       { label: 'About',            href: ROUTES.ABOUT },
       { label: 'Trust & Security', href: ROUTES.TRUST },
       { label: 'Contact',          href: ROUTES.CONTACT },
-      { label: 'Request Demo',     href: ROUTES.CONTACT },
     ],
   },
   {

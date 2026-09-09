@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
+import MonoLabel from '@components/common/MonoLabel/MonoLabel'
+import TabDots from '@components/common/TabDots/TabDots'
 import { SPECIALTIES } from '@constants/specialties'
 import styles from './SpecialtiesSection.module.scss'
 
@@ -16,6 +18,19 @@ export default function SpecialtiesSection() {
             Your workflows. Your terminology. Your templates — across every specialty in your hospital.
           </p>
         </div>
+
+        <div className={styles.mockupCard}>
+          <button type="button" className={styles.expandBtn} aria-label="More detail">+</button>
+          <div className={styles.mockupTop}>
+            <MonoLabel text="Specialties · Coverage" />
+            <TabDots total={3} active={0} />
+          </div>
+          <div className={styles.mockupBody}>
+            <span className={styles.monoNum}>{SPECIALTIES.length}</span>
+            <span className={styles.mockupStatLabel}>specialty templates live</span>
+          </div>
+        </div>
+
         <div className={styles.grid}>
           {SPECIALTIES.map((s, i) => (
             <motion.div

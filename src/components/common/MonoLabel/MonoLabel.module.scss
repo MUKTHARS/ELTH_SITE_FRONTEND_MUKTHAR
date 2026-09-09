@@ -1,0 +1,10 @@
+@use '@styles/variables' as *;
+
+.label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  font-weight: $font-medium;
+  letter-spacing: $tracking-wider;
+  text-transform: uppercase;
+  color: $text-tertiary;
+}
