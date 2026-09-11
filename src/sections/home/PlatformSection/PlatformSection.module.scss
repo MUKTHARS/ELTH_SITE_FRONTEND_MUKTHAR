@@ -279,13 +279,13 @@
 
 .mobileCard {
   @include card-dark(16px);
-  border-radius: $radius-xl;
+  border-radius: 0;
   overflow: hidden;
 }
 
 .mobileMock {
   position: relative;
-  height: 180px;
+  aspect-ratio: 25 / 14;
   background: $elth-dark;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
