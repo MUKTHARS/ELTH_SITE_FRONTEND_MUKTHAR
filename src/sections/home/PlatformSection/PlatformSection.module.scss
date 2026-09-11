@@ -285,13 +285,13 @@
 
 .mobileMock {
   position: relative;
-  height: 180px;
+  aspect-ratio: 25 / 14;
   background: $elth-dark;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .mobileImage {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .mobileBody {
