@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import { IconCheck } from '@icons/index'
 import { DRUG_CHECKER_LIST, DRUG_INTERACTIONS, DRUG_SEVERITY_COLOR } from '@constants/drugCheck'
 import styles from './DrugCheckerSection.module.scss'
