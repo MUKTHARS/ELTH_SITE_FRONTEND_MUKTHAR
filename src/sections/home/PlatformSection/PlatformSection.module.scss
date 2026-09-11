@@ -279,7 +279,7 @@
 
 .mobileCard {
   @include card-dark(16px);
-  border-radius: $radius-xl;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -291,7 +291,7 @@
 }
 
 .mobileImage {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .mobileBody {
