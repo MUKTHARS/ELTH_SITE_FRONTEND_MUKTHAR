@@ -11,7 +11,7 @@ export default function OgImage() {
     (
       <div
         style={{
-          background: '#101826',
+          background: '#1F2229',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -25,8 +25,8 @@ export default function OgImage() {
         <div
           style={{
             fontSize: 20,
-            color: '#0F7A5C',
-            background: 'rgba(8,80,65,0.15)',
+            color: '#00CECB',
+            background: 'rgba(52,59,237,0.18)',
             padding: '8px 20px',
             borderRadius: 100,
             marginBottom: 32,

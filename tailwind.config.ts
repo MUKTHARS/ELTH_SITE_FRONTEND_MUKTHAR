@@ -12,13 +12,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'elth-teal':    '#0F7A5C',
-        'elth-purple':  '#1E2A4A',
-        'elth-blue':    '#3D5A99',
-        'elth-amber':   '#C9852F',
-        'elth-dark':    '#101826',
-        'elth-bg-warm': '#F3F8F6',
-        'elth-border':  '#E1EAE6',
+        'elth-teal':    '#00CECB',
+        'elth-purple':  '#3F4657',
+        'elth-blue':    '#55607A',
+        'elth-amber':   '#C07A1F',
+        'elth-dark':    '#1F2229',
+        'elth-bg-warm': '#FFFFFF',
+        'elth-border':  '#E6E6E9',
         border:      'hsl(var(--border))',
         input:       'hsl(var(--input))',
         ring:        'hsl(var(--ring))',
@@ -42,14 +42,16 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['Cordia New'],
+        sans: ['Inter', 'sans-serif'],
+        display: ['Instrument Sans', 'Inter', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
       },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
-        card: '16px',
-        xl:   '24px',
+        card: '20px',
+        xl:   '28px',
       },
       container: {
         center:  true,

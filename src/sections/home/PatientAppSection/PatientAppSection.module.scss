@@ -9,12 +9,7 @@
 
   &::before,
   &::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-    z-index: 0;
+    content: none;
   }
 
   &::before {
@@ -22,7 +17,7 @@
     height: 480px;
     top: -160px;
     right: -140px;
-    background: radial-gradient(circle at 30% 30%, rgba($elth-teal-light, 0.28), transparent 70%);
+    background: radial-gradient(circle at 30% 30%, rgba($elth-teal-light, 0.05), transparent 70%);
   }
 
   &::after {
@@ -117,7 +112,7 @@
   border-radius: 34px 34px 0 0;
   font-size: 11px;
   font-weight: 600;
-  color: #1f2937;
+  color: #332C27;
 }
 
 .statusIcons {
@@ -128,7 +123,7 @@
     width: 4px;
     height: 10px;
     border-radius: 2px;
-    background: #1f2937;
+    background: #332C27;
 
     &:nth-child(2) { height: 8px; align-self: flex-end; }
     &:nth-child(3) { height: 12px; }
@@ -215,8 +210,8 @@
   width: 24px;
   height: 24px;
   border-radius: 8px;
-  background: $elth-teal-bg;
-  color: $elth-teal;
+  background: #000000;
+  color: $white;
   @include flex-center;
   margin: 0 auto 6px;
 }

@@ -5,10 +5,7 @@
   @include section-padding-sm;
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 8% 50%, rgba($elth-teal, 0.09), transparent 26%),
-    radial-gradient(circle at 92% 18%, rgba($elth-purple, 0.1), transparent 24%),
-    linear-gradient(135deg, #FBFEFC 0%, #f5f3fc 52%, #f8fbfb 100%);
+  background: $elth-bg-warm;
   border-top: 1px solid rgba($elth-purple, 0.1);
   border-bottom: 1px solid rgba($elth-purple, 0.1);
 
@@ -66,8 +63,6 @@
     .iconWrap { transform: scale(1.08) rotate(-4deg); }
   }
 
-  &:nth-child(2) .iconWrap { background: $elth-purple-bg; color: $elth-purple; }
-  &:nth-child(3) .iconWrap { background: $elth-blue-bg; color: $elth-blue; }
 
   @include respond-to(md) { min-height: auto; }
 }
@@ -76,8 +71,8 @@
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  background: $elth-teal-bg;
-  color: $elth-teal;
+  background: #000000;
+  color: $white;
   @include flex-center;
   flex-shrink: 0;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);

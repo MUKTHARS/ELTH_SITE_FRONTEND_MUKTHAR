@@ -9,15 +9,10 @@
 .inner { @include container; }
 
 .card {
-  position: relative;
-  overflow: hidden;
-  background: $elth-purple-bg;
-  border: 0;
-  border-radius: 2px;
-  box-shadow: none;
+  @include card-base;
   padding: $space-12;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 1fr;
   gap: $space-12;
   align-items: center;
 
@@ -28,8 +23,6 @@
 
   @include respond-to(sm) {
     padding: $space-6 $space-5;
-    box-shadow: $shadow-md;
-    border: 1px solid rgba(#18241d, 0.08);
   }
 }
 
@@ -43,8 +36,8 @@
 
 .heading {
   @include heading-md;
-  color: #18241d;
-  letter-spacing: -0.04em;
+  color: $text-primary;
+  letter-spacing: -0.02em;
 }
 
 .desc {
@@ -68,76 +61,111 @@
   align-items: center;
   gap: $space-3;
   font-size: $text-sm;
-  color: $elth-purple;
+  color: $text-primary;
 }
 
-.listDot {
-  width: 6px;
-  height: 6px;
-  border-radius: $radius-full;
-  background: $elth-purple;
+.listCheck {
   flex-shrink: 0;
+  color: $elth-dark;
 }
 
 .right { position: relative; z-index: 1; }
 
-.statGroup {
+.drugCard {
+  background: $white;
+  border: 1px solid $elth-border;
+  border-radius: $radius-lg;
+  padding: $space-5;
   display: flex;
   flex-direction: column;
-  gap: $space-6;
-  min-width: 180px;
-  width: 100%;
-  padding: $space-6;
-  border: 1px solid rgba(#18241d, 0.12);
-  border-radius: 2px;
-  background: rgba($white, 0.52);
-
-  @include respond-to(lg) {
-    flex-direction: row;
-    gap: $space-10;
-  }
-
-  @include respond-to(sm) {
-    flex-direction: row;
-    gap: $space-3;
-    padding: $space-5;
-    background: rgba($white, 0.85);
-    box-shadow: $shadow-sm;
-  }
+  gap: $space-4;
 }
 
-.stat {
+.drugCardHeader {
+  @include flex-between;
+  gap: $space-3;
+}
+
+.drugCardTitle {
+  font-family: $font-mono;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $text-tertiary;
+}
+
+.drugCount {
+  font-family: $font-mono;
+  font-size: $text-xs;
+  font-weight: $font-medium;
+  color: #FFFFFF;
+  background: #B4432C;
+  padding: 3px 9px;
+  border-radius: $radius-full;
+  flex-shrink: 0;
+}
+
+.interactions {
   display: flex;
   flex-direction: column;
-  gap: $space-1;
-  padding-bottom: $space-4;
-  border-bottom: 1px solid rgba(#18241d, 0.1);
-  min-width: 0;
-
-  &:last-child { padding-bottom: 0; border-bottom: none; }
-
-  @include respond-to(sm) {
-    flex: 1;
-    padding-bottom: 0;
-    padding-right: $space-3;
-    border-bottom: none;
-    border-right: 1px solid rgba(#18241d, 0.1);
-
-    &:last-child { padding-right: 0; border-right: none; }
-  }
+  gap: $space-3;
 }
 
-.statNum {
-  font-size: $text-4xl;
-  font-weight: $font-bold;
-  color: #18241d;
-  letter-spacing: $tracking-tight;
-  line-height: 1;
-
-  @include respond-to(xs) { font-size: $text-3xl; }
+.interaction {
+  border: 1px solid $elth-border;
+  border-radius: $radius-md;
+  padding: $space-3 $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
 }
 
-.statLabel {
-  font-size: $text-sm;
-  color: #66756a;
+.interactionDrugs {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  flex-wrap: wrap;
+}
+
+.drugPill {
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  background: $elth-bg-light;
+  color: $text-primary;
+  padding: 3px 8px;
+  border-radius: $radius-full;
+}
+
+.interactionX {
+  font-size: $text-xs;
+  color: $text-tertiary;
+}
+
+.severityBadge {
+  font-family: $font-mono;
+  font-size: 10.5px;
+  padding: 2px 8px;
+  border-radius: $radius-full;
+  font-weight: $font-medium;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-left: auto;
+}
+
+.interactionNote {
+  font-size: $text-xs;
+  color: $text-secondary;
+  line-height: $leading-relaxed;
+  margin: 0;
+}
+
+.drugFooter {
+  padding-top: $space-2;
+  border-top: 1px solid $elth-border;
+}
+
+.dbNote {
+  font-family: $font-mono;
+  font-size: 10.5px;
+  color: $text-tertiary;
 }

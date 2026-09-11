@@ -4,8 +4,8 @@ import { IconStethoscope, IconBuilding, IconUser } from '@icons/index'
 export const PORTALS = [
   {
     role: 'For Doctors',
-    color: '#1E2A4A',
-    bg: '#EAEEF6',
+    color: '#4A3F3B',
+    bg: '#EFEBE7',
     href: ROUTES.FOR_DOCTORS,
     icon: IconStethoscope,
     img: '/assets/svgs/undraw_doctor_aum1.svg',
@@ -13,8 +13,8 @@ export const PORTALS = [
   },
   {
     role: 'For Hospitals',
-    color: '#2C4A7C',
-    bg: '#EAF0F8',
+    color: '#2954E8',
+    bg: '#E1E8FE',
     href: ROUTES.FOR_HOSPITALS,
     icon: IconBuilding,
     img: '/assets/svgs/undraw_medicine_hqqg.svg',
@@ -22,8 +22,8 @@ export const PORTALS = [
   },
   {
     role: 'For Patients',
-    color: '#0F7A5C',
-    bg: '#E6F5EF',
+    color: '#5B3DF6',
+    bg: '#ECE6FE',
     href: ROUTES.FOR_PATIENTS,
     icon: IconUser,
     img: '/assets/svgs/undraw_booking_8vl5.svg',

@@ -5,8 +5,8 @@ export const DRUG_INTERACTIONS = [
 ]
 
 export const DRUG_SEVERITY_COLOR: Record<string, { bg: string; text: string }> = {
-  high: { bg: '#fee2e2', text: '#dc2626' },
-  moderate: { bg: '#fef3c7', text: '#d97706' },
+  high: { bg: '#DC2626', text: '#FFFFFF' },
+  moderate: { bg: '#F59E0B', text: '#FFFFFF' },
   low: { bg: '#dcfce7', text: '#16a34a' },
 }
 

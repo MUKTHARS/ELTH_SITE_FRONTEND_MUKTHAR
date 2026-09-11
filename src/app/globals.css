@@ -1,29 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 160 30% 97%; /* #F3F8F6 to match new emerald/navy theme */
-    --foreground: 222.2 84% 4.9%;
+    /* Slate Coral system: pure white ground, blue accent reserved for buttons/links/active states only */
+    --background: 0 0% 100%; /* pure white */
+    --foreground: 222 14% 14%; /* #1F2229 ink */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 14% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 163 78% 27%;
+    --popover-foreground: 222 14% 14%;
+    --primary: 238 84% 57%; /* #00CECB blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 5% 96%; /* #F5F5F6 neutral grey panel */
+    --secondary-foreground: 222 14% 14%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 5% 40%; /* #62626C ink-soft */
+    --accent: 240 91% 95%; /* #E4E5FD blue-soft, badges/chips only */
+    --accent-foreground: 238 84% 57%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 163 78% 27%;
-    --radius: 0.5rem;
+    --border: 240 6% 91%; /* #E6E6E9 neutral line */
+    --input: 240 6% 91%;
+    --ring: 238 84% 57%;
+    --radius: 1rem;
   }
 
   * {
@@ -40,16 +43,20 @@
   }
 
   body {
-    background: linear-gradient(180deg, #EDE7F8 0%, #F5F1FB 100%);
-    background-attachment: fixed;
+    background: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: 'Cordia New';
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-feature-settings: 'rlig' 1, 'calt' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
     overflow-x: hidden;
     min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Instrument Sans', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
   }
 
   img, video {

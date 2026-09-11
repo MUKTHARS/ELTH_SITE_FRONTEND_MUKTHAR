@@ -16,9 +16,9 @@ const CIRCLE_POSITIONS = [
 ]
 
 const TABS = [
-  { id: 'scribe',     label: 'AI Scribe',        color: '#1E2A4A' },
-  { id: 'memory',     label: 'Clinical Memory',  color: '#0F7A5C' },
-  { id: 'continuous', label: 'Continuous Care',  color: '#2C4A7C' },
+  { id: 'scribe',     label: 'AI Scribe',        color: '#4A3F3B' },
+  { id: 'memory',     label: 'Clinical Memory',  color: '#5B3DF6' },
+  { id: 'continuous', label: 'Continuous Care',  color: '#2954E8' },
 ] as const
 
 export default function FeaturesExplainer() {

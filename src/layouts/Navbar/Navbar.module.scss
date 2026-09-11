@@ -3,42 +3,43 @@
 
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 16px;
+  left: 16px;
+  right: 16px;
   z-index: $z-sticky;
-  transition: background $transition-base, box-shadow $transition-base, border-color $transition-base;
-  border-bottom: 1px solid transparent;
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  transition: box-shadow $transition-base, border-color $transition-base;
+  border: 1px solid $elth-border;
+  border-radius: $radius-full;
+  background: rgba($white, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: $shadow-sm;
+
+  @include respond-to(sm) { top: 10px; left: 10px; right: 10px; }
 }
 
 .scrolled {
-  background: rgba($white, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom-color: $elth-border;
-  box-shadow: $shadow-sm;
+  box-shadow: $shadow-lg;
 }
 
 .inner {
-  @include container;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-2 0 $space-6;
   @include flex-between;
-  height: 68px;
+  height: 60px;
+
+  @include respond-to(md) { padding: 0 $space-2 0 $space-4; }
 }
 
 .logo { text-decoration: none; }
 
 .logoText {
+  font-family: $font-display;
   font-size: $text-xl;
   font-weight: $font-bold;
-  color: $white;
-  letter-spacing: $tracking-tight;
-}
-
-.scrolled .logoText {
   color: $elth-teal;
+  letter-spacing: $tracking-tight;
 }
 
 .nav {
@@ -60,29 +61,23 @@
   padding: $space-2 $space-3;
   font-size: $text-sm;
   font-weight: $font-medium;
-  color: $white;
+  font-family: inherit;
+  color: $text-secondary;
+  background: none;
+  border: none;
   border-radius: $radius-md;
+  cursor: pointer;
   transition: color $transition-fast, background $transition-fast;
   text-decoration: none;
-
-  &:hover { color: $white; background: rgba($white, 0.15); }
-}
-
-.scrolled .navLink {
-  color: $text-secondary;
 
   &:hover { color: $text-primary; background: $elth-bg-warm; }
 }
 
 .chevron {
   font-size: $text-base;
-  color: rgba($white, 0.7);
+  color: $text-tertiary;
   transform: rotate(90deg);
   display: inline-block;
-}
-
-.scrolled .chevron {
-  color: $text-tertiary;
 }
 
 .dropdown {
@@ -139,18 +134,12 @@
   background: none;
   border: none;
   padding: $space-2;
-  color: $white;
+  color: $text-secondary;
   cursor: pointer;
   border-radius: $radius-md;
   transition: background $transition-fast, color $transition-fast;
 
-  &:hover { background: rgba($white, 0.15); }
+  &:hover { background: $elth-bg-warm; }
 
   @include respond-to(lg) { display: flex; align-items: center; }
-}
-
-.scrolled .menuBtn {
-  color: $text-secondary;
-
-  &:hover { background: $elth-bg-warm; }
 }

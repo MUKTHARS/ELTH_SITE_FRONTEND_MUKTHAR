@@ -7,46 +7,14 @@
   position: relative;
   overflow: hidden;
 
-  // Ambient color blobs that the glass cards pick up light from
   &::before,
   &::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  &::before {
-    width: 620px;
-    height: 620px;
-    top: -220px;
-    left: -200px;
-    background: radial-gradient(circle at 30% 30%, rgba(61, 90, 153, 0.4), transparent 70%);
-  }
-
-  &::after {
-    width: 580px;
-    height: 580px;
-    bottom: -240px;
-    right: -180px;
-    background: radial-gradient(circle at 70% 70%, rgba(15, 122, 92, 0.32), transparent 70%);
+    content: none;
   }
 }
 
 .orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  pointer-events: none;
-  z-index: 0;
-  width: 400px;
-  height: 400px;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(201, 133, 47, 0.22), transparent 70%);
+  display: none;
 }
 
 .inner {
@@ -146,16 +114,7 @@
 // Soft accent-colored wash in the corner of each card — kept subtle and
 // clipped to the card so it reads as ambient light, not a decorative blob.
 .cardGlow {
-  position: absolute;
-  top: -40%;
-  right: -30%;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent, #{$elth-teal}) 0%, transparent 72%);
-  opacity: 0.14;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
+  display: none;
 }
 
 .iconWrap {
@@ -164,10 +123,8 @@
   border-radius: 14px;
   @include flex-center;
   margin-bottom: $space-5;
-  color: var(--accent, #{$elth-teal});
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.85), var(--accent-bg, rgba(255, 255, 255, 0.4)));
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  color: $white;
+  background: #000000;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   z-index: 1;

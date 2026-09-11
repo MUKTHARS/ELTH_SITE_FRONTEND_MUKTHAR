@@ -24,7 +24,7 @@ export default function TeamSection() {
               transition={{ duration: 0.45, delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <span className={styles.icon}><item.icon size={22} color="#0F7A5C" strokeWidth={1.6} /></span>
+              <span className={styles.icon}><item.icon size={22} /></span>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.desc}>{item.desc}</p>
             </motion.div>
