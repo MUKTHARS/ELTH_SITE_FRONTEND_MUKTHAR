@@ -54,7 +54,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             </nav>
 
             <div className={styles.cta}>
-              <Button asChild size="lg" className="w-full">
+              <Button asChild size="lg" className="w-full bg-black hover:bg-black/90">
                 <Link href={NAV_CTA.href} onClick={onClose}>{NAV_CTA.label}</Link>
               </Button>
             </div>

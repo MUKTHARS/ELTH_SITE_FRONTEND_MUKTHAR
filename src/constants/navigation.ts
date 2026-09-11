@@ -29,7 +29,7 @@ export const FOOTER_GROUPS: FooterGroup[] = [
       { label: 'For Hospitals', href: ROUTES.FOR_HOSPITALS },
       { label: 'For Patients',  href: ROUTES.FOR_PATIENTS },
       { label: 'Pricing',       href: ROUTES.PRICING },
-      { label: 'Case Studies',  href: ROUTES.CASE_STUDIES },
+      // { label: 'Case Studies',  href: ROUTES.CASE_STUDIES },
     ],
   },
   {

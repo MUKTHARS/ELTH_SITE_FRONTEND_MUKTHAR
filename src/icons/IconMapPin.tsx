@@ -1,10 +1,9 @@
 import type { IconProps } from '@/types'
 
-export default function IconMapPin({ size = 24, color = 'currentColor', className, strokeWidth = 1.5 }: IconProps) {
+export default function IconMapPin({ size = 24, color = 'currentColor', className }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-      <circle cx="12" cy="10" r="3" />
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} className={className}>
+      <path fillRule="evenodd" clipRule="evenodd" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
     </svg>
   )
 }

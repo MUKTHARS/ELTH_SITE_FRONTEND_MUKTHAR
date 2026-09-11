@@ -9,12 +9,7 @@
 
   &::before,
   &::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    pointer-events: none;
-    z-index: 0;
+    content: none;
   }
 
   &::before {
@@ -22,7 +17,7 @@
     height: 520px;
     top: -200px;
     left: -160px;
-    background: radial-gradient(circle at 30% 30%, rgba($elth-teal-light, 0.16), transparent 70%);
+    background: radial-gradient(circle at 30% 30%, rgba($elth-teal-light, 0.05), transparent 70%);
   }
 
   &::after {

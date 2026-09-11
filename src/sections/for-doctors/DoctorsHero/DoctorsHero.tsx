@@ -12,10 +12,6 @@ import styles from './DoctorsHero.module.scss'
 export default function DoctorsHero() {
   return (
     <section className={styles.section}>
-      <div className={styles.bg}>
-        <Image src="/images/topbanners/for-doctors.webp" alt="" fill priority sizes="100vw" className={styles.bgImage} />
-        <div className={styles.scrim} />
-      </div>
       <div className={styles.inner}>
         <motion.div
           className={styles.content}
@@ -32,7 +28,7 @@ export default function DoctorsHero() {
             Elth AI handles documentation, pre-visit briefings, and drug safety checks — so you can focus on what only you can do: healing patients.
           </p>
           <div className={styles.actions}>
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="bg-black hover:bg-black/90">
               <Link href={ROUTES.CONTACT}>Request Demo</Link>
             </Button>
             <Button asChild variant="outline" size="lg">

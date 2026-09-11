@@ -1,40 +1,45 @@
 // ─── Colors ───────────────────────────────────────────────────────────────────
-$elth-teal:       #0F7A5C;
-$elth-teal-light: #14A37B;
-$elth-teal-bg:    #E6F5EF;
+// Slate Coral system: pure white ground, primary accent reserved for interactive
+// elements only (buttons, links, active states) — every other accent is a
+// neutral slate/graphite so the accent never washes across whole sections.
+$elth-teal:       #00CECB; // primary accent (green-blue) — buttons/links/active states only
+$elth-teal-light: #3DE0DC; // lighter/brighter shade of the accent, for hover & dark-section states
+$elth-teal-bg:    #E6FBFA; // lightest tint of the accent, replaces the old lavender wash
 
-$elth-purple:       #1E2A4A;
-$elth-purple-light: #3D5A99;
-$elth-purple-bg:    #EAEEF6;
+$elth-purple:       #3F4657; // neutral slate — secondary tag/icon color (NOT coral)
+$elth-purple-light: #5B6478;
+$elth-purple-bg:    #EEF0F3;
 
-$elth-blue:       #2C4A7C;
-$elth-blue-light: #3D5A99;
-$elth-blue-bg:    #EAF0F8;
+$elth-blue:       #55607A; // cool grey-blue — tertiary tag
+$elth-blue-light: #758096;
+$elth-blue-bg:    #ECEEF3;
 
-$elth-amber:      #C9852F;
-$elth-amber-bg:   #FBF0DE;
+$elth-amber:      #C07A1F; // warm neutral gold — roadmap/attention tag (NOT coral)
+$elth-amber-bg:   #FBEEDD;
 
-$elth-dark:       #101826;
-$elth-dark-2:     #111827;
-$elth-dark-3:     #1F2937;
+$elth-dark:       #1F2229; // neutral charcoal ink
+$elth-dark-2:     #16181D;
+$elth-dark-3:     #2A2D36;
 
-$elth-bg-warm:    transparent; // Replaced #F1EFE8 so the global theme is inherited
-$elth-bg-light:   #F3F8F6;
-$elth-lavender:   #F6F4FB; // Very light lavender — page/section backdrop so glass panels read against it
+$elth-bg-warm:    #FFFFFF; // page ground — pure white
+$elth-bg-light:   #FAFAFA; // near-white panel tone
+$elth-lavender:   #EAFBFA; // lightest green-blue section backdrop, tied to the teal accent
 
-$elth-border:     #E1EAE6;
-$elth-border-dark:#2D3748;
+$elth-border:     #E6E6E9; // neutral line
+$elth-border-dark:#333640;
 
 $white:           #FFFFFF;
 $black:           #000000;
 
-$text-primary:    #0F172A;
-$text-secondary:  #475569;
-$text-tertiary:   #94A3B8;
-$text-inverse:    #F8FAFC;
+$text-primary:    #1F2229; // ink
+$text-secondary:  #62626C; // ink-soft
+$text-tertiary:   #97979F;
+$text-inverse:    #FFFFFF;
 
 // ─── Typography ───────────────────────────────────────────────────────────────
-$font-sans:   'Cordia New';
+$font-sans:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-display: 'Instrument Sans', 'Inter', sans-serif;
+$font-mono:    'IBM Plex Mono', monospace;
 
 $text-xs:     12px;
 $text-sm:     14px;
@@ -79,21 +84,21 @@ $space-24:   96px;
 $space-32:   128px;
 
 // ─── Border Radius ────────────────────────────────────────────────────────────
-$radius-xs:   4px;
-$radius-sm:   6px;
-$radius-md:   10px;
-$radius-lg:   16px;
-$radius-xl:   24px;
+$radius-xs:   6px;
+$radius-sm:   8px;
+$radius-md:   14px;
+$radius-lg:   20px;
+$radius-xl:   28px;
 $radius-2xl:  32px;
 $radius-full: 9999px;
 
 // ─── Shadows ──────────────────────────────────────────────────────────────────
-$shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.05);
-$shadow-md:   0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
-$shadow-lg:   0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
-$shadow-xl:   0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
-$shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.08);
-$shadow-glow: 0 0 40px rgba(15, 122, 92, 0.15);
+$shadow-sm:   0 1px 2px rgba(31, 34, 41, 0.06);
+$shadow-md:   0 4px 10px rgba(31, 34, 41, 0.08), 0 2px 4px rgba(31, 34, 41, 0.05);
+$shadow-lg:   0 20px 40px -20px rgba(31, 34, 41, 0.22);
+$shadow-xl:   0 30px 70px -30px rgba(31, 34, 41, 0.25);
+$shadow-card: 0 2px 8px rgba(31, 34, 41, 0.06), 0 0 1px rgba(31, 34, 41, 0.08);
+$shadow-glow: 0 0 24px rgba(0, 206, 203, 0.18);
 
 // ─── Breakpoints ──────────────────────────────────────────────────────────────
 $bp-xs:  480px;

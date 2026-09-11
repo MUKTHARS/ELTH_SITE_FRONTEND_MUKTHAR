@@ -30,10 +30,21 @@ export default function Navbar() {
                 onMouseEnter={() => item.children && setActive(item.label)}
                 onMouseLeave={() => setActive(null)}
               >
-                <Link href={item.href} className={styles.navLink}>
-                  {item.label}
-                  {item.children && <span className={styles.chevron}>›</span>}
-                </Link>
+                {item.children ? (
+                  <button
+                    type="button"
+                    className={styles.navLink}
+                    onClick={() => setActive(activeMenu === item.label ? null : item.label)}
+                    aria-expanded={activeMenu === item.label}
+                  >
+                    {item.label}
+                    <span className={styles.chevron}>›</span>
+                  </button>
+                ) : (
+                  <Link href={item.href} className={styles.navLink}>
+                    {item.label}
+                  </Link>
+                )}
 
                 {item.children && activeMenu === item.label && (
                   <div className={styles.dropdown}>
@@ -49,7 +60,7 @@ export default function Navbar() {
           </nav>
 
           <div className={styles.actions}>
-            <Button asChild size="default" className={styles.ctaBtn}>
+            <Button asChild size="default" className={`${styles.ctaBtn} bg-black hover:bg-black/90`}>
               <Link href={NAV_CTA.href}>{NAV_CTA.label}</Link>
             </Button>
             <button className={styles.menuBtn} onClick={() => setOpen(true)} aria-label="Open menu">

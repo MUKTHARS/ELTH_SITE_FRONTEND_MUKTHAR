@@ -9,12 +9,7 @@
 
   &::before,
   &::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-    z-index: 0;
+    content: none;
   }
 
   &::before {
@@ -30,7 +25,7 @@
     height: 420px;
     bottom: -180px;
     right: -140px;
-    background: radial-gradient(circle at 70% 70%, rgba($elth-teal, 0.28), transparent 70%);
+    background: radial-gradient(circle at 70% 70%, rgba($elth-teal, 0.05), transparent 70%);
   }
 }
 
@@ -157,8 +152,8 @@
   width: 30px;
   height: 30px;
   border-radius: $radius-md;
-  background: $elth-purple-bg;
-  color: $elth-purple;
+  background: #000000;
+  color: $white;
   @include flex-center;
   flex-shrink: 0;
 }
@@ -345,7 +340,7 @@
   height: 300px;
   border-radius: $radius-full;
   border: 1px dashed rgba($white, 0.26);
-  background: radial-gradient(circle, rgba($elth-teal, 0.18) 0%, transparent 67%);
+  background: radial-gradient(circle, rgba($elth-teal, 0.05) 0%, transparent 67%);
 
   @include respond-to(sm) { width: 260px; height: 260px; }
 }

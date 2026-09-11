@@ -11,10 +11,6 @@ import styles from './HospitalsHero.module.scss'
 export default function HospitalsHero() {
   return (
     <section className={styles.section}>
-      <div className={styles.bg}>
-        <Image src="/images/topbanners/for-hospitals.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
-        <div className={styles.scrim} />
-      </div>
       <div className={styles.inner}>
         <motion.div
           className={styles.content}
@@ -31,7 +27,7 @@ export default function HospitalsHero() {
             Elth AI is white-label infrastructure. Deploy it under your brand in 48 hours. Your patients never see &ldquo;Elth&rdquo; — they see your hospital&apos;s AI.
           </p>
           <div className={styles.actions}>
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="bg-black hover:bg-black/90">
               <Link href={ROUTES.CONTACT}>Request Demo</Link>
             </Button>
             <Button asChild variant="outline" size="lg">

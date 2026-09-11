@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef }         from 'react'
+import { useState }       from 'react'
 import Image              from 'next/image'
 import Link               from 'next/link'
 import { motion }         from 'framer-motion'
@@ -11,6 +11,33 @@ import styles             from './HeroSection.module.scss'
 
 const WAVEFORM_BARS = [18, 34, 24, 46, 30, 52, 26, 40, 20, 34, 16]
 
+// Fully filled (solid) icon variants for the capability stack — kept local
+// to this section so the shared line-icon set used elsewhere is untouched.
+function IconMicFilled({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 15.75a3.75 3.75 0 003.75-3.75V6a3.75 3.75 0 10-7.5 0v6a3.75 3.75 0 003.75 3.75z" />
+      <path d="M6 12a.75.75 0 01.75.75 5.25 5.25 0 0010.5 0 .75.75 0 011.5 0 6.751 6.751 0 01-6 6.709v2.291h3a.75.75 0 010 1.5h-7.5a.75.75 0 010-1.5h3v-2.291a6.751 6.751 0 01-6-6.709A.75.75 0 016 12z" />
+    </svg>
+  )
+}
+
+function IconFileTextFilled({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13zM8 12h8v2H8v-2zm0 4h8v2H8v-2zm0-8h5v2H8V8z" />
+    </svg>
+  )
+}
+
+function IconShieldFilled({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path fillRule="evenodd" clipRule="evenodd" d="M12.516 2.17a.75.75 0 00-1.032 0 11.209 11.209 0 01-7.877 3.08.75.75 0 00-.722.515A12.74 12.74 0 002.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 00.374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 00-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08zm3.094 8.016a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" />
+    </svg>
+  )
+}
+
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   show:   { opacity: 1, y: 0,  transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
@@ -18,40 +45,44 @@ const fadeUp = {
 
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } }
 
+const CAPABILITIES = [
+  {
+    id: 'scribe',
+    icon: IconMicFilled,
+    image: '/images/topbanners/soap_notes.jpg',
+    title: 'Voice → SOAP note',
+    meta: '00:11 captured',
+    detail: 'Structured into Subjective, Objective, Assessment & Plan — instantly, with ICD-10 codes attached.',
+  },
+  {
+    id: 'brief',
+    icon: IconFileTextFilled,
+    image: '/images/topbanners/pre-visit.png',
+    title: 'Pre-visit AI brief',
+    meta: 'Ready 10 min early',
+    detail: 'Relevant history, last visit notes and open flags, summarized before the doctor walks in.',
+  },
+  {
+    id: 'safety',
+    icon: IconShieldFilled,
+    image: '/images/topbanners/drug.webp',
+    title: 'Drug safety check',
+    meta: 'Live screening',
+    detail: 'Every prescription cross-checked against the patient’s active medications and allergies in real time.',
+  },
+] as const
+
 export default function HeroSection() {
-  const sceneRef = useRef<HTMLDivElement>(null)
-  const panelRef = useRef<HTMLDivElement>(null)
-
-  function handleStageMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-    const r = e.currentTarget.getBoundingClientRect()
-    const px = (e.clientX - r.left) / r.width - 0.5
-    const py = (e.clientY - r.top) / r.height - 0.5
-    if (sceneRef.current) {
-      sceneRef.current.style.transform = `rotateX(${4 - py * 10}deg) rotateY(${-8 + px * 16}deg)`
-    }
-    if (panelRef.current) {
-      panelRef.current.style.transform = `translate(-50%, -50%) translateZ(100px) rotateX(${3 - py * 5}deg) rotateY(${-6 + px * 12}deg)`
-    }
-  }
-
-  function handleStageMouseLeave() {
-    if (sceneRef.current) sceneRef.current.style.transform = 'rotateX(4deg) rotateY(-8deg)'
-    if (panelRef.current) panelRef.current.style.transform = 'translate(-50%, -50%) translateZ(100px) rotateX(3deg) rotateY(-6deg)'
-  }
+  const [activeId, setActiveId] = useState<string>(CAPABILITIES[0].id)
 
   return (
     <section className={styles.section}>
-      <div className={styles.bg}>
-        <Image src="/images/top.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
-        <div className={styles.scrim} />
-      </div>
-
       <div className={styles.inner}>
         <motion.div className={styles.content} variants={stagger} initial="hidden" animate="show">
           <motion.div variants={fadeUp}>
-            <Badge variant="dark" className={styles.pill}>
+            {/* <Badge variant="teal" className={styles.pill}>
               AI-POWERED CARE, FROM CONSULTATION TO CONTINUITY
-            </Badge>
+            </Badge> */}
           </motion.div>
 
           <motion.h1 className={styles.heading} variants={fadeUp}>
@@ -96,48 +127,67 @@ export default function HeroSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className={styles.stage} onMouseMove={handleStageMouseMove} onMouseLeave={handleStageMouseLeave}>
-            <div className={styles.medScene} ref={sceneRef}>
-              <div className={styles.medGlow} />
+          <div className={styles.stage}>
+            <span className={styles.stageKicker}>What Elth is doing right now</span>
 
-              <div className={styles.medParticles}>
-                {Array.from({ length: 6 }).map((_, i) => (
-                  <span key={i} className={styles.medParticle} data-particle={i} />
-                ))}
-              </div>
+            <div className={styles.capStack}>
+              {CAPABILITIES.map((cap) => {
+                const Icon = cap.icon
+                const isActive = cap.id === activeId
+                return (
+                  <div
+                    key={cap.id}
+                    className={`${styles.capCard} ${isActive ? styles.capCardActive : ''}`}
+                    onMouseEnter={() => setActiveId(cap.id)}
+                    onFocus={() => setActiveId(cap.id)}
+                    tabIndex={0}
+                  >
+                    <div className={styles.capHead}>
+                      <span className={styles.capIcon}><Icon size={18} /></span>
+                      <span className={styles.capHeadText}>
+                        <span className={styles.capTitle}>{cap.title}</span>
+                        <span className={styles.capMeta}>{cap.meta}</span>
+                      </span>
+                      {/* <span className={styles.capLive} aria-hidden="true">Live</span> */}
+                    </div>
 
-              <div className={styles.medical3d} ref={panelRef}>
-                <div className={styles.listenPanel}>
-                  <div className={styles.listenTop}>
-                    <span className={styles.listenKicker}>Clinical companion</span>
-                    <span className={styles.listenStatus}>Listening</span>
+                    <div className={styles.capDetailWrap}>
+                      <div className={styles.capDetail}>
+                        <div className={styles.capDetailRow}>
+                          {/* <Image
+                            src={cap.image}
+                            alt=""
+                            width={72}
+                            height={72}
+                            className={styles.capImage}
+                          /> */}
+                          <div className={styles.capDetailText}>
+                            <p>{cap.detail}</p>
+
+                            {cap.id === 'scribe' && (
+                              <div className={styles.waveform} aria-hidden="true">
+                                {WAVEFORM_BARS.map((h, wi) => (
+                                  <i
+                                    key={wi}
+                                    style={{
+                                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                      ['--bar-height' as any]: `${h}px`,
+                                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                      ['--bar-delay' as any]: `${wi * 0.1}s`,
+                                    }}
+                                  />
+                                ))}
+                              </div>
+                            )}
+
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-
-                  <div className={styles.listenCopy}>
-                    <strong>Turning the conversation into care.</strong>
-                    <p>Capturing the patient&apos;s story and preparing a clear brief for the clinician.</p>
-                  </div>
-
-                  <div className={styles.waveform} aria-hidden="true">
-                    {WAVEFORM_BARS.map((h, i) => (
-                      <i
-                        key={i}
-                        style={{
-                          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                          ['--bar-height' as any]: `${h}px`,
-                          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                          ['--bar-delay' as any]: `${i * 0.1}s`,
-                        }}
-                      />
-                    ))}
-                  </div>
-
-                  <div className={styles.listenFoot}>
-                    <span><b>EN</b> · consent verified</span>
-                    <span>00:42</span>
-                  </div>
-                </div>
-              </div>
+                )
+              })}
             </div>
           </div>
         </motion.div>

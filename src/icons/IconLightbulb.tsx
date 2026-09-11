@@ -1,11 +1,9 @@
 import type { IconProps } from '@/types'
 
-export default function IconLightbulb({ size = 24, color = 'currentColor', className, strokeWidth = 1.5 }: IconProps) {
+export default function IconLightbulb({ size = 24, color = 'currentColor', className }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M9 18h6" />
-      <path d="M10 22h4" />
-      <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1v.2a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z" />
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} className={className}>
+      <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" />
     </svg>
   )
 }

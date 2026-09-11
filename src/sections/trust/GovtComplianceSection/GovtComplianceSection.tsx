@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
 import { GOVT_COMPLIANCE_ITEMS } from '@constants/govtCompliance'
@@ -9,10 +8,6 @@ import styles from './GovtComplianceSection.module.scss'
 export default function GovtComplianceSection() {
   return (
     <section className={styles.section}>
-      <div className={styles.bg}>
-        <Image src="/images/top.jpg" alt="" fill priority sizes="100vw" className={styles.bgImage} />
-        <div className={styles.scrim} />
-      </div>
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionLabel text="India Health Stack" color="teal" />

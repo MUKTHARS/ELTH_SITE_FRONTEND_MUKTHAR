@@ -17,7 +17,7 @@ export default function LabReportSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <SectionLabel text="Lab Report AI" color="blue" />
+            {/* <SectionLabel text="Lab Report AI" color="blue" /> */}
             <h2 className={styles.heading}>Your lab report, in plain English — or Tamil, or Hindi.</h2>
             <p className={styles.sub}>
               Upload your report. Elth AI explains every test in language you can understand, highlights what&apos;s abnormal, and tells you exactly what to discuss with your doctor.
@@ -38,7 +38,7 @@ export default function LabReportSection() {
             <div className={styles.features}>
               {LAB_REPORT_FEATURES.map((f) => (
                 <div key={f.title} className={styles.featureItem}>
-                  <span className={styles.featureIcon}><f.icon size={20} color="#1E2A4A" strokeWidth={1.6} /></span>
+                  <span className={styles.featureIcon}><f.icon size={20} /></span>
                   <div>
                     <strong className={styles.featureTitle}>{f.title}</strong>
                     <p className={styles.featureDesc}>{f.desc}</p>

@@ -11,12 +11,12 @@ export const SCRIBE_BLOCK = {
     { icon: IconSmartphone, label: 'Saved to patient app' },
   ],
   checklist: [
-    { label: 'Complaints',     icon: IconFileText,    color: '#1E2A4A', bg: '#EAEEF6' },
+    { label: 'Complaints',     icon: IconFileText,    color: '#4A3F3B', bg: '#EFEBE7' },
     { label: 'Vitals',         icon: IconActivity,    color: '#DC2626', bg: '#FEE2E2' },
-    { label: 'Examination',    icon: IconStethoscope, color: '#2C4A7C', bg: '#EAF0F8' },
+    { label: 'Examination',    icon: IconStethoscope, color: '#2954E8', bg: '#E1E8FE' },
     { label: 'Investigation',  icon: IconSearch,      color: '#9A3412', bg: '#FFEDD5' },
-    { label: 'Diagnosis',      icon: IconBrain,       color: '#0F7A5C', bg: '#E6F5EF' },
-    { label: 'Treatment Plan', icon: IconCalendar,    color: '#1E2A4A', bg: '#EAEEF6' },
+    { label: 'Diagnosis',      icon: IconBrain,       color: '#5B3DF6', bg: '#ECE6FE' },
+    { label: 'Treatment Plan', icon: IconCalendar,    color: '#4A3F3B', bg: '#EFEBE7' },
     { label: 'Medication',     icon: IconPill,        color: '#DB2777', bg: '#FCE7F3' },
   ],
 }
@@ -27,7 +27,7 @@ export const MEMORY_BLOCK = {
   desc: 'Every consultation, prescription, report and investigation becomes part of the patient\'s longitudinal story.',
   years: [
     {
-      year: '2026', color: '#3D5A99', latest: true,
+      year: '2026', color: '#5878EF', latest: true,
       items: [
         { label: 'Consultation', icon: IconStethoscope },
         { label: 'Prescription', icon: IconPill },
@@ -65,10 +65,10 @@ export const CONTINUOUS_BLOCK = {
   center: { icon: IconRepeat, label: 'Always on' },
   nodes: [
     { icon: IconCheck,      label: 'Visit completed',       color: '#16A34A', bg: '#DCFCE7' },
-    { icon: IconCalendar,   label: 'Follow-up scheduled',   color: '#1E2A4A', bg: '#EAEEF6' },
+    { icon: IconCalendar,   label: 'Follow-up scheduled',   color: '#4A3F3B', bg: '#EFEBE7' },
     { icon: IconBell,       label: 'Patient notified',      color: '#DC2626', bg: '#FEE2E2' },
-    { icon: IconChat,       label: 'Patient responds',      color: '#0F7A5C', bg: '#E6F5EF' },
-    { icon: IconFileText,   label: 'Doctor sees the update', color: '#2C4A7C', bg: '#EAF0F8' },
+    { icon: IconChat,       label: 'Patient responds',      color: '#5B3DF6', bg: '#ECE6FE' },
+    { icon: IconFileText,   label: 'Doctor sees the update', color: '#2954E8', bg: '#E1E8FE' },
     { icon: IconBell,       label: 'Next visit',            color: '#DC2626', bg: '#FEE2E2' },
   ],
 }
