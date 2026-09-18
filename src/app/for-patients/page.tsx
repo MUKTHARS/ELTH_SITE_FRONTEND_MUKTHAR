@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { PatientsHero, SymptomCheckerSection, LabReportSection, ConciergeSection } from '@sections/for-patients'
+import { PatientsHero, SymptomCheckerSection, LabReportSection, ConciergeSection, AppDownloadSection } from '@sections/for-patients'
 
 export const metadata: Metadata = {
   title: 'For Patients — Elth AI',
@@ -13,6 +13,7 @@ export default function ForPatientsPage() {
       <SymptomCheckerSection />
       <LabReportSection />
       <ConciergeSection />
+      <AppDownloadSection />
     </>
   )
 }
