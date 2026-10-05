@@ -7,7 +7,7 @@ export interface CaseStudy {
   metrics: { value: string; label: string }[]
 }
 
-// Illustrative deployment scenarios based on Elth AI's product design and pilot
+// Illustrative deployment scenarios based on Saple AI's product design and pilot
 // feedback. Hospital names match the examples used in testimonials.ts for
 // narrative consistency across the site.
 export const CASE_STUDIES: CaseStudy[] = [

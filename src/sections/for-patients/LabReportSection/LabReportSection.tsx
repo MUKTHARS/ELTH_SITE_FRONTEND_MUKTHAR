@@ -19,7 +19,7 @@ export default function LabReportSection() {
             {/* <SectionLabel text="Lab Report AI" color="blue" /> */}
             <h2 className={styles.heading}>Your lab report, in plain English — or Tamil, or Hindi.</h2>
             <p className={styles.sub}>
-              Upload your report. Elth AI explains every test in language you can understand, highlights what&apos;s abnormal, and tells you exactly what to discuss with your doctor.
+              Upload your report. Saple AI explains every test in language you can understand, highlights what&apos;s abnormal, and tells you exactly what to discuss with your doctor.
             </p>
             <div className={styles.stat}>
               <span className={styles.statNum}>73%</span>

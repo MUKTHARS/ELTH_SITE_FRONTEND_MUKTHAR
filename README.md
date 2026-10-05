@@ -1,6 +1,6 @@
-# Elth AI — Marketing Website
+# Saple AI — Marketing Website
 
-Production-ready marketing website for **Elth AI**, an AI-native healthcare platform built on Saple.ai infrastructure.
+Production-ready marketing website for **Saple AI**, an AI-native healthcare platform built on Saple.ai infrastructure.
 
 **Status: Complete and running** — `npm run dev` → http://localhost:3000
 
@@ -8,9 +8,9 @@ Production-ready marketing website for **Elth AI**, an AI-native healthcare plat
 
 ## What This Is
 
-A **frontend-only marketing website** that communicates Elth AI's product to hospitals, clinics, and doctors across India. No backend. No authentication. No database.
+A **frontend-only marketing website** that communicates Saple AI's product to hospitals, clinics, and doctors across India. No backend. No authentication. No database.
 
-Elth AI is a **white-label B2B SaaS platform** — hospitals deploy it under their own brand. Patients never see "Elth AI". The site speaks to hospital admins and doctors, not patients.
+Saple AI is a **white-label B2B SaaS platform** — hospitals deploy it under their own brand. Patients never see "Saple AI". The site speaks to hospital admins and doctors, not patients.
 
 > Think Shopify for hospitals — not Apollo 247 or Practo. We give hospitals the tools to care for their own patients, with AI, under their own brand.
 

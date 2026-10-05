@@ -14,7 +14,7 @@ export default function ConciergeSection() {
           <SectionLabel text="Health Concierge · P1" color="teal" />
           <h2 className={styles.heading}>Care doesn&apos;t end when the appointment does</h2>
           <p className={styles.sub}>
-            Elth AI stays with patients after discharge — reminders, follow-ups, questions answered, summaries explained. Continuous care, zero extra staff.
+            Saple AI stays with patients after discharge — reminders, follow-ups, questions answered, summaries explained. Continuous care, zero extra staff.
           </p>
         </div>
         <div className={styles.content}>

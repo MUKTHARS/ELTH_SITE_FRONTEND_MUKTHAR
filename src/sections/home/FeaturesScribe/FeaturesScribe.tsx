@@ -25,7 +25,7 @@ export default function FeaturesScribe() {
               <GradientText variant="teal">Start healing.</GradientText>
             </h2>
             <p className={styles.sub}>
-              Elth AI Scribe listens to your consultation and writes the clinical note for you — in any Indian language, in real time.
+              Saple AI Scribe listens to your consultation and writes the clinical note for you — in any Indian language, in real time.
             </p>
             <ul className={styles.points}>
               {SCRIBE_POINTS.map((pt) => (

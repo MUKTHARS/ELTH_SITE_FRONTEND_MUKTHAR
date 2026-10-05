@@ -25,7 +25,7 @@ export default function FeaturesLabReport() {
               <GradientText variant="teal">Explanation in English.</GradientText>
             </h2>
             <p className={styles.sub}>
-              Upload any lab report. Elth AI explains every marker in plain language, flags abnormal values, and tells the patient exactly what to ask their doctor — in their language.
+              Upload any lab report. Saple AI explains every marker in plain language, flags abnormal values, and tells the patient exactly what to ask their doctor — in their language.
             </p>
             <div className={styles.features}>
               {LAB_FEATURES_LIST.map((f) => (

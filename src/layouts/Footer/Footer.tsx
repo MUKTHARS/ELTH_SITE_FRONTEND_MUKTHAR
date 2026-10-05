@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brand}>
-          <span className={styles.logo}>Elth AI</span>
+          <span className={styles.logo}>Saple AI</span>
           <p className={styles.tagline}>{siteConfig.tagline}</p>
           <p className={styles.built}>Built on <a href="https://saple.ai" className={styles.link}>Saple.ai</a></p>
           <div className={styles.badges}>
@@ -35,7 +35,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <p className={styles.copy}>© {new Date().getFullYear()} Elth AI. All rights reserved.</p>
+        <p className={styles.copy}>© {new Date().getFullYear()} Saple AI. All rights reserved.</p>
         <p className={styles.copy}>Making healthcare intelligent, accessible, and human.</p>
       </div>
     </footer>

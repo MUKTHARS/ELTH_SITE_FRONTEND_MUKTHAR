@@ -41,7 +41,7 @@ export default function CtaSection() {
               Give your doctors<br />their time back.
             </h2>
             <p className={styles.sub}>
-              See how Elth AI can transform your consultation workflow and keep your patients connected beyond the clinic.
+              See how Saple AI can transform your consultation workflow and keep your patients connected beyond the clinic.
             </p>
 
             <div className={styles.actions}>

@@ -24,7 +24,7 @@ export default function FeaturesDrugCheck() {
               <GradientText variant="warm">confidence.</GradientText>
             </h2>
             <p className={styles.sub}>
-              Before any prescription is finalized, Elth AI cross-checks every drug combination against a 50,000+ interaction database — flagging contraindications in real time.
+              Before any prescription is finalized, Saple AI cross-checks every drug combination against a 50,000+ interaction database — flagging contraindications in real time.
             </p>
             <div className={styles.bullets}>
               {DRUG_BULLETS.map((b) => (

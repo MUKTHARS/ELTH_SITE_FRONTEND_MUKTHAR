@@ -13,7 +13,7 @@ export default function GovtComplianceSection() {
           <SectionLabel text="India Health Stack" color="teal" />
           <h2 className={styles.heading}>Built for how India regulates health data</h2>
           <p className={styles.sub}>
-            Elth AI is built around ABDM from day one — not retrofitted. That means every hospital deployment is ready for ABHA-linked records, consent-based sharing, and claims interoperability as those requirements roll out.
+            Saple AI is built around ABDM from day one — not retrofitted. That means every hospital deployment is ready for ABHA-linked records, consent-based sharing, and claims interoperability as those requirements roll out.
           </p>
         </div>
 

@@ -19,7 +19,7 @@ export default function Navbar() {
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.inner}>
           <Link href="/" className={styles.logo}>
-            <span className={styles.logoText}>Elth AI</span>
+            <span className={styles.logoText}>Saple AI</span>
           </Link>
 
           <nav className={styles.nav}>

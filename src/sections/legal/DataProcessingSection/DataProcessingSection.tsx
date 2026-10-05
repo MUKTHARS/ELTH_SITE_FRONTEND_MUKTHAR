@@ -12,7 +12,7 @@ export default function DataProcessingSection() {
           <span className={styles.eyebrow}>Legal · Security</span>
           <h1 className={styles.heading}>Data Processing</h1>
           <p className={styles.sub}>
-            How Elth AI processes hospital and patient data, and the technical and organisational measures in place to protect it — for hospital compliance and IT teams evaluating the platform.
+            How Saple AI processes hospital and patient data, and the technical and organisational measures in place to protect it — for hospital compliance and IT teams evaluating the platform.
           </p>
         </div>
 

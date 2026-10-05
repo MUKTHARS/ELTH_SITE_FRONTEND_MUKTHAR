@@ -12,7 +12,7 @@ export default function TestimonialsSection() {
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionLabel text="Testimonials" color="purple" />
-          <h2 className={styles.heading}>Doctors and hospitals love Elth AI</h2>
+          <h2 className={styles.heading}>Doctors and hospitals love Saple AI</h2>
           <p className={styles.sub}>From single-doctor clinics to multi-speciality hospitals — here&apos;s what they say.</p>
         </div>
 

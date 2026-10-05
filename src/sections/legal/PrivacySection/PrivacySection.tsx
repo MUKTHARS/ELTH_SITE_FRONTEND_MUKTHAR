@@ -17,7 +17,7 @@ export default function PrivacySection() {
           <span className={styles.eyebrow}>Legal</span>
           <h1 className={styles.heading}>Privacy Policy</h1>
           <p className={styles.sub}>
-            This Privacy Policy applies to the Elth mobile application and the Elth AI website, both owned and operated by Monobot Agentic Automations LLP.
+            This Privacy Policy applies to the Elth mobile application and the Saple AI website, both owned and operated by Monobot Agentic Automations LLP.
           </p>
         </div>
 
