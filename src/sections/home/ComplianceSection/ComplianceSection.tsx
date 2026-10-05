@@ -20,7 +20,7 @@ export default function ComplianceSection() {
             <SectionLabel text="Compliance" color="teal" />
             <h2 className={styles.heading}>Enterprise-grade security. Day one.</h2>
             <p className={styles.sub}>
-              We don&apos;t wait for hospitals to ask about compliance. Every Saple AI deployment ships with full DPDPA 2023, HIPAA, and HL7 FHIR R4 compliance — built in, not bolted on.
+              Saple AI is designed around data protection and consent-led health information sharing, including support for DPDPA and ABDM workflows.
             </p>
           </div>
           <div className={styles.badges}>

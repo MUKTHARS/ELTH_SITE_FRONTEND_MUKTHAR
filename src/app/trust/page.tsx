@@ -4,7 +4,7 @@ import { GovtComplianceSection } from '@sections/trust'
 
 export const metadata: Metadata = {
   title: 'Trust & Security — Saple AI',
-  description: 'How Saple AI protects patient data — consent-first design, HIPAA/DPDPA/ISO 27001 compliance, ABDM/ABHA readiness, and India-first data residency.',
+  description: 'How Saple AI approaches patient data protection through consent-first design, DPDPA, ABDM/ABHA support, and India-first data residency.',
 }
 
 export default function TrustPage() {

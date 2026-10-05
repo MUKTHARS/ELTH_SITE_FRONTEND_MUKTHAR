@@ -48,7 +48,7 @@ export default function HowItWorks() {
         >
           <span className={styles.noteIcon}><IconLightbulb size={18} strokeWidth={1.6} /></span>
           <p className={styles.noteText}>
-            <strong>No patients ever see &quot;Saple AI&quot;</strong> — they interact with your hospital&apos;s brand. We&apos;re the infrastructure, you&apos;re the experience.
+            <strong>Hospitals can offer care through their own branded channels.</strong> MyElth remains the patient&apos;s personal health app, bringing together records from participating hospitals and clinics.
           </p>
         </motion.div>
       </div>

@@ -32,7 +32,7 @@ Each Tenant's patient and clinical data is logically isolated. Saple AI does not
   },
   {
     title: 'AI-Generated Output',
-    body: `The Services use artificial intelligence to assist with tasks such as clinical documentation, symptom triage, lab report interpretation, and drug interaction checks. AI-generated output is a decision-support aid only and does not constitute medical advice or a diagnosis.
+    body: `The Services use artificial intelligence to assist with tasks such as clinical documentation, lab report interpretation, and drug interaction checks. AI-generated output is a decision-support aid only and does not constitute medical advice or a diagnosis.
 
 All AI-generated clinical content — including scribe notes, prescriptions, and briefings — must be reviewed and approved by a licensed doctor before being acted upon or shared with a patient. Saple AI is not a substitute for professional medical judgment.`,
   },

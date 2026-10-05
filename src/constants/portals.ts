@@ -27,6 +27,6 @@ export const PORTALS = [
     href: ROUTES.FOR_PATIENTS,
     icon: IconUser,
     img: '/assets/svgs/undraw_booking_8vl5.svg',
-    desc: 'Symptom Checker, Lab Report Trends, ABHA-Linked Records, Consent QR Sharing',
+    desc: 'Lab Report Trends, ABHA-Linked Records, Consent QR Sharing',
   },
 ]

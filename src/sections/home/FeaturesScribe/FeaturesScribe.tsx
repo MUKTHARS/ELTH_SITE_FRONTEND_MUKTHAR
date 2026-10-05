@@ -25,7 +25,7 @@ export default function FeaturesScribe() {
               <GradientText variant="teal">Start healing.</GradientText>
             </h2>
             <p className={styles.sub}>
-              Saple AI Scribe listens to your consultation and writes the clinical note for you — in any Indian language, in real time.
+              Saple AI Scribe transcribes the consultation and organizes only what the doctor said into a draft report for review.
             </p>
             <ul className={styles.points}>
               {SCRIBE_POINTS.map((pt) => (
@@ -51,10 +51,10 @@ export default function FeaturesScribe() {
               <div className={styles.soapMock}>
                 <div className={styles.soapHeader}>
                   <span className={styles.soapDot} />
-                  <span className={styles.soapTitle}>AI Scribe — SOAP Note</span>
+                  <span className={styles.soapTitle}>AI Scribe — Draft Report</span>
                   <span className={styles.soapBadge}>Live</span>
                 </div>
-                {['Subjective', 'Objective', 'Assessment', 'Plan'].map((label, i) => (
+                {['Complaints', 'Examination', 'Investigation', 'Diagnosis', 'Treatment plan', 'Medication'].map((label, i) => (
                   <div key={label} className={styles.soapRow}>
                     <span className={styles.soapLabel}>{label}</span>
                     <div className={styles.soapLines}>

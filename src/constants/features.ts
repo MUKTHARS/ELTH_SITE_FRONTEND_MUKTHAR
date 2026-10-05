@@ -4,18 +4,10 @@ export const FEATURES: Feature[] = [
   {
     id: 'scribe',
     title: 'AI Clinical Scribe',
-    description: 'Doctor speaks after consultation. AI generates SOAP notes, ICD-10 codes, and prescription draft in under 2 minutes. Saves 12+ hours weekly.',
+    description: 'The doctor dictates the consultation. AI organizes only what was said into a structured draft report for doctor review.',
     icon: 'IconMic',
     phase: 'P0',
     audience: 'doctor',
-  },
-  {
-    id: 'symptom',
-    title: 'AI Symptom Checker',
-    description: 'Patient describes symptoms in English, Tamil, or Hindi. AI asks adaptive follow-up questions and classifies urgency into 4 levels.',
-    icon: 'IconBrain',
-    phase: 'P0',
-    audience: 'patient',
   },
   {
     id: 'appointment',
@@ -60,7 +52,7 @@ export const FEATURES: Feature[] = [
   {
     id: 'concierge',
     title: 'Personal Health Concierge',
-    description: 'Medication reminders, health journal, family profile management, and preventive care nudges — all via WhatsApp.',
+    description: 'Medication reminders, health journal, and preventive care nudges — all via WhatsApp.',
     icon: 'IconShield',
     phase: 'P1',
     audience: 'patient',

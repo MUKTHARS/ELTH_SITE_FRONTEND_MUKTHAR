@@ -3,8 +3,8 @@ import { IconMic, IconGlobe, IconEdit, IconFileText } from '@icons/index'
 export const SCRIBE_POINTS = [
   {
     icon: IconMic,
-    title: 'Voice → SOAP note in 30 seconds',
-    desc: 'Record the consultation. Elth transcribes and structures it into a SOAP note, ready to sign off.',
+    title: 'Voice → structured report',
+    desc: 'Record the consultation. AI transcribes and organizes the doctor’s dictated content into a draft report for review.',
   },
   {
     icon: IconGlobe,
@@ -36,8 +36,8 @@ export const SCRIBE_WORKFLOW = [
   },
   {
     step: '3',
-    label: 'SOAP note generated',
-    detail: 'Structured Subjective / Objective / Assessment / Plan in 30 seconds.',
+    label: 'Draft report prepared',
+    detail: 'The doctor’s dictated content is organized into report sections for review.',
   },
   {
     step: '4',

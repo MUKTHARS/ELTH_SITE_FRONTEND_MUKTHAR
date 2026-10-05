@@ -58,7 +58,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | `/` | Homepage — full product story, 17 sections |
 | `/for-doctors` | AI Scribe, Pre-visit Brief, Drug Checker |
 | `/for-hospitals` | Admin Console, Analytics, White-labelling |
-| `/for-patients` | Symptom Checker, Lab Interpreter, Concierge |
+| `/for-patients` | Lab Interpreter, Concierge |
 | `/pricing` | Starter / Pro / Enterprise plans |
 | `/about` | Mission, values, team |
 | `/contact` | Demo request form |

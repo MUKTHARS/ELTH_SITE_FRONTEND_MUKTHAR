@@ -12,14 +12,14 @@ export const HOW_IT_WORKS_STEPS = [
     num: '02',
     icon: IconSettings,
     title: 'Configure your workflows',
-    desc: 'Enable the features your hospital needs. Scribe for OPD? Symptom checker on WhatsApp? Analytics for admin? All toggleable.',
+    desc: 'Enable the features your hospital needs. Scribe for OPD? Patient communication? Analytics for admin? Configure workflows to suit your team.',
     color: '#4A3F3B',
   },
   {
     num: '03',
     icon: IconSmartphone,
     title: 'Patients connect',
-    desc: "Patients reach your hospital's AI via WhatsApp, web portal, or app. They never see Elth — only your hospital.",
+    desc: "Patients can reach your hospital's AI through hospital-branded channels. MyElth is the patient's personal app for health records across participating hospitals and clinics.",
     color: '#2954E8',
   },
   {

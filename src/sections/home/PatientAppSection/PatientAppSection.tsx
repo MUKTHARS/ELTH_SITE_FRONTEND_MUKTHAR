@@ -16,8 +16,7 @@ const POINTS = [
   { icon: IconBrain,    title: 'Understand your health', desc: 'See trends and understand reports in plain language.' },
   { icon: IconUsers,    title: 'Your records. Your choice.', desc: 'Grant access with a scannable consent QR, and revoke it anytime.' },
   { icon: IconShield,   title: 'Connected to your care', desc: 'Receive prescriptions and follow-up information from connected hospitals.' },
-  { icon: IconUsers,    title: 'Manage care for the whole family', desc: 'Add parents, spouse or children to your account and see everyone’s records and appointments in one place.' },
-  { icon: IconSearch,   title: 'Find the right doctor, fast', desc: 'Search your hospital’s doctors by specialty, availability and ratings — book in a tap.' },
+  { icon: IconSearch,   title: 'Find the right doctor, fast', desc: 'Search doctors at connected clinics by specialty and availability — book in a tap.' },
 ]
 
 export default function PatientAppSection() {
@@ -39,7 +38,7 @@ export default function PatientAppSection() {
               <SectionLabel text="MyElth" color="teal" />
               <h2 className={styles.heading}>The patient&apos;s health record. For life.</h2>
               <p className={styles.sub}>
-                MyElth gives every patient one place for their health records — regardless of which hospital or clinic they visit.
+                MyElth brings together a patient&apos;s health records from participating hospitals and clinics in one place.
               </p>
               <span className={styles.underline} />
             </motion.div>
