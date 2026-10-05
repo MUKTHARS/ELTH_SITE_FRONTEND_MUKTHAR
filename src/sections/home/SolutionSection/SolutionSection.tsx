@@ -30,11 +30,11 @@ export default function SolutionSection() {
           <SectionLabel text="The Solution" color="teal" />
           <h2 className={styles.heading}>Care that continues beyond the consultation.</h2>
           <p className={styles.sub}>
-            Elth connects the moments around a visit—from preparing for a consultation to documenting the doctor&apos;s plan and helping patients stay on track afterward.
+            Saple connects the moments around a visit—from preparing for a consultation to documenting the doctor&apos;s plan and helping patients stay on track afterward.
           </p>
         </div>
 
-        <p className={styles.journeyCaption}>One connected journey, supported by Elth.</p>
+        <p className={styles.journeyCaption}>One connected journey, supported by Saple.</p>
 
         <motion.div
           className={styles.journey}

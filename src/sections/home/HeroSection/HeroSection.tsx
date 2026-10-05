@@ -85,7 +85,7 @@ export default function HeroSection() {
 
           <motion.h1 className={styles.heading} variants={fadeUp}>
             Let doctors care. <br />
-            <span className={styles.accent}>Let Elth remember.</span>
+            <span className={styles.accent}>Let Saple remember.</span>
           </motion.h1>
 
           <motion.p className={styles.sub} variants={fadeUp}>
@@ -126,7 +126,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className={styles.stage}>
-            <span className={styles.stageKicker}>What Elth is doing right now</span>
+            <span className={styles.stageKicker}>What Saple is doing right now</span>
 
             <div className={styles.capStack}>
               {CAPABILITIES.map((cap) => {

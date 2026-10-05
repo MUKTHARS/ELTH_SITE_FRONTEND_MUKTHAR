@@ -23,7 +23,7 @@ export default function PatientsHero() {
             Know what to do next.
           </h1>
           <p className={styles.sub}>
-            Get help understanding health information, keeping track of reports, and staying connected to your care team. Elth makes the next step in your care easier to understand.
+            Get help understanding health information, keeping track of reports, and staying connected to your care team. Saple makes the next step in your care easier to understand.
           </p>
           <div className={styles.actions}>
             <Button asChild size="lg">

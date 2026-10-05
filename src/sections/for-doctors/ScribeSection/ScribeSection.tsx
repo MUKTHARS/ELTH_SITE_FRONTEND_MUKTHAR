@@ -14,7 +14,7 @@ export default function ScribeSection() {
           <SectionLabel text="AI Scribe" color="purple" />
           <h2 className={styles.heading}>Care the way you trained to care</h2>
           <p className={styles.sub}>
-            The average doctor spends 2 hours per day on documentation. Elth Scribe gives that time back.
+            The average doctor spends 2 hours per day on documentation. Saple Scribe gives that time back.
           </p>
         </div>
         <div className={styles.story}>

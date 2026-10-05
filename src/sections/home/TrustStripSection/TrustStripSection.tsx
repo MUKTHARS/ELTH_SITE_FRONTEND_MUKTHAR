@@ -6,7 +6,7 @@ import styles from './TrustStripSection.module.scss'
 
 const TRUST_ITEMS = [
   { icon: IconCheck, title: 'Doctor approved', desc: 'Nothing is shared with the patient until the doctor reviews and approves.' },
-  { icon: IconBrain, title: 'Grounded in what was said', desc: 'Elth organizes the doctor\'s dictation. It doesn\'t invent clinical findings.' },
+  { icon: IconBrain, title: 'Grounded in what was said', desc: 'Saple organizes the doctor\'s dictation. It doesn\'t invent clinical findings.' },
   { icon: IconShield, title: 'Private by design', desc: 'Clinical information and dictation audio are treated as protected health information, with controlled access.' },
 ]
 

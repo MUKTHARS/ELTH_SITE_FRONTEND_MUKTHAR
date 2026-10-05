@@ -49,7 +49,7 @@ export default function CtaSection() {
                 <Link href={ROUTES.CONTACT}>Book a Demo</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className={styles.outlineBtn}>
-                <Link href={ROUTES.CONTACT}>Talk to Elth</Link>
+                <Link href={ROUTES.CONTACT}>Talk to Saple</Link>
               </Button>
             </div>
 

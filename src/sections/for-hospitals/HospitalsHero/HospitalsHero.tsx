@@ -24,7 +24,7 @@ export default function HospitalsHero() {
             From arrival to follow-up.
           </h1>
           <p className={styles.sub}>
-            Elth gives your care teams and patients connected AI tools while keeping your hospital at the centre of the relationship. Support patient communication, clinical workflows, and continuity of care through one connected experience.
+            Saple gives your care teams and patients connected AI tools while keeping your hospital at the centre of the relationship. Support patient communication, clinical workflows, and continuity of care through one connected experience.
           </p>
           <div className={styles.actions}>
             <Button asChild size="lg" className="bg-black hover:bg-black/90">

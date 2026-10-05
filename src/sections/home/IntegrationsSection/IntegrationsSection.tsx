@@ -12,7 +12,7 @@ export default function IntegrationsSection() {
           <SectionLabel text="Integrations" color="blue" />
           <h2 className={styles.heading}>Fits into the care systems you already use</h2>
           <p className={styles.sub}>
-            Elth is designed to fit into your care workflows—not force your teams to start over. Integration availability depends on your existing systems and deployment.
+            Saple is designed to fit into your care workflows—not force your teams to start over. Integration availability depends on your existing systems and deployment.
           </p>
         </div>
 

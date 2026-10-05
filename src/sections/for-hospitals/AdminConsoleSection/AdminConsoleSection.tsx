@@ -13,7 +13,7 @@ export default function AdminConsoleSection() {
         <div className={styles.header}>
           <SectionLabel text="Admin Console" color="teal" />
           <h2 className={styles.heading}>The care experience, connected behind the scenes</h2>
-          <p className={styles.sub}>The Elth Admin Console gives hospital administrators full operational control — staff, scheduling, communication, billing, and integrations.</p>
+          <p className={styles.sub}>The Saple Admin Console gives hospital administrators full operational control — staff, scheduling, communication, billing, and integrations.</p>
         </div>
         <div className={styles.content}>
           <div className={styles.imagePanel}>
