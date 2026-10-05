@@ -1,4 +1,4 @@
-import { IconMic, IconFileText, IconPill, IconBrain, IconBuilding, IconChart, IconSmartphone, IconStethoscope, IconSearch, IconChat } from '@icons/index'
+import { IconMic, IconFileText, IconPill, IconBrain, IconBuilding, IconChart, IconSmartphone, IconSearch, IconChat } from '@icons/index'
 
 export const DOCTORS_HERO_PROOF = [
   { icon: IconMic, label: 'AI Scribe' },
@@ -15,7 +15,6 @@ export const HOSPITALS_HERO_PROOF = [
 ]
 
 export const PATIENTS_HERO_PROOF = [
-  { icon: IconStethoscope, label: 'Symptom Checker' },
   { icon: IconSearch, label: 'Lab Interpreter' },
   { icon: IconChat, label: 'Health Concierge' },
   { icon: IconSmartphone, label: 'WhatsApp-first' },

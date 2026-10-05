@@ -41,7 +41,7 @@ export default function DemoFormSection() {
             <span className={styles.eyebrow}>Request a Demo</span>
             <h1 className={styles.heading}>See Saple AI in your hospital</h1>
             <p className={styles.sub}>
-              We&apos;ll show you a live demo tailored to your hospital&apos;s workflow — Scribe, Symptom Checker, Admin Console, and Analytics — in 30 minutes.
+              We&apos;ll show you a live demo tailored to your hospital&apos;s workflow — Scribe, Admin Console, and Analytics — in 30 minutes.
             </p>
 
             <div className={styles.promises}>
@@ -115,7 +115,7 @@ export default function DemoFormSection() {
                     name="message"
                     className={styles.textarea}
                     rows={4}
-                    placeholder="e.g. AI Scribe for our OPD, WhatsApp symptom checker, analytics dashboard…"
+                    placeholder="e.g. AI Scribe for our OPD, patient communication, analytics dashboard…"
                     value={form.message}
                     onChange={handleChange}
                   />

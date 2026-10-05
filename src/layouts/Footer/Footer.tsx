@@ -12,7 +12,7 @@ export default function Footer() {
           <p className={styles.tagline}>{siteConfig.tagline}</p>
           <p className={styles.built}>Built on <a href="https://saple.ai" className={styles.link}>Saple.ai</a></p>
           <div className={styles.badges}>
-            {['HIPAA', 'DPDPA', 'FHIR R4', 'ISO 27001'].map(b => (
+            {['ABDM', 'DPDPA',].map(b => (
               <span key={b} className={styles.badge}>{b}</span>
             ))}
           </div>

@@ -1,4 +1,4 @@
-import { IconLock, IconCheck, IconFileText, IconShield, IconSettings, IconEye } from '@icons/index'
+import { IconLock, IconCheck, IconFileText, IconEye } from '@icons/index'
 
 export const CONSENT_PRINCIPLES = [
   {
@@ -15,16 +15,6 @@ export const CONSENT_PRINCIPLES = [
     icon: IconFileText,
     title: 'DPDPA 2023 compliant',
     desc: 'Built to the Digital Personal Data Protection Act 2023. Right to access, right to erase — both implemented.',
-  },
-  {
-    icon: IconShield,
-    title: 'HIPAA & HL7 FHIR R4',
-    desc: 'International standards for healthcare data exchange. Your data is interoperable and portable.',
-  },
-  {
-    icon: IconSettings,
-    title: 'ISO 27001 certified infrastructure',
-    desc: 'All infrastructure runs on ISO 27001 certified cloud. Annual penetration tests. 99.9% uptime SLA.',
   },
   {
     icon: IconEye,

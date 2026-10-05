@@ -77,7 +77,7 @@ export default function DoctorsHero() {
                 <strong>Early osteoarthritis — left knee</strong>
               </div>
               <div className={styles.workspaceFooter}>
-                <span><IconFileText size={14} /> SOAP note ready</span>
+                <span><IconFileText size={14} /> Draft report ready</span>
                 <span className={styles.ready}><IconCheck size={13} /> Review</span>
               </div>
             </div>

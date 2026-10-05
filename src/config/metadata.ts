@@ -14,7 +14,6 @@ export const defaultMetadata: Metadata = {
     'hospital AI software',
     'AI clinical scribe',
     'lab report interpreter',
-    'symptom checker AI',
     'healthcare SaaS India',
     'white label health AI',
     'Saple AI',

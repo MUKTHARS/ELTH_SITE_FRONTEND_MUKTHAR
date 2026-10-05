@@ -48,9 +48,9 @@ const CAPABILITIES = [
     id: 'scribe',
     icon: IconMicFilled,
     image: '/images/topbanners/soap_notes.jpg',
-    title: 'Voice → SOAP note',
+    title: 'Voice → structured report',
     meta: '00:11 captured',
-    detail: 'Structured into Subjective, Objective, Assessment & Plan — instantly, with ICD-10 codes attached.',
+    detail: 'Organizes the doctor’s dictated consultation into a structured draft report for review, without adding clinical content.',
   },
   {
     id: 'brief',

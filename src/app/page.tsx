@@ -6,7 +6,6 @@ import {
   SolutionSection,
   FeaturesExplainer,
   // FeaturesScribe,
-  // FeaturesSymptom,
   // FeaturesLabReport,
   // FeaturesBriefing,
   // FeaturesDrugCheck,
@@ -34,7 +33,6 @@ export default function HomePage() {
       <SolutionSection />
       <FeaturesExplainer />
       {/* <FeaturesScribe /> */}
-      {/* <FeaturesSymptom /> */}
       {/* <FeaturesLabReport /> */}
       {/* <FeaturesBriefing /> */}
       {/* <FeaturesDrugCheck /> */}

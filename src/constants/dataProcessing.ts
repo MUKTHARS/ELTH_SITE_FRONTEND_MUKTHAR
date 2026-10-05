@@ -30,7 +30,7 @@ Cross-tenant queries are not possible through the standard application layer. Ac
     body: `• Encryption in transit (TLS 1.3) and at rest (AES-256) for all patient health data
 • Role-based access control, so each user role only sees data relevant to their function
 • Every AI access to a patient record requires an active, logged patient consent
-• Infrastructure hosted on ISO 27001 certified cloud infrastructure in India (AWS ap-south-1)
+• Infrastructure hosted in India
 • Regular security reviews and penetration testing of production systems
 • Full audit trail of consent grants, revocations, and data access events`,
   },

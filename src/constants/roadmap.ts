@@ -8,8 +8,8 @@ export const ROADMAP: RoadmapPhase[] = [
     focus: 'Platform setup & compliance architecture',
     deliverables: [
       'FHIR-compliant data store',
-      'HIPAA & DPDPA compliance framework',
-      'EMR adapter (HL7 FHIR R4)',
+      'DPDPA compliance framework',
+      'EMR adapter',
       'Medical knowledge base ingestion',
       'WhatsApp Business API channel setup',
     ],
@@ -21,10 +21,9 @@ export const ROADMAP: RoadmapPhase[] = [
     timeline: 'Months 3–5',
     focus: 'Core doctor + patient flows. First 5 paying clinics.',
     deliverables: [
-      'AI Clinical Scribe (voice → SOAP)',
+      'AI Clinical Scribe (voice → structured report)',
       'Pre-Visit Patient Briefing',
       'Drug Interaction Checker',
-      'Symptom Checker (Web + WhatsApp)',
       'Appointment Booking & Reminders',
       'Doctor Dashboard',
     ],
