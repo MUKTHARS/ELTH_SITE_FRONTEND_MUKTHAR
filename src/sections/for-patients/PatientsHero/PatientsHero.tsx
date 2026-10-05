@@ -20,11 +20,10 @@ export default function PatientsHero() {
         >
           <span className={styles.badge}>For Patients</span>
           <h1 className={styles.heading}>
-            Clearer answers.<br />
-            Calmer next steps.
+            Know what to do next.
           </h1>
           <p className={styles.sub}>
-            Symptom checker, lab report interpreter, health concierge — all on WhatsApp, in your language, from your hospital&apos;s AI.
+            Get help understanding health information, keeping track of reports, and staying connected to your care team. Elth makes the next step in your care easier to understand.
           </p>
           <div className={styles.actions}>
             <Button asChild size="lg">

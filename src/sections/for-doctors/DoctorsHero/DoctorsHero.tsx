@@ -25,7 +25,7 @@ export default function DoctorsHero() {
             Less time at the screen.
           </h1>
           <p className={styles.sub}>
-            Elth AI handles documentation, pre-visit briefings, and drug safety checks — so you can focus on what only you can do: healing patients.
+            Elth helps you prepare patient context, turn consultations into structured notes, and check medication safety—so you can spend less time on repetitive tasks and more time with patients.
           </p>
           <div className={styles.actions}>
             <Button asChild size="lg" className="bg-black hover:bg-black/90">

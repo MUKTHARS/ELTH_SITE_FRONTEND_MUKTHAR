@@ -24,7 +24,7 @@ export default function HospitalsHero() {
             From arrival to follow-up.
           </h1>
           <p className={styles.sub}>
-            Elth AI is white-label infrastructure. Deploy it under your brand in 48 hours. Your patients never see &ldquo;Elth&rdquo; — they see your hospital&apos;s AI.
+            Elth gives your care teams and patients connected AI tools while keeping your hospital at the centre of the relationship. Support patient communication, clinical workflows, and continuity of care through one connected experience.
           </p>
           <div className={styles.actions}>
             <Button asChild size="lg" className="bg-black hover:bg-black/90">
