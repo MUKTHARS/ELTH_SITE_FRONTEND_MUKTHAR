@@ -17,7 +17,7 @@ export default function TermsSection() {
           <span className={styles.eyebrow}>Legal</span>
           <h1 className={styles.heading}>Terms of Service</h1>
           <p className={styles.sub}>
-            These Terms govern Your access to and use of the Elth AI website, the Elth mobile application, and related services, owned and operated by Monobot Agentic Automations LLP.
+            These Terms govern Your access to and use of the Saple AI website, the Elth mobile application, and related services, owned and operated by Monobot Agentic Automations LLP.
           </p>
         </div>
 

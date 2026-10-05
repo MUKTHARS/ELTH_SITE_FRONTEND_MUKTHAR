@@ -26,7 +26,7 @@ export const HOW_IT_WORKS_STEPS = [
     num: '04',
     icon: IconBrain,
     title: 'AI works across every touchpoint',
-    desc: 'Intake → consultation → diagnosis → prescription → follow-up. Elth AI is the thread across every step of care.',
+    desc: 'Intake → consultation → diagnosis → prescription → follow-up. Saple AI is the thread across every step of care.',
     color: '#B8791E',
   },
 ]

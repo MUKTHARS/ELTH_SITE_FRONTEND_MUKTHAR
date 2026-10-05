@@ -32,7 +32,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
           >
             <div className={styles.drawerHeader}>
-              <span className={styles.logo}>Elth AI</span>
+              <span className={styles.logo}>Saple AI</span>
               <button onClick={onClose} className={styles.closeBtn} aria-label="Close menu">
                 <IconX size={20} />
               </button>

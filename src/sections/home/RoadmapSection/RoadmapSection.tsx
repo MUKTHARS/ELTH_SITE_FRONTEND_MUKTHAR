@@ -25,7 +25,7 @@ export default function RoadmapSection() {
           <SectionLabel text="Roadmap" color="purple" />
           <h2 className={styles.heading}>Where we&apos;re going</h2>
           <p className={styles.sub}>
-            Elth AI is on an aggressive build schedule. Here&apos;s what&apos;s shipped, what&apos;s coming, and what&apos;s on the horizon.
+            Saple AI is on an aggressive build schedule. Here&apos;s what&apos;s shipped, what&apos;s coming, and what&apos;s on the horizon.
           </p>
         </div>
 

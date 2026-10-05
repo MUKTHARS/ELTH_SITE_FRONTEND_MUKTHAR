@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { DoctorsHero, ScribeSection, BriefingSection, DrugCheckerSection, SpecialtiesSection } from '@sections/for-doctors'
 
 export const metadata: Metadata = {
-  title: 'For Doctors — Elth AI',
+  title: 'For Doctors — Saple AI',
   description: 'AI Scribe, Pre-visit Briefing, and Drug Checker for doctors. Spend less time on paperwork and more time with patients.',
 }
 

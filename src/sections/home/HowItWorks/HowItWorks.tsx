@@ -13,7 +13,7 @@ export default function HowItWorks() {
         <div className={styles.header}>
           <SectionLabel text="How It Works" color="teal" />
           <h2 className={styles.heading}>Up and running in 48 hours</h2>
-          <p className={styles.sub}>No lengthy EMR migrations. No IT overhaul. Elth AI sits on top of your existing systems.</p>
+          <p className={styles.sub}>No lengthy EMR migrations. No IT overhaul. Saple AI sits on top of your existing systems.</p>
         </div>
 
         <div className={styles.steps}>
@@ -48,7 +48,7 @@ export default function HowItWorks() {
         >
           <span className={styles.noteIcon}><IconLightbulb size={18} strokeWidth={1.6} /></span>
           <p className={styles.noteText}>
-            <strong>No patients ever see &quot;Elth AI&quot;</strong> — they interact with your hospital&apos;s brand. We&apos;re the infrastructure, you&apos;re the experience.
+            <strong>No patients ever see &quot;Saple AI&quot;</strong> — they interact with your hospital&apos;s brand. We&apos;re the infrastructure, you&apos;re the experience.
           </p>
         </motion.div>
       </div>

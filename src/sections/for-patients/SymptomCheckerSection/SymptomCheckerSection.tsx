@@ -14,7 +14,7 @@ export default function SymptomCheckerSection() {
           <SectionLabel text="Symptom Checker" color="teal" />
           <h2 className={styles.heading}>When something feels wrong, start with a simple conversation</h2>
           <p className={styles.sub}>
-            Describe your symptoms on WhatsApp — in Tamil, Hindi, Telugu, or any Indian language. Elth AI asks the right follow-up questions and triages your urgency in minutes.
+            Describe your symptoms on WhatsApp — in Tamil, Hindi, Telugu, or any Indian language. Saple AI asks the right follow-up questions and triages your urgency in minutes.
           </p>
         </div>
         <div className={styles.content}>

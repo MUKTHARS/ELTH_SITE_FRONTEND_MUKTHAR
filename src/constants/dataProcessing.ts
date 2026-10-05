@@ -1,21 +1,21 @@
 export const DATA_PROCESSING_SECTIONS = [
   {
     title: 'Purpose of This Document',
-    body: `This Data Processing overview describes how Monobot Agentic Automations LLP ("Elth AI") processes data on behalf of hospitals and clinics ("Tenants") using the Services, and the technical and organisational measures in place to protect that data.
+    body: `This Data Processing overview describes how Monobot Agentic Automations LLP ("Saple AI") processes data on behalf of hospitals and clinics ("Tenants") using the Services, and the technical and organisational measures in place to protect that data.
 
-It is intended for hospital administrators, compliance officers, and IT teams evaluating Elth AI, and supplements our Privacy Policy and Terms of Service.`,
+It is intended for hospital administrators, compliance officers, and IT teams evaluating Saple AI, and supplements our Privacy Policy and Terms of Service.`,
   },
   {
     title: 'Controller & Processor Roles',
-    body: `For patient health data, the Tenant (hospital or clinic) acts as the Data Fiduciary / Controller and determines the purpose and means of processing. Elth AI acts as the Data Processor, processing patient data solely on the Tenant's documented instructions to provide the Services.
+    body: `For patient health data, the Tenant (hospital or clinic) acts as the Data Fiduciary / Controller and determines the purpose and means of processing. Saple AI acts as the Data Processor, processing patient data solely on the Tenant's documented instructions to provide the Services.
 
-Elth AI does not use Tenant patient data to train shared or cross-tenant AI models, and does not sell or rent patient data to any third party.`,
+Saple AI does not use Tenant patient data to train shared or cross-tenant AI models, and does not sell or rent patient data to any third party.`,
   },
   {
     title: 'Data Isolation Per Tenant',
     body: `Each hospital's data is logically isolated within its own tenant environment. Patient records, clinical protocols, and AI configuration for one hospital are never visible to, or used by, another hospital on the platform.
 
-Cross-tenant queries are not possible through the standard application layer. Access to raw tenant data by Elth AI personnel is restricted, logged, and limited to what is required for support, security, or maintenance.`,
+Cross-tenant queries are not possible through the standard application layer. Access to raw tenant data by Saple AI personnel is restricted, logged, and limited to what is required for support, security, or maintenance.`,
   },
   {
     title: 'Categories of Data Processed',
@@ -40,7 +40,7 @@ Cross-tenant queries are not possible through the standard application layer. Ac
   },
   {
     title: 'Sub-Processors',
-    body: `Elth AI uses a limited number of vetted sub-processors for infrastructure, messaging, and AI inference — including cloud hosting, WhatsApp Business API delivery, and large language model providers used to power clinical AI features. All sub-processors are bound by confidentiality and data-protection obligations no weaker than those in this document. A current sub-processor list is available on request.`,
+    body: `Saple AI uses a limited number of vetted sub-processors for infrastructure, messaging, and AI inference — including cloud hosting, WhatsApp Business API delivery, and large language model providers used to power clinical AI features. All sub-processors are bound by confidentiality and data-protection obligations no weaker than those in this document. A current sub-processor list is available on request.`,
   },
   {
     title: 'Data Retention & Deletion',
@@ -54,7 +54,7 @@ Patients may request erasure of their personal data at any time, subject to lega
   },
   {
     title: 'Breach Notification',
-    body: `In the event of a data breach affecting Tenant or patient data, Elth AI will notify the affected Tenant without undue delay, and will support the Tenant in meeting its own regulatory notification obligations.`,
+    body: `In the event of a data breach affecting Tenant or patient data, Saple AI will notify the affected Tenant without undue delay, and will support the Tenant in meeting its own regulatory notification obligations.`,
   },
   {
     title: 'Contact',

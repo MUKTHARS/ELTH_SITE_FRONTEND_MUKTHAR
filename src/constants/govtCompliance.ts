@@ -9,7 +9,7 @@ export const GOVT_COMPLIANCE_ITEMS = [
   {
     icon: IconLink,
     title: 'FHIR R4 health records',
-    desc: 'Clinical records are stored and exchanged as FHIR R4 resources, so they stay portable and interoperable with the wider ABDM ecosystem — not locked into Elth AI.',
+    desc: 'Clinical records are stored and exchanged as FHIR R4 resources, so they stay portable and interoperable with the wider ABDM ecosystem — not locked into Saple AI.',
   },
   {
     icon: IconFileText,

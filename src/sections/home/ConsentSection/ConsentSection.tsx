@@ -17,7 +17,7 @@ export default function ConsentSection() {
             <GradientText variant="teal">Privacy by design.</GradientText>
           </h2>
           <p className={styles.sub}>
-            Healthcare data is the most sensitive data in the world. We built Elth AI with consent at the centre — not as an afterthought.
+            Healthcare data is the most sensitive data in the world. We built Saple AI with consent at the centre — not as an afterthought.
           </p>
         </div>
 

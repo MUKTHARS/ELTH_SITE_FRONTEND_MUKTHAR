@@ -39,7 +39,7 @@ export default function DemoFormSection() {
             transition={{ duration: 0.6 }}
           >
             <span className={styles.eyebrow}>Request a Demo</span>
-            <h1 className={styles.heading}>See Elth AI in your hospital</h1>
+            <h1 className={styles.heading}>See Saple AI in your hospital</h1>
             <p className={styles.sub}>
               We&apos;ll show you a live demo tailored to your hospital&apos;s workflow — Scribe, Symptom Checker, Admin Console, and Analytics — in 30 minutes.
             </p>

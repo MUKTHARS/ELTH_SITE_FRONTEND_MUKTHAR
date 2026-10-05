@@ -14,7 +14,7 @@ export default function BriefingSection() {
           <SectionLabel text="Pre-visit Brief" color="purple" />
           <h2 className={styles.heading}>Arrive prepared. Stay present.</h2>
           <p className={styles.sub}>
-            60 seconds before each appointment, Elth AI delivers a structured brief to the doctor — no chart hunting, no catching up mid-consultation.
+            60 seconds before each appointment, Saple AI delivers a structured brief to the doctor — no chart hunting, no catching up mid-consultation.
           </p>
         </div>
         <div className={styles.content}>

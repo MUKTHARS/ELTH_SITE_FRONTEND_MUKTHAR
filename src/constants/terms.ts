@@ -1,7 +1,7 @@
 export const TERMS_SECTIONS = [
   {
     title: 'Introduction',
-    body: `These Terms of Service ("Terms") govern access to and use of the Elth AI website, the Elth mobile application, and all related services (collectively, the "Services"), owned and operated by Monobot Agentic Automations LLP ("Elth AI", "We", "Our", "Us").
+    body: `These Terms of Service ("Terms") govern access to and use of the Saple AI website, the Elth mobile application, and all related services (collectively, the "Services"), owned and operated by Monobot Agentic Automations LLP ("Saple AI", "We", "Our", "Us").
 
 By accessing or using the Services, You agree to be bound by these Terms. If You are using the Services on behalf of a hospital, clinic, or other organisation, You represent that You have the authority to bind that organisation to these Terms.
 
@@ -15,9 +15,9 @@ Doctors and administrators must hold valid professional credentials and be autho
   },
   {
     title: 'Tenant & White-Label Model',
-    body: `Elth AI is provided to hospitals and clinics ("Tenants") on a business-to-business basis. Tenants may configure the Services with their own branding, AI persona, and clinical protocols for use by their doctors and patients.
+    body: `Saple AI is provided to hospitals and clinics ("Tenants") on a business-to-business basis. Tenants may configure the Services with their own branding, AI persona, and clinical protocols for use by their doctors and patients.
 
-Each Tenant's patient and clinical data is logically isolated. Elth AI does not access, view, or use patient-identifiable data except as required to operate, secure, and support the Services, or as expressly authorised in a signed agreement with the Tenant.`,
+Each Tenant's patient and clinical data is logically isolated. Saple AI does not access, view, or use patient-identifiable data except as required to operate, secure, and support the Services, or as expressly authorised in a signed agreement with the Tenant.`,
   },
   {
     title: 'Acceptable Use',
@@ -34,7 +34,7 @@ Each Tenant's patient and clinical data is logically isolated. Elth AI does not 
     title: 'AI-Generated Output',
     body: `The Services use artificial intelligence to assist with tasks such as clinical documentation, symptom triage, lab report interpretation, and drug interaction checks. AI-generated output is a decision-support aid only and does not constitute medical advice or a diagnosis.
 
-All AI-generated clinical content — including scribe notes, prescriptions, and briefings — must be reviewed and approved by a licensed doctor before being acted upon or shared with a patient. Elth AI is not a substitute for professional medical judgment.`,
+All AI-generated clinical content — including scribe notes, prescriptions, and briefings — must be reviewed and approved by a licensed doctor before being acted upon or shared with a patient. Saple AI is not a substitute for professional medical judgment.`,
   },
   {
     title: 'Accounts & Security',
@@ -64,7 +64,7 @@ Upon termination, We will make Tenant data available for export for a reasonable
     title: 'Limitation of Liability',
     body: `The Services are provided on an "as is" and "as available" basis. To the maximum extent permitted by law, Monobot Agentic Automations LLP disclaims all warranties, express or implied, regarding the Services.
 
-Elth AI shall not be liable for any indirect, incidental, or consequential damages arising from use of the Services. Nothing in these Terms limits liability for gross negligence, wilful misconduct, or matters that cannot be excluded under applicable law.`,
+Saple AI shall not be liable for any indirect, incidental, or consequential damages arising from use of the Services. Nothing in these Terms limits liability for gross negligence, wilful misconduct, or matters that cannot be excluded under applicable law.`,
   },
   {
     title: 'Governing Law',

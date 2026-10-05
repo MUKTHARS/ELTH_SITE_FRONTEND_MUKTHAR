@@ -13,6 +13,7 @@ import {
   PatientAppSection,
   // HowItWorks,
   AudienceSection,
+  IntegrationsSection,
   // StatsSection,
   // ConsentSection,
   // IntegrationsSection,
@@ -40,6 +41,7 @@ export default function HomePage() {
       <PatientAppSection />
       {/* <HowItWorks /> */}
       <AudienceSection />
+      <IntegrationsSection />
       {/* <StatsSection /> */}
       {/* <ConsentSection /> */}
       {/* <IntegrationsSection /> */}

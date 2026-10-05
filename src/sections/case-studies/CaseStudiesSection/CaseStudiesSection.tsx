@@ -18,11 +18,11 @@ export default function CaseStudiesSection() {
         <div className={styles.header}>
           <SectionLabel text="Case Studies" color="teal" />
           <h1 className={styles.heading}>
-            What Elth AI looks like<br />
+            What Saple AI looks like<br />
             <GradientText variant="teal">inside a real clinic.</GradientText>
           </h1>
           <p className={styles.sub}>
-            Illustrative deployment scenarios based on Elth AI&apos;s product design and pilot feedback — showing how each feature changes day-to-day work for doctors, staff, and patients.
+            Illustrative deployment scenarios based on Saple AI&apos;s product design and pilot feedback — showing how each feature changes day-to-day work for doctors, staff, and patients.
           </p>
         </div>
 

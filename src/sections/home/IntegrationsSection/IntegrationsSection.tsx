@@ -2,11 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@components/common/SectionLabel/SectionLabel'
-import IntegrationLogo from '@components/common/IntegrationLogo/IntegrationLogo'
-import { INTEGRATIONS } from '@constants/integrations'
 import styles from './IntegrationsSection.module.scss'
-
-const CATEGORIES = ['EMR', 'Lab', 'Insurance', 'Messaging'] as const
 
 export default function IntegrationsSection() {
   return (
@@ -14,33 +10,10 @@ export default function IntegrationsSection() {
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionLabel text="Integrations" color="blue" />
-          <h2 className={styles.heading}>Plugs into what you already use</h2>
+          <h2 className={styles.heading}>Fits into the care systems you already use</h2>
           <p className={styles.sub}>
-            No ripping out your existing systems. Elth AI integrates with the leading EMRs, lab networks, and insurance providers in India.
+            Saple is designed to fit into your care workflows—not force your teams to start over. Integration availability depends on your existing systems and deployment.
           </p>
-        </div>
-
-        <div className={styles.categories}>
-          {CATEGORIES.map((cat, ci) => {
-            const items = INTEGRATIONS.filter((ix) => ix.category === cat)
-            return (
-              <motion.div
-                key={cat}
-                className={styles.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: ci * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <span className={styles.catLabel}>{cat}</span>
-                <div className={styles.logos}>
-                  {items.map((item) => (
-                    <IntegrationLogo key={item.name} integration={item} />
-                  ))}
-                </div>
-              </motion.div>
-            )
-          })}
         </div>
 
         <motion.div
@@ -51,9 +24,9 @@ export default function IntegrationsSection() {
           viewport={{ once: true }}
         >
           <p className={styles.footerText}>
-            Don&apos;t see your system? <strong>We build custom integrations</strong> for Enterprise hospitals within 2 weeks.
+            Need to check compatibility with your systems? <strong>Talk to our team</strong> about your workflow and deployment.
           </p>
-          <a href="mailto:hello@elth.ai" className={styles.footerLink}>hello@elth.ai →</a>
+          <a href="mailto:hello@elth.ai" className={styles.footerLink}>Discuss compatibility →</a>
         </motion.div>
       </div>
     </section>

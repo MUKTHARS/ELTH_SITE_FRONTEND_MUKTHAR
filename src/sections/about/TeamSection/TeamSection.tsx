@@ -33,7 +33,7 @@ export default function TeamSection() {
         <div className={styles.saple}>
           <span className={styles.sapleLabel}>Built on</span>
           <strong className={styles.sapleName}>Saple.ai</strong>
-          <p className={styles.sapleDesc}>Elth AI is built on the Saple.ai platform — India&apos;s enterprise AI infrastructure layer for regulated industries.</p>
+          <p className={styles.sapleDesc}>Saple AI is built on the Saple.ai platform — India&apos;s enterprise AI infrastructure layer for regulated industries.</p>
         </div>
       </div>
     </section>

@@ -17,7 +17,7 @@ export const AUDIENCE: AudienceBlock[] = [
     kicker: 'OUR DOCTORS',
     title: 'Built around the way doctors actually work.',
     points: [
-      'AI Scribe — dictate naturally, Elth structures it',
+      'AI Scribe — dictate naturally, Saple structures it',
       'Clinical Memory — find past consultations instantly',
       'Drug Interaction Checker — flags conflicts before you sign',
       'Doctor in control — AI assists, the doctor reviews and approves',
@@ -29,7 +29,7 @@ export const AUDIENCE: AudienceBlock[] = [
   {
     kicker: 'FOR CLINICS & HOSPITALS',
     title: 'Your clinic. Your workflow. Connected care.',
-    desc: 'Elth works alongside your existing workflow and brings modern AI, patient engagement and continuity of care to the front.',
+    desc: 'Saple works alongside your existing workflow and brings modern AI, patient engagement and continuity of care to the front.',
     steps: ['Run your clinic', 'Document care', 'Connect patients', 'Continue care'],
     cta: 'See how clinics use Elth',
     href: ROUTES.FOR_HOSPITALS,

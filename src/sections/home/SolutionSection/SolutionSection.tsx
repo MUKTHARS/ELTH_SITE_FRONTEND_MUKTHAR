@@ -7,25 +7,19 @@ import { PORTALS } from '@constants/portals'
 import styles from './SolutionSection.module.scss'
 
 import {
-  IconUser,
   IconStethoscope,
   IconMic,
   IconFileText,
   IconCheck,
-  IconSmartphone,
   IconBell,
-  IconCalendar,
 } from '@icons/index'
 
 const JOURNEY = [
-  { label: 'Patient arrives',    Icon: IconUser },
-  { label: 'Consultation',       Icon: IconStethoscope },
-  { label: 'AI Scribe',          Icon: IconMic },
-  { label: 'Clinical Record',    Icon: IconFileText },
-  { label: 'Doctor Approval',    Icon: IconCheck },
-  { label: 'Patient App',        Icon: IconSmartphone },
-  { label: 'Follow-up',          Icon: IconBell },
-  { label: 'Next Consultation',  Icon: IconCalendar },
+  { label: 'Prepare',            Icon: IconFileText },
+  { label: 'Consult',            Icon: IconStethoscope },
+  { label: 'Document',           Icon: IconMic },
+  { label: 'Review',             Icon: IconCheck },
+  { label: 'Follow up',          Icon: IconBell },
 ]
 
 export default function SolutionSection() {
@@ -34,13 +28,13 @@ export default function SolutionSection() {
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionLabel text="The Solution" color="teal" />
-          <h2 className={styles.heading}>One platform. Three portals. Every role served.</h2>
+          <h2 className={styles.heading}>Care that continues beyond the consultation.</h2>
           <p className={styles.sub}>
-            Elth AI is white-label infrastructure. Hospitals deploy it under their brand. Patients never see &ldquo;Elth&rdquo; — they see their hospital&apos;s AI.
+            Saple connects the moments around a visit—from preparing for a consultation to documenting the doctor&apos;s plan and helping patients stay on track afterward.
           </p>
         </div>
 
-        <p className={styles.journeyCaption}>One platform. One continuous patient journey.</p>
+        <p className={styles.journeyCaption}>One connected journey, supported by Saple.</p>
 
         <motion.div
           className={styles.journey}

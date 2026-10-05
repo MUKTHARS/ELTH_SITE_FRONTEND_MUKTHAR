@@ -13,7 +13,7 @@ export default function ProblemSection() {
         <div className={styles.header}>
           <SectionLabel text="The Problem" color="purple" />
           <h2 className={styles.heading}>The consultation ends.<br/>The work doesn&apos;t.</h2>
-          <p className={styles.sub}>Every clinic, every hospital, every patient feels it. We built Elth AI to fix all three.</p>
+          <p className={styles.sub}>Every clinic, every hospital, every patient feels it. We built Saple AI to fix all three.</p>
         </div>
 
         <div className={styles.grid}>

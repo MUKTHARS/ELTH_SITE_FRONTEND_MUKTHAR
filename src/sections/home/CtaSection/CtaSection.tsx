@@ -41,7 +41,7 @@ export default function CtaSection() {
               Give your doctors<br />their time back.
             </h2>
             <p className={styles.sub}>
-              See how Elth AI can transform your consultation workflow and keep your patients connected beyond the clinic.
+              See how Saple AI can transform your consultation workflow and keep your patients connected beyond the clinic.
             </p>
 
             <div className={styles.actions}>
@@ -49,7 +49,7 @@ export default function CtaSection() {
                 <Link href={ROUTES.CONTACT}>Book a Demo</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className={styles.outlineBtn}>
-                <Link href={ROUTES.CONTACT}>Talk to Elth</Link>
+                <Link href={ROUTES.CONTACT}>Talk to Saple</Link>
               </Button>
             </div>
 

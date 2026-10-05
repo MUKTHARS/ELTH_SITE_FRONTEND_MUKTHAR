@@ -25,7 +25,7 @@ export default function MissionSection() {
             India has 1.4 billion people and a severe shortage of healthcare infrastructure. The solution isn&apos;t more hospitals — it&apos;s making every existing doctor, nurse, and clinic dramatically more capable using AI.
           </p>
           <p className={styles.body}>
-            We built Elth AI on Saple.ai to give hospitals the same AI capabilities that large tech companies have — at a price that works for a 3-doctor clinic in Coimbatore and a 500-bed hospital in Hyderabad.
+            We built Saple AI on Saple.ai to give hospitals the same AI capabilities that large tech companies have — at a price that works for a 3-doctor clinic in Coimbatore and a 500-bed hospital in Hyderabad.
           </p>
 
           <div className={styles.visual}>

@@ -62,7 +62,7 @@ export default function FeaturesBriefing() {
               <GradientText variant="purple">before they sit down.</GradientText>
             </h2>
             <p className={styles.sub}>
-              60 seconds before each appointment, Elth AI surfaces a structured brief — chief complaint, history, last labs, risk flags — so doctors can walk in prepared, not playing catch-up.
+              60 seconds before each appointment, Saple AI surfaces a structured brief — chief complaint, history, last labs, risk flags — so doctors can walk in prepared, not playing catch-up.
             </p>
             <div className={styles.stats}>
               {BRIEF_STATS.map((s) => (
