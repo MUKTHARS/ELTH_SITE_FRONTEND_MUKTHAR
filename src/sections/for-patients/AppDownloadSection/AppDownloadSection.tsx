@@ -30,7 +30,13 @@ export default function AppDownloadSection() {
             </span>
           </a>
 
-          <span className={styles.badgeStatic} aria-label="Download on the App Store">
+          <a
+            href="https://apps.apple.com/us/app/myelth/id6805315945"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.badgeStatic}
+            aria-label="Download on the App Store"
+          >
             <span className={styles.badgeIcon}>
               <Image src="/images/logos/apple.png" alt="" width={31} height={36} />
             </span>
@@ -38,7 +44,7 @@ export default function AppDownloadSection() {
               <span className={styles.badgeTextSmall}>Download on the</span>
               <span className={styles.badgeTextLarge}>App Store</span>
             </span>
-          </span>
+          </a>
         </div>
       </div>
     </section>
